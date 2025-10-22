@@ -3,16 +3,13 @@ package com.convocatis.app
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import android.view.View
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
-import com.convocatis.app.ui.fragments.GroupsFragment
 import com.convocatis.app.ui.fragments.LoginFragment
-import com.convocatis.app.ui.fragments.NotificationsFragment
 import com.convocatis.app.ui.fragments.ProfileFragment
 import com.convocatis.app.ui.fragments.TextReadingFragment
 import com.convocatis.app.ui.fragments.TextsFragment
@@ -23,7 +20,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     private lateinit var drawerLayout: DrawerLayout
     private lateinit var navView: NavigationView
     private lateinit var toggle: ActionBarDrawerToggle
-    private lateinit var menuLayout: View
     private var currentFragment: Fragment? = null
 
     var onSearchTermChangedListener: ((String) -> Unit)? = null
@@ -33,7 +29,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         setContentView(R.layout.activity_main_drawer)
 
         setupNavigationDrawer()
-        setupCustomMenu()
 
         // Check if user is logged in
         val profile = ConvocatisApplication.getInstance().getProfile()
@@ -62,33 +57,9 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         toggle.syncState()
     }
 
-    private fun setupCustomMenu() {
-        menuLayout = findViewById(R.id.menu_layout)
-
-        findViewById<View>(R.id.menu_texts).setOnClickListener {
-            showTextsFragment()
-            drawerLayout.closeDrawers()
-        }
-
-        findViewById<View>(R.id.menu_notifs).setOnClickListener {
-            showNotificationsFragment()
-            drawerLayout.closeDrawers()
-        }
-
-        findViewById<View>(R.id.menu_groups).setOnClickListener {
-            val profile = ConvocatisApplication.getInstance().getProfile()
-            if (!profile.nick.isNullOrEmpty()) {
-                showGroupsFragment()
-                drawerLayout.closeDrawers()
-            }
-        }
-    }
-
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.nav_texts -> showTextsFragment()
-            R.id.nav_notifications -> showNotificationsFragment()
-            R.id.nav_groups -> showGroupsFragment()
             R.id.nav_profile -> showProfileFragment()
             R.id.nav_logout -> showLoginFragment(true)
         }
@@ -96,49 +67,42 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         return true
     }
 
-    private fun showFragment(fragment: Fragment, title: String, showMenu: Boolean = true) {
+    private fun showFragment(fragment: Fragment, title: String) {
         currentFragment = fragment
         supportFragmentManager.beginTransaction()
             .replace(R.id.nav_host_fragment, fragment)
             .commit()
 
         supportActionBar?.title = title
-        menuLayout.visibility = if (showMenu) View.VISIBLE else View.GONE
 
         // Enable/disable drawer based on fragment
         if (fragment is LoginFragment || fragment is TextReadingFragment) {
             drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED)
+            supportActionBar?.setDisplayHomeAsUpEnabled(false)
         } else {
             drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_UNLOCKED)
+            supportActionBar?.setDisplayHomeAsUpEnabled(true)
         }
     }
 
     fun showTextsFragment() {
-        showFragment(TextsFragment(), "Texts", true)
-    }
-
-    fun showNotificationsFragment() {
-        showFragment(NotificationsFragment(), "Notifications", true)
-    }
-
-    fun showGroupsFragment() {
-        showFragment(GroupsFragment(), "Groups", true)
+        showFragment(TextsFragment(), "Texts")
     }
 
     fun showProfileFragment() {
-        showFragment(ProfileFragment(), "Profile", false)
+        showFragment(ProfileFragment(), "Profile")
     }
 
     fun showLoginFragment(doLogout: Boolean = false) {
         if (doLogout) {
             ConvocatisApplication.getInstance().clearProfile()
         }
-        showFragment(LoginFragment(), "Convocatis", false)
+        showFragment(LoginFragment(), "Convocatis")
     }
 
     fun showTextReadingFragment(textEntity: com.convocatis.app.database.entity.TextEntity) {
         val fragment = TextReadingFragment.newInstance(textEntity)
-        showFragment(fragment, "Reading", false)
+        showFragment(fragment, "Reading")
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {

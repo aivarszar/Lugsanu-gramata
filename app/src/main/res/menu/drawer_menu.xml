@@ -6,24 +6,12 @@
             android:icon="@android:drawable/ic_menu_sort_by_size"
             android:title="Texts" />
         <item
-            android:id="@+id/nav_notifications"
-            android:icon="@android:drawable/ic_menu_info_details"
-            android:title="Notifications" />
+            android:id="@+id/nav_profile"
+            android:icon="@android:drawable/ic_menu_myplaces"
+            android:title="Profile" />
         <item
-            android:id="@+id/nav_groups"
-            android:icon="@android:drawable/ic_menu_agenda"
-            android:title="Groups" />
+            android:id="@+id/nav_logout"
+            android:icon="@android:drawable/ic_lock_power_off"
+            android:title="Logout" />
     </group>
-    <item android:title="Account">
-        <menu>
-            <item
-                android:id="@+id/nav_profile"
-                android:icon="@android:drawable/ic_menu_myplaces"
-                android:title="Profile" />
-            <item
-                android:id="@+id/nav_logout"
-                android:icon="@android:drawable/ic_lock_power_off"
-                android:title="Logout" />
-        </menu>
-    </item>
 </menu>

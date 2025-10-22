@@ -91,9 +91,6 @@ dependencies {
     // SharedPreferences
     implementation("androidx.preference:preference-ktx:1.2.1")
 
-    // WorkManager (for alarms/notifications)
-    implementation("androidx.work:work-runtime-ktx:2.9.0")
-
     // Drawer Layout
     implementation("androidx.drawerlayout:drawerlayout:1.2.0")
 

@@ -4,16 +4,12 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.convocatis.app.database.dao.GroupDao
-import com.convocatis.app.database.dao.NotificationDao
 import com.convocatis.app.database.dao.TextDao
 import com.convocatis.app.database.entity.*
 
 @Database(
     entities = [
         TextEntity::class,
-        GroupEntity::class,
-        NotificationEntity::class,
         LanguageEntity::class,
         DenominationEntity::class,
         TextUsageEntity::class
@@ -23,8 +19,6 @@ import com.convocatis.app.database.entity.*
 )
 abstract class AppDatabase : RoomDatabase() {
     abstract fun textDao(): TextDao
-    abstract fun groupDao(): GroupDao
-    abstract fun notificationDao(): NotificationDao
 
     companion object {
         @Volatile

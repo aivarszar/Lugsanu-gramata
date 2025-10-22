@@ -8,62 +8,10 @@
     tools:context=".MainActivity">
 
     <!-- Main content -->
-    <LinearLayout
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/nav_host_fragment"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-
-        <!-- Custom tab-like menu -->
-        <LinearLayout
-            android:id="@+id/menu_layout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:background="?attr/colorPrimary"
-            android:paddingVertical="12dp">
-
-            <TextView
-                android:id="@+id/menu_texts"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Texts"
-                android:textColor="@android:color/white"
-                android:textSize="16sp"
-                android:gravity="center"
-                android:padding="8dp" />
-
-            <TextView
-                android:id="@+id/menu_notifs"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Notifications"
-                android:textColor="@android:color/white"
-                android:textSize="16sp"
-                android:gravity="center"
-                android:padding="8dp" />
-
-            <TextView
-                android:id="@+id/menu_groups"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Groups"
-                android:textColor="@android:color/white"
-                android:textSize="16sp"
-                android:gravity="center"
-                android:padding="8dp" />
-        </LinearLayout>
-
-        <!-- Fragment container -->
-        <androidx.fragment.app.FragmentContainerView
-            android:id="@+id/nav_host_fragment"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1" />
-
-    </LinearLayout>
+        android:layout_height="match_parent" />
 
     <!-- Navigation drawer -->
     <com.google.android.material.navigation.NavigationView
