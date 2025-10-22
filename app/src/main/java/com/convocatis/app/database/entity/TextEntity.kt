@@ -27,8 +27,8 @@ data class TextEntity(
     val likeDirty: Boolean = false,
     val scheduleDirty: Boolean = false,
     val isSharedDirty: Boolean = false,
-    val createdAt: Long = System.currentTimeMillis(),
-    val updatedAt: Long = System.currentTimeMillis()
+    val createdAt: Long = 0L,
+    val updatedAt: Long = 0L
 ) : Parcelable {
 
     fun getNextPrayerTime(): Long {

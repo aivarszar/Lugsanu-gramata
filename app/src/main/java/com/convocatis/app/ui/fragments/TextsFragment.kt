@@ -42,10 +42,26 @@ class TextsFragment : Fragment() {
     private fun loadTexts() {
         // TODO: Load from database using ViewModel
         // For now, show sample data
+        val currentTime = System.currentTimeMillis()
         val sampleTexts = listOf(
-            TextEntity(title = "Sample Prayer 1", text = "This is a sample prayer text..."),
-            TextEntity(title = "Sample Prayer 2", text = "Another sample prayer text..."),
-            TextEntity(title = "Sample Hymn", text = "A sample hymn text...")
+            TextEntity(
+                title = "Sample Prayer 1",
+                text = "This is a sample prayer text...",
+                createdAt = currentTime,
+                updatedAt = currentTime
+            ),
+            TextEntity(
+                title = "Sample Prayer 2",
+                text = "Another sample prayer text...",
+                createdAt = currentTime,
+                updatedAt = currentTime
+            ),
+            TextEntity(
+                title = "Sample Hymn",
+                text = "A sample hymn text...",
+                createdAt = currentTime,
+                updatedAt = currentTime
+            )
         )
         adapter.submitList(sampleTexts)
     }
