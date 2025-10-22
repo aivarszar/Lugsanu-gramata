@@ -1,11 +1,9 @@
 package com.convocatis.app.database.entity
 
-import android.os.Parcelable
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import kotlinx.parcelize.Parcelize
+import java.io.Serializable
 
-@Parcelize
 @Entity(tableName = "texts")
 data class TextEntity(
     @PrimaryKey(autoGenerate = true)
@@ -29,10 +27,4 @@ data class TextEntity(
     val isSharedDirty: Boolean = false,
     val createdAt: Long = 0L,
     val updatedAt: Long = 0L
-) : Parcelable {
-
-    fun getNextPrayerTime(): Long {
-        // TODO: Implement prayer time calculation based on schedule
-        return -1
-    }
-}
+) : Serializable

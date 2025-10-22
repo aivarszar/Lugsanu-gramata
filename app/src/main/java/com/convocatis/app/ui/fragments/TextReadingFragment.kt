@@ -1,5 +1,6 @@
 package com.convocatis.app.ui.fragments
 
+import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -16,7 +17,12 @@ class TextReadingFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
-            textEntity = it.getParcelable(ARG_TEXT) ?: TextEntity()
+            textEntity = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+                it.getSerializable(ARG_TEXT, TextEntity::class.java) ?: TextEntity()
+            } else {
+                @Suppress("DEPRECATION")
+                it.getSerializable(ARG_TEXT) as? TextEntity ?: TextEntity()
+            }
         }
     }
 
@@ -41,7 +47,7 @@ class TextReadingFragment : Fragment() {
 
         fun newInstance(textEntity: TextEntity) = TextReadingFragment().apply {
             arguments = Bundle().apply {
-                putParcelable(ARG_TEXT, textEntity)
+                putSerializable(ARG_TEXT, textEntity)
             }
         }
     }
