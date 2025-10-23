@@ -50,8 +50,19 @@ class TextContentParser(
                 if (rawPage.isNotBlank()) {
                     val trimmed = rawPage.trim()
 
-                    // Check if this page starts with a repetition pattern
-                    val repetitionMatch = Regex("""^(\d+)\^(.+?)$""", RegexOption.DOT_MATCHES_ALL).find(trimmed)
+                    // First, check if this raw page contains a header (>>...<<)
+                    val headerMatch = Regex(""">>(.+?)<<""", RegexOption.DOT_MATCHES_ALL).find(trimmed)
+                    val headerText = headerMatch?.groupValues?.get(1)?.trim()
+
+                    // Remove the header from the content to process the rest
+                    val contentWithoutHeader = if (headerMatch != null) {
+                        trimmed.replace(headerMatch.value, "").trim()
+                    } else {
+                        trimmed
+                    }
+
+                    // Check if the remaining content (after header) starts with a repetition pattern
+                    val repetitionMatch = Regex("""^\|?(\d+)\^(.+?)$""", RegexOption.DOT_MATCHES_ALL).find(contentWithoutHeader)
 
                     if (repetitionMatch != null) {
                         // This page has repetitions
@@ -65,42 +76,38 @@ class TextContentParser(
                             processPage(repeatedContent, depth = 0)
                         }
 
-                        // Check if processed content contains headers (>>...<< becomes <h2>)
-                        // If it does, then the header is part of the repetition, not static
-                        val hasHeaderInRepetition = processedContent.contains("<h2>")
+                        // Process any remaining content in the page (after the repetition)
+                        val remainingContent = contentWithoutHeader.replaceFirst(
+                            Regex("""^\|?(\d+)\^(.+?)(?=\||$)""", RegexOption.DOT_MATCHES_ALL),
+                            ""
+                        ).trim()
 
-                        // Extract static header from previous page only if:
-                        // 1. Previous page exists
-                        // 2. Repeated content does NOT have its own header
-                        // 3. Previous page contains ONLY a header (no other significant content)
-                        val staticHeader = if (!hasHeaderInRepetition && allPages.isNotEmpty()) {
-                            val lastPage = allPages.last()
-                            val lastPageHeader = extractHeaderFromContent(lastPage.content)
-
-                            // Check if last page is mostly just a header
-                            if (lastPageHeader != null && isPageOnlyHeader(lastPage.content)) {
-                                // Remove the last page since it will be used as static header
-                                allPages.removeAt(allPages.size - 1)
-                                globalPageNumber--
-                                lastPageHeader
-                            } else null
-                        } else null
+                        val processedRemaining = if (remainingContent.isNotEmpty()) {
+                            processPage(remainingContent, depth = 0)
+                        } else ""
 
                         // Create N pages, one for each repetition
                         repeat(count) { index ->
+                            // Combine repeated content with remaining content
+                            val combinedContent = if (processedRemaining.isNotEmpty()) {
+                                "$processedContent<br><br>$processedRemaining"
+                            } else {
+                                processedContent
+                            }
+
                             allPages.add(
                                 Page(
                                     pageNumber = globalPageNumber++,
-                                    content = processedContent,
+                                    content = combinedContent,
                                     totalPages = 0, // Will update later
-                                    staticHeader = staticHeader,
+                                    staticHeader = headerText, // Use header from this page as static
                                     repetitionIndex = index + 1,
                                     totalRepetitions = count
                                 )
                             )
                         }
                     } else {
-                        // Regular page, no repetitions
+                        // Regular page, no repetitions - process everything including header
                         val processed = processPage(trimmed, depth = 0)
                         allPages.add(
                             Page(
