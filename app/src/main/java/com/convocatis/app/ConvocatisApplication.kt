@@ -16,7 +16,8 @@ class ConvocatisApplication : Application() {
     lateinit var preferences: SharedPreferences
         private set
 
-    private val gson: Gson by lazy {
+    // Make gson a public property (remove private and getGson() function)
+    val gson: Gson by lazy {
         GsonBuilder()
             .setPrettyPrinting()
             .serializeNulls()
@@ -62,8 +63,6 @@ class ConvocatisApplication : Application() {
         profileEntity = ProfileEntity()
         preferences.edit().remove(PROFILE_KEY).apply()
     }
-
-    fun getGson(): Gson = gson
 
     companion object {
         private const val PROFILE_KEY = "profile_entity"
