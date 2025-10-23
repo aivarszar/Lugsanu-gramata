@@ -38,6 +38,9 @@ class MainActivity : AppCompatActivity() {
 
         supportActionBar?.title = title
         supportActionBar?.setDisplayHomeAsUpEnabled(fragment is TextReadingFragment)
+
+        // Refresh menu to show/hide search based on fragment type
+        invalidateOptionsMenu()
     }
 
     fun showTextsFragment() {
@@ -46,16 +49,26 @@ class MainActivity : AppCompatActivity() {
 
     fun showTextReadingFragment(textEntity: TextEntity) {
         val fragment = TextReadingFragment.newInstance(textEntity)
+        currentFragment = fragment
         supportFragmentManager.beginTransaction()
             .replace(R.id.fragment_container, fragment)
             .addToBackStack(null)
             .commit()
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
+        // Refresh menu to hide search in reading view
+        invalidateOptionsMenu()
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.main_menu, menu)
+
+        // Hide search, sort, and filter for TextReadingFragment
+        val isReadingFragment = currentFragment is TextReadingFragment
+        menu?.findItem(R.id.action_search)?.isVisible = !isReadingFragment
+        menu?.findItem(R.id.action_sort_toggle)?.isVisible = !isReadingFragment
+        menu?.findItem(R.id.action_filter_favorites)?.isVisible = !isReadingFragment
 
         val searchItem = menu?.findItem(R.id.action_search)
         val searchView = searchItem?.actionView as? SearchView

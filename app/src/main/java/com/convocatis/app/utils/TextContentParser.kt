@@ -58,18 +58,33 @@ class TextContentParser(
                         val count = repetitionMatch.groupValues[1].toIntOrNull() ?: 1
                         val repeatedContent = repetitionMatch.groupValues[2]
 
-                        // Extract static header from previous page if it has >>header<<
-                        val staticHeader = if (allPages.isNotEmpty()) {
-                            val lastPage = allPages.last()
-                            extractHeaderFromContent(lastPage.content)
-                        } else null
-
                         // Process the repeated content once
                         val processedContent = if (repeatedContent.startsWith("%")) {
                             resolveReferences(repeatedContent, depth = 0)
                         } else {
                             processPage(repeatedContent, depth = 0)
                         }
+
+                        // Check if processed content contains headers (>>...<< becomes <h2>)
+                        // If it does, then the header is part of the repetition, not static
+                        val hasHeaderInRepetition = processedContent.contains("<h2>")
+
+                        // Extract static header from previous page only if:
+                        // 1. Previous page exists
+                        // 2. Repeated content does NOT have its own header
+                        // 3. Previous page contains ONLY a header (no other significant content)
+                        val staticHeader = if (!hasHeaderInRepetition && allPages.isNotEmpty()) {
+                            val lastPage = allPages.last()
+                            val lastPageHeader = extractHeaderFromContent(lastPage.content)
+
+                            // Check if last page is mostly just a header
+                            if (lastPageHeader != null && isPageOnlyHeader(lastPage.content)) {
+                                // Remove the last page since it will be used as static header
+                                allPages.removeAt(allPages.size - 1)
+                                globalPageNumber--
+                                lastPageHeader
+                            } else null
+                        } else null
 
                         // Create N pages, one for each repetition
                         repeat(count) { index ->
@@ -111,8 +126,24 @@ class TextContentParser(
      * Extract header from content if present
      */
     private fun extractHeaderFromContent(content: String): String? {
-        val headerMatch = Regex("""<h2>(.+?)</h2>""").find(content)
+        val headerMatch = Regex("""<h2>(.+?)</h2>""", RegexOption.DOT_MATCHES_ALL).find(content)
         return headerMatch?.groupValues?.get(1)
+    }
+
+    /**
+     * Check if page contains only a header (no other significant content)
+     */
+    private fun isPageOnlyHeader(content: String): Boolean {
+        // Remove all h2 tags
+        val withoutHeader = content.replace(Regex("""<h2>.+?</h2>""", RegexOption.DOT_MATCHES_ALL), "")
+
+        // Remove HTML tags and whitespace
+        val stripped = withoutHeader
+            .replace(Regex("""<[^>]+>"""), "")
+            .replace(Regex("""\s+"""), "")
+
+        // If there's very little or no content left, it's only a header
+        return stripped.length < 10
     }
 
     /**
@@ -215,7 +246,8 @@ class TextContentParser(
         result = result.replace("&lt;&lt;", "<<")
 
         // Convert >>header<< to <h2>header</h2>
-        result = result.replace(Regex(""">>(.+?)<<""")) { match ->
+        // Use DOT_MATCHES_ALL so . matches newlines too
+        result = result.replace(Regex(""">>(.+?)<<""", RegexOption.DOT_MATCHES_ALL)) { match ->
             "<h2>${match.groupValues[1].trim()}</h2>"
         }
 

@@ -119,10 +119,8 @@ class TextReadingFragment : Fragment() {
         // Show/hide and update static header
         if (page.staticHeader != null) {
             staticHeader.visibility = View.VISIBLE
-            staticHeader.text = HtmlCompat.fromHtml(
-                "<h2>${page.staticHeader}</h2>",
-                HtmlCompat.FROM_HTML_MODE_LEGACY
-            )
+            // staticHeader is already plain text extracted from <h2> tags
+            staticHeader.text = page.staticHeader
         } else {
             staticHeader.visibility = View.GONE
         }

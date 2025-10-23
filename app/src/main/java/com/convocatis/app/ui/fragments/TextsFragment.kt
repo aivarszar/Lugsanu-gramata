@@ -48,6 +48,12 @@ class TextsFragment : Fragment() {
         )
         recyclerView.adapter = adapter
 
+        return view
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
         // Load texts from database
         loadTexts()
 
@@ -56,8 +62,6 @@ class TextsFragment : Fragment() {
             searchTerm = term
             loadTexts()
         }
-
-        return view
     }
 
     private fun loadTexts() {
