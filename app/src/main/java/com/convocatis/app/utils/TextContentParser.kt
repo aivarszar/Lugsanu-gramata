@@ -31,37 +31,88 @@ class TextContentParser(
     data class Page(
         val pageNumber: Int,
         val content: String,
-        val totalPages: Int
+        val totalPages: Int,
+        val staticHeader: String? = null,  // Static header shown on all repetition pages
+        val repetitionIndex: Int? = null,   // Current repetition (1-based)
+        val totalRepetitions: Int? = null   // Total number of repetitions
     )
 
     /**
-     * Parse text entity into pages
+     * Parse text entity into pages, handling repetitions specially
      */
     suspend fun parseToPages(text: TextEntity): List<Page> = withContext(Dispatchers.Default) {
         try {
             val rawPages = text.rawContent.split("|")
-            val processedPages = mutableListOf<String>()
+            val allPages = mutableListOf<Page>()
+            var globalPageNumber = 1
 
             rawPages.forEach { rawPage ->
                 if (rawPage.isNotBlank()) {
-                    val processed = processPage(rawPage.trim(), depth = 0)
-                    processedPages.add(processed)
+                    val trimmed = rawPage.trim()
+
+                    // Check if this page starts with a repetition pattern
+                    val repetitionMatch = Regex("""^(\d+)\^(.+?)$""", RegexOption.DOT_MATCHES_ALL).find(trimmed)
+
+                    if (repetitionMatch != null) {
+                        // This page has repetitions
+                        val count = repetitionMatch.groupValues[1].toIntOrNull() ?: 1
+                        val repeatedContent = repetitionMatch.groupValues[2]
+
+                        // Extract static header from previous page if it has >>header<<
+                        val staticHeader = if (allPages.isNotEmpty()) {
+                            val lastPage = allPages.last()
+                            extractHeaderFromContent(lastPage.content)
+                        } else null
+
+                        // Process the repeated content once
+                        val processedContent = if (repeatedContent.startsWith("%")) {
+                            resolveReferences(repeatedContent, depth = 0)
+                        } else {
+                            processPage(repeatedContent, depth = 0)
+                        }
+
+                        // Create N pages, one for each repetition
+                        repeat(count) { index ->
+                            allPages.add(
+                                Page(
+                                    pageNumber = globalPageNumber++,
+                                    content = processedContent,
+                                    totalPages = 0, // Will update later
+                                    staticHeader = staticHeader,
+                                    repetitionIndex = index + 1,
+                                    totalRepetitions = count
+                                )
+                            )
+                        }
+                    } else {
+                        // Regular page, no repetitions
+                        val processed = processPage(trimmed, depth = 0)
+                        allPages.add(
+                            Page(
+                                pageNumber = globalPageNumber++,
+                                content = processed,
+                                totalPages = 0 // Will update later
+                            )
+                        )
+                    }
                 }
             }
 
-            // Create Page objects with numbering
-            processedPages.mapIndexed { index, content ->
-                Page(
-                    pageNumber = index + 1,
-                    content = content,
-                    totalPages = processedPages.size
-                )
-            }
+            // Update totalPages for all pages
+            allPages.map { it.copy(totalPages = allPages.size) }
         } catch (e: Exception) {
             Log.e(TAG, "Error parsing text: ${text.title}", e)
             // Return single page with raw content on error
             listOf(Page(1, text.rawContent, 1))
         }
+    }
+
+    /**
+     * Extract header from content if present
+     */
+    private fun extractHeaderFromContent(content: String): String? {
+        val headerMatch = Regex("""<h2>(.+?)</h2>""").find(content)
+        return headerMatch?.groupValues?.get(1)
     }
 
     /**

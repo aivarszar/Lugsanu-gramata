@@ -5,6 +5,8 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.core.text.HtmlCompat
 import androidx.fragment.app.Fragment
@@ -24,7 +26,13 @@ class TextReadingFragment : Fragment() {
     private var pages: List<TextContentParser.Page> = emptyList()
 
     private lateinit var viewPager: ViewPager2
+    private lateinit var staticHeader: TextView
     private lateinit var pageIndicator: TextView
+    private lateinit var pageProgressBar: ProgressBar
+    private lateinit var repetitionProgressContainer: View
+    private lateinit var repetitionIndicator: TextView
+    private lateinit var repetitionProgressBar: ProgressBar
+    private lateinit var nextRepetitionButton: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -50,9 +58,23 @@ class TextReadingFragment : Fragment() {
 
         val titleView = view.findViewById<TextView>(R.id.titleText)
         viewPager = view.findViewById(R.id.viewPager)
+        staticHeader = view.findViewById(R.id.staticHeader)
         pageIndicator = view.findViewById(R.id.pageIndicator)
+        pageProgressBar = view.findViewById(R.id.pageProgressBar)
+        repetitionProgressContainer = view.findViewById(R.id.repetitionProgressContainer)
+        repetitionIndicator = view.findViewById(R.id.repetitionIndicator)
+        repetitionProgressBar = view.findViewById(R.id.repetitionProgressBar)
+        nextRepetitionButton = view.findViewById(R.id.nextRepetitionButton)
 
         titleView.text = textEntity.title
+
+        // Set up next repetition button
+        nextRepetitionButton.setOnClickListener {
+            val currentItem = viewPager.currentItem
+            if (currentItem < pages.size - 1) {
+                viewPager.currentItem = currentItem + 1
+            }
+        }
 
         // Parse content with special codes
         lifecycleScope.launch {
@@ -86,7 +108,36 @@ class TextReadingFragment : Fragment() {
 
     private fun updatePageIndicator(position: Int) {
         val page = pages[position]
-        pageIndicator.text = getString(R.string.page_indicator, page.pageNumber, page.totalPages)
+
+        // Update page indicator and progress bar
+        pageIndicator.text = "${page.pageNumber}/${page.totalPages}"
+        val pageProgress = if (page.totalPages > 0) {
+            (page.pageNumber * 100) / page.totalPages
+        } else 100
+        pageProgressBar.progress = pageProgress
+
+        // Show/hide and update static header
+        if (page.staticHeader != null) {
+            staticHeader.visibility = View.VISIBLE
+            staticHeader.text = HtmlCompat.fromHtml(
+                "<h2>${page.staticHeader}</h2>",
+                HtmlCompat.FROM_HTML_MODE_LEGACY
+            )
+        } else {
+            staticHeader.visibility = View.GONE
+        }
+
+        // Show/hide and update repetition indicator
+        if (page.repetitionIndex != null && page.totalRepetitions != null) {
+            repetitionProgressContainer.visibility = View.VISIBLE
+            repetitionIndicator.text = "${page.repetitionIndex}/${page.totalRepetitions}"
+            val repetitionProgress = if (page.totalRepetitions > 0) {
+                (page.repetitionIndex * 100) / page.totalRepetitions
+            } else 100
+            repetitionProgressBar.progress = repetitionProgress
+        } else {
+            repetitionProgressContainer.visibility = View.GONE
+        }
     }
 
     private fun getDefaultEntity() = TextEntity(

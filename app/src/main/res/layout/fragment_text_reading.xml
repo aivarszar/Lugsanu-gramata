@@ -14,19 +14,82 @@
         android:background="?attr/colorPrimary"
         android:textColor="@android:color/white" />
 
+    <!-- Static header for repetitions -->
     <TextView
-        android:id="@+id/pageIndicator"
+        android:id="@+id/staticHeader"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="14sp"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:padding="12dp"
+        android:visibility="gone" />
+
+    <!-- Page progress indicator -->
+    <LinearLayout
+        android:id="@+id/pageProgressContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
         android:padding="8dp"
-        android:gravity="center"
-        android:text="Lapa 1 / 1" />
+        android:gravity="center_vertical">
+
+        <ProgressBar
+            android:id="@+id/pageProgressBar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="0dp"
+            android:layout_height="8dp"
+            android:layout_weight="1"
+            android:layout_marginEnd="8dp"
+            android:max="100" />
+
+        <TextView
+            android:id="@+id/pageIndicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:text="1/1" />
+    </LinearLayout>
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/viewPager"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1" />
+
+    <!-- Repetition progress indicator -->
+    <LinearLayout
+        android:id="@+id/repetitionProgressContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="8dp"
+        android:gravity="center_vertical"
+        android:visibility="gone">
+
+        <ProgressBar
+            android:id="@+id/repetitionProgressBar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="0dp"
+            android:layout_height="8dp"
+            android:layout_weight="1"
+            android:layout_marginEnd="8dp"
+            android:max="100" />
+
+        <TextView
+            android:id="@+id/repetitionIndicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:layout_marginEnd="8dp"
+            android:text="1/10" />
+
+        <Button
+            android:id="@+id/nextRepetitionButton"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:text="→"
+            android:textSize="18sp"
+            style="?android:attr/borderlessButtonStyle" />
+    </LinearLayout>
 
 </LinearLayout>

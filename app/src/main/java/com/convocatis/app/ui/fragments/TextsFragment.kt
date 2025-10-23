@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -62,6 +61,11 @@ class TextsFragment : Fragment() {
     }
 
     private fun loadTexts() {
+        // Check if view is still available
+        if (!isAdded || view == null) {
+            return
+        }
+
         val database = ConvocatisApplication.getInstance().database
         database.textDao().getAllTexts().observe(viewLifecycleOwner) { allTexts ->
             var filteredTexts = allTexts
@@ -136,16 +140,17 @@ class TextsAdapter(
 
     inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         private val titleView: TextView = view.findViewById(R.id.titleText)
-        private val favoriteIcon: ImageView = view.findViewById(R.id.favoriteIcon)
+        private val favoriteIcon: TextView = view.findViewById(R.id.favoriteIcon)
 
         fun bind(text: TextEntity) {
             titleView.text = text.title
 
-            // Set favorite icon
+            // Set favorite icon (dot or star)
             val isFavorite = favoritesManager.isFavorite(text.rid)
-            favoriteIcon.setImageResource(
-                if (isFavorite) android.R.drawable.btn_star_big_on
-                else android.R.drawable.btn_star_big_off
+            favoriteIcon.text = if (isFavorite) "★" else "●"
+            favoriteIcon.setTextColor(
+                if (isFavorite) 0xFF000000.toInt() // Black star
+                else 0xFF999999.toInt() // Gray dot
             )
 
             // Click on item -> open text
