@@ -40,7 +40,8 @@ class TextsFragment : Fragment() {
     }
 
     private fun loadTexts() {
-        // TODO: Load from database using ViewModel
+        // TODO: Load from database using ViewModel or from assets/ XML files
+        // XML files location: assets/conv_texts_lang_2.xml, assets/conv_texts_lang_34.xml
         // For now, show sample data
         val sampleTexts = listOf(
             TextEntity(
