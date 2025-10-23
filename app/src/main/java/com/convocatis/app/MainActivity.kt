@@ -2,6 +2,7 @@ package com.convocatis.app
 
 import android.os.Bundle
 import android.view.Menu
+import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
@@ -13,6 +14,9 @@ class MainActivity : AppCompatActivity() {
 
     private var currentFragment: Fragment? = null
     var onSearchTermChangedListener: ((String) -> Unit)? = null
+
+    private var sortMenuItem: MenuItem? = null
+    private var favoritesMenuItem: MenuItem? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -68,7 +72,53 @@ class MainActivity : AppCompatActivity() {
             }
         })
 
+        // Store references to menu items for updating icons
+        sortMenuItem = menu?.findItem(R.id.action_sort_toggle)
+        favoritesMenuItem = menu?.findItem(R.id.action_filter_favorites)
+
+        // Update icons based on current state
+        updateMenuIcons()
+
         return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.action_sort_toggle -> {
+                val textsFragment = currentFragment as? TextsFragment
+                textsFragment?.toggleSort()
+                updateMenuIcons()
+                true
+            }
+            R.id.action_filter_favorites -> {
+                val textsFragment = currentFragment as? TextsFragment
+                textsFragment?.toggleFavoritesFilter()
+                updateMenuIcons()
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
+    }
+
+    private fun updateMenuIcons() {
+        val textsFragment = currentFragment as? TextsFragment
+        if (textsFragment != null) {
+            // Update sort icon (arrow up for A-Z, arrow down for Z-A)
+            val sortIcon = if (textsFragment.getSortAscending()) {
+                android.R.drawable.arrow_up_float
+            } else {
+                android.R.drawable.arrow_down_float
+            }
+            sortMenuItem?.setIcon(sortIcon)
+
+            // Update favorites filter icon (checkbox on/off)
+            val favoritesIcon = if (textsFragment.getShowOnlyFavorites()) {
+                android.R.drawable.checkbox_on_background
+            } else {
+                android.R.drawable.checkbox_off_background
+            }
+            favoritesMenuItem?.setIcon(favoritesIcon)
+        }
     }
 
     override fun onSupportNavigateUp(): Boolean {

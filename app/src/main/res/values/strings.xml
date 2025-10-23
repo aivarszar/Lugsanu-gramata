@@ -16,4 +16,7 @@
     <string name="loading">Ielādē…</string>
     <string name="error">Kļūda</string>
     <string name="no_texts_found">Nav atrasti teksti</string>
+    <string name="favorite">Favorīts</string>
+    <string name="sort">Kārtot</string>
+    <string name="filter_favorites">Rādīt favorītus</string>
 </resources>

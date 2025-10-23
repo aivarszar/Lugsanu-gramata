@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="12dp"
+    android:gravity="center_vertical"
+    android:background="?android:attr/selectableItemBackground"
+    android:clickable="true">
+
+    <!-- Star icon for favorites -->
+    <ImageView
+        android:id="@+id/favoriteIcon"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:src="@android:drawable/btn_star_big_off"
+        android:contentDescription="@string/favorite"
+        android:layout_marginEnd="16dp" />
+
+    <!-- Text title -->
+    <TextView
+        android:id="@+id/titleText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textSize="16sp"
+        android:textColor="?android:attr/textColorPrimary"
+        android:maxLines="2"
+        android:ellipsize="end" />
+
+</LinearLayout>
