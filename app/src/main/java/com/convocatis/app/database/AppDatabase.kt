@@ -9,10 +9,7 @@ import com.convocatis.app.database.entity.*
 
 @Database(
     entities = [
-        TextEntity::class,
-        LanguageEntity::class,
-        DenominationEntity::class,
-        TextUsageEntity::class
+        TextEntity::class
     ],
     version = 1,
     exportSchema = false

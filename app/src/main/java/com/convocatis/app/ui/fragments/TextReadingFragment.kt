@@ -18,10 +18,10 @@ class TextReadingFragment : Fragment() {
         super.onCreate(savedInstanceState)
         arguments?.let {
             textEntity = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-                it.getSerializable(ARG_TEXT, TextEntity::class.java) ?: TextEntity()
+                it.getSerializable(ARG_TEXT, TextEntity::class.java) ?: getDefaultEntity()
             } else {
                 @Suppress("DEPRECATION")
-                it.getSerializable(ARG_TEXT) as? TextEntity ?: TextEntity()
+                it.getSerializable(ARG_TEXT) as? TextEntity ?: getDefaultEntity()
             }
         }
     }
@@ -37,10 +37,19 @@ class TextReadingFragment : Fragment() {
         val contentView = view.findViewById<TextView>(R.id.contentText)
 
         titleView.text = textEntity.title
-        contentView.text = textEntity.text
+        // TODO: Parse rawContent with page splitting and special codes
+        // For now, show raw content as-is
+        contentView.text = textEntity.rawContent
 
         return view
     }
+
+    private fun getDefaultEntity() = TextEntity(
+        rid = 0,
+        title = "",
+        rawContent = "",
+        languageCode = "lv"
+    )
 
     companion object {
         private const val ARG_TEXT = "text_entity"

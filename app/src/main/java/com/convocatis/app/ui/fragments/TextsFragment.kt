@@ -42,25 +42,30 @@ class TextsFragment : Fragment() {
     private fun loadTexts() {
         // TODO: Load from database using ViewModel
         // For now, show sample data
-        val currentTime = System.currentTimeMillis()
         val sampleTexts = listOf(
             TextEntity(
-                title = "Sample Prayer 1",
-                text = "This is a sample prayer text...",
-                createdAt = currentTime,
-                updatedAt = currentTime
+                rid = 1,
+                title = "Tēvreize",
+                rawContent = "Tēvs mūsu, kas esi Debesīs...",
+                categoryType = 1,
+                categoryCode = "1",
+                languageCode = "lv"
             ),
             TextEntity(
-                title = "Sample Prayer 2",
-                text = "Another sample prayer text...",
-                createdAt = currentTime,
-                updatedAt = currentTime
+                rid = 2,
+                title = "Rožukronis",
+                rawContent = ">>Kristus Atnākšanas noslēpumi<<|Rožukronis Vissv...",
+                categoryType = 1,
+                categoryCode = "1",
+                languageCode = "lv"
             ),
             TextEntity(
-                title = "Sample Hymn",
-                text = "A sample hymn text...",
-                createdAt = currentTime,
-                updatedAt = currentTime
+                rid = 3,
+                title = "Ave Maria",
+                rawContent = "Esi sveicināta, Marija, žēlastības pilnā...",
+                categoryType = 1,
+                categoryCode = "1",
+                languageCode = "lv"
             )
         )
         adapter.submitList(sampleTexts)
@@ -95,7 +100,12 @@ class TextsAdapter(private val onItemClick: (TextEntity) -> Unit) :
 
         fun bind(text: TextEntity) {
             titleView.text = text.title
-            subtitleView.text = text.text.take(100) + "..."
+            // Show preview of raw content (without special codes)
+            val preview = text.rawContent
+                .replace(Regex(">>|<<|\\|%?\\d*\\^?"), " ")
+                .trim()
+                .take(100)
+            subtitleView.text = if (preview.length >= 100) "$preview..." else preview
             itemView.setOnClickListener { onItemClick(text) }
         }
     }

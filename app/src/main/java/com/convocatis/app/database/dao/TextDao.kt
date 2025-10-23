@@ -9,23 +9,20 @@ interface TextDao {
     @Query("SELECT * FROM texts ORDER BY title ASC")
     fun getAllTexts(): LiveData<List<TextEntity>>
 
-    @Query("SELECT * FROM texts WHERE highlighted = 1 ORDER BY title ASC")
-    fun getHighlightedTexts(): LiveData<List<TextEntity>>
+    @Query("SELECT * FROM texts WHERE rid = :rid")
+    suspend fun getTextByRid(rid: Long): TextEntity?
 
-    @Query("SELECT * FROM texts WHERE id = :id")
-    suspend fun getTextById(id: Long): TextEntity?
-
-    @Query("SELECT * FROM texts WHERE title LIKE '%' || :searchTerm || '%' OR text LIKE '%' || :searchTerm || '%'")
+    @Query("SELECT * FROM texts WHERE title LIKE '%' || :searchTerm || '%' OR rawContent LIKE '%' || :searchTerm || '%'")
     fun searchTexts(searchTerm: String): LiveData<List<TextEntity>>
+
+    @Query("SELECT * FROM texts WHERE categoryType = :categoryType ORDER BY title ASC")
+    fun getTextsByCategory(categoryType: Int): LiveData<List<TextEntity>>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertText(text: TextEntity): Long
 
-    @Update
-    suspend fun updateText(text: TextEntity)
-
-    @Delete
-    suspend fun deleteText(text: TextEntity)
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun insertAll(texts: List<TextEntity>)
 
     @Query("DELETE FROM texts")
     suspend fun deleteAllTexts()
