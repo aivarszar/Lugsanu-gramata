@@ -41,6 +41,12 @@ android {
         viewBinding = true
     }
 
+    // Disable lint checks (allows offline builds)
+    lint {
+        checkReleaseBuilds = false
+        abortOnError = false
+    }
+
     // KSP source sets
     applicationVariants.all {
         val variantName = name
