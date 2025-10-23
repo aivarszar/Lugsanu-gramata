@@ -6,9 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.convocatis.app.ConvocatisApplication
 import com.convocatis.app.MainActivity
 import com.convocatis.app.R
 import com.convocatis.app.database.entity.TextEntity
@@ -40,36 +40,11 @@ class TextsFragment : Fragment() {
     }
 
     private fun loadTexts() {
-        // TODO: Load from database using ViewModel or from assets/ XML files
-        // XML files location: assets/conv_texts_lang_2.xml, assets/conv_texts_lang_34.xml
-        // For now, show sample data
-        val sampleTexts = listOf(
-            TextEntity(
-                rid = 1,
-                title = "Tēvreize",
-                rawContent = "Tēvs mūsu, kas esi Debesīs...",
-                categoryType = 1,
-                categoryCode = "1",
-                languageCode = "lv"
-            ),
-            TextEntity(
-                rid = 2,
-                title = "Rožukronis",
-                rawContent = ">>Kristus Atnākšanas noslēpumi<<|Rožukronis Vissv...",
-                categoryType = 1,
-                categoryCode = "1",
-                languageCode = "lv"
-            ),
-            TextEntity(
-                rid = 3,
-                title = "Ave Maria",
-                rawContent = "Esi sveicināta, Marija, žēlastības pilnā...",
-                categoryType = 1,
-                categoryCode = "1",
-                languageCode = "lv"
-            )
-        )
-        adapter.submitList(sampleTexts)
+        // Load texts from database
+        val database = ConvocatisApplication.getInstance().database
+        database.textDao().getAllTexts().observe(viewLifecycleOwner) { texts ->
+            adapter.submitList(texts)
+        }
     }
 }
 
