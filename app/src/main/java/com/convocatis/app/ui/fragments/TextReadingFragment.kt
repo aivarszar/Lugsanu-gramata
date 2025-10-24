@@ -231,6 +231,13 @@ class TextReadingFragment : Fragment() {
             false  // Don't consume, allow scrolling
         }
 
+        // KEY FIX: Apply to progress bar and indicator - they don't intercept horizontal swipes
+        headerProgressBar.setOnTouchListener(headerTouchListener)
+        android.util.Log.d("HeaderSwipe", "Attached listener to headerProgressBar")
+
+        headerIndicator.setOnTouchListener(headerTouchListener)
+        android.util.Log.d("HeaderSwipe", "Attached listener to headerIndicator")
+
         // Apply to navigation container (outside ScrollView - most reliable)
         // Make it clickable and add background so it receives touch events
         headerNavigationContainer.isClickable = true
