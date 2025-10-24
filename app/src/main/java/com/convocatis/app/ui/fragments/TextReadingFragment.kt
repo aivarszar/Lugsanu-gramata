@@ -232,10 +232,15 @@ class TextReadingFragment : Fragment() {
         }
 
         // Apply to navigation container (outside ScrollView - most reliable)
-        // Make it clickable so it receives touch events
+        // Make it clickable and add background so it receives touch events
         headerNavigationContainer.isClickable = true
         headerNavigationContainer.isFocusable = true
+        headerNavigationContainer.setBackgroundColor(android.graphics.Color.TRANSPARENT)
         headerNavigationContainer.setOnTouchListener(headerTouchListener)
+        // Add onClick to ensure it's truly clickable
+        headerNavigationContainer.setOnClickListener {
+            android.util.Log.d("HeaderSwipe", "Navigation container clicked")
+        }
         android.util.Log.d("HeaderSwipe", "Attached listener to headerNavigationContainer, visibility=${headerNavigationContainer.visibility}, clickable=${headerNavigationContainer.isClickable}")
 
         // Also apply to ScrollView and its children for full area coverage
