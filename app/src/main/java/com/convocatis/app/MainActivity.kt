@@ -108,10 +108,10 @@ class MainActivity : AppCompatActivity() {
         return when (item.itemId) {
             R.id.action_category_filter -> {
                 val textsFragment = currentFragment as? TextsFragment
-                // Pass the menu item view as anchor for dropdown
-                val view = findViewById<android.view.View>(R.id.action_category_filter)
-                if (view != null && textsFragment != null) {
-                    textsFragment.showCategoryFilterDropdown(view)
+                // Use toolbar as anchor for dropdown
+                val toolbar = findViewById<androidx.appcompat.widget.Toolbar>(R.id.toolbar)
+                if (toolbar != null && textsFragment != null) {
+                    textsFragment.showCategoryFilterDropdown(toolbar)
                 }
                 true
             }

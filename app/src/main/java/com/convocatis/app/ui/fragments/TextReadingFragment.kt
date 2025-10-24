@@ -24,6 +24,7 @@ class TextReadingFragment : Fragment() {
     private lateinit var textEntity: TextEntity
     private lateinit var parser: TextContentParser
     private var sections: List<TextContentParser.HeaderSection> = emptyList()
+    private var sectionsWithHeaders: List<TextContentParser.HeaderSection> = emptyList()
     private var currentSectionIndex = 0
 
     // Views
@@ -126,11 +127,14 @@ class TextReadingFragment : Fragment() {
         lifecycleScope.launch {
             sections = parser.parseToSections(textEntity)
 
-            if (sections.isNotEmpty()) {
-                val hasMultipleSections = sections.size > 1 || sections.any { it.headerText != null }
+            // Filter sections that have headers (for header navigation counter)
+            sectionsWithHeaders = sections.filter { it.headerText != null }
 
-                // Show/hide header navigation based on content structure
-                if (hasMultipleSections) {
+            if (sections.isNotEmpty()) {
+                val hasHeaders = sectionsWithHeaders.isNotEmpty()
+
+                // Show/hide header navigation based on whether there are headers
+                if (hasHeaders) {
                     headerNavigationContainer.visibility = View.VISIBLE
                     updateHeaderDisplay()
                 } else {
@@ -153,16 +157,22 @@ class TextReadingFragment : Fragment() {
 
         if (section.headerText != null) {
             headerTextView.visibility = View.VISIBLE
-            headerTextView.text = HtmlCompat.fromHtml(
-                "<h2>${section.headerText}</h2>",
-                HtmlCompat.FROM_HTML_MODE_LEGACY
-            )
+            // Just show plain text header, no HTML formatting
+            headerTextView.text = section.headerText
         } else {
             headerTextView.visibility = View.GONE
         }
 
-        // Update header navigation buttons
-        headerIndicator.text = "${currentSectionIndex + 1}/${sections.size}"
+        // Update header navigation counter - only count sections with headers
+        if (sectionsWithHeaders.isNotEmpty()) {
+            val headerSectionIndex = sectionsWithHeaders.indexOf(section)
+            if (headerSectionIndex >= 0) {
+                headerIndicator.text = "${headerSectionIndex + 1}/${sectionsWithHeaders.size}"
+            } else {
+                // Current section has no header, don't show counter
+                headerIndicator.text = ""
+            }
+        }
 
         // Hide << button if at first section, >> if at last
         prevHeaderButton.visibility = if (currentSectionIndex > 0) View.VISIBLE else View.INVISIBLE
@@ -224,18 +234,27 @@ class TextReadingFragment : Fragment() {
 
         val page = pages[position]
 
-        // Show/hide page progress if there are multiple pages
-        if (pages.size > 1) {
-            pageProgressContainer.visibility = View.VISIBLE
-            pageNavigationContainer.visibility = View.VISIBLE
+        // Only show page counter if this is a repetition (has repetitionIndex)
+        // Don't show counters for regular pages separated by |
+        val isRepetition = page.repetitionIndex != null && page.totalRepetitions != null
 
-            pageIndicator.text = "${position + 1}/${pages.size}"
-            val progress = if (pages.size > 0) {
-                ((position + 1) * 100) / pages.size
+        if (isRepetition) {
+            pageProgressContainer.visibility = View.VISIBLE
+
+            // Show repetition counter (e.g., "3/10" for 3rd repetition out of 10)
+            pageIndicator.text = "${page.repetitionIndex}/${page.totalRepetitions}"
+            val progress = if (page.totalRepetitions!! > 0) {
+                (page.repetitionIndex!! * 100) / page.totalRepetitions!!
             } else 100
             pageProgressBar.progress = progress
         } else {
             pageProgressContainer.visibility = View.GONE
+        }
+
+        // Show navigation arrows if there are multiple pages (regardless of repetition)
+        if (pages.size > 1) {
+            pageNavigationContainer.visibility = View.VISIBLE
+        } else {
             pageNavigationContainer.visibility = View.GONE
         }
 

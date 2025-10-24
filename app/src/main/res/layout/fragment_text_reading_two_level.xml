@@ -4,35 +4,44 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <!-- Title bar -->
-    <TextView
-        android:id="@+id/titleText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:padding="16dp"
-        android:background="?attr/colorPrimary"
-        android:textColor="@android:color/white" />
-
-    <!-- Header section (top level navigation) - max 50% of screen -->
+    <!-- Title / Header section (combined) - max 50% of screen -->
     <ScrollView
         android:id="@+id/headerScrollView"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="0"
-        android:maxHeight="300dp"
+        android:layout_height="wrap_content"
+        android:maxHeight="400dp"
         android:scrollbars="vertical"
-        android:fillViewport="true">
+        android:background="?attr/colorPrimary"
+        android:fillViewport="false">
 
-        <TextView
-            android:id="@+id/headerTextView"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:padding="16dp"
-            android:textColor="?attr/colorPrimary" />
+            android:orientation="vertical">
+
+            <!-- Title text (always shown) -->
+            <TextView
+                android:id="@+id/titleText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:padding="16dp"
+                android:textColor="@android:color/white"
+                android:background="?attr/colorPrimary" />
+
+            <!-- Header text (shown when section has header) -->
+            <TextView
+                android:id="@+id/headerTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:padding="16dp"
+                android:textColor="#333333"
+                android:background="#F5F5F5"
+                android:visibility="gone" />
+
+        </LinearLayout>
     </ScrollView>
 
     <!-- Header navigation arrows -->
