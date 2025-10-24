@@ -263,52 +263,50 @@ class TextReadingFragment : Fragment() {
         val adapter = PageAdapter(section.pages)
         pageViewPager.adapter = adapter
 
-        // Set up page change listener with auto-advance
-        var isUserScrolling = false
-        var lastPosition = if (startAtEnd && section.pages.isNotEmpty()) section.pages.size - 1 else 0
-
+        // Set up page change listener
         pageViewPager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
-            override fun onPageScrollStateChanged(state: Int) {
-                super.onPageScrollStateChanged(state)
-                isUserScrolling = state == ViewPager2.SCROLL_STATE_DRAGGING
-            }
-
             override fun onPageSelected(position: Int) {
                 super.onPageSelected(position)
                 updatePageIndicator(position)
-
-                // Detect swipe direction
-                val swipingForward = position > lastPosition
-                val swipingBackward = position < lastPosition
-                lastPosition = position
-
-                // Auto-advance to next section if at last page and user swiped forward
-                if (isUserScrolling && swipingForward && position == section.pages.size - 1 && currentSectionIndex < sections.size - 1) {
-                    // Small delay to allow current swipe to complete
-                    pageViewPager.postDelayed({
-                        if (pageViewPager.currentItem == section.pages.size - 1) {
-                            // Still at last page, advance to next section
-                            currentSectionIndex++
-                            updateHeaderDisplay()
-                            loadPagesForCurrentSection(startAtEnd = false)
-                        }
-                    }, 300)
-                }
-
-                // Auto-advance to previous section if at first page and user swiped backward
-                if (isUserScrolling && swipingBackward && position == 0 && currentSectionIndex > 0) {
-                    // Small delay to allow current swipe to complete
-                    pageViewPager.postDelayed({
-                        if (pageViewPager.currentItem == 0) {
-                            // Still at first page, go to previous section
-                            currentSectionIndex--
-                            updateHeaderDisplay()
-                            loadPagesForCurrentSection(startAtEnd = true)
-                        }
-                    }, 300)
-                }
             }
         })
+
+        // Set up gesture detector for swipe at boundaries
+        val gestureDetector = GestureDetector(requireContext(), object : GestureDetector.SimpleOnGestureListener() {
+            override fun onFling(e1: MotionEvent?, e2: MotionEvent, velocityX: Float, velocityY: Float): Boolean {
+                if (e1 == null) return false
+
+                val diffX = e2.x - e1.x
+                val currentPos = pageViewPager.currentItem
+
+                // Check if swiping left (forward) at last page
+                if (diffX < -100 && currentPos == section.pages.size - 1 && currentSectionIndex < sections.size - 1) {
+                    android.util.Log.d("TextReading", "Swipe forward from last page, advancing section")
+                    currentSectionIndex++
+                    updateHeaderDisplay()
+                    loadPagesForCurrentSection(startAtEnd = false)
+                    return true
+                }
+
+                // Check if swiping right (backward) at first page
+                if (diffX > 100 && currentPos == 0 && currentSectionIndex > 0) {
+                    android.util.Log.d("TextReading", "Swipe backward from first page, going to previous section")
+                    currentSectionIndex--
+                    updateHeaderDisplay()
+                    loadPagesForCurrentSection(startAtEnd = true)
+                    return true
+                }
+
+                return false
+            }
+        })
+
+        // Attach touch listener to ViewPager2's RecyclerView child
+        val recyclerView = pageViewPager.getChildAt(0) as? RecyclerView
+        recyclerView?.setOnTouchListener { v, event ->
+            gestureDetector.onTouchEvent(event)
+            false  // Don't consume, let ViewPager2 handle it too
+        }
 
         // Navigate to first or last page
         if (startAtEnd && section.pages.isNotEmpty()) {

@@ -56,6 +56,9 @@ class CategoryDropdownMenu(
             typeList.add(Pair(typeNum, typeDescriptions[typeNum] ?: "Type $typeNum"))
         }
 
+        // Debug logging
+        android.util.Log.d("CategoryDropdown", "Found ${typeList.size} types: $typeList")
+
         val contentView = createDropdownView(typeList, true)
         showPopup(contentView)
     }
