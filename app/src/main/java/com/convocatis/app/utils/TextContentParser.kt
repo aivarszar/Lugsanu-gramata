@@ -38,6 +38,151 @@ class TextContentParser(
     )
 
     /**
+     * Represents a section with a header and its associated pages
+     * Used for two-level navigation: headers on top, pages on bottom
+     */
+    data class HeaderSection(
+        val headerText: String?,           // Null for section without header
+        val pages: List<Page>,             // All pages within this header section
+        val sectionIndex: Int,             // 0-based index of this section
+        val totalSections: Int             // Total number of sections
+    )
+
+    /**
+     * Parse text into header sections for two-level navigation
+     * Headers go in top section, pages go in bottom section
+     */
+    suspend fun parseToSections(text: TextEntity): List<HeaderSection> = withContext(Dispatchers.Default) {
+        try {
+            val rawPages = text.rawContent.split("|")
+            val sections = mutableListOf<HeaderSection>()
+            var currentHeaderText: String? = null
+            var currentSectionPages = mutableListOf<Page>()
+            var globalPageNumber = 1
+
+            rawPages.forEach { rawPage ->
+                if (rawPage.isNotBlank()) {
+                    val trimmed = rawPage.trim()
+
+                    // Check if this raw page contains a header (>>...<<)
+                    val headerMatch = Regex(""">>(.+?)<<""", RegexOption.DOT_MATCHES_ALL).find(trimmed)
+
+                    if (headerMatch != null) {
+                        // Found a new header - save current section if it has pages
+                        if (currentSectionPages.isNotEmpty()) {
+                            sections.add(
+                                HeaderSection(
+                                    headerText = currentHeaderText,
+                                    pages = currentSectionPages.toList(),
+                                    sectionIndex = sections.size,
+                                    totalSections = 0 // Will update at end
+                                )
+                            )
+                            currentSectionPages = mutableListOf()
+                        }
+
+                        // Extract new header
+                        currentHeaderText = headerMatch.groupValues[1].trim()
+
+                        // Content after header in this same raw page
+                        val headerEnd = headerMatch.range.last + 1
+                        val contentAfterHeader = if (headerEnd < trimmed.length) {
+                            trimmed.substring(headerEnd).trim()
+                        } else ""
+
+                        if (contentAfterHeader.isNotEmpty()) {
+                            // Process content after header
+                            val pages = processRawPageContent(contentAfterHeader, globalPageNumber)
+                            currentSectionPages.addAll(pages)
+                            globalPageNumber += pages.size
+                        }
+                    } else {
+                        // No header - add pages to current section
+                        val pages = processRawPageContent(trimmed, globalPageNumber)
+                        currentSectionPages.addAll(pages)
+                        globalPageNumber += pages.size
+                    }
+                }
+            }
+
+            // Add final section if it has pages
+            if (currentSectionPages.isNotEmpty()) {
+                sections.add(
+                    HeaderSection(
+                        headerText = currentHeaderText,
+                        pages = currentSectionPages.toList(),
+                        sectionIndex = sections.size,
+                        totalSections = 0
+                    )
+                )
+            }
+
+            // Update totalSections for all sections
+            sections.map { it.copy(totalSections = sections.size) }
+        } catch (e: Exception) {
+            Log.e(TAG, "Error parsing text to sections: ${text.title}", e)
+            // Return single section with raw content on error
+            listOf(
+                HeaderSection(
+                    headerText = null,
+                    pages = listOf(Page(1, text.rawContent, 1)),
+                    sectionIndex = 0,
+                    totalSections = 1
+                )
+            )
+        }
+    }
+
+    /**
+     * Process a raw page content into one or more pages
+     * Handles repetitions: N^content or N^%RID
+     */
+    private suspend fun processRawPageContent(content: String, startPageNumber: Int): List<Page> {
+        val pages = mutableListOf<Page>()
+        var pageNumber = startPageNumber
+
+        // Check if it's a repetition
+        val repetitionMatch = Regex("""^\s*(\d+)\^(.+?)$""", RegexOption.DOT_MATCHES_ALL).find(content)
+
+        if (repetitionMatch != null) {
+            // Repetition: N^content
+            val count = repetitionMatch.groupValues[1].toIntOrNull() ?: 1
+            val repeatedContent = repetitionMatch.groupValues[2]
+
+            val processedContent = if (repeatedContent.startsWith("%")) {
+                resolveReferences(repeatedContent, depth = 0)
+            } else {
+                processPage(repeatedContent, depth = 0)
+            }
+
+            repeat(count) { index ->
+                pages.add(
+                    Page(
+                        pageNumber = pageNumber++,
+                        content = processedContent,
+                        totalPages = 0, // Will update later
+                        staticHeader = null,
+                        repetitionIndex = index + 1,
+                        totalRepetitions = count
+                    )
+                )
+            }
+        } else {
+            // Regular page
+            val processed = processPage(content, depth = 0)
+            pages.add(
+                Page(
+                    pageNumber = pageNumber++,
+                    content = processed,
+                    totalPages = 0 // Will update later
+                )
+            )
+        }
+
+        return pages
+    }
+
+    /**
      * Parse text entity into pages, handling repetitions specially
      */
     suspend fun parseToPages(text: TextEntity): List<Page> = withContext(Dispatchers.Default) {

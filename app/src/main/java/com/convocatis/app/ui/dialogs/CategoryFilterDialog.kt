@@ -14,7 +14,9 @@ import com.convocatis.app.R
 import com.convocatis.app.utils.TextTypesParser
 
 /**
- * Dialog for hierarchical category filtering (Type -> Code)
+ * Two-step dialog for hierarchical category filtering (Type -> Code)
+ * Step 1: Select Type (or "All")
+ * Step 2: Select Code within Type (or dismiss to keep Type-only filter)
  */
 class CategoryFilterDialog : DialogFragment() {
 
@@ -47,7 +49,6 @@ class CategoryFilterDialog : DialogFragment() {
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         val parser = TextTypesParser(requireContext())
-        val filters = parser.getAllFilters()
 
         // Restore current filter from arguments
         currentFilter = arguments?.let { args ->
@@ -57,65 +58,180 @@ class CategoryFilterDialog : DialogFragment() {
             TextTypesParser.CategoryFilter(type, code, display)
         } ?: TextTypesParser.CategoryFilter.all()
 
-        // Create adapter for the list
-        val adapter = CategoryFilterAdapter(filters, currentFilter)
+        // Show Type selection dialog (Step 1)
+        return createTypeSelectionDialog(parser)
+    }
 
+    /**
+     * Step 1: Show Type categories and "All" option
+     */
+    private fun createTypeSelectionDialog(parser: TextTypesParser): Dialog {
+        val typeDescriptions = parser.getTypeToDescriptionMap()
+        val typeList = mutableListOf<Pair<Int?, String>>()
+
+        // Add "All" option
+        typeList.add(Pair(null, "All"))
+
+        // Add all types sorted by number
+        typeDescriptions.keys.sorted().forEach { typeNum ->
+            typeList.add(Pair(typeNum, typeDescriptions[typeNum] ?: "Type $typeNum"))
+        }
+
+        val adapter = TypeAdapter(typeList, currentFilter?.type)
         val listView = ListView(requireContext())
         listView.adapter = adapter
+
         listView.setOnItemClickListener { _, _, position, _ ->
-            val selectedFilter = filters[position]
-            onFilterSelected?.invoke(selectedFilter)
-            dismiss()
+            val selectedType = typeList[position].first
+
+            if (selectedType == null) {
+                // User selected "All" - apply and close
+                onFilterSelected?.invoke(TextTypesParser.CategoryFilter.all())
+                dismiss()
+            } else {
+                // User selected a Type - show Code selection dialog (Step 2)
+                showCodeSelectionDialog(parser, selectedType, typeList[position].second)
+            }
         }
 
         return AlertDialog.Builder(requireContext())
-            .setTitle("Filter by Category")
+            .setTitle("Select Category")
             .setView(listView)
             .setNegativeButton("Cancel") { dialog, _ -> dialog.dismiss() }
             .create()
     }
 
     /**
-     * Custom adapter to show hierarchy with indentation and highlight current selection
+     * Step 2: Show Code subcategories for selected Type
      */
-    private inner class CategoryFilterAdapter(
-        private val filters: List<TextTypesParser.CategoryFilter>,
-        private val currentFilter: TextTypesParser.CategoryFilter?
-    ) : ArrayAdapter<TextTypesParser.CategoryFilter>(
+    private fun showCodeSelectionDialog(parser: TextTypesParser, selectedType: Int, typeDescription: String) {
+        val hierarchy = parser.getTypeCodeHierarchy()
+        val codes = hierarchy[selectedType] ?: emptyList()
+
+        if (codes.isEmpty()) {
+            // No subcategories - apply Type-only filter
+            onFilterSelected?.invoke(TextTypesParser.CategoryFilter(selectedType, null, typeDescription))
+            dismiss()
+            return
+        }
+
+        val codeList = mutableListOf<Pair<String?, String>>()
+
+        // Add "All in this category" option
+        codeList.add(Pair(null, "All in $typeDescription"))
+
+        // Add all codes
+        codes.forEach { (code, description) ->
+            codeList.add(Pair(code, description))
+        }
+
+        val adapter = CodeAdapter(codeList, currentFilter?.code)
+        val listView = ListView(requireContext())
+        listView.adapter = adapter
+
+        listView.setOnItemClickListener { _, _, position, _ ->
+            val selectedCode = codeList[position].first
+
+            if (selectedCode == null) {
+                // User selected "All in this category" - apply Type-only filter
+                onFilterSelected?.invoke(TextTypesParser.CategoryFilter(selectedType, null, typeDescription))
+            } else {
+                // User selected specific Code - apply Type+Code filter
+                onFilterSelected?.invoke(
+                    TextTypesParser.CategoryFilter(
+                        selectedType,
+                        selectedCode,
+                        codeList[position].second
+                    )
+                )
+            }
+            dismiss()
+        }
+
+        val dialog = AlertDialog.Builder(requireContext())
+            .setTitle("Select Subcategory")
+            .setView(listView)
+            .setNegativeButton("Back") { _, _ ->
+                // User dismissed - apply Type-only filter
+                onFilterSelected?.invoke(TextTypesParser.CategoryFilter(selectedType, null, typeDescription))
+                dismiss()
+            }
+            .create()
+
+        dialog.show()
+        // Dismiss the Type selection dialog
+        this.dialog?.dismiss()
+    }
+
+    /**
+     * Adapter for Type selection
+     */
+    private inner class TypeAdapter(
+        private val types: List<Pair<Int?, String>>,
+        private val currentType: Int?
+    ) : ArrayAdapter<Pair<Int?, String>>(
         requireContext(),
         android.R.layout.simple_list_item_1,
-        filters
+        types
     ) {
-
         override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
             val view = convertView ?: LayoutInflater.from(context)
                 .inflate(android.R.layout.simple_list_item_1, parent, false)
 
-            val filter = filters[position]
+            val (typeNum, description) = types[position]
             val textView = view.findViewById<TextView>(android.R.id.text1)
 
-            textView.text = filter.displayText
+            textView.text = description
 
-            // Highlight current selection
-            val isSelected = currentFilter?.let { current ->
-                current.type == filter.type && current.code == filter.code
-            } ?: false
-
+            // Highlight if this is the current type
+            val isSelected = typeNum == currentType
             if (isSelected) {
-                textView.setTextColor(0xFF1976D2.toInt()) // Blue
+                textView.setTextColor(0xFF1976D2.toInt())
                 textView.setTypeface(null, android.graphics.Typeface.BOLD)
             } else {
-                textView.setTextColor(0xFF000000.toInt()) // Black
+                textView.setTextColor(0xFF000000.toInt())
                 textView.setTypeface(null, android.graphics.Typeface.NORMAL)
             }
 
-            // Apply padding based on hierarchy level
-            val paddingLeft = if (filter.displayText.startsWith("  →")) {
-                60 // Indent for subcategories
+            textView.setPadding(40, 32, 40, 32)
+            textView.textSize = 16f
+
+            return view
+        }
+    }
+
+    /**
+     * Adapter for Code selection
+     */
+    private inner class CodeAdapter(
+        private val codes: List<Pair<String?, String>>,
+        private val currentCode: String?
+    ) : ArrayAdapter<Pair<String?, String>>(
+        requireContext(),
+        android.R.layout.simple_list_item_1,
+        codes
+    ) {
+        override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
+            val view = convertView ?: LayoutInflater.from(context)
+                .inflate(android.R.layout.simple_list_item_1, parent, false)
+
+            val (code, description) = codes[position]
+            val textView = view.findViewById<TextView>(android.R.id.text1)
+
+            textView.text = description
+
+            // Highlight if this is the current code
+            val isSelected = code == currentCode
+            if (isSelected) {
+                textView.setTextColor(0xFF1976D2.toInt())
+                textView.setTypeface(null, android.graphics.Typeface.BOLD)
             } else {
-                20 // Normal padding for types and "All"
+                textView.setTextColor(0xFF000000.toInt())
+                textView.setTypeface(null, android.graphics.Typeface.NORMAL)
             }
-            textView.setPadding(paddingLeft, 16, 20, 16)
+
+            textView.setPadding(40, 32, 40, 32)
+            textView.textSize = 16f
 
             return view
         }

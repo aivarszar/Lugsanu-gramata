@@ -23,19 +23,22 @@ class TextReadingFragment : Fragment() {
 
     private lateinit var textEntity: TextEntity
     private lateinit var parser: TextContentParser
-    private var pages: List<TextContentParser.Page> = emptyList()
+    private var sections: List<TextContentParser.HeaderSection> = emptyList()
+    private var currentSectionIndex = 0
 
-    private lateinit var viewPager: ViewPager2
-    private lateinit var staticHeader: TextView
+    // Views
+    private lateinit var headerTextView: TextView
+    private lateinit var headerNavigationContainer: View
+    private lateinit var prevHeaderButton: Button
+    private lateinit var nextHeaderButton: Button
+    private lateinit var headerIndicator: TextView
+    private lateinit var pageViewPager: ViewPager2
+    private lateinit var pageProgressContainer: View
+    private lateinit var pageNavigationContainer: View
     private lateinit var pageIndicator: TextView
     private lateinit var pageProgressBar: ProgressBar
-    private lateinit var navigationContainer: View
     private lateinit var prevPageButton: Button
     private lateinit var nextPageButton: Button
-    private lateinit var repetitionProgressContainer: View
-    private lateinit var repetitionIndicator: TextView
-    private lateinit var repetitionProgressBar: ProgressBar
-    private lateinit var nextRepetitionButton: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -57,113 +60,169 @@ class TextReadingFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.fragment_text_reading, container, false)
+        val view = inflater.inflate(R.layout.fragment_text_reading_two_level, container, false)
 
+        // Initialize views
         val titleView = view.findViewById<TextView>(R.id.titleText)
-        viewPager = view.findViewById(R.id.viewPager)
-        staticHeader = view.findViewById(R.id.staticHeader)
+        headerTextView = view.findViewById(R.id.headerTextView)
+        headerNavigationContainer = view.findViewById(R.id.headerNavigationContainer)
+        prevHeaderButton = view.findViewById(R.id.prevHeaderButton)
+        nextHeaderButton = view.findViewById(R.id.nextHeaderButton)
+        headerIndicator = view.findViewById(R.id.headerIndicator)
+        pageViewPager = view.findViewById(R.id.pageViewPager)
+        pageProgressContainer = view.findViewById(R.id.pageProgressContainer)
+        pageNavigationContainer = view.findViewById(R.id.pageNavigationContainer)
         pageIndicator = view.findViewById(R.id.pageIndicator)
         pageProgressBar = view.findViewById(R.id.pageProgressBar)
-        navigationContainer = view.findViewById(R.id.navigationContainer)
         prevPageButton = view.findViewById(R.id.prevPageButton)
         nextPageButton = view.findViewById(R.id.nextPageButton)
-        repetitionProgressContainer = view.findViewById(R.id.repetitionProgressContainer)
-        repetitionIndicator = view.findViewById(R.id.repetitionIndicator)
-        repetitionProgressBar = view.findViewById(R.id.repetitionProgressBar)
-        nextRepetitionButton = view.findViewById(R.id.nextRepetitionButton)
 
         titleView.text = textEntity.title
 
-        // Set up navigation buttons
+        // Set up header navigation
+        prevHeaderButton.setOnClickListener {
+            if (currentSectionIndex > 0) {
+                currentSectionIndex--
+                updateHeaderDisplay()
+                loadPagesForCurrentSection()
+            }
+        }
+
+        nextHeaderButton.setOnClickListener {
+            if (currentSectionIndex < sections.size - 1) {
+                currentSectionIndex++
+                updateHeaderDisplay()
+                loadPagesForCurrentSection()
+            }
+        }
+
+        // Set up page navigation
         prevPageButton.setOnClickListener {
-            val currentItem = viewPager.currentItem
+            val currentItem = pageViewPager.currentItem
             if (currentItem > 0) {
-                viewPager.currentItem = currentItem - 1
+                pageViewPager.currentItem = currentItem - 1
+            } else if (currentSectionIndex > 0) {
+                // At first page, go to previous section
+                currentSectionIndex--
+                updateHeaderDisplay()
+                loadPagesForCurrentSection(startAtEnd = true)
             }
         }
 
         nextPageButton.setOnClickListener {
-            val currentItem = viewPager.currentItem
-            if (currentItem < pages.size - 1) {
-                viewPager.currentItem = currentItem + 1
+            val currentSection = sections[currentSectionIndex]
+            val currentItem = pageViewPager.currentItem
+            if (currentItem < currentSection.pages.size - 1) {
+                pageViewPager.currentItem = currentItem + 1
+            } else if (currentSectionIndex < sections.size - 1) {
+                // At last page, go to next section
+                currentSectionIndex++
+                updateHeaderDisplay()
+                loadPagesForCurrentSection()
             }
         }
 
-        // Set up next repetition button
-        nextRepetitionButton.setOnClickListener {
-            val currentItem = viewPager.currentItem
-            if (currentItem < pages.size - 1) {
-                viewPager.currentItem = currentItem + 1
-            }
-        }
-
-        // Parse content with special codes
+        // Parse content
         lifecycleScope.launch {
-            pages = parser.parseToPages(textEntity)
+            sections = parser.parseToSections(textEntity)
 
-            if (pages.isNotEmpty()) {
-                setupViewPager()
-            } else {
-                pageIndicator.text = "Kļūda: Neizdevās ielādēt tekstu"
+            if (sections.isNotEmpty()) {
+                val hasMultipleSections = sections.size > 1 || sections.any { it.headerText != null }
+
+                // Show/hide header navigation based on content structure
+                if (hasMultipleSections) {
+                    headerNavigationContainer.visibility = View.VISIBLE
+                    updateHeaderDisplay()
+                } else {
+                    headerNavigationContainer.visibility = View.GONE
+                    headerTextView.visibility = View.GONE
+                }
+
+                loadPagesForCurrentSection()
             }
         }
 
         return view
     }
 
-    private fun setupViewPager() {
-        val adapter = PageAdapter(pages)
-        viewPager.adapter = adapter
+    /**
+     * Update header display with current section's header text
+     */
+    private fun updateHeaderDisplay() {
+        val section = sections[currentSectionIndex]
 
-        // Update page indicator on swipe
-        viewPager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
+        if (section.headerText != null) {
+            headerTextView.visibility = View.VISIBLE
+            headerTextView.text = HtmlCompat.fromHtml(
+                "<h2>${section.headerText}</h2>",
+                HtmlCompat.FROM_HTML_MODE_LEGACY
+            )
+        } else {
+            headerTextView.visibility = View.GONE
+        }
+
+        // Update header navigation buttons
+        headerIndicator.text = "${currentSectionIndex + 1}/${sections.size}"
+        prevHeaderButton.isEnabled = currentSectionIndex > 0
+        nextHeaderButton.isEnabled = currentSectionIndex < sections.size - 1
+    }
+
+    /**
+     * Load pages for the current section into ViewPager
+     */
+    private fun loadPagesForCurrentSection(startAtEnd: Boolean = false) {
+        val section = sections[currentSectionIndex]
+        val adapter = PageAdapter(section.pages)
+        pageViewPager.adapter = adapter
+
+        // Set up page change listener
+        pageViewPager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
             override fun onPageSelected(position: Int) {
                 super.onPageSelected(position)
                 updatePageIndicator(position)
             }
         })
 
-        // Set initial page indicator
-        updatePageIndicator(0)
+        // Navigate to first or last page
+        if (startAtEnd && section.pages.isNotEmpty()) {
+            pageViewPager.setCurrentItem(section.pages.size - 1, false)
+        } else {
+            updatePageIndicator(0)
+        }
     }
 
+    /**
+     * Update page indicator and navigation
+     */
     private fun updatePageIndicator(position: Int) {
+        val section = sections[currentSectionIndex]
+        val pages = section.pages
+
+        if (pages.isEmpty()) return
+
         val page = pages[position]
 
-        // Update page indicator and progress bar
-        pageIndicator.text = "${page.pageNumber}/${page.totalPages}"
-        val pageProgress = if (page.totalPages > 0) {
-            (page.pageNumber * 100) / page.totalPages
-        } else 100
-        pageProgressBar.progress = pageProgress
+        // Show/hide page progress if there are multiple pages
+        if (pages.size > 1) {
+            pageProgressContainer.visibility = View.VISIBLE
+            pageNavigationContainer.visibility = View.VISIBLE
 
-        // Show/hide navigation arrows if multiple pages
-        navigationContainer.visibility = if (pages.size > 1) View.VISIBLE else View.GONE
-
-        // Enable/disable prev/next buttons based on position
-        prevPageButton.isEnabled = position > 0
-        nextPageButton.isEnabled = position < pages.size - 1
-
-        // Show/hide and update static header
-        if (page.staticHeader != null) {
-            staticHeader.visibility = View.VISIBLE
-            // staticHeader is already plain text extracted from <h2> tags
-            staticHeader.text = page.staticHeader
-        } else {
-            staticHeader.visibility = View.GONE
-        }
-
-        // Show/hide and update repetition indicator
-        if (page.repetitionIndex != null && page.totalRepetitions != null) {
-            repetitionProgressContainer.visibility = View.VISIBLE
-            repetitionIndicator.text = "${page.repetitionIndex}/${page.totalRepetitions}"
-            val repetitionProgress = if (page.totalRepetitions > 0) {
-                (page.repetitionIndex * 100) / page.totalRepetitions
+            pageIndicator.text = "${position + 1}/${pages.size}"
+            val progress = if (pages.size > 0) {
+                ((position + 1) * 100) / pages.size
             } else 100
-            repetitionProgressBar.progress = repetitionProgress
+            pageProgressBar.progress = progress
         } else {
-            repetitionProgressContainer.visibility = View.GONE
+            pageProgressContainer.visibility = View.GONE
+            pageNavigationContainer.visibility = View.GONE
         }
+
+        // Enable/disable navigation buttons
+        val hasMoreSectionsBefore = currentSectionIndex > 0
+        val hasMoreSectionsAfter = currentSectionIndex < sections.size - 1
+
+        prevPageButton.isEnabled = position > 0 || hasMoreSectionsBefore
+        nextPageButton.isEnabled = position < pages.size - 1 || hasMoreSectionsAfter
     }
 
     private fun getDefaultEntity() = TextEntity(

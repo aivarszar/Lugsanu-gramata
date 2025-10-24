@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!-- Title bar -->
+    <TextView
+        android:id="@+id/titleText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:padding="16dp"
+        android:background="?attr/colorPrimary"
+        android:textColor="@android:color/white" />
+
+    <!-- Header section (top level navigation) - max 50% of screen -->
+    <ScrollView
+        android:id="@+id/headerScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0"
+        android:maxHeight="300dp"
+        android:scrollbars="vertical"
+        android:fillViewport="true">
+
+        <TextView
+            android:id="@+id/headerTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:padding="16dp"
+            android:textColor="?attr/colorPrimary" />
+    </ScrollView>
+
+    <!-- Header navigation arrows -->
+    <LinearLayout
+        android:id="@+id/headerNavigationContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="4dp"
+        android:gravity="center"
+        android:background="?attr/colorPrimary"
+        android:visibility="gone">
+
+        <Button
+            android:id="@+id/prevHeaderButton"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:text="<<"
+            android:textSize="18sp"
+            android:textColor="@android:color/white"
+            android:layout_marginEnd="8dp"
+            style="?android:attr/borderlessButtonStyle" />
+
+        <TextView
+            android:id="@+id/headerIndicator"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textSize="14sp"
+            android:textColor="@android:color/white"
+            android:text="1/1" />
+
+        <Button
+            android:id="@+id/nextHeaderButton"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:text=">>"
+            android:textSize="18sp"
+            android:textColor="@android:color/white"
+            android:layout_marginStart="8dp"
+            style="?android:attr/borderlessButtonStyle" />
+    </LinearLayout>
+
+    <!-- Divider -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="?attr/colorPrimary" />
+
+    <!-- Page section (bottom level navigation) -->
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/pageViewPager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <!-- Page navigation -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="8dp">
+
+        <!-- Page progress bar -->
+        <LinearLayout
+            android:id="@+id/pageProgressContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:visibility="gone">
+
+            <ProgressBar
+                android:id="@+id/pageProgressBar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="0dp"
+                android:layout_height="8dp"
+                android:layout_weight="1"
+                android:layout_marginEnd="8dp"
+                android:max="100"
+                android:progressTint="?attr/colorPrimary" />
+
+            <TextView
+                android:id="@+id/pageIndicator"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:text="1/1" />
+        </LinearLayout>
+
+        <!-- Page navigation arrows -->
+        <LinearLayout
+            android:id="@+id/pageNavigationContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:visibility="gone">
+
+            <Button
+                android:id="@+id/prevPageButton"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:text="←"
+                android:textSize="24sp"
+                android:layout_marginEnd="16dp"
+                style="?android:attr/borderlessButtonStyle" />
+
+            <Button
+                android:id="@+id/nextPageButton"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:text="→"
+                android:textSize="24sp"
+                style="?android:attr/borderlessButtonStyle" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>
