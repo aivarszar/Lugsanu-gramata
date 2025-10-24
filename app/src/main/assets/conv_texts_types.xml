@@ -1,2 +1,253 @@
-<?xml version="1.0"?>
-<root><item><RID>1</RID><Description>Simple prayers</Description><Type>1</Type><Code>2</Code></item><item><RID>2</RID><Description>Rosary</Description><Type>1</Type><Code>1</Code></item><item><RID>3</RID><Description>Lithurgical texts</Description><Type>2</Type><Code/></item><item><RID>4</RID><Description>Litanies</Description><Type>3</Type><Code/></item><item><RID>5</RID><Description>Citas</Description><Type>4</Type><Code>1</Code></item><item><RID>6</RID><Description>Songs</Description><Type>5</Type><Code/></item><item><RID>7</RID><Description>Vienk&#x101;r&#x161;as l&#x16B;g&#x161;anas</Description><Type>1</Type><Code>2</Code></item><item><RID>8</RID><Description>Ro&#x17E;ukronis</Description><Type>1</Type><Code>1</Code></item><item><RID>9</RID><Description>Litur&#x123;iskie teksti</Description><Type>2</Type><Code/></item><item><RID>10</RID><Description>Lit&#x101;nijas</Description><Type>3</Type><Code/></item><item><RID>11</RID><Description>Novennas latviski</Description><Type>4</Type><Code/></item><item><RID>12</RID><Description>Dziesmas</Description><Type>5</Type><Code/></item><item><RID>13</RID><Description>ADVENTA DZIESMAS</Description><Type>5</Type><Code>1</Code></item><item><RID>14</RID><Description>ZIEMSV&#x112;TKU DZIESMAS</Description><Type>5</Type><Code>2</Code></item><item><RID>15</RID><Description>GAV&#x112;&#x145;A LAIKA DZIESMAS</Description><Type>5</Type><Code>3</Code></item><item><RID>16</RID><Description>LIELDIENU DZIESMAS</Description><Type>5</Type><Code>4</Code></item><item><RID>17</RID><Description>DZIESMAS SV&#x112;T&#x100; GARA GODAM</Description><Type>5</Type><Code>5</Code></item><item><RID>18</RID><Description>DZIESMAS VISSV. SAKRAMENTA GODAM</Description><Type>5</Type><Code>6</Code></item><item><RID>19</RID><Description>DZIESMAS VISSV. J&#x112;ZUS SIRDS GODAM</Description><Type>5</Type><Code>7</Code></item><item><RID>20</RID><Description>DZIESMAS KUNGA J&#x112;ZUS GODAM</Description><Type>5</Type><Code>8</Code></item><item><RID>21</RID><Description>DA&#x17D;&#x100;DAS DZIESMAS DIEVA KUNGA GODAM</Description><Type>5</Type><Code>9</Code></item><item><RID>22</RID><Description>DZIESMAS VISSV. J. MARIJAS GODAM</Description><Type>5</Type><Code>10</Code></item><item><RID>23</RID><Description>Sv&#x113;t&#x101; Mise</Description><Type>2</Type><Code>1</Code></item><item><RID>24</RID><Description>Laudes latviski</Description><Type>2</Type><Code>4</Code></item><item><RID>25</RID><Description>Advent Songs</Description><Type>5</Type><Code>1</Code></item><item><RID>26</RID><Description>Christmas Songs</Description><Type>5</Type><Code>2</Code></item><item><RID>27</RID><Description>Lenten songs</Description><Type>5</Type><Code>3</Code></item><item><RID>28</RID><Description>Easter songs</Description><Type>5</Type><Code>4</Code></item><item><RID>29</RID><Description>Songs to the Glory of the Holy Spirit</Description><Type>5</Type><Code>5</Code></item><item><RID>30</RID><Description>Songs to the Holy Eucharist</Description><Type>5</Type><Code>6</Code></item><item><RID>31</RID><Description>Songs to the SACRED HEART of Jesus</Description><Type>5</Type><Code>7</Code></item><item><RID>32</RID><Description>Hymns to Mary</Description><Type>5</Type><Code>10</Code></item><item><RID>33</RID><Description>Hymns to the Lord Jesus</Description><Type>5</Type><Code>8</Code></item><item><RID>34</RID><Description>Hymns to the Lord our God</Description><Type>5</Type><Code>9</Code></item><item><RID>35</RID><Description>R&#xF3;&#x17C;aniec</Description><Type>1</Type><Code>1</Code></item><item><RID>47</RID><Description>Rosario</Description><Type>1</Type><Code>1</Code></item><item><RID>54</RID><Description>Citi teksti</Description><Type>2</Type><Code>3</Code></item><item><RID>56</RID><Description>Krustace&#x13C;&#x161;</Description><Type>2</Type><Code>2</Code></item><item><RID>58</RID><Description>Vesperes latviski</Description><Type>2</Type><Code>5</Code></item><item><RID>62</RID><Description>Prosty modlitwy</Description><Type>1</Type><Code>2</Code></item><item><RID>64</RID><Description>Prayers</Description><Type>1</Type><Code/></item><item><RID>65</RID><Description>L&#x16B;g&#x161;anas</Description><Type>1</Type><Code/></item><item><RID>66</RID><Description>Modlitwy</Description><Type>1</Type><Code/></item><item><RID>67</RID><Description>Orationes</Description><Type>1</Type><Code/></item><item><RID>68</RID><Description>L&#x16B;g&#x161;anas &#x12B;pa&#x161;os gad&#x12B;jumos</Description><Type>1</Type><Code>3</Code></item><item><RID>69</RID><Description>Pamatl&#x16B;g&#x161;anas</Description><Type>1</Type><Code>4</Code></item><item><RID>70</RID><Description>Basic prayers</Description><Type>1</Type><Code>4</Code></item><item><RID>71</RID><Description>Special prayers</Description><Type>1</Type><Code>3</Code></item><item><RID>72</RID><Description>Specjalne modlitwy</Description><Type>1</Type><Code>3</Code></item><item><RID>73</RID><Description>Podstawowymi modlitwy</Description><Type>1</Type><Code>4</Code></item><item><RID>74</RID><Description>Saist&#x12B;b&#x101; ar sakramentiem</Description><Type>1</Type><Code>5</Code></item><item><RID>75</RID><Description>Iek&#x13C;&#x101;vumi cit&#x101;m l&#x16B;g&#x161;an&#x101;m</Description><Type>2</Type><Code>6</Code></item><item><RID>76</RID><Description>Teksty liturgiczne</Description><Type>2</Type><Code/></item><item><RID>77</RID><Description>Litanie</Description><Type>3</Type><Code/></item><item><RID>78</RID><Description>Nowenny</Description><Type>4</Type><Code/></item><item><RID>79</RID><Description>Pie&#x15B;ni</Description><Type>5</Type><Code/></item><item><RID>80</RID><Description>&#x41C;&#x43E;&#x43B;&#x438;&#x442;&#x432;&#x44B;</Description><Type>1</Type><Code/></item><item><RID>81</RID><Description>&#x420;&#x43E;&#x437;&#x430;&#x440;&#x438;&#x439;</Description><Type>1</Type><Code>1</Code></item><item><RID>82</RID><Description>&#x41B;&#x438;&#x442;&#x443;&#x440;&#x433;&#x438;&#x44F;</Description><Type>2</Type><Code/></item><item><RID>83</RID><Description>&#x41F;&#x435;&#x441;&#x43D;&#x438;</Description><Type>5</Type><Code/></item><item><RID>84</RID><Description>&#x41B;&#x438;&#x442;&#x430;&#x43D;&#x438;&#x438;</Description><Type>3</Type><Code/></item><item><RID>85</RID><Description>&#x41F;&#x440;&#x43E;&#x441;&#x442;&#x44B;&#x435; &#x43C;&#x43E;&#x43B;&#x438;&#x442;&#x432;&#x44B;</Description><Type>1</Type><Code>2</Code></item><item><RID>86</RID><Description>Kompletorijs</Description><Type>2</Type><Code>7</Code></item><item><RID>87</RID><Description>DZIESMAS SV&#x112;TO GODAM</Description><Type>5</Type><Code>11</Code></item><item><RID>88</RID><Description>Simple prayers</Description><Type>1</Type><Code>2</Code></item><item><RID>90</RID><Description>Sacraments</Description><Type>1</Type><Code>5</Code></item><item><RID>91</RID><Description>Holy Mass</Description><Type>2</Type><Code>1</Code></item><item><RID>92</RID><Description>Includes for other prayers</Description><Type>2</Type><Code>6</Code></item><item><RID>93</RID><Description>&#x412; &#x43E;&#x441;&#x43E;&#x431;&#x44B;&#x445; &#x441;&#x43B;&#x443;&#x447;&#x430;&#x438;</Description><Type>1</Type><Code>3</Code></item><item><RID>94</RID><Description>O&#x441;&#x43D;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x435;</Description><Type>1</Type><Code>4</Code></item><item><RID>95</RID><Description>&#x412; &#x441;&#x432;&#x44F;&#x437;&#x438; &#x441; &#x441;&#x430;&#x43A;&#x440;&#x430;&#x43C;&#x435;&#x43D;&#x442;&#x430;&#x43C;</Description><Type>1</Type><Code>5</Code></item><item><RID>96</RID><Description>&#x414;&#x440;&#x443;&#x433;&#x438;&#x435; &#x442;&#x435;&#x43A;&#x441;&#x442;&#x44B;</Description><Type>2</Type><Code>3</Code></item><item><RID>97</RID><Description>&#x414;&#x440;&#x443;&#x433;&#x438;&#x435;</Description><Type>2</Type><Code>6</Code></item><item><RID>98</RID><Description>&#x41D;&#x43E;&#x432;&#x435;&#x43D;&#x43D;&#x44B;</Description><Type>4</Type><Code/></item><item><RID>99</RID><Description>Rezo</Description><Type>1</Type><Code>1</Code></item><item><RID>100</RID><Description>Rosario</Description><Type>1</Type><Code>1</Code></item><item><RID>101</RID><Description>Una oraci&#xF3;n sencilla</Description><Type>1</Type><Code>2</Code></item><item><RID>102</RID><Description>Oraciones para ocasiones especiales</Description><Type>1</Type><Code>3</Code></item><item><RID>103</RID><Description>Oraciones b&#xE1;sicas</Description><Type>1</Type><Code>4</Code></item><item><RID>104</RID><Description>En relaci&#xF3;n con los sacramentos</Description><Type>1</Type><Code>5</Code></item><item><RID>105</RID><Description>Textos lit&#xFA;rgicos</Description><Type>2</Type><Code/></item><item><RID>106</RID><Description>Santa Misa</Description><Type>2</Type><Code>1</Code></item><item><RID>107</RID><Description>Cruzada</Description><Type>2</Type><Code>2</Code></item><item><RID>108</RID><Description>Otros textos</Description><Type>2</Type><Code>3</Code></item><item><RID>109</RID><Description>Lauda</Description><Type>2</Type><Code>4</Code></item><item><RID>110</RID><Description>V&#xED;speras</Description><Type>2</Type><Code>5</Code></item><item><RID>111</RID><Description>Tambi&#xE9;n deber&#xE1; otras oraciones</Description><Type>2</Type><Code>6</Code></item><item><RID>112</RID><Description>Kompletorium</Description><Type>2</Type><Code>7</Code></item><item><RID>113</RID><Description>Letan&#xED;a</Description><Type>3</Type><Code/></item><item><RID>114</RID><Description>Novena</Description><Type>4</Type><Code/></item><item><RID>115</RID><Description>Canciones  / pistas</Description><Type>5</Type><Code/></item><item><RID>116</RID><Description>CANCIONES DE ADVIENTO</Description><Type>5</Type><Code>1</Code></item><item><RID>117</RID><Description>CANCIONES DE NAVIDAD</Description><Type>5</Type><Code>2</Code></item><item><RID>118</RID><Description>CANCIONES de Cuaresma</Description><Type>5</Type><Code>3</Code></item><item><RID>119</RID><Description>CANCIONES DE PASCUA</Description><Type>5</Type><Code>4</Code></item><item><RID>120</RID><Description>CANCIONES DE LA gloria ESP&#xCD;RITU SANTO</Description><Type>5</Type><Code>5</Code></item><item><RID>121</RID><Description>CANCIONES Bienaventurados gloria Sacramento</Description><Type>5</Type><Code>6</Code></item><item><RID>122</RID><Description>CANCIONES Bendito Coraz&#xF3;n de Jes&#xFA;s la gloria</Description><Type>5</Type><Code>7</Code></item><item><RID>123</RID><Description>CANCIONES gloria del Se&#xF1;or Jes&#xFA;s</Description><Type>5</Type><Code>8</Code></item><item><RID>124</RID><Description>CANCIONES DE VARIOS Se&#xF1;or gloria</Description><Type>5</Type><Code>9</Code></item><item><RID>125</RID><Description>CANCIONES honor de la Sant&#xED;sima Virgen Mar&#xED;a</Description><Type>5</Type><Code>10</Code></item><item><RID>126</RID><Description>Gloria CANCIONES DE SAINT</Description><Type>5</Type><Code>11</Code></item><item><RID>127</RID><Description>&#x92A;&#x94D;&#x930;&#x93E;&#x930;&#x94D;&#x925;&#x928;&#x93E;</Description><Type>1</Type><Code/></item><item><RID>128</RID><Description>&#x92E;&#x93E;&#x932;&#x93E;</Description><Type>1</Type><Code>1</Code></item><item><RID>129</RID><Description>&#x90F;&#x915; &#x938;&#x93E;&#x927;&#x93E;&#x930;&#x923; &#x92A;&#x94D;&#x930;&#x93E;&#x930;&#x94D;&#x925;&#x928;&#x93E;</Description><Type>1</Type><Code>2</Code></item><item><RID>130</RID><Description>&#x935;&#x93F;&#x936;&#x947;&#x937; &#x92E;&#x93E;&#x92E;&#x932;&#x94B;&#x902; &#x915;&#x947; &#x932;&#x93F;&#x90F; &#x92A;&#x94D;&#x930;&#x93E;&#x930;&#x94D;&#x925;&#x928;&#x93E;</Description><Type>1</Type><Code>3</Code></item><item><RID>131</RID><Description>&#x92C;&#x941;&#x928;&#x93F;&#x92F;&#x93E;&#x926;&#x940; &#x928;&#x92E;&#x93E;&#x91C;</Description><Type>1</Type><Code>4</Code></item><item><RID>132</RID><Description>&#x92A;&#x94D;&#x930;&#x93E;&#x930;&#x94D;&#x925;&#x928;&#x93E; &#x915;&#x947; &#x938;&#x902;&#x938;&#x94D;&#x915;&#x93E;&#x930;&#x94B;&#x902; &#x915;&#x947; &#x938;&#x902;&#x92C;&#x902;&#x927; &#x92E;&#x947;&#x902;</Description><Type>1</Type><Code>5</Code></item><item><RID>133</RID><Description>&#x92E;&#x930;&#x928;&#x947; &#x915;&#x947; &#x92C;&#x93E;&#x926; &#x917;&#x94D;&#x930;&#x902;&#x925;&#x94B;&#x902;</Description><Type>2</Type><Code/></item><item><RID>134</RID><Description>&#x92A;&#x935;&#x93F;&#x924;&#x94D;&#x930; &#x92E;&#x93E;&#x938;</Description><Type>2</Type><Code>1</Code></item><item><RID>135</RID><Description>&#x927;&#x930;&#x94D;&#x92E;&#x92F;&#x941;&#x926;&#x94D;&#x927;</Description><Type>2</Type><Code>2</Code></item><item><RID>136</RID><Description>&#x905;&#x928;&#x94D;&#x92F; &#x917;&#x94D;&#x930;&#x902;&#x925;&#x94B;&#x902;</Description><Type>2</Type><Code>3</Code></item><item><RID>137</RID><Description>&#x932;&#x94C;&#x921;&#x93E;</Description><Type>2</Type><Code>4</Code></item><item><RID>138</RID><Description>vespers</Description><Type>2</Type><Code>5</Code></item><item><RID>139</RID><Description>&#x935;&#x947; &#x92D;&#x940; &#x905;&#x928;&#x94D;&#x92F; &#x915;&#x940; &#x928;&#x92E;&#x93E;&#x91C; &#x915;&#x930;&#x947;&#x917;&#x93E;</Description><Type>2</Type><Code>6</Code></item><item><RID>140</RID><Description>Kompletorium</Description><Type>2</Type><Code>7</Code></item><item><RID>141</RID><Description>&#x932;&#x940;&#x91F;&#x93E;&#x928;&#x940;</Description><Type>3</Type><Code/></item><item><RID>142</RID><Description>novena</Description><Type>4</Type><Code/></item><item><RID>143</RID><Description>&#x917;&#x940;&#x924;</Description><Type>5</Type><Code/></item><item><RID>144</RID><Description>&#x90F;&#x921;&#x935;&#x947;&#x902;&#x91F; &#x917;&#x940;&#x924;</Description><Type>5</Type><Code>1</Code></item><item><RID>145</RID><Description>&#x915;&#x94D;&#x930;&#x93F;&#x938;&#x92E;&#x938; &#x917;&#x940;&#x924;&#x94B;&#x902;</Description><Type>5</Type><Code>2</Code></item><item><RID>146</RID><Description>&#x930;&#x94B;&#x91C;&#x93C;&#x947; &#x917;&#x940;&#x924;</Description><Type>5</Type><Code>3</Code></item><item><RID>147</RID><Description>&#x908;&#x938;&#x94D;&#x91F;&#x930; &#x917;&#x940;&#x924;</Description><Type>5</Type><Code>4</Code></item><item><RID>148</RID><Description>&#x92A;&#x935;&#x93F;&#x924;&#x94D;&#x930; &#x906;&#x924;&#x94D;&#x92E;&#x93E; &#x92E;&#x939;&#x93F;&#x92E;&#x93E; &#x915;&#x947; &#x917;&#x940;&#x924;</Description><Type>5</Type><Code>5</Code></item><item><RID>149</RID><Description>&#x917;&#x940;&#x924; &#x927;&#x930;&#x94D;&#x92E;&#x935;&#x93F;&#x927;&#x93F; &#x92E;&#x939;&#x93F;&#x92E;&#x93E; &#x927;&#x928;&#x94D;&#x92F;</Description><Type>5</Type><Code>6</Code></item><item><RID>150</RID><Description>&#x92F;&#x940;&#x936;&#x941; &#x915;&#x940; &#x92E;&#x939;&#x93F;&#x92E;&#x93E; &#x915;&#x947; &#x917;&#x940;&#x924; &#x927;&#x928;&#x94D;&#x92F; &#x926;&#x93F;&#x932;</Description><Type>5</Type><Code>7</Code></item><item><RID>151</RID><Description>&#x92A;&#x94D;&#x930;&#x92D;&#x941; &#x92F;&#x940;&#x936;&#x941; &#x915;&#x940; &#x92E;&#x939;&#x93F;&#x92E;&#x93E; &#x915;&#x947; &#x917;&#x940;&#x924;</Description><Type>5</Type><Code>8</Code></item><item><RID>152</RID><Description>&#x935;&#x93F;&#x92D;&#x93F;&#x928;&#x94D;&#x928; &#x917;&#x940;&#x924; &#x92D;&#x917;&#x935;&#x93E;&#x928; &#x915;&#x940; &#x92E;&#x939;&#x93F;&#x92E;&#x93E;</Description><Type>5</Type><Code>9</Code></item><item><RID>153</RID><Description>&#x927;&#x928;&#x94D;&#x92F; &#x935;&#x930;&#x94D;&#x91C;&#x93F;&#x928; &#x92E;&#x948;&#x930;&#x940; &#x915;&#x947; &#x917;&#x93E;&#x928;&#x947; &#x938;&#x92E;&#x94D;&#x92E;&#x93E;&#x928;</Description><Type>5</Type><Code>10</Code></item><item><RID>154</RID><Description>&#x917;&#x940;&#x924; Saint &#x92E;&#x939;&#x93F;&#x92E;&#x93E;</Description><Type>5</Type><Code>11</Code></item><item><RID>155</RID><Description>praarthana</Description><Type>1</Type><Code/></item><item><RID>156</RID><Description>maala</Description><Type>1</Type><Code>1</Code></item><item><RID>157</RID><Description>ek saadhaaran praarthana</Description><Type>1</Type><Code>2</Code></item><item><RID>158</RID><Description>vishesh maamalon ke lie praarthana</Description><Type>1</Type><Code>3</Code></item><item><RID>159</RID><Description>buniyaadee namaaj</Description><Type>1</Type><Code>4</Code></item><item><RID>160</RID><Description>praarthana ke sanskaaron ke sambandh mein</Description><Type>1</Type><Code>5</Code></item><item><RID>161</RID><Description>marane ke baad granthon</Description><Type>2</Type><Code/></item><item><RID>162</RID><Description>pavitr maas</Description><Type>2</Type><Code>1</Code></item><item><RID>163</RID><Description>dharmayuddh</Description><Type>2</Type><Code>2</Code></item><item><RID>164</RID><Description>any granthon</Description><Type>2</Type><Code>3</Code></item><item><RID>165</RID><Description>lauda</Description><Type>2</Type><Code>4</Code></item><item><RID>166</RID><Description>vaispairs</Description><Type>2</Type><Code>5</Code></item><item><RID>167</RID><Description>ve bhee any kee namaaj karega</Description><Type>2</Type><Code>6</Code></item><item><RID>168</RID><Description>leetaanee</Description><Type>3</Type><Code/></item><item><RID>169</RID><Description>novain</Description><Type>4</Type><Code/></item><item><RID>170</RID><Description>geet</Description><Type>5</Type><Code/></item><item><RID>171</RID><Description>edavent geet</Description><Type>5</Type><Code>1</Code></item><item><RID>172</RID><Description>krisamas geeton</Description><Type>5</Type><Code>2</Code></item><item><RID>173</RID><Description>roze geet</Description><Type>5</Type><Code>3</Code></item><item><RID>174</RID><Description>eestar geet</Description><Type>5</Type><Code>4</Code></item><item><RID>175</RID><Description>pavitr aatma mahima ke geet</Description><Type>5</Type><Code>5</Code></item><item><RID>176</RID><Description>geet dharmavidhi mahima dhany</Description><Type>5</Type><Code>6</Code></item><item><RID>177</RID><Description>yeeshu kee mahima ke geet dhany dil</Description><Type>5</Type><Code>7</Code></item><item><RID>178</RID><Description>prabhu yeeshu kee mahima ke geet</Description><Type>5</Type><Code>8</Code></item><item><RID>179</RID><Description>vibhinn geet bhagavaan kee mahima</Description><Type>5</Type><Code>9</Code></item><item><RID>180</RID><Description>dhany varjin mairee ke gaane sammaan</Description><Type>5</Type><Code>10</Code></item><item><RID>181</RID><Description>geet saint mahima</Description><Type>5</Type><Code>11</Code></item><item><RID>182</RID><Description>Citas</Description><Type>5</Type><Code>12</Code></item><item><RID>183</RID><Description>Citas</Description><Type>3</Type><Code>10</Code></item><item><RID>184</RID><Description>Slav&#x113;&#x161;anas dziesmas</Description><Type>5</Type><Code>20</Code></item><item><RID>186</RID><Description>Slav&#x113;&#x161;ana - Sv&#x113;tajam Garam</Description><Type>5</Type><Code>21</Code></item><item><RID>187</RID><Description>Slav&#x113;&#x161;ana - Marijai</Description><Type>5</Type><Code>22</Code></item><item><RID>188</RID><Description>Slav&#x113;&#x161;ana - Marijai</Description><Type>5</Type><Code>22</Code></item><item><RID>189</RID><Description>Slav&#x113;&#x161;ana - Sv&#x113;tajam Garam</Description><Type>5</Type><Code>21</Code></item><item><RID>190</RID><Description>Slav&#x113;&#x161;anas dziesmas</Description><Type>5</Type><Code>20</Code></item><item><RID>191</RID><Description>Novenas</Description><Type>4</Type><Code/></item><item><RID>192</RID><Description>Sv&#x113;t&#x12B;bas</Description><Type>6</Type><Code/></item><item><RID>193</RID><Description>Blessings</Description><Type>6</Type><Code/></item><item><RID>194</RID><Description>Concsecrations</Description><Type>7</Type><Code/></item><item><RID>195</RID><Description>Konsekr&#x101;cijas</Description><Type>7</Type><Code/></item><item><RID>196</RID><Description>P&#x101;vestu l&#x16B;g&#x161;anas</Description><Type>1</Type><Code>6</Code></item><item><RID>197</RID><Description>Prayers of the Popes</Description><Type>1</Type><Code>6</Code></item><item><RID>198</RID><Description>Pie&#x15B;ni v</Description><Type>5</Type><Code>1</Code></item><item><RID>199</RID><Description>Laudes</Description><Type>2</Type><Code>4</Code></item><item><RID>200</RID><Description>Laudes</Description><Type>2</Type><Code>4</Code></item><item><RID>201</RID><Description>&#x441;&#x432;&#x44F;&#x442;&#x430;&#x44F; &#x41C;&#x435;&#x441;&#x441;&#x430;</Description><Type>2</Type><Code>1</Code></item><item><RID>202</RID><Description>Vesperes</Description><Type>2</Type><Code>5</Code></item><item><RID>203</RID><Description>&#x41F;&#x435;&#x441;&#x43D;&#x438;</Description><Type>5</Type><Code>1</Code></item><item><RID>204</RID><Description>&#x41F;&#x435;&#x441;&#x43D;&#x438; &#x410;&#x434;&#x432;&#x435;&#x43D;&#x442;a</Description><Type>5</Type><Code>1</Code></item><item><RID>205</RID><Description>Others</Description><Type>4</Type><Code>1</Code></item><item><RID>206</RID><Description>&#x414;&#x440;&#x443;&#x433;&#x438;&#x435;</Description><Type>4</Type><Code>1</Code></item><item><RID>207</RID><Description>Inne</Description><Type>4</Type><Code>1</Code></item><item><RID>208</RID><Description>Pie&#x15B;ni wielkopostne</Description><Type>5</Type><Code>3</Code></item><item><RID>209</RID><Description>Pie&#x15B;ni wielkanocne</Description><Type>5</Type><Code>4</Code></item><item><RID>210</RID><Description>&#x41F;&#x430;&#x441;&#x445;&#x430;&#x43B;&#x44C;&#x43D;&#x44B;&#x435; &#x43F;&#x435;&#x441;&#x43D;&#x438;</Description><Type>5</Type><Code>4</Code></item><item><RID>211</RID><Description>Zwi&#x105;zana z Sakrament&#xF3;w</Description><Type>1</Type><Code>5</Code></item><item><RID>212</RID><Description>Msza &#x15A;wi&#x119;ta</Description><Type>2</Type><Code>1</Code></item><item><RID>213</RID><Description>Way of the Cross</Description><Type>2</Type><Code>2</Code></item><item><RID>214</RID><Description>Droga Krzy&#x17C;owa</Description><Type>2</Type><Code>2</Code></item><item><RID>215</RID><Description>&#x41A;&#x440;&#x435;&#x441;&#x442;&#x43D;&#x44B;&#x439; &#x43F;&#x443;&#x442;&#x44C;</Description><Type>2</Type><Code>2</Code></item><item><RID>216</RID><Description>Other texts</Description><Type>2</Type><Code>3</Code></item><item><RID>217</RID><Description>Inne teksty</Description><Type>2</Type><Code>3</Code></item><item><RID>218</RID><Description>Laudes</Description><Type>2</Type><Code>4</Code></item><item><RID>219</RID><Description>Vesperes</Description><Type>2</Type><Code>5</Code></item><item><RID>220</RID><Description>Kompletorium</Description><Type>2</Type><Code>7</Code></item><item><RID>221</RID><Description>Kompletorium</Description><Type>2</Type><Code>7</Code></item><item><RID>222</RID><Description>Kompletorium</Description><Type>2</Type><Code>7</Code></item><item><RID>223</RID><Description>Others</Description><Type>3</Type><Code>10</Code></item><item><RID>224</RID><Description>Inne</Description><Type>3</Type><Code>10</Code></item><item><RID>225</RID><Description>&#x414;&#x440;&#x443;&#x433;&#x438;&#x435;</Description><Type>3</Type><Code>10</Code></item></root>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<item>
+		<RID>5</RID>
+		<Description>Citas</Description>
+		<Type>4</Type>
+		<Code>1</Code>
+	</item>
+	<item>
+		<RID>7</RID>
+		<Description>Vienkāršas lūgšanas</Description>
+		<Type>1</Type>
+		<Code>2</Code>
+	</item>
+	<item>
+		<RID>8</RID>
+		<Description>Rožukronis</Description>
+		<Type>1</Type>
+		<Code>1</Code>
+	</item>
+	<item>
+		<RID>9</RID>
+		<Description>Liturģiskie teksti</Description>
+		<Type>2</Type>
+	</item>
+	<item>
+		<RID>10</RID>
+		<Description>Litānijas</Description>
+		<Type>3</Type>
+	</item>
+	<item>
+		<RID>11</RID>
+		<Description>Novennas latviski</Description>
+		<Type>4</Type>
+	</item>
+	<item>
+		<RID>12</RID>
+		<Description>Dziesmas</Description>
+		<Type>5</Type>
+	</item>
+	<item>
+		<RID>13</RID>
+		<Description>ADVENTA DZIESMAS</Description>
+		<Type>5</Type>
+		<Code>1</Code>
+	</item>
+	<item>
+		<RID>14</RID>
+		<Description>ZIEMSVĒTKU DZIESMAS</Description>
+		<Type>5</Type>
+		<Code>2</Code>
+	</item>
+	<item>
+		<RID>15</RID>
+		<Description>GAVĒŅA LAIKA DZIESMAS</Description>
+		<Type>5</Type>
+		<Code>3</Code>
+	</item>
+	<item>
+		<RID>16</RID>
+		<Description>LIELDIENU DZIESMAS</Description>
+		<Type>5</Type>
+		<Code>4</Code>
+	</item>
+	<item>
+		<RID>17</RID>
+		<Description>DZIESMAS SVĒTĀ GARA GODAM</Description>
+		<Type>5</Type>
+		<Code>5</Code>
+	</item>
+	<item>
+		<RID>18</RID>
+		<Description>DZIESMAS VISSV. SAKRAMENTA GODAM</Description>
+		<Type>5</Type>
+		<Code>6</Code>
+	</item>
+	<item>
+		<RID>19</RID>
+		<Description>DZIESMAS VISSV. JĒZUS SIRDS GODAM</Description>
+		<Type>5</Type>
+		<Code>7</Code>
+	</item>
+	<item>
+		<RID>20</RID>
+		<Description>DZIESMAS KUNGA JĒZUS GODAM</Description>
+		<Type>5</Type>
+		<Code>8</Code>
+	</item>
+	<item>
+		<RID>21</RID>
+		<Description>DAŽĀDAS DZIESMAS DIEVA KUNGA GODAM</Description>
+		<Type>5</Type>
+		<Code>9</Code>
+	</item>
+	<item>
+		<RID>22</RID>
+		<Description>DZIESMAS VISSV. J. MARIJAS GODAM</Description>
+		<Type>5</Type>
+		<Code>10</Code>
+	</item>
+	<item>
+		<RID>23</RID>
+		<Description>Svētā Mise</Description>
+		<Type>2</Type>
+		<Code>1</Code>
+	</item>
+	<item>
+		<RID>24</RID>
+		<Description>Laudes latviski</Description>
+		<Type>2</Type>
+		<Code>4</Code>
+	</item>
+	<item>
+		<RID>54</RID>
+		<Description>Citi teksti</Description>
+		<Type>2</Type>
+		<Code>3</Code>
+	</item>
+	<item>
+		<RID>56</RID>
+		<Description>Krustaceļš</Description>
+		<Type>2</Type>
+		<Code>2</Code>
+	</item>
+	<item>
+		<RID>58</RID>
+		<Description>Vesperes latviski</Description>
+		<Type>2</Type>
+		<Code>5</Code>
+	</item>
+	<item>
+		<RID>65</RID>
+		<Description>Lūgšanas</Description>
+		<Type>1</Type>
+	</item>
+	<item>
+		<RID>68</RID>
+		<Description>Lūgšanas īpašos gadījumos</Description>
+		<Type>1</Type>
+		<Code>3</Code>
+	</item>
+	<item>
+		<RID>69</RID>
+		<Description>Pamatlūgšanas</Description>
+		<Type>1</Type>
+		<Code>4</Code>
+	</item>
+	<item>
+		<RID>74</RID>
+		<Description>Saistībā ar sakramentiem</Description>
+		<Type>1</Type>
+		<Code>5</Code>
+	</item>
+	<item>
+		<RID>75</RID>
+		<Description>Iekļāvumi citām lūgšanām</Description>
+		<Type>2</Type>
+		<Code>6</Code>
+	</item>
+	<item>
+		<RID>86</RID>
+		<Description>Kompletorijs</Description>
+		<Type>2</Type>
+		<Code>7</Code>
+	</item>
+	<item>
+		<RID>87</RID>
+		<Description>DZIESMAS SVĒTO GODAM</Description>
+		<Type>5</Type>
+		<Code>11</Code>
+	</item>
+	<item>
+		<RID>182</RID>
+		<Description>Citas</Description>
+		<Type>5</Type>
+		<Code>12</Code>
+	</item>
+	<item>
+		<RID>183</RID>
+		<Description>Citas</Description>
+		<Type>3</Type>
+		<Code>10</Code>
+	</item>
+	<item>
+		<RID>184</RID>
+		<Description>Slavēšanas dziesmas</Description>
+		<Type>5</Type>
+		<Code>20</Code>
+	</item>
+	<item>
+		<RID>186</RID>
+		<Description>Slavēšana - Svētajam Garam</Description>
+		<Type>5</Type>
+		<Code>21</Code>
+	</item>
+	<item>
+		<RID>187</RID>
+		<Description>Slavēšana - Marijai</Description>
+		<Type>5</Type>
+		<Code>22</Code>
+	</item>
+	<item>
+		<RID>188</RID>
+		<Description>Slavēšana - Marijai</Description>
+		<Type>5</Type>
+		<Code>22</Code>
+	</item>
+	<item>
+		<RID>189</RID>
+		<Description>Slavēšana - Svētajam Garam</Description>
+		<Type>5</Type>
+		<Code>21</Code>
+	</item>
+	<item>
+		<RID>190</RID>
+		<Description>Slavēšanas dziesmas</Description>
+		<Type>5</Type>
+		<Code>20</Code>
+	</item>
+	<item>
+		<RID>191</RID>
+		<Description>Novenas</Description>
+		<Type>4</Type>
+	</item>
+	<item>
+		<RID>192</RID>
+		<Description>Svētības</Description>
+		<Type>6</Type>
+	</item>
+	<item>
+		<RID>195</RID>
+		<Description>Konsekrācijas</Description>
+		<Type>7</Type>
+	</item>
+	<item>
+		<RID>196</RID>
+		<Description>Pāvestu lūgšanas</Description>
+		<Type>1</Type>
+		<Code>6</Code>
+	</item>
+	<item>
+		<RID>200</RID>
+		<Description>Laudes</Description>
+		<Type>2</Type>
+		<Code>4</Code>
+	</item>
+	<item>
+		<RID>219</RID>
+		<Description>Vesperes</Description>
+		<Type>2</Type>
+		<Code>5</Code>
+	</item>
+</root>
