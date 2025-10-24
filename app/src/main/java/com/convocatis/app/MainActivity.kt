@@ -72,9 +72,10 @@ class MainActivity : AppCompatActivity() {
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.main_menu, menu)
 
-        // Hide search, sort, and filter for TextReadingFragment
+        // Hide search, sort, category filter, and favorites filter for TextReadingFragment
         val isReadingFragment = currentFragment is TextReadingFragment
         menu?.findItem(R.id.action_search)?.isVisible = !isReadingFragment
+        menu?.findItem(R.id.action_category_filter)?.isVisible = !isReadingFragment
         menu?.findItem(R.id.action_sort_toggle)?.isVisible = !isReadingFragment
         menu?.findItem(R.id.action_filter_favorites)?.isVisible = !isReadingFragment
 
@@ -105,6 +106,11 @@ class MainActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
+            R.id.action_category_filter -> {
+                val textsFragment = currentFragment as? TextsFragment
+                textsFragment?.showCategoryFilterDialog()
+                true
+            }
             R.id.action_sort_toggle -> {
                 val textsFragment = currentFragment as? TextsFragment
                 textsFragment?.toggleSort()

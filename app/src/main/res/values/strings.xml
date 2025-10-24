@@ -19,4 +19,5 @@
     <string name="favorite">Favorīts</string>
     <string name="sort">Kārtot</string>
     <string name="filter_favorites">Rādīt favorītus</string>
+    <string name="filter_category">Filtrēt pēc kategorijas</string>
 </resources>

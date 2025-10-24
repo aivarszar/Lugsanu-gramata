@@ -85,4 +85,95 @@ class TextTypesParser(private val context: Context) {
 
         return map
     }
+
+    /**
+     * Get map of type number -> description for unique types
+     * Example: 1 -> "Prayers", 5 -> "Songs"
+     */
+    fun getTypeToDescriptionMap(): Map<Int, String> {
+        val types = parseTypesFromAsset()
+        val map = mutableMapOf<Int, String>()
+
+        // Get all types with empty or null codes (these are the parent categories)
+        types.forEach { type ->
+            if (type.type != null && (type.code == null || type.code.isEmpty()) && !map.containsKey(type.type)) {
+                map[type.type] = type.description
+            }
+        }
+
+        return map
+    }
+
+    /**
+     * Get hierarchical structure: Type -> List of (Code, Description)
+     * Example: 1 -> [(1, "Rosary"), (2, "Simple prayers"), ...]
+     *          5 -> [(1, "Advent Songs"), (2, "Christmas Songs"), ...]
+     */
+    fun getTypeCodeHierarchy(): Map<Int, List<Pair<String, String>>> {
+        val types = parseTypesFromAsset()
+        val hierarchy = mutableMapOf<Int, MutableList<Pair<String, String>>>()
+
+        // Group by type, collect code-description pairs
+        types.forEach { type ->
+            if (type.type != null && type.code != null && type.code.isNotEmpty()) {
+                if (!hierarchy.containsKey(type.type)) {
+                    hierarchy[type.type] = mutableListOf()
+                }
+                // Add unique code-description pairs
+                val codeDescPair = Pair(type.code, type.description)
+                if (!hierarchy[type.type]!!.contains(codeDescPair)) {
+                    hierarchy[type.type]!!.add(codeDescPair)
+                }
+            }
+        }
+
+        // Sort codes within each type
+        hierarchy.values.forEach { list ->
+            list.sortBy { it.first.toIntOrNull() ?: Int.MAX_VALUE }
+        }
+
+        return hierarchy
+    }
+
+    /**
+     * Data class representing a category filter choice
+     */
+    data class CategoryFilter(
+        val type: Int?,
+        val code: String?,
+        val displayText: String
+    ) {
+        companion object {
+            fun all() = CategoryFilter(null, null, "All")
+        }
+    }
+
+    /**
+     * Get all available filters in a flat list for selection
+     * Includes "All", all Types, and all Type->Code combinations
+     */
+    fun getAllFilters(): List<CategoryFilter> {
+        val filters = mutableListOf<CategoryFilter>()
+
+        // Add "All" option
+        filters.add(CategoryFilter.all())
+
+        val typeDescriptions = getTypeToDescriptionMap()
+        val hierarchy = getTypeCodeHierarchy()
+
+        // Add types and their codes
+        typeDescriptions.keys.sorted().forEach { typeNum ->
+            val typeDesc = typeDescriptions[typeNum] ?: "Type $typeNum"
+
+            // Add type-level filter
+            filters.add(CategoryFilter(typeNum, null, typeDesc))
+
+            // Add code-level filters under this type
+            hierarchy[typeNum]?.forEach { (code, codeDesc) ->
+                filters.add(CategoryFilter(typeNum, code, "  → $codeDesc"))
+            }
+        }
+
+        return filters
+    }
 }

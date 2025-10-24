@@ -4,18 +4,15 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.AdapterView
-import android.widget.ArrayAdapter
-import android.widget.Spinner
 import android.widget.TextView
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.convocatis.app.ConvocatisApplication
 import com.convocatis.app.MainActivity
 import com.convocatis.app.R
 import com.convocatis.app.database.entity.TextEntity
+import com.convocatis.app.ui.dialogs.CategoryFilterDialog
 import com.convocatis.app.utils.FavoritesManager
 import com.convocatis.app.utils.TextTypesParser
 import kotlinx.coroutines.launch
@@ -25,16 +22,17 @@ class TextsFragment : Fragment() {
     private lateinit var recyclerView: RecyclerView
     private lateinit var adapter: TextsAdapter
     private lateinit var favoritesManager: FavoritesManager
-    private lateinit var categorySpinner: Spinner
     private lateinit var prefs: android.content.SharedPreferences
 
     private var sortAscending = true
     private var showOnlyFavorites = false
     private var searchTerm = ""
-    private var selectedCategoryCode: String? = null
+    private var currentFilter: TextTypesParser.CategoryFilter = TextTypesParser.CategoryFilter.all()
 
     companion object {
-        private const val PREF_LAST_CATEGORY = "last_category_code"
+        private const val PREF_LAST_FILTER_TYPE = "last_filter_type"
+        private const val PREF_LAST_FILTER_CODE = "last_filter_code"
+        private const val PREF_LAST_FILTER_DISPLAY = "last_filter_display"
     }
 
     override fun onCreateView(
@@ -47,7 +45,9 @@ class TextsFragment : Fragment() {
         favoritesManager = FavoritesManager(requireContext())
         prefs = requireContext().getSharedPreferences("convocatis_prefs", android.content.Context.MODE_PRIVATE)
 
-        categorySpinner = view.findViewById(R.id.categoryCodeSpinner)
+        // Restore last filter from SharedPreferences
+        restoreLastFilter()
+
         recyclerView = view.findViewById(R.id.recyclerView)
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
 
@@ -62,9 +62,6 @@ class TextsFragment : Fragment() {
             }
         )
         recyclerView.adapter = adapter
-
-        // Setup category spinner
-        setupCategorySpinner()
 
         return view
     }
@@ -100,9 +97,20 @@ class TextsFragment : Fragment() {
                 }
             }
 
-            // Filter by category code
-            if (selectedCategoryCode != null && selectedCategoryCode != "all") {
-                filteredTexts = filteredTexts.filter { it.categoryCode == selectedCategoryCode }
+            // Filter by category (hierarchical: Type and/or Code)
+            filteredTexts = when {
+                // Filter by both Type and Code
+                currentFilter.type != null && currentFilter.code != null -> {
+                    filteredTexts.filter {
+                        it.categoryType == currentFilter.type && it.categoryCode == currentFilter.code
+                    }
+                }
+                // Filter by Type only
+                currentFilter.type != null -> {
+                    filteredTexts.filter { it.categoryType == currentFilter.type }
+                }
+                // No filter (show all)
+                else -> filteredTexts
             }
 
             // Sort alphabetically
@@ -135,60 +143,44 @@ class TextsFragment : Fragment() {
     fun getSortAscending() = sortAscending
     fun getShowOnlyFavorites() = showOnlyFavorites
 
-    private fun setupCategorySpinner() {
-        lifecycleScope.launch {
-            val database = ConvocatisApplication.getInstance().database
-            val codes = database.textDao().getUniqueCategoryCodes()
-
-            // Get code -> description mapping
-            val typesParser = TextTypesParser(requireContext())
-            val codeToDescription = typesParser.getCodeToDescriptionMap()
-
-            // Get last selected category
-            val lastCategory = prefs.getString(PREF_LAST_CATEGORY, "all") ?: "all"
-
-            // Create spinner items with "All" option and descriptions
-            val spinnerItems = mutableListOf("All")
-            spinnerItems.addAll(codes.map { code ->
-                codeToDescription[code] ?: "Type $code"
-            })
-
-            val spinnerAdapter = ArrayAdapter(
-                requireContext(),
-                android.R.layout.simple_spinner_item,
-                spinnerItems
-            )
-            spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-
-            categorySpinner.adapter = spinnerAdapter
-
-            // Restore last selection
-            val restoredPosition = if (lastCategory == "all") {
-                0
-            } else {
-                codes.indexOf(lastCategory) + 1
+    /**
+     * Show category filter dialog
+     */
+    fun showCategoryFilterDialog() {
+        val dialog = CategoryFilterDialog.newInstance(
+            currentFilter = currentFilter,
+            onFilterSelected = { filter ->
+                currentFilter = filter
+                saveLastFilter()
+                loadTexts()
             }
-            if (restoredPosition >= 0 && restoredPosition < spinnerItems.size) {
-                categorySpinner.setSelection(restoredPosition)
-            }
+        )
+        dialog.show(childFragmentManager, "CategoryFilterDialog")
+    }
 
-            categorySpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-                override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-                    selectedCategoryCode = if (position == 0) {
-                        "all"
-                    } else {
-                        codes[position - 1]
-                    }
-                    // Save selection
-                    prefs.edit().putString(PREF_LAST_CATEGORY, selectedCategoryCode).apply()
-                    loadTexts()
-                }
+    /**
+     * Restore last filter from SharedPreferences
+     */
+    private fun restoreLastFilter() {
+        val type = if (prefs.contains(PREF_LAST_FILTER_TYPE)) {
+            prefs.getInt(PREF_LAST_FILTER_TYPE, -1).takeIf { it != -1 }
+        } else null
 
-                override fun onNothingSelected(parent: AdapterView<*>?) {
-                    selectedCategoryCode = "all"
-                    loadTexts()
-                }
-            }
+        val code = prefs.getString(PREF_LAST_FILTER_CODE, null)
+        val display = prefs.getString(PREF_LAST_FILTER_DISPLAY, "All") ?: "All"
+
+        currentFilter = TextTypesParser.CategoryFilter(type, code, display)
+    }
+
+    /**
+     * Save current filter to SharedPreferences
+     */
+    private fun saveLastFilter() {
+        prefs.edit().apply {
+            currentFilter.type?.let { putInt(PREF_LAST_FILTER_TYPE, it) } ?: remove(PREF_LAST_FILTER_TYPE)
+            currentFilter.code?.let { putString(PREF_LAST_FILTER_CODE, it) } ?: remove(PREF_LAST_FILTER_CODE)
+            putString(PREF_LAST_FILTER_DISPLAY, currentFilter.displayText)
+            apply()
         }
     }
 }
