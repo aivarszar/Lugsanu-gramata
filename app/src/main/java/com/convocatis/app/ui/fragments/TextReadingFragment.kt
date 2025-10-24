@@ -118,7 +118,66 @@ class TextReadingFragment : Fragment() {
             }
         }
 
-        // Set up swipe gesture for header navigation
+        // Set up page navigation
+        prevPageButton.setOnClickListener {
+            val currentItem = pageViewPager.currentItem
+            if (currentItem > 0) {
+                pageViewPager.currentItem = currentItem - 1
+            } else if (currentSectionIndex > 0) {
+                // At first page, go to previous section
+                currentSectionIndex--
+                updateHeaderDisplay()
+                loadPagesForCurrentSection(startAtEnd = true)
+            }
+        }
+
+        nextPageButton.setOnClickListener {
+            val currentSection = sections[currentSectionIndex]
+            val currentItem = pageViewPager.currentItem
+            if (currentItem < currentSection.pages.size - 1) {
+                pageViewPager.currentItem = currentItem + 1
+            } else if (currentSectionIndex < sections.size - 1) {
+                // At last page, go to next section
+                currentSectionIndex++
+                updateHeaderDisplay()
+                loadPagesForCurrentSection()
+            }
+        }
+
+        // Parse content
+        lifecycleScope.launch {
+            sections = parser.parseToSections(textEntity)
+
+            // Filter sections that have headers (for header navigation counter)
+            sectionsWithHeaders = sections.filter { it.headerText != null }
+
+            if (sections.isNotEmpty()) {
+                val hasHeaders = sectionsWithHeaders.isNotEmpty()
+
+                // Show/hide header navigation based on whether there are headers
+                if (hasHeaders) {
+                    headerNavigationContainer.visibility = View.VISIBLE
+                    updateHeaderDisplay()
+                } else {
+                    headerNavigationContainer.visibility = View.GONE
+                    headerTextView.visibility = View.GONE
+                }
+
+                loadPagesForCurrentSection()
+
+                // Set up header swipe gesture AFTER views are visible
+                setupHeaderSwipeGesture()
+            }
+        }
+
+        return view
+    }
+
+    /**
+     * Set up swipe gesture for header navigation
+     * Called after sections are parsed and views are visible
+     */
+    private fun setupHeaderSwipeGesture() {
         android.util.Log.d("HeaderSwipe", "Setting up header swipe gesture detector")
 
         val headerGestureDetector = GestureDetector(requireContext(), object : GestureDetector.SimpleOnGestureListener() {
@@ -176,7 +235,8 @@ class TextReadingFragment : Fragment() {
         headerNavigationContainer.setOnTouchListener(headerTouchListener)
         android.util.Log.d("HeaderSwipe", "Attached listener to headerNavigationContainer, visibility=${headerNavigationContainer.visibility}")
 
-        // Also apply to ScrollView and its children for full area coverage (reuse headerScrollView from above)
+        // Also apply to ScrollView and its children for full area coverage
+        val headerScrollView = requireView().findViewById<View>(R.id.headerScrollView)
         headerScrollView.setOnTouchListener(headerTouchListener)
         android.util.Log.d("HeaderSwipe", "Attached listener to headerScrollView")
 
@@ -185,57 +245,6 @@ class TextReadingFragment : Fragment() {
 
         headerTextView.setOnTouchListener(headerTouchListener)
         android.util.Log.d("HeaderSwipe", "Attached listener to headerTextView, visibility=${headerTextView.visibility}")
-
-        // Set up page navigation
-        prevPageButton.setOnClickListener {
-            val currentItem = pageViewPager.currentItem
-            if (currentItem > 0) {
-                pageViewPager.currentItem = currentItem - 1
-            } else if (currentSectionIndex > 0) {
-                // At first page, go to previous section
-                currentSectionIndex--
-                updateHeaderDisplay()
-                loadPagesForCurrentSection(startAtEnd = true)
-            }
-        }
-
-        nextPageButton.setOnClickListener {
-            val currentSection = sections[currentSectionIndex]
-            val currentItem = pageViewPager.currentItem
-            if (currentItem < currentSection.pages.size - 1) {
-                pageViewPager.currentItem = currentItem + 1
-            } else if (currentSectionIndex < sections.size - 1) {
-                // At last page, go to next section
-                currentSectionIndex++
-                updateHeaderDisplay()
-                loadPagesForCurrentSection()
-            }
-        }
-
-        // Parse content
-        lifecycleScope.launch {
-            sections = parser.parseToSections(textEntity)
-
-            // Filter sections that have headers (for header navigation counter)
-            sectionsWithHeaders = sections.filter { it.headerText != null }
-
-            if (sections.isNotEmpty()) {
-                val hasHeaders = sectionsWithHeaders.isNotEmpty()
-
-                // Show/hide header navigation based on whether there are headers
-                if (hasHeaders) {
-                    headerNavigationContainer.visibility = View.VISIBLE
-                    updateHeaderDisplay()
-                } else {
-                    headerNavigationContainer.visibility = View.GONE
-                    headerTextView.visibility = View.GONE
-                }
-
-                loadPagesForCurrentSection()
-            }
-        }
-
-        return view
     }
 
     /**
