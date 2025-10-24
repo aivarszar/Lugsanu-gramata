@@ -2,7 +2,9 @@ package com.convocatis.app.ui.fragments
 
 import android.os.Build
 import android.os.Bundle
+import android.view.GestureDetector
 import android.view.LayoutInflater
+import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
@@ -18,6 +20,7 @@ import com.convocatis.app.R
 import com.convocatis.app.database.entity.TextEntity
 import com.convocatis.app.utils.TextContentParser
 import kotlinx.coroutines.launch
+import kotlin.math.abs
 
 class TextReadingFragment : Fragment() {
 
@@ -81,6 +84,21 @@ class TextReadingFragment : Fragment() {
         prevPageButton = view.findViewById(R.id.prevPageButton)
         nextPageButton = view.findViewById(R.id.nextPageButton)
 
+        // Limit header section to maximum 50% of screen height
+        val headerScrollView = view.findViewById<View>(R.id.headerScrollView)
+        val displayMetrics = resources.displayMetrics
+        val screenHeight = displayMetrics.heightPixels
+        val maxHeaderHeight = (screenHeight * 0.5).toInt()
+
+        // Measure the header and limit it if it exceeds max height
+        headerScrollView.post {
+            if (headerScrollView.height > maxHeaderHeight) {
+                headerScrollView.layoutParams = headerScrollView.layoutParams.apply {
+                    height = maxHeaderHeight
+                }
+            }
+        }
+
         titleView.text = textEntity.title
 
         // Set up header navigation
@@ -98,6 +116,46 @@ class TextReadingFragment : Fragment() {
                 updateHeaderDisplay()
                 loadPagesForCurrentSection()
             }
+        }
+
+        // Set up swipe gesture for header navigation
+        val headerGestureDetector = GestureDetector(requireContext(), object : GestureDetector.SimpleOnGestureListener() {
+            private val SWIPE_THRESHOLD = 100
+            private val SWIPE_VELOCITY_THRESHOLD = 100
+
+            override fun onFling(e1: MotionEvent?, e2: MotionEvent, velocityX: Float, velocityY: Float): Boolean {
+                if (e1 == null) return false
+
+                val diffX = e2.x - e1.x
+                val diffY = e2.y - e1.y
+
+                if (abs(diffX) > abs(diffY) && abs(diffX) > SWIPE_THRESHOLD && abs(velocityX) > SWIPE_VELOCITY_THRESHOLD) {
+                    if (diffX > 0) {
+                        // Swipe right - go to previous section
+                        val headerSectionIndex = sectionsWithHeaders.indexOf(sections[currentSectionIndex])
+                        if (headerSectionIndex > 0) {
+                            currentSectionIndex = sections.indexOf(sectionsWithHeaders[headerSectionIndex - 1])
+                            updateHeaderDisplay()
+                            loadPagesForCurrentSection()
+                        }
+                    } else {
+                        // Swipe left - go to next section
+                        val headerSectionIndex = sectionsWithHeaders.indexOf(sections[currentSectionIndex])
+                        if (headerSectionIndex >= 0 && headerSectionIndex < sectionsWithHeaders.size - 1) {
+                            currentSectionIndex = sections.indexOf(sectionsWithHeaders[headerSectionIndex + 1])
+                            updateHeaderDisplay()
+                            loadPagesForCurrentSection()
+                        }
+                    }
+                    return true
+                }
+                return false
+            }
+        })
+
+        headerTextView.setOnTouchListener { v, event ->
+            headerGestureDetector.onTouchEvent(event)
+            false
         }
 
         // Set up page navigation

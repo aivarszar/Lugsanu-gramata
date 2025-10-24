@@ -4,12 +4,66 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+    <!-- Header navigation bar (moved to top, below app toolbar) -->
+    <LinearLayout
+        android:id="@+id/headerNavigationContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="8dp"
+        android:gravity="center_vertical"
+        android:background="@android:color/transparent"
+        android:visibility="gone">
+
+        <Button
+            android:id="@+id/prevHeaderButton"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:text="&lt;"
+            android:textSize="20sp"
+            android:textColor="?attr/colorPrimary"
+            android:textStyle="bold"
+            android:layout_marginEnd="8dp"
+            android:padding="0dp"
+            android:background="@android:color/transparent" />
+
+        <ProgressBar
+            android:id="@+id/headerProgressBar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="0dp"
+            android:layout_height="6dp"
+            android:layout_weight="1"
+            android:layout_marginEnd="8dp"
+            android:max="100"
+            android:progressTint="?attr/colorPrimary" />
+
+        <TextView
+            android:id="@+id/headerIndicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:textSize="14sp"
+            android:textColor="?attr/colorPrimary"
+            android:textStyle="bold"
+            android:text="1/5" />
+
+        <Button
+            android:id="@+id/nextHeaderButton"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:text="&gt;"
+            android:textSize="20sp"
+            android:textColor="?attr/colorPrimary"
+            android:textStyle="bold"
+            android:padding="0dp"
+            android:background="@android:color/transparent" />
+    </LinearLayout>
+
     <!-- Title / Header section (combined) - max 50% of screen -->
     <ScrollView
         android:id="@+id/headerScrollView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:maxHeight="400dp"
         android:scrollbars="vertical"
         android:background="?attr/colorPrimary"
         android:fillViewport="false">
@@ -44,60 +98,6 @@
         </LinearLayout>
     </ScrollView>
 
-    <!-- Header navigation bar -->
-    <LinearLayout
-        android:id="@+id/headerNavigationContainer"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:padding="8dp"
-        android:gravity="center_vertical"
-        android:background="?attr/colorPrimary"
-        android:visibility="gone">
-
-        <Button
-            android:id="@+id/prevHeaderButton"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:text="&lt;"
-            android:textSize="18sp"
-            android:textColor="@android:color/white"
-            android:layout_marginEnd="8dp"
-            android:minWidth="0dp"
-            android:minHeight="0dp"
-            style="?android:attr/borderlessButtonStyle" />
-
-        <ProgressBar
-            android:id="@+id/headerProgressBar"
-            style="?android:attr/progressBarStyleHorizontal"
-            android:layout_width="0dp"
-            android:layout_height="6dp"
-            android:layout_weight="1"
-            android:layout_marginEnd="8dp"
-            android:max="100"
-            android:progressTint="@android:color/white" />
-
-        <TextView
-            android:id="@+id/headerIndicator"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
-            android:textSize="12sp"
-            android:textColor="@android:color/white"
-            android:text="1/5" />
-
-        <Button
-            android:id="@+id/nextHeaderButton"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:text="&gt;"
-            android:textSize="18sp"
-            android:textColor="@android:color/white"
-            android:minWidth="0dp"
-            android:minHeight="0dp"
-            style="?android:attr/borderlessButtonStyle" />
-    </LinearLayout>
-
     <!-- Divider -->
     <View
         android:layout_width="match_parent"
@@ -119,19 +119,20 @@
         android:orientation="horizontal"
         android:padding="8dp"
         android:gravity="center_vertical"
-        android:background="#E0E0E0"
+        android:background="@android:color/transparent"
         android:visibility="gone">
 
         <Button
             android:id="@+id/prevPageButton"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:text="&lt;"
-            android:textSize="18sp"
+            android:textSize="20sp"
+            android:textColor="?attr/colorPrimary"
+            android:textStyle="bold"
             android:layout_marginEnd="8dp"
-            android:minWidth="0dp"
-            android:minHeight="0dp"
-            style="?android:attr/borderlessButtonStyle" />
+            android:padding="0dp"
+            android:background="@android:color/transparent" />
 
         <ProgressBar
             android:id="@+id/pageProgressBar"
@@ -148,18 +149,21 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
-            android:textSize="12sp"
+            android:textSize="14sp"
+            android:textColor="?attr/colorPrimary"
+            android:textStyle="bold"
             android:text="1/10" />
 
         <Button
             android:id="@+id/nextPageButton"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:text="&gt;"
-            android:textSize="18sp"
-            android:minWidth="0dp"
-            android:minHeight="0dp"
-            style="?android:attr/borderlessButtonStyle" />
+            android:textSize="20sp"
+            android:textColor="?attr/colorPrimary"
+            android:textStyle="bold"
+            android:padding="0dp"
+            android:background="@android:color/transparent" />
     </LinearLayout>
 
     <!-- Separate progress container (hidden in new design) -->

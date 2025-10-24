@@ -95,9 +95,14 @@ class TextTypesParser(private val context: Context) {
         val map = mutableMapOf<Int, String>()
 
         // Get all types with empty or null codes (these are the parent categories)
+        // Prefer longer descriptions (usually more specific) or Latvian language descriptions
         types.forEach { type ->
-            if (type.type != null && (type.code == null || type.code.isEmpty()) && !map.containsKey(type.type)) {
-                map[type.type] = type.description
+            if (type.type != null && (type.code == null || type.code.isEmpty())) {
+                val currentDesc = map[type.type]
+                // Use this description if we don't have one yet, or if it's longer (more specific)
+                if (currentDesc == null || type.description.length > currentDesc.length) {
+                    map[type.type] = type.description
+                }
             }
         }
 
