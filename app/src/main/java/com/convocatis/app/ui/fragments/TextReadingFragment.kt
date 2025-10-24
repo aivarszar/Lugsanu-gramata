@@ -84,6 +84,8 @@ class TextReadingFragment : Fragment() {
         prevPageButton = view.findViewById(R.id.prevPageButton)
         nextPageButton = view.findViewById(R.id.nextPageButton)
 
+        titleView.text = textEntity.title
+
         // Limit header section to maximum 50% of screen height
         val headerScrollView = view.findViewById<View>(R.id.headerScrollView)
         val displayMetrics = resources.displayMetrics
@@ -98,8 +100,6 @@ class TextReadingFragment : Fragment() {
                 }
             }
         }
-
-        titleView.text = textEntity.title
 
         // Set up header navigation
         prevHeaderButton.setOnClickListener {
@@ -159,8 +159,6 @@ class TextReadingFragment : Fragment() {
         })
 
         // Attach swipe to header area - navigation container, ScrollView and its children
-        val headerScrollView = view.findViewById<View>(R.id.headerScrollView)
-
         val headerTouchListener = View.OnTouchListener { v, event ->
             headerGestureDetector.onTouchEvent(event)
             android.util.Log.d("HeaderSwipe", "Touch on ${v.javaClass.simpleName}: action=${event.action}")
@@ -170,7 +168,7 @@ class TextReadingFragment : Fragment() {
         // Apply to navigation container (outside ScrollView - most reliable)
         headerNavigationContainer.setOnTouchListener(headerTouchListener)
 
-        // Also apply to ScrollView and its children for full area coverage
+        // Also apply to ScrollView and its children for full area coverage (reuse headerScrollView from above)
         headerScrollView.setOnTouchListener(headerTouchListener)
         titleView.setOnTouchListener(headerTouchListener)
         headerTextView.setOnTouchListener(headerTouchListener)
