@@ -131,7 +131,7 @@ class CategoryDropdownMenu(
             headerLayout.addView(backButton)
 
             val homeButton = ImageButton(context).apply {
-                setImageResource(android.R.drawable.ic_menu_home) // Home icon
+                setImageResource(android.R.drawable.ic_menu_mylocation) // Home/location icon
                 setBackgroundColor(Color.TRANSPARENT)
                 layoutParams = LinearLayout.LayoutParams(48, 48)
                 setOnClickListener {
