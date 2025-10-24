@@ -147,17 +147,33 @@ class TextsFragment : Fragment() {
      * Show category filter dropdown menu
      */
     fun showCategoryFilterDropdown() {
-        val dropdown = com.convocatis.app.ui.views.CategoryDropdownMenu(
-            context = requireContext(),
-            onFilterSelected = { filter ->
-                currentFilter = filter
-                saveLastFilter()
-                loadTexts()
-            }
+        // Use toolbar as anchor for dropdown
+        val toolbar = (activity as? MainActivity)?.findViewById<androidx.appcompat.widget.Toolbar>(
+            com.convocatis.app.R.id.toolbar
         )
-        dropdown.setCurrentFilter(currentFilter)
-        dropdown.show()
+        if (toolbar != null) {
+            val dropdown = com.convocatis.app.ui.views.CategoryDropdownMenu(
+                context = requireContext(),
+                anchorView = toolbar,
+                onFilterSelected = { filter ->
+                    currentFilter = filter
+                    saveLastFilter()
+                    loadTexts()
+                }
+            )
+            dropdown.setCurrentFilter(currentFilter)
+            dropdown.show()
+        }
     }
+
+
+
+
+
+
+
+
+
 
     /**
      * Restore last filter from SharedPreferences

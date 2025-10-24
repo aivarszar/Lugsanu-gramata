@@ -44,7 +44,7 @@
         </LinearLayout>
     </ScrollView>
 
-    <!-- Header navigation bar (thin, like progress bar) -->
+    <!-- Header navigation bar -->
     <LinearLayout
         android:id="@+id/headerNavigationContainer"
         android:layout_width="match_parent"
@@ -59,32 +59,40 @@
             android:id="@+id/prevHeaderButton"
             android:layout_width="32dp"
             android:layout_height="32dp"
-            android:text="&lt;&lt;"
-            android:textSize="14sp"
+            android:text="&lt;"
+            android:textSize="18sp"
             android:textColor="@android:color/white"
             android:layout_marginEnd="8dp"
             android:minWidth="0dp"
             android:minHeight="0dp"
             style="?android:attr/borderlessButtonStyle" />
 
+        <ProgressBar
+            android:id="@+id/headerProgressBar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="0dp"
+            android:layout_height="6dp"
+            android:layout_weight="1"
+            android:layout_marginEnd="8dp"
+            android:max="100"
+            android:progressTint="@android:color/white" />
+
         <TextView
             android:id="@+id/headerIndicator"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
+            android:layout_marginEnd="8dp"
             android:textSize="12sp"
             android:textColor="@android:color/white"
-            android:text="1/1" />
+            android:text="1/5" />
 
         <Button
             android:id="@+id/nextHeaderButton"
             android:layout_width="32dp"
             android:layout_height="32dp"
-            android:text="&gt;&gt;"
-            android:textSize="14sp"
+            android:text="&gt;"
+            android:textSize="18sp"
             android:textColor="@android:color/white"
-            android:layout_marginStart="8dp"
             android:minWidth="0dp"
             android:minHeight="0dp"
             style="?android:attr/borderlessButtonStyle" />
@@ -103,7 +111,7 @@
         android:layout_height="0dp"
         android:layout_weight="1" />
 
-    <!-- Page navigation bar (thin, at bottom) -->
+    <!-- Page navigation bar -->
     <LinearLayout
         android:id="@+id/pageNavigationContainer"
         android:layout_width="match_parent"
@@ -111,13 +119,14 @@
         android:orientation="horizontal"
         android:padding="8dp"
         android:gravity="center_vertical"
+        android:background="#E0E0E0"
         android:visibility="gone">
 
         <Button
             android:id="@+id/prevPageButton"
             android:layout_width="32dp"
             android:layout_height="32dp"
-            android:text="←"
+            android:text="&lt;"
             android:textSize="18sp"
             android:layout_marginEnd="8dp"
             android:minWidth="0dp"
@@ -132,25 +141,22 @@
             android:layout_weight="1"
             android:layout_marginEnd="8dp"
             android:max="100"
-            android:progressTint="?attr/colorPrimary"
-            android:visibility="gone" />
+            android:progressTint="?attr/colorPrimary" />
 
         <TextView
             android:id="@+id/pageIndicator"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="12sp"
             android:layout_marginEnd="8dp"
-            android:text="1/10"
-            android:visibility="gone" />
+            android:textSize="12sp"
+            android:text="1/10" />
 
         <Button
             android:id="@+id/nextPageButton"
             android:layout_width="32dp"
             android:layout_height="32dp"
-            android:text="→"
+            android:text="&gt;"
             android:textSize="18sp"
-            android:layout_marginStart="8dp"
             android:minWidth="0dp"
             android:minHeight="0dp"
             style="?android:attr/borderlessButtonStyle" />

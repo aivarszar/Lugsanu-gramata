@@ -28,11 +28,13 @@ class TextReadingFragment : Fragment() {
     private var currentSectionIndex = 0
 
     // Views
+    private lateinit var titleView: TextView
     private lateinit var headerTextView: TextView
     private lateinit var headerNavigationContainer: View
     private lateinit var prevHeaderButton: Button
     private lateinit var nextHeaderButton: Button
     private lateinit var headerIndicator: TextView
+    private lateinit var headerProgressBar: ProgressBar
     private lateinit var pageViewPager: ViewPager2
     private lateinit var pageProgressContainer: View
     private lateinit var pageNavigationContainer: View
@@ -64,12 +66,13 @@ class TextReadingFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_text_reading_two_level, container, false)
 
         // Initialize views
-        val titleView = view.findViewById<TextView>(R.id.titleText)
+        titleView = view.findViewById(R.id.titleText)
         headerTextView = view.findViewById(R.id.headerTextView)
         headerNavigationContainer = view.findViewById(R.id.headerNavigationContainer)
         prevHeaderButton = view.findViewById(R.id.prevHeaderButton)
         nextHeaderButton = view.findViewById(R.id.nextHeaderButton)
         headerIndicator = view.findViewById(R.id.headerIndicator)
+        headerProgressBar = view.findViewById(R.id.headerProgressBar)
         pageViewPager = view.findViewById(R.id.pageViewPager)
         pageProgressContainer = view.findViewById(R.id.pageProgressContainer)
         pageNavigationContainer = view.findViewById(R.id.pageNavigationContainer)
@@ -156,6 +159,9 @@ class TextReadingFragment : Fragment() {
         val section = sections[currentSectionIndex]
 
         if (section.headerText != null) {
+            // Hide title when header is shown
+            titleView.visibility = View.GONE
+
             headerTextView.visibility = View.VISIBLE
             // Just show plain text header, no HTML formatting
             headerTextView.text = section.headerText
@@ -168,7 +174,13 @@ class TextReadingFragment : Fragment() {
             if (headerSectionIndex >= 0) {
                 headerIndicator.text = "${headerSectionIndex + 1}/${sectionsWithHeaders.size}"
 
-                // Hide << button if at first header section, >> if at last header section
+                // Update header progress bar
+                val progress = if (sectionsWithHeaders.size > 0) {
+                    ((headerSectionIndex + 1) * 100) / sectionsWithHeaders.size
+                } else 100
+                headerProgressBar.progress = progress
+
+                // Hide < button if at first header section, > if at last header section
                 val isFirstHeaderSection = headerSectionIndex == 0
                 val isLastHeaderSection = headerSectionIndex == sectionsWithHeaders.size - 1
 
@@ -176,6 +188,9 @@ class TextReadingFragment : Fragment() {
                 nextHeaderButton.visibility = if (isLastHeaderSection) View.INVISIBLE else View.VISIBLE
             }
         } else {
+            // Show title when no header
+            titleView.visibility = View.VISIBLE
+
             headerTextView.visibility = View.GONE
             // Hide header navigation when not in a header section
             headerNavigationContainer.visibility = View.GONE
@@ -192,6 +207,8 @@ class TextReadingFragment : Fragment() {
 
         // Set up page change listener with auto-advance
         var isUserScrolling = false
+        var lastPosition = if (startAtEnd && section.pages.isNotEmpty()) section.pages.size - 1 else 0
+
         pageViewPager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
             override fun onPageScrollStateChanged(state: Int) {
                 super.onPageScrollStateChanged(state)
@@ -202,15 +219,33 @@ class TextReadingFragment : Fragment() {
                 super.onPageSelected(position)
                 updatePageIndicator(position)
 
+                // Detect swipe direction
+                val swipingForward = position > lastPosition
+                val swipingBackward = position < lastPosition
+                lastPosition = position
+
                 // Auto-advance to next section if at last page and user swiped forward
-                if (isUserScrolling && position == section.pages.size - 1 && currentSectionIndex < sections.size - 1) {
+                if (isUserScrolling && swipingForward && position == section.pages.size - 1 && currentSectionIndex < sections.size - 1) {
                     // Small delay to allow current swipe to complete
                     pageViewPager.postDelayed({
                         if (pageViewPager.currentItem == section.pages.size - 1) {
                             // Still at last page, advance to next section
                             currentSectionIndex++
                             updateHeaderDisplay()
-                            loadPagesForCurrentSection()
+                            loadPagesForCurrentSection(startAtEnd = false)
+                        }
+                    }, 300)
+                }
+
+                // Auto-advance to previous section if at first page and user swiped backward
+                if (isUserScrolling && swipingBackward && position == 0 && currentSectionIndex > 0) {
+                    // Small delay to allow current swipe to complete
+                    pageViewPager.postDelayed({
+                        if (pageViewPager.currentItem == 0) {
+                            // Still at first page, go to previous section
+                            currentSectionIndex--
+                            updateHeaderDisplay()
+                            loadPagesForCurrentSection(startAtEnd = true)
                         }
                     }, 300)
                 }

@@ -1,78 +1,63 @@
 package com.convocatis.app.ui.views
 
-import android.app.AlertDialog
 import android.content.Context
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
+import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
+import android.widget.ImageButton
 import android.widget.ListView
+import android.widget.PopupWindow
 import android.widget.TextView
+import android.widget.LinearLayout
 import com.convocatis.app.utils.TextTypesParser
 
 /**
  * Dropdown menu for hierarchical category filtering (Type -> Code)
- * Two-step process: Shows Types, then Codes for selected Type
+ * Shows as a proper dropdown with ListView
  */
 class CategoryDropdownMenu(
     private val context: Context,
+    private val anchorView: View,
     private val onFilterSelected: (TextTypesParser.CategoryFilter) -> Unit
 ) {
 
+    private var popupWindow: PopupWindow? = null
     private var currentFilter: TextTypesParser.CategoryFilter? = null
     private val parser = TextTypesParser(context)
-    private var currentDialog: AlertDialog? = null
 
     fun setCurrentFilter(filter: TextTypesParser.CategoryFilter?) {
         currentFilter = filter
     }
 
     fun show() {
-        // Dismiss any existing dialog
-        currentDialog?.dismiss()
+        if (popupWindow?.isShowing == true) {
+            popupWindow?.dismiss()
+            return
+        }
 
-        // Start with Type selection
         showTypeSelection()
     }
 
     fun dismiss() {
-        currentDialog?.dismiss()
-        currentDialog = null
+        popupWindow?.dismiss()
+        popupWindow = null
     }
 
     private fun showTypeSelection() {
         val typeDescriptions = parser.getTypeToDescriptionMap()
         val typeList = mutableListOf<Pair<Int, String>>()
 
-        // Add all types sorted by number (no "All" option)
+        // Add all types sorted by number
         typeDescriptions.keys.sorted().forEach { typeNum ->
             typeList.add(Pair(typeNum, typeDescriptions[typeNum] ?: "Type $typeNum"))
         }
 
-        val listView = ListView(context)
-        val adapter = TypeAdapter(typeList)
-        listView.adapter = adapter
-
-        listView.setOnItemClickListener { _, _, position, _ ->
-            val (typeNum, typeDesc) = typeList[position]
-
-            // Filter list immediately by Type
-            onFilterSelected(TextTypesParser.CategoryFilter(typeNum, null, typeDesc))
-
-            // Dismiss current dialog
-            currentDialog?.dismiss()
-
-            // Show codes for this type
-            showCodeSelection(typeNum, typeDesc)
-        }
-
-        currentDialog = AlertDialog.Builder(context)
-            .setTitle("Select Category")
-            .setView(listView)
-            .setNegativeButton("Cancel") { dialog, _ -> dialog.dismiss() }
-            .create()
-
-        currentDialog?.show()
+        val contentView = createDropdownView(typeList, true)
+        showPopup(contentView)
     }
 
     private fun showCodeSelection(typeNum: Int, typeDescription: String) {
@@ -80,32 +65,99 @@ class CategoryDropdownMenu(
         val codes = hierarchy[typeNum] ?: emptyList()
 
         if (codes.isEmpty()) {
-            // No subcategories - we're done
+            dismiss()
             return
         }
 
-        val codeList = codes.toMutableList()
+        val contentView = createDropdownView(codes, false, typeNum)
 
-        val listView = ListView(context)
-        val adapter = CodeAdapter(codeList)
-        listView.adapter = adapter
+        // Dismiss old popup and show new one
+        popupWindow?.dismiss()
+        showPopup(contentView)
+    }
 
-        listView.setOnItemClickListener { _, _, position, _ ->
-            val (code, description) = codeList[position]
-            onFilterSelected(TextTypesParser.CategoryFilter(typeNum, code, description))
-            currentDialog?.dismiss()
+    private fun <T> createDropdownView(items: List<T>, isTypeSelection: Boolean, typeNum: Int? = null): View {
+        val containerLayout = LinearLayout(context).apply {
+            orientation = LinearLayout.VERTICAL
+            setBackgroundColor(Color.WHITE)
+            layoutParams = ViewGroup.LayoutParams(
+                (context.resources.displayMetrics.widthPixels * 0.75).toInt(),
+                ViewGroup.LayoutParams.WRAP_CONTENT
+            )
         }
 
-        currentDialog = AlertDialog.Builder(context)
-            .setTitle("Select Subcategory")
-            .setView(listView)
-            .setNegativeButton("Back") { dialog, _ ->
-                dialog.dismiss()
-                // Type-only filter already applied
-            }
-            .create()
+        // Add close button in top-right corner
+        val headerLayout = LinearLayout(context).apply {
+            orientation = LinearLayout.HORIZONTAL
+            gravity = Gravity.END
+            setPadding(8, 8, 8, 0)
+            layoutParams = LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT,
+                LinearLayout.LayoutParams.WRAP_CONTENT
+            )
+        }
 
-        currentDialog?.show()
+        val closeButton = ImageButton(context).apply {
+            setImageResource(android.R.drawable.ic_menu_close_clear_cancel)
+            setBackgroundColor(Color.TRANSPARENT)
+            layoutParams = LinearLayout.LayoutParams(48, 48)
+            setOnClickListener { dismiss() }
+        }
+        headerLayout.addView(closeButton)
+        containerLayout.addView(headerLayout)
+
+        // Create ListView
+        val listView = ListView(context).apply {
+            layoutParams = LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT,
+                LinearLayout.LayoutParams.WRAP_CONTENT
+            )
+            dividerHeight = 1
+        }
+
+        if (isTypeSelection) {
+            @Suppress("UNCHECKED_CAST")
+            val typeList = items as List<Pair<Int, String>>
+            val adapter = TypeAdapter(typeList)
+            listView.adapter = adapter
+
+            listView.setOnItemClickListener { _, _, position, _ ->
+                val (selectedType, typeDesc) = typeList[position]
+                onFilterSelected(TextTypesParser.CategoryFilter(selectedType, null, typeDesc))
+                showCodeSelection(selectedType, typeDesc)
+            }
+        } else {
+            @Suppress("UNCHECKED_CAST")
+            val codeList = items as List<Pair<String, String>>
+            val adapter = CodeAdapter(codeList)
+            listView.adapter = adapter
+
+            listView.setOnItemClickListener { _, _, position, _ ->
+                val (code, description) = codeList[position]
+                onFilterSelected(TextTypesParser.CategoryFilter(typeNum!!, code, description))
+                dismiss()
+            }
+        }
+
+        containerLayout.addView(listView)
+        return containerLayout
+    }
+
+    private fun showPopup(contentView: View) {
+        popupWindow = PopupWindow(
+            contentView,
+            ViewGroup.LayoutParams.WRAP_CONTENT,
+            ViewGroup.LayoutParams.WRAP_CONTENT,
+            true
+        ).apply {
+            setBackgroundDrawable(ColorDrawable(Color.WHITE))
+            elevation = 8f
+            isOutsideTouchable = true
+            isFocusable = true
+
+            // Show below anchor view
+            showAsDropDown(anchorView, 0, 0, Gravity.END)
+        }
     }
 
     private inner class TypeAdapter(
@@ -121,10 +173,8 @@ class CategoryDropdownMenu(
 
             val (typeNum, description) = types[position]
             val textView = view.findViewById<TextView>(android.R.id.text1)
-
             textView.text = description
 
-            // Highlight if this is the current type
             val isSelected = currentFilter?.type == typeNum
             if (isSelected) {
                 textView.setTextColor(0xFF1976D2.toInt())
@@ -134,7 +184,7 @@ class CategoryDropdownMenu(
                 textView.setTypeface(null, android.graphics.Typeface.NORMAL)
             }
 
-            textView.setPadding(40, 32, 40, 32)
+            textView.setPadding(40, 24, 40, 24)
             textView.textSize = 16f
 
             return view
@@ -154,10 +204,8 @@ class CategoryDropdownMenu(
 
             val (code, description) = codes[position]
             val textView = view.findViewById<TextView>(android.R.id.text1)
-
             textView.text = description
 
-            // Highlight if this is the current code
             val isSelected = currentFilter?.code == code
             if (isSelected) {
                 textView.setTextColor(0xFF1976D2.toInt())
@@ -167,7 +215,7 @@ class CategoryDropdownMenu(
                 textView.setTypeface(null, android.graphics.Typeface.NORMAL)
             }
 
-            textView.setPadding(40, 32, 40, 32)
+            textView.setPadding(40, 24, 40, 24)
             textView.textSize = 16f
 
             return view
