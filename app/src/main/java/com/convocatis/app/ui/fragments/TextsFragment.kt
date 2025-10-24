@@ -4,8 +4,12 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
+import android.widget.Spinner
 import android.widget.TextView
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.convocatis.app.ConvocatisApplication
@@ -13,16 +17,19 @@ import com.convocatis.app.MainActivity
 import com.convocatis.app.R
 import com.convocatis.app.database.entity.TextEntity
 import com.convocatis.app.utils.FavoritesManager
+import kotlinx.coroutines.launch
 
 class TextsFragment : Fragment() {
 
     private lateinit var recyclerView: RecyclerView
     private lateinit var adapter: TextsAdapter
     private lateinit var favoritesManager: FavoritesManager
+    private lateinit var categorySpinner: Spinner
 
     private var sortAscending = true
     private var showOnlyFavorites = false
     private var searchTerm = ""
+    private var selectedCategoryCode: String? = null
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -33,6 +40,7 @@ class TextsFragment : Fragment() {
 
         favoritesManager = FavoritesManager(requireContext())
 
+        categorySpinner = view.findViewById(R.id.categoryCodeSpinner)
         recyclerView = view.findViewById(R.id.recyclerView)
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
 
@@ -47,6 +55,9 @@ class TextsFragment : Fragment() {
             }
         )
         recyclerView.adapter = adapter
+
+        // Setup category spinner
+        setupCategorySpinner()
 
         return view
     }
@@ -82,6 +93,11 @@ class TextsFragment : Fragment() {
                 }
             }
 
+            // Filter by category code
+            if (selectedCategoryCode != null && selectedCategoryCode != "all") {
+                filteredTexts = filteredTexts.filter { it.categoryCode == selectedCategoryCode }
+            }
+
             // Filter by favorites
             if (showOnlyFavorites) {
                 val favoriteRids = favoritesManager.getFavorites()
@@ -115,6 +131,41 @@ class TextsFragment : Fragment() {
 
     fun getSortAscending() = sortAscending
     fun getShowOnlyFavorites() = showOnlyFavorites
+
+    private fun setupCategorySpinner() {
+        lifecycleScope.launch {
+            val database = ConvocatisApplication.getInstance().database
+            val codes = database.textDao().getUniqueCategoryCodes()
+
+            // Create spinner items with "All" option
+            val spinnerItems = mutableListOf("All")
+            spinnerItems.addAll(codes.map { "Type $it" })
+
+            val spinnerAdapter = ArrayAdapter(
+                requireContext(),
+                android.R.layout.simple_spinner_item,
+                spinnerItems
+            )
+            spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+
+            categorySpinner.adapter = spinnerAdapter
+            categorySpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+                override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+                    selectedCategoryCode = if (position == 0) {
+                        "all"
+                    } else {
+                        codes[position - 1]
+                    }
+                    loadTexts()
+                }
+
+                override fun onNothingSelected(parent: AdapterView<*>?) {
+                    selectedCategoryCode = "all"
+                    loadTexts()
+                }
+            }
+        }
+    }
 }
 
 class TextsAdapter(
