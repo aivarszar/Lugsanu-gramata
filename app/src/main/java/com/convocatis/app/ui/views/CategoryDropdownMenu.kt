@@ -102,21 +102,21 @@ class CategoryDropdownMenu(
             )
         }
 
-        // Home button (reset to "All")
-        val homeButton = ImageButton(context).apply {
-            setImageResource(android.R.drawable.ic_menu_revert) // Home icon
-            setBackgroundColor(Color.TRANSPARENT)
-            layoutParams = LinearLayout.LayoutParams(48, 48)
-            setOnClickListener {
-                currentTypeNum = null
-                onFilterSelected(TextTypesParser.CategoryFilter.all())
-                dismiss()
+        if (isTypeSelection) {
+            // Type selection view: only home/back button to reset to "All"
+            val homeButton = ImageButton(context).apply {
+                setImageResource(android.R.drawable.ic_menu_revert) // Back/home icon
+                setBackgroundColor(Color.TRANSPARENT)
+                layoutParams = LinearLayout.LayoutParams(48, 48)
+                setOnClickListener {
+                    currentTypeNum = null
+                    onFilterSelected(TextTypesParser.CategoryFilter.all())
+                    dismiss()
+                }
             }
-        }
-        headerLayout.addView(homeButton)
-
-        // Back button (go back to type selection from code selection)
-        if (!isTypeSelection) {
+            headerLayout.addView(homeButton)
+        } else {
+            // Code selection view: back button (to type selection) + home button (to All)
             val backButton = ImageButton(context).apply {
                 setImageResource(android.R.drawable.ic_menu_revert) // Back icon
                 setBackgroundColor(Color.TRANSPARENT)
@@ -129,6 +129,18 @@ class CategoryDropdownMenu(
                 }
             }
             headerLayout.addView(backButton)
+
+            val homeButton = ImageButton(context).apply {
+                setImageResource(android.R.drawable.ic_menu_home) // Home icon
+                setBackgroundColor(Color.TRANSPARENT)
+                layoutParams = LinearLayout.LayoutParams(48, 48)
+                setOnClickListener {
+                    currentTypeNum = null
+                    onFilterSelected(TextTypesParser.CategoryFilter.all())
+                    dismiss()
+                }
+            }
+            headerLayout.addView(homeButton)
         }
 
         // Spacer to push close button to right

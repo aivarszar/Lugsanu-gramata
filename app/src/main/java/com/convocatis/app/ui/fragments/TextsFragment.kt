@@ -337,21 +337,30 @@ class TextsAdapter(
         fun bind(text: TextEntity) {
             titleView.text = text.title
 
-            // Set favorite icon (dot or star)
-            val isFavorite = favoritesManager.isFavorite(text.rid)
-            favoriteIcon.text = if (isFavorite) "★" else "●"
-            favoriteIcon.setTextColor(
-                if (isFavorite) 0xFF000000.toInt() // Black star
-                else 0xFF999999.toInt() // Gray dot
-            )
+            // Don't show favorite icon for synthetic advertisement entries (negative RID)
+            if (text.rid < 0) {
+                favoriteIcon.visibility = View.GONE
+                favoriteIcon.isClickable = false
+            } else {
+                favoriteIcon.visibility = View.VISIBLE
+                favoriteIcon.isClickable = true
+
+                // Set favorite icon (dot or star)
+                val isFavorite = favoritesManager.isFavorite(text.rid)
+                favoriteIcon.text = if (isFavorite) "★" else "●"
+                favoriteIcon.setTextColor(
+                    if (isFavorite) 0xFF000000.toInt() // Black star
+                    else 0xFF999999.toInt() // Gray dot
+                )
+
+                // Click on star -> toggle favorite
+                favoriteIcon.setOnClickListener {
+                    onFavoriteClick(text)
+                }
+            }
 
             // Click on item -> open text
             itemView.setOnClickListener { onItemClick(text) }
-
-            // Click on star -> toggle favorite
-            favoriteIcon.setOnClickListener {
-                onFavoriteClick(text)
-            }
         }
     }
 }

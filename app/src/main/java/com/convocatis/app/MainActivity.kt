@@ -3,18 +3,12 @@ package com.convocatis.app
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.Toast
-import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.lifecycleScope
 import com.convocatis.app.database.entity.TextEntity
 import com.convocatis.app.ui.fragments.TextReadingFragment
 import com.convocatis.app.ui.fragments.TextsFragment
-import com.convocatis.app.utils.DataImporter
-import com.convocatis.app.utils.FavoritesManager
-import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {
 
@@ -129,46 +123,7 @@ class MainActivity : AppCompatActivity() {
                 updateMenuIcons()
                 true
             }
-            R.id.action_reimport_data -> {
-                showReimportConfirmationDialog()
-                true
-            }
             else -> super.onOptionsItemSelected(item)
-        }
-    }
-
-    private fun showReimportConfirmationDialog() {
-        AlertDialog.Builder(this)
-            .setTitle("Reimport Data?")
-            .setMessage("This will clear and re-import all texts from XML files. Continue?")
-            .setPositiveButton("Yes") { _, _ ->
-                reimportData()
-            }
-            .setNegativeButton("Cancel", null)
-            .show()
-    }
-
-    private fun reimportData() {
-        lifecycleScope.launch {
-            try {
-                Toast.makeText(this@MainActivity, "Importing data...", Toast.LENGTH_SHORT).show()
-
-                val importer = DataImporter(this@MainActivity)
-                importer.clearImportFlag()
-                importer.importAllData()
-
-                // Re-initialize default favorites
-                val favoritesManager = FavoritesManager(this@MainActivity)
-                favoritesManager.initializeDefaultFavorites()
-
-                Toast.makeText(this@MainActivity, "Data imported successfully!", Toast.LENGTH_LONG).show()
-
-                // Refresh the current fragment if it's TextsFragment
-                val textsFragment = currentFragment as? TextsFragment
-                textsFragment?.refreshData()
-            } catch (e: Exception) {
-                Toast.makeText(this@MainActivity, "Import failed: ${e.message}", Toast.LENGTH_LONG).show()
-            }
         }
     }
 

@@ -22,9 +22,4 @@
         android:icon="@android:drawable/ic_menu_sort_by_size"
         android:title="@string/filter_category"
         app:showAsAction="always" />
-    <item
-        android:id="@+id/action_reimport_data"
-        android:icon="@android:drawable/ic_menu_rotate"
-        android:title="Debug: Reimport Data"
-        app:showAsAction="never" />
 </menu>

@@ -369,20 +369,38 @@ class TextReadingFragment : Fragment() {
                 val diffX = e2.x - e1.x
                 val currentPos = pageViewPager.currentItem
 
-                // Check if swiping left (forward) at last page - simulate next button click
+                // Check if swiping left (forward) at last page - use SAME logic as header swipe
                 if (diffX < -100 && currentPos == section.pages.size - 1) {
-                    android.util.Log.d("TextReading", "Swipe forward from last page - triggering next button")
-                    // Simulate next button click by calling its handler
-                    nextPageButton.performClick()
-                    return true
+                    android.util.Log.d("TextReading", "Swipe forward from last page")
+
+                    // Use same logic as setupHeaderSwipeGesture() for consistency
+                    val headerSectionIndex = sectionsWithHeaders.indexOf(sections[currentSectionIndex])
+                    android.util.Log.d("TextReading", "headerSectionIndex=$headerSectionIndex, total=${sectionsWithHeaders.size}")
+
+                    if (headerSectionIndex >= 0 && headerSectionIndex < sectionsWithHeaders.size - 1) {
+                        currentSectionIndex = sections.indexOf(sectionsWithHeaders[headerSectionIndex + 1])
+                        android.util.Log.d("TextReading", "Moving to next header section at index $currentSectionIndex")
+                        updateHeaderDisplay()
+                        loadPagesForCurrentSection()
+                        return true
+                    }
                 }
 
-                // Check if swiping right (backward) at first page - simulate prev button click
+                // Check if swiping right (backward) at first page - use SAME logic as header swipe
                 if (diffX > 100 && currentPos == 0) {
-                    android.util.Log.d("TextReading", "Swipe backward from first page - triggering prev button")
-                    // Simulate prev button click by calling its handler
-                    prevPageButton.performClick()
-                    return true
+                    android.util.Log.d("TextReading", "Swipe backward from first page")
+
+                    // Use same logic as setupHeaderSwipeGesture() for consistency
+                    val headerSectionIndex = sectionsWithHeaders.indexOf(sections[currentSectionIndex])
+                    android.util.Log.d("TextReading", "headerSectionIndex=$headerSectionIndex")
+
+                    if (headerSectionIndex > 0) {
+                        currentSectionIndex = sections.indexOf(sectionsWithHeaders[headerSectionIndex - 1])
+                        android.util.Log.d("TextReading", "Moving to previous header section at index $currentSectionIndex")
+                        updateHeaderDisplay()
+                        loadPagesForCurrentSection(startAtEnd = true)
+                        return true
+                    }
                 }
 
                 return false
