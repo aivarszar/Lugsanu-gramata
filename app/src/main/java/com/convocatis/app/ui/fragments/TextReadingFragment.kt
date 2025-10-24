@@ -29,6 +29,9 @@ class TextReadingFragment : Fragment() {
     private lateinit var staticHeader: TextView
     private lateinit var pageIndicator: TextView
     private lateinit var pageProgressBar: ProgressBar
+    private lateinit var navigationContainer: View
+    private lateinit var prevPageButton: Button
+    private lateinit var nextPageButton: Button
     private lateinit var repetitionProgressContainer: View
     private lateinit var repetitionIndicator: TextView
     private lateinit var repetitionProgressBar: ProgressBar
@@ -61,12 +64,30 @@ class TextReadingFragment : Fragment() {
         staticHeader = view.findViewById(R.id.staticHeader)
         pageIndicator = view.findViewById(R.id.pageIndicator)
         pageProgressBar = view.findViewById(R.id.pageProgressBar)
+        navigationContainer = view.findViewById(R.id.navigationContainer)
+        prevPageButton = view.findViewById(R.id.prevPageButton)
+        nextPageButton = view.findViewById(R.id.nextPageButton)
         repetitionProgressContainer = view.findViewById(R.id.repetitionProgressContainer)
         repetitionIndicator = view.findViewById(R.id.repetitionIndicator)
         repetitionProgressBar = view.findViewById(R.id.repetitionProgressBar)
         nextRepetitionButton = view.findViewById(R.id.nextRepetitionButton)
 
         titleView.text = textEntity.title
+
+        // Set up navigation buttons
+        prevPageButton.setOnClickListener {
+            val currentItem = viewPager.currentItem
+            if (currentItem > 0) {
+                viewPager.currentItem = currentItem - 1
+            }
+        }
+
+        nextPageButton.setOnClickListener {
+            val currentItem = viewPager.currentItem
+            if (currentItem < pages.size - 1) {
+                viewPager.currentItem = currentItem + 1
+            }
+        }
 
         // Set up next repetition button
         nextRepetitionButton.setOnClickListener {
@@ -115,6 +136,13 @@ class TextReadingFragment : Fragment() {
             (page.pageNumber * 100) / page.totalPages
         } else 100
         pageProgressBar.progress = pageProgress
+
+        // Show/hide navigation arrows if multiple pages
+        navigationContainer.visibility = if (pages.size > 1) View.VISIBLE else View.GONE
+
+        // Enable/disable prev/next buttons based on position
+        prevPageButton.isEnabled = position > 0
+        nextPageButton.isEnabled = position < pages.size - 1
 
         // Show/hide and update static header
         if (page.staticHeader != null) {
