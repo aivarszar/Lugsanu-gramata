@@ -50,72 +50,126 @@ class TextContentParser(
                 if (rawPage.isNotBlank()) {
                     val trimmed = rawPage.trim()
 
-                    // First, check if this raw page contains a header (>>...<<)
+                    // Check if this raw page contains a header (>>...<<)
                     val headerMatch = Regex(""">>(.+?)<<""", RegexOption.DOT_MATCHES_ALL).find(trimmed)
-                    val headerText = headerMatch?.groupValues?.get(1)?.trim()
 
-                    // Remove the header from the content to process the rest
-                    val contentWithoutHeader = if (headerMatch != null) {
-                        trimmed.replace(headerMatch.value, "").trim()
-                    } else {
-                        trimmed
-                    }
+                    if (headerMatch != null) {
+                        // This page contains a header
+                        val headerText = headerMatch.groupValues[1].trim()
+                        val headerStart = headerMatch.range.first
+                        val headerEnd = headerMatch.range.last + 1
 
-                    // Check if the remaining content (after header) starts with a repetition pattern
-                    val repetitionMatch = Regex("""^\|?(\d+)\^(.+?)$""", RegexOption.DOT_MATCHES_ALL).find(contentWithoutHeader)
+                        // Content BEFORE header
+                        val contentBeforeHeader = trimmed.substring(0, headerStart).trim()
 
-                    if (repetitionMatch != null) {
-                        // This page has repetitions
-                        val count = repetitionMatch.groupValues[1].toIntOrNull() ?: 1
-                        val repeatedContent = repetitionMatch.groupValues[2]
-
-                        // Process the repeated content once
-                        val processedContent = if (repeatedContent.startsWith("%")) {
-                            resolveReferences(repeatedContent, depth = 0)
-                        } else {
-                            processPage(repeatedContent, depth = 0)
-                        }
-
-                        // Process any remaining content in the page (after the repetition)
-                        val remainingContent = contentWithoutHeader.replaceFirst(
-                            Regex("""^\|?(\d+)\^(.+?)(?=\||$)""", RegexOption.DOT_MATCHES_ALL),
-                            ""
-                        ).trim()
-
-                        val processedRemaining = if (remainingContent.isNotEmpty()) {
-                            processPage(remainingContent, depth = 0)
+                        // Content AFTER header
+                        val contentAfterHeader = if (headerEnd < trimmed.length) {
+                            trimmed.substring(headerEnd).trim()
                         } else ""
 
-                        // Create N pages, one for each repetition
-                        repeat(count) { index ->
-                            // Combine repeated content with remaining content
-                            val combinedContent = if (processedRemaining.isNotEmpty()) {
-                                "$processedContent<br><br>$processedRemaining"
-                            } else {
-                                processedContent
-                            }
-
+                        // If there's content before header, create a separate page for it
+                        if (contentBeforeHeader.isNotEmpty()) {
+                            val processed = processPage(contentBeforeHeader, depth = 0)
                             allPages.add(
                                 Page(
                                     pageNumber = globalPageNumber++,
-                                    content = combinedContent,
-                                    totalPages = 0, // Will update later
-                                    staticHeader = headerText, // Use header from this page as static
-                                    repetitionIndex = index + 1,
-                                    totalRepetitions = count
+                                    content = processed,
+                                    totalPages = 0
+                                )
+                            )
+                        }
+
+                        // Now handle the header + content after it
+                        // Check if content after header has repetitions
+                        val repetitionMatch = Regex("""^\s*(\d+)\^(.+?)$""", RegexOption.DOT_MATCHES_ALL)
+                            .find(contentAfterHeader)
+
+                        if (repetitionMatch != null) {
+                            // Header with repetitions
+                            val count = repetitionMatch.groupValues[1].toIntOrNull() ?: 1
+                            val repeatedContent = repetitionMatch.groupValues[2]
+
+                            // Process the repeated content
+                            val processedContent = if (repeatedContent.startsWith("%")) {
+                                resolveReferences(repeatedContent, depth = 0)
+                            } else {
+                                processPage(repeatedContent, depth = 0)
+                            }
+
+                            // Create N pages with static header
+                            repeat(count) { index ->
+                                allPages.add(
+                                    Page(
+                                        pageNumber = globalPageNumber++,
+                                        content = processedContent,
+                                        totalPages = 0,
+                                        staticHeader = headerText,
+                                        repetitionIndex = index + 1,
+                                        totalRepetitions = count
+                                    )
+                                )
+                            }
+                        } else if (contentAfterHeader.isNotEmpty()) {
+                            // Header with regular content (no repetitions)
+                            val processed = processPage(contentAfterHeader, depth = 0)
+                            allPages.add(
+                                Page(
+                                    pageNumber = globalPageNumber++,
+                                    content = processed,
+                                    totalPages = 0,
+                                    staticHeader = headerText,
+                                    repetitionIndex = null,
+                                    totalRepetitions = null
+                                )
+                            )
+                        } else {
+                            // Header only, no content after
+                            allPages.add(
+                                Page(
+                                    pageNumber = globalPageNumber++,
+                                    content = "<h2>$headerText</h2>",
+                                    totalPages = 0
                                 )
                             )
                         }
                     } else {
-                        // Regular page, no repetitions - process everything including header
-                        val processed = processPage(trimmed, depth = 0)
-                        allPages.add(
-                            Page(
-                                pageNumber = globalPageNumber++,
-                                content = processed,
-                                totalPages = 0 // Will update later
+                        // No header - check if it's a repetition or regular page
+                        val repetitionMatch = Regex("""^(\d+)\^(.+?)$""", RegexOption.DOT_MATCHES_ALL).find(trimmed)
+
+                        if (repetitionMatch != null) {
+                            // Repetition without header
+                            val count = repetitionMatch.groupValues[1].toIntOrNull() ?: 1
+                            val repeatedContent = repetitionMatch.groupValues[2]
+
+                            val processedContent = if (repeatedContent.startsWith("%")) {
+                                resolveReferences(repeatedContent, depth = 0)
+                            } else {
+                                processPage(repeatedContent, depth = 0)
+                            }
+
+                            repeat(count) { index ->
+                                allPages.add(
+                                    Page(
+                                        pageNumber = globalPageNumber++,
+                                        content = processedContent,
+                                        totalPages = 0,
+                                        staticHeader = null,
+                                        repetitionIndex = index + 1,
+                                        totalRepetitions = count
+                                    )
+                                )
+                            }
+                        } else {
+                            // Regular page, no header, no repetitions
+                            val processed = processPage(trimmed, depth = 0)
+                            allPages.add(
+                                Page(
+                                    pageNumber = globalPageNumber++,
+                                    content = processed,
+                                    totalPages = 0
+                                )
                             )
-                        )
+                        }
                     }
                 }
             }
