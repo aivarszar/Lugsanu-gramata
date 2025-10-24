@@ -17,7 +17,7 @@ class DataImporter(private val context: Context) {
 
     companion object {
         private const val TAG = "DataImporter"
-        private const val KEY_DATA_IMPORTED = "data_imported_v1"
+        private const val KEY_DATA_IMPORTED = "data_imported_v2"  // v2: Fixed --delete- filter with trim()
     }
 
     /**

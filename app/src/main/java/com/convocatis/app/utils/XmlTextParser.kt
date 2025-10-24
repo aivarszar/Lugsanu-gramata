@@ -76,11 +76,11 @@ class XmlTextParser(private val context: Context) {
 
                                 // Skip texts marked for deletion
                                 if (rid != null && description != null && string != null &&
-                                    !description.startsWith("--delete-", ignoreCase = true)) {
+                                    !description.trim().startsWith("--delete-", ignoreCase = true)) {
                                     texts.add(
                                         TextEntity(
                                             rid = rid,
-                                            title = description,
+                                            title = description.trim(),
                                             rawContent = string,
                                             categoryType = textType,
                                             categoryCode = code,
@@ -160,11 +160,11 @@ class ImprovedXmlTextParser(private val context: Context) {
 
                                 // Skip texts marked for deletion
                                 if (rid != null && description != null && string != null &&
-                                    !description.startsWith("--delete-", ignoreCase = true)) {
+                                    !description.trim().startsWith("--delete-", ignoreCase = true)) {
                                     texts.add(
                                         TextEntity(
                                             rid = rid,
-                                            title = description,
+                                            title = description.trim(),
                                             rawContent = string,
                                             categoryType = textType,
                                             categoryCode = code,

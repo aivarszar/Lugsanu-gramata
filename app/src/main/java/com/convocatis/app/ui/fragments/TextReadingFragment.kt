@@ -123,11 +123,23 @@ class TextReadingFragment : Fragment() {
             val currentItem = pageViewPager.currentItem
             if (currentItem > 0) {
                 pageViewPager.currentItem = currentItem - 1
-            } else if (currentSectionIndex > 0) {
-                // At first page, go to previous section
-                currentSectionIndex--
-                updateHeaderDisplay()
-                loadPagesForCurrentSection(startAtEnd = true)
+            } else {
+                // At first page, go to previous section with header (if headers exist)
+                if (sectionsWithHeaders.isNotEmpty()) {
+                    val currentSection = sections[currentSectionIndex]
+                    val currentHeaderSectionIndex = sectionsWithHeaders.indexOf(currentSection)
+                    if (currentHeaderSectionIndex > 0) {
+                        val prevHeaderSection = sectionsWithHeaders[currentHeaderSectionIndex - 1]
+                        currentSectionIndex = sections.indexOf(prevHeaderSection)
+                        updateHeaderDisplay()
+                        loadPagesForCurrentSection(startAtEnd = true)
+                    }
+                } else if (currentSectionIndex > 0) {
+                    // No headers, just go to previous section
+                    currentSectionIndex--
+                    updateHeaderDisplay()
+                    loadPagesForCurrentSection(startAtEnd = true)
+                }
             }
         }
 
@@ -136,11 +148,22 @@ class TextReadingFragment : Fragment() {
             val currentItem = pageViewPager.currentItem
             if (currentItem < currentSection.pages.size - 1) {
                 pageViewPager.currentItem = currentItem + 1
-            } else if (currentSectionIndex < sections.size - 1) {
-                // At last page, go to next section
-                currentSectionIndex++
-                updateHeaderDisplay()
-                loadPagesForCurrentSection()
+            } else {
+                // At last page, go to next section with header (if headers exist)
+                if (sectionsWithHeaders.isNotEmpty()) {
+                    val currentHeaderSectionIndex = sectionsWithHeaders.indexOf(currentSection)
+                    if (currentHeaderSectionIndex >= 0 && currentHeaderSectionIndex < sectionsWithHeaders.size - 1) {
+                        val nextHeaderSection = sectionsWithHeaders[currentHeaderSectionIndex + 1]
+                        currentSectionIndex = sections.indexOf(nextHeaderSection)
+                        updateHeaderDisplay()
+                        loadPagesForCurrentSection()
+                    }
+                } else if (currentSectionIndex < sections.size - 1) {
+                    // No headers, just go to next section
+                    currentSectionIndex++
+                    updateHeaderDisplay()
+                    loadPagesForCurrentSection()
+                }
             }
         }
 
@@ -342,21 +365,63 @@ class TextReadingFragment : Fragment() {
                 val currentPos = pageViewPager.currentItem
 
                 // Check if swiping left (forward) at last page
-                if (diffX < -100 && currentPos == section.pages.size - 1 && currentSectionIndex < sections.size - 1) {
-                    android.util.Log.d("TextReading", "Swipe forward from last page, advancing section")
-                    currentSectionIndex++
-                    updateHeaderDisplay()
-                    loadPagesForCurrentSection(startAtEnd = false)
-                    return true
+                if (diffX < -100 && currentPos == section.pages.size - 1) {
+                    android.util.Log.d("TextReading", "Swipe forward from last page")
+
+                    // If we have headers, find the next section WITH a header
+                    if (sectionsWithHeaders.isNotEmpty()) {
+                        val currentSection = sections[currentSectionIndex]
+                        val currentHeaderSectionIndex = sectionsWithHeaders.indexOf(currentSection)
+
+                        android.util.Log.d("TextReading", "Current section has header: ${currentSection.headerText != null}, headerSectionIndex=$currentHeaderSectionIndex")
+
+                        if (currentHeaderSectionIndex >= 0 && currentHeaderSectionIndex < sectionsWithHeaders.size - 1) {
+                            // Move to next section with header
+                            val nextHeaderSection = sectionsWithHeaders[currentHeaderSectionIndex + 1]
+                            currentSectionIndex = sections.indexOf(nextHeaderSection)
+                            android.util.Log.d("TextReading", "Moving to next header section at index $currentSectionIndex")
+                            updateHeaderDisplay()
+                            loadPagesForCurrentSection(startAtEnd = false)
+                            return true
+                        }
+                    } else if (currentSectionIndex < sections.size - 1) {
+                        // No headers at all, just move to next section
+                        currentSectionIndex++
+                        android.util.Log.d("TextReading", "No headers, moving to next section")
+                        updateHeaderDisplay()
+                        loadPagesForCurrentSection(startAtEnd = false)
+                        return true
+                    }
                 }
 
                 // Check if swiping right (backward) at first page
-                if (diffX > 100 && currentPos == 0 && currentSectionIndex > 0) {
-                    android.util.Log.d("TextReading", "Swipe backward from first page, going to previous section")
-                    currentSectionIndex--
-                    updateHeaderDisplay()
-                    loadPagesForCurrentSection(startAtEnd = true)
-                    return true
+                if (diffX > 100 && currentPos == 0) {
+                    android.util.Log.d("TextReading", "Swipe backward from first page")
+
+                    // If we have headers, find the previous section WITH a header
+                    if (sectionsWithHeaders.isNotEmpty()) {
+                        val currentSection = sections[currentSectionIndex]
+                        val currentHeaderSectionIndex = sectionsWithHeaders.indexOf(currentSection)
+
+                        android.util.Log.d("TextReading", "Current section has header: ${currentSection.headerText != null}, headerSectionIndex=$currentHeaderSectionIndex")
+
+                        if (currentHeaderSectionIndex > 0) {
+                            // Move to previous section with header
+                            val prevHeaderSection = sectionsWithHeaders[currentHeaderSectionIndex - 1]
+                            currentSectionIndex = sections.indexOf(prevHeaderSection)
+                            android.util.Log.d("TextReading", "Moving to previous header section at index $currentSectionIndex")
+                            updateHeaderDisplay()
+                            loadPagesForCurrentSection(startAtEnd = true)
+                            return true
+                        }
+                    } else if (currentSectionIndex > 0) {
+                        // No headers at all, just move to previous section
+                        currentSectionIndex--
+                        android.util.Log.d("TextReading", "No headers, moving to previous section")
+                        updateHeaderDisplay()
+                        loadPagesForCurrentSection(startAtEnd = true)
+                        return true
+                    }
                 }
 
                 return false

@@ -6,6 +6,7 @@ import android.content.SharedPreferences
 import android.util.Log
 import com.convocatis.app.database.AppDatabase
 import com.convocatis.app.utils.DataImporter
+import com.convocatis.app.utils.FavoritesManager
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
@@ -30,6 +31,10 @@ class ConvocatisApplication : Application() {
 
         // Import initial data from XML files on first launch
         importInitialDataIfNeeded()
+
+        // Initialize default favorites (adds advertisement entry)
+        val favoritesManager = FavoritesManager(this)
+        favoritesManager.initializeDefaultFavorites()
     }
 
     private fun importInitialDataIfNeeded() {

@@ -17,6 +17,8 @@ class FavoritesManager(context: Context) {
     companion object {
         private const val PREFS_NAME = "favorites"
         private const val KEY_FAVORITES = "favorite_rids"
+        private const val KEY_DEFAULTS_INITIALIZED = "defaults_initialized"
+        private const val ADVERTISEMENT_RID = 999999L
     }
 
     /**
@@ -75,5 +77,20 @@ class FavoritesManager(context: Context) {
     private fun saveFavorites(favorites: Set<Long>) {
         val favoritesString = favorites.joinToString(",")
         prefs.edit().putString(KEY_FAVORITES, favoritesString).apply()
+    }
+
+    /**
+     * Initialize default favorites (call once on first app launch)
+     * Adds the advertisement/info entry (RID 999999) as a default favorite
+     */
+    fun initializeDefaultFavorites() {
+        val defaultsInitialized = prefs.getBoolean(KEY_DEFAULTS_INITIALIZED, false)
+        if (!defaultsInitialized) {
+            // Add advertisement entry as default favorite
+            addFavorite(ADVERTISEMENT_RID)
+
+            // Mark defaults as initialized
+            prefs.edit().putBoolean(KEY_DEFAULTS_INITIALIZED, true).apply()
+        }
     }
 }
