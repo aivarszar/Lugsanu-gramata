@@ -87,14 +87,14 @@ class TextsFragment : Fragment() {
 
         val database = ConvocatisApplication.getInstance().database
         database.textDao().getAllTexts().observe(viewLifecycleOwner) { allTexts ->
-            var filteredTexts = allTexts
+            var filteredTexts = allTexts.toMutableList()
 
             // Filter by search term
             if (searchTerm.isNotEmpty()) {
                 filteredTexts = filteredTexts.filter {
                     it.title.contains(searchTerm, ignoreCase = true) ||
                     it.rawContent.contains(searchTerm, ignoreCase = true)
-                }
+                }.toMutableList()
             }
 
             // Filter by category (hierarchical: Type and/or Code)
@@ -103,11 +103,11 @@ class TextsFragment : Fragment() {
                 currentFilter.type != null && currentFilter.code != null -> {
                     filteredTexts.filter {
                         it.categoryType == currentFilter.type && it.categoryCode == currentFilter.code
-                    }
+                    }.toMutableList()
                 }
                 // Filter by Type only
                 currentFilter.type != null -> {
-                    filteredTexts.filter { it.categoryType == currentFilter.type }
+                    filteredTexts.filter { it.categoryType == currentFilter.type }.toMutableList()
                 }
                 // No filter (show all)
                 else -> filteredTexts
@@ -115,18 +115,114 @@ class TextsFragment : Fragment() {
 
             // Sort alphabetically
             filteredTexts = if (sortAscending) {
-                filteredTexts.sortedBy { it.title }
+                filteredTexts.sortedBy { it.title }.toMutableList()
             } else {
-                filteredTexts.sortedByDescending { it.title }
+                filteredTexts.sortedByDescending { it.title }.toMutableList()
             }
 
             // If favorites filter is ON, sort favorites to top (all texts still visible)
             if (showOnlyFavorites) {
                 val favoriteRids = favoritesManager.getFavorites()
-                filteredTexts = filteredTexts.sortedByDescending { favoriteRids.contains(it.rid) }
+                filteredTexts = filteredTexts.sortedByDescending { favoriteRids.contains(it.rid) }.toMutableList()
+            }
+
+            // Add synthetic advertisement entries at the top (always shown, regardless of filters)
+            // Only add if search term is empty (so user can search without seeing ads)
+            if (searchTerm.isEmpty()) {
+                val adEntryLv = createAdvertisementEntry("lv")
+                val adEntryEn = createAdvertisementEntry("en")
+
+                // Insert at beginning
+                filteredTexts.add(0, adEntryLv)
+                filteredTexts.add(1, adEntryEn)
             }
 
             adapter.submitList(filteredTexts)
+        }
+    }
+
+    /**
+     * Create synthetic advertisement entry
+     */
+    private fun createAdvertisementEntry(languageCode: String): TextEntity {
+        return if (languageCode == "lv") {
+            TextEntity(
+                rid = -1L, // Negative RID to avoid conflicts
+                title = "⭐ Informācija un atgriezeniskā saite",
+                rawContent = """
+                    >>Sveicināti Convocatis!<<
+
+                    Ja vēlies šādu programmu savam pasākumam, vai tev ir kādi ieteikumi vai problēmas ar šo programmu, raksti e-pastu:
+
+                    <a href="mailto:aivarszar@gmail.com"><b>aivarszar@gmail.com</b></a>
+
+                    ---
+
+                    <h3>Par šo programmu</h3>
+
+                    Convocatis ir radīta, lai palīdzētu organizēt un lasīt lūgšanu un dziesmu tekstus pasākumos.
+
+                    <ul>
+                      <li>✅ Vienkārša navigācija</li>
+                      <li>✅ Tekstu meklēšana un šķirošana</li>
+                      <li>✅ Izlūkotāko tekstu saglabāšana</li>
+                      <li>✅ Daudzu lapu un atkārtošanas atbalsts</li>
+                    </ul>
+
+                    <h3>Kā var palīdzēt?</h3>
+
+                    <ul>
+                      <li>💬 Nosūti savus ieteikumus</li>
+                      <li>🐛 Ziņo par problēmām</li>
+                      <li>⭐ Novērtē aplikāciju</li>
+                      <li>📤 Dalies ar draugiem</li>
+                    </ul>
+
+                    <p><small>Versija 1.0 | Izstrādāts ar ❤️ Latvijā</small></p>
+                """.trimIndent(),
+                categoryType = 0,
+                categoryCode = null,
+                languageCode = "lv"
+            )
+        } else {
+            TextEntity(
+                rid = -2L, // Different negative RID
+                title = "⭐ Information and Feedback",
+                rawContent = """
+                    >>Welcome to Convocatis!<<
+
+                    If you want such a program for your event, or you have any suggestions or problems with this program, write an email to:
+
+                    <a href="mailto:aivarszar@gmail.com"><b>aivarszar@gmail.com</b></a>
+
+                    ---
+
+                    <h3>About this app</h3>
+
+                    Convocatis is designed to help organize and read prayer and song texts at events.
+
+                    <ul>
+                      <li>✅ Simple navigation</li>
+                      <li>✅ Text search and sorting</li>
+                      <li>✅ Save favorite texts</li>
+                      <li>✅ Multi-page and repetition support</li>
+                    </ul>
+
+                    <h3>How can you help?</h3>
+
+                    <ul>
+                      <li>💬 Send your suggestions</li>
+                      <li>🐛 Report problems</li>
+                      <li>⭐ Rate the app</li>
+                      <li>📤 Share with friends</li>
+                    </ul>
+
+                    <p><small>Version 1.0 | Made with ❤️ in Latvia</small></p>
+                """.trimIndent(),
+                categoryType = 0,
+                categoryCode = null,
+                languageCode = "en"
+            )
         }
     }
 

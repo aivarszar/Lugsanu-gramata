@@ -28,6 +28,7 @@ class CategoryDropdownMenu(
     private var popupWindow: PopupWindow? = null
     private var currentFilter: TextTypesParser.CategoryFilter? = null
     private val parser = TextTypesParser(context)
+    private var currentTypeNum: Int? = null // Track current type for back navigation
 
     fun setCurrentFilter(filter: TextTypesParser.CategoryFilter?) {
         currentFilter = filter
@@ -72,6 +73,7 @@ class CategoryDropdownMenu(
             return
         }
 
+        currentTypeNum = typeNum
         val contentView = createDropdownView(codes, false, typeNum)
 
         // Dismiss old popup and show new one
@@ -89,10 +91,10 @@ class CategoryDropdownMenu(
             )
         }
 
-        // Add close button in top-right corner
+        // Add header with navigation buttons
         val headerLayout = LinearLayout(context).apply {
             orientation = LinearLayout.HORIZONTAL
-            gravity = Gravity.END
+            gravity = Gravity.START or Gravity.CENTER_VERTICAL
             setPadding(8, 8, 8, 0)
             layoutParams = LinearLayout.LayoutParams(
                 LinearLayout.LayoutParams.MATCH_PARENT,
@@ -100,6 +102,46 @@ class CategoryDropdownMenu(
             )
         }
 
+        // Home button (reset to "All")
+        val homeButton = ImageButton(context).apply {
+            setImageResource(android.R.drawable.ic_menu_revert) // Home icon
+            setBackgroundColor(Color.TRANSPARENT)
+            layoutParams = LinearLayout.LayoutParams(48, 48)
+            setOnClickListener {
+                currentTypeNum = null
+                onFilterSelected(TextTypesParser.CategoryFilter.all())
+                dismiss()
+            }
+        }
+        headerLayout.addView(homeButton)
+
+        // Back button (go back to type selection from code selection)
+        if (!isTypeSelection) {
+            val backButton = ImageButton(context).apply {
+                setImageResource(android.R.drawable.ic_menu_revert) // Back icon
+                setBackgroundColor(Color.TRANSPARENT)
+                layoutParams = LinearLayout.LayoutParams(48, 48)
+                rotation = 180f // Flip icon to point left
+                setOnClickListener {
+                    currentTypeNum = null
+                    popupWindow?.dismiss()
+                    showTypeSelection()
+                }
+            }
+            headerLayout.addView(backButton)
+        }
+
+        // Spacer to push close button to right
+        val spacer = View(context).apply {
+            layoutParams = LinearLayout.LayoutParams(
+                0,
+                1,
+                1f // weight
+            )
+        }
+        headerLayout.addView(spacer)
+
+        // Close button
         val closeButton = ImageButton(context).apply {
             setImageResource(android.R.drawable.ic_menu_close_clear_cancel)
             setBackgroundColor(Color.TRANSPARENT)
@@ -107,6 +149,7 @@ class CategoryDropdownMenu(
             setOnClickListener { dismiss() }
         }
         headerLayout.addView(closeButton)
+
         containerLayout.addView(headerLayout)
 
         // Create ListView

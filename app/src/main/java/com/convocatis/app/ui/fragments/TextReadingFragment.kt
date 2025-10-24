@@ -369,66 +369,20 @@ class TextReadingFragment : Fragment() {
                 val diffX = e2.x - e1.x
                 val currentPos = pageViewPager.currentItem
 
-                // Check if swiping left (forward) at last page
+                // Check if swiping left (forward) at last page - simulate next button click
                 if (diffX < -100 && currentPos == section.pages.size - 1) {
-                    android.util.Log.d("TextReading", "Swipe forward from last page, currentSectionIndex=$currentSectionIndex")
-
-                    // If we have headers, find the next section WITH a header
-                    if (sectionsWithHeaders.isNotEmpty()) {
-                        // Find next header section AFTER current position
-                        val nextHeaderSection = sectionsWithHeaders.firstOrNull { headerSection ->
-                            val headerIndex = sections.indexOf(headerSection)
-                            headerIndex > currentSectionIndex
-                        }
-
-                        android.util.Log.d("TextReading", "Found next header section: ${nextHeaderSection?.headerText}")
-
-                        if (nextHeaderSection != null) {
-                            currentSectionIndex = sections.indexOf(nextHeaderSection)
-                            android.util.Log.d("TextReading", "Moving to next header section at index $currentSectionIndex")
-                            updateHeaderDisplay()
-                            loadPagesForCurrentSection(startAtEnd = false)
-                            return true
-                        }
-                    } else if (currentSectionIndex < sections.size - 1) {
-                        // No headers at all, just move to next section
-                        currentSectionIndex++
-                        android.util.Log.d("TextReading", "No headers, moving to next section")
-                        updateHeaderDisplay()
-                        loadPagesForCurrentSection(startAtEnd = false)
-                        return true
-                    }
+                    android.util.Log.d("TextReading", "Swipe forward from last page - triggering next button")
+                    // Simulate next button click by calling its handler
+                    nextPageButton.performClick()
+                    return true
                 }
 
-                // Check if swiping right (backward) at first page
+                // Check if swiping right (backward) at first page - simulate prev button click
                 if (diffX > 100 && currentPos == 0) {
-                    android.util.Log.d("TextReading", "Swipe backward from first page, currentSectionIndex=$currentSectionIndex")
-
-                    // If we have headers, find the previous section WITH a header
-                    if (sectionsWithHeaders.isNotEmpty()) {
-                        // Find previous header section BEFORE current position
-                        val prevHeaderSection = sectionsWithHeaders.lastOrNull { headerSection ->
-                            val headerIndex = sections.indexOf(headerSection)
-                            headerIndex < currentSectionIndex
-                        }
-
-                        android.util.Log.d("TextReading", "Found previous header section: ${prevHeaderSection?.headerText}")
-
-                        if (prevHeaderSection != null) {
-                            currentSectionIndex = sections.indexOf(prevHeaderSection)
-                            android.util.Log.d("TextReading", "Moving to previous header section at index $currentSectionIndex")
-                            updateHeaderDisplay()
-                            loadPagesForCurrentSection(startAtEnd = true)
-                            return true
-                        }
-                    } else if (currentSectionIndex > 0) {
-                        // No headers at all, just move to previous section
-                        currentSectionIndex--
-                        android.util.Log.d("TextReading", "No headers, moving to previous section")
-                        updateHeaderDisplay()
-                        loadPagesForCurrentSection(startAtEnd = true)
-                        return true
-                    }
+                    android.util.Log.d("TextReading", "Swipe backward from first page - triggering prev button")
+                    // Simulate prev button click by calling its handler
+                    prevPageButton.performClick()
+                    return true
                 }
 
                 return false
