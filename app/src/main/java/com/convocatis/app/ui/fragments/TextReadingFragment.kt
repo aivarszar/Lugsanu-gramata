@@ -177,9 +177,6 @@ class TextReadingFragment : Fragment() {
         val adapter = PageAdapter(section.pages)
         pageViewPager.adapter = adapter
 
-        // Clear previous callbacks
-        pageViewPager.clearOnPageChangeCallbacks()
-
         // Set up page change listener with auto-advance
         var isUserScrolling = false
         pageViewPager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
