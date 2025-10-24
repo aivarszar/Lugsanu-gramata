@@ -129,34 +129,51 @@ class TextReadingFragment : Fragment() {
                 val diffX = e2.x - e1.x
                 val diffY = e2.y - e1.y
 
+                android.util.Log.d("HeaderSwipe", "onFling: diffX=$diffX, diffY=$diffY, velocityX=$velocityX")
+
                 if (abs(diffX) > abs(diffY) && abs(diffX) > SWIPE_THRESHOLD && abs(velocityX) > SWIPE_VELOCITY_THRESHOLD) {
                     if (diffX > 0) {
                         // Swipe right - go to previous section
                         val headerSectionIndex = sectionsWithHeaders.indexOf(sections[currentSectionIndex])
+                        android.util.Log.d("HeaderSwipe", "Swipe right, headerSectionIndex=$headerSectionIndex")
                         if (headerSectionIndex > 0) {
                             currentSectionIndex = sections.indexOf(sectionsWithHeaders[headerSectionIndex - 1])
                             updateHeaderDisplay()
                             loadPagesForCurrentSection()
+                            return true
                         }
                     } else {
                         // Swipe left - go to next section
                         val headerSectionIndex = sectionsWithHeaders.indexOf(sections[currentSectionIndex])
+                        android.util.Log.d("HeaderSwipe", "Swipe left, headerSectionIndex=$headerSectionIndex, total=${sectionsWithHeaders.size}")
                         if (headerSectionIndex >= 0 && headerSectionIndex < sectionsWithHeaders.size - 1) {
                             currentSectionIndex = sections.indexOf(sectionsWithHeaders[headerSectionIndex + 1])
                             updateHeaderDisplay()
                             loadPagesForCurrentSection()
+                            return true
                         }
                     }
-                    return true
                 }
                 return false
             }
         })
 
-        headerTextView.setOnTouchListener { v, event ->
+        // Attach swipe to header area - navigation container, ScrollView and its children
+        val headerScrollView = view.findViewById<View>(R.id.headerScrollView)
+
+        val headerTouchListener = View.OnTouchListener { v, event ->
             headerGestureDetector.onTouchEvent(event)
-            false
+            android.util.Log.d("HeaderSwipe", "Touch on ${v.javaClass.simpleName}: action=${event.action}")
+            false  // Don't consume, allow scrolling
         }
+
+        // Apply to navigation container (outside ScrollView - most reliable)
+        headerNavigationContainer.setOnTouchListener(headerTouchListener)
+
+        // Also apply to ScrollView and its children for full area coverage
+        headerScrollView.setOnTouchListener(headerTouchListener)
+        titleView.setOnTouchListener(headerTouchListener)
+        headerTextView.setOnTouchListener(headerTouchListener)
 
         // Set up page navigation
         prevPageButton.setOnClickListener {
