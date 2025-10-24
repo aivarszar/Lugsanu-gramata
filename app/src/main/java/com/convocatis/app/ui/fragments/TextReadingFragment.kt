@@ -232,11 +232,18 @@ class TextReadingFragment : Fragment() {
         }
 
         // KEY FIX: Apply to progress bar and indicator - they don't intercept horizontal swipes
+        // Must set clickable=true for them to receive touch events
+        headerProgressBar.isClickable = true
+        headerProgressBar.isFocusable = true
         headerProgressBar.setOnTouchListener(headerTouchListener)
-        android.util.Log.d("HeaderSwipe", "Attached listener to headerProgressBar")
+        headerProgressBar.setOnClickListener { android.util.Log.d("HeaderSwipe", "Progress bar clicked") }
+        android.util.Log.d("HeaderSwipe", "Attached listener to headerProgressBar, clickable=${headerProgressBar.isClickable}")
 
+        headerIndicator.isClickable = true
+        headerIndicator.isFocusable = true
         headerIndicator.setOnTouchListener(headerTouchListener)
-        android.util.Log.d("HeaderSwipe", "Attached listener to headerIndicator")
+        headerIndicator.setOnClickListener { android.util.Log.d("HeaderSwipe", "Indicator clicked") }
+        android.util.Log.d("HeaderSwipe", "Attached listener to headerIndicator, clickable=${headerIndicator.isClickable}")
 
         // Apply to navigation container (outside ScrollView - most reliable)
         // Make it clickable and add background so it receives touch events
