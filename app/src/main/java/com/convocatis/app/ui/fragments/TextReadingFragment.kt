@@ -232,19 +232,25 @@ class TextReadingFragment : Fragment() {
         }
 
         // Apply to navigation container (outside ScrollView - most reliable)
+        // Make it clickable so it receives touch events
+        headerNavigationContainer.isClickable = true
+        headerNavigationContainer.isFocusable = true
         headerNavigationContainer.setOnTouchListener(headerTouchListener)
-        android.util.Log.d("HeaderSwipe", "Attached listener to headerNavigationContainer, visibility=${headerNavigationContainer.visibility}")
+        android.util.Log.d("HeaderSwipe", "Attached listener to headerNavigationContainer, visibility=${headerNavigationContainer.visibility}, clickable=${headerNavigationContainer.isClickable}")
 
         // Also apply to ScrollView and its children for full area coverage
         val headerScrollView = requireView().findViewById<View>(R.id.headerScrollView)
+        headerScrollView.isClickable = true
         headerScrollView.setOnTouchListener(headerTouchListener)
-        android.util.Log.d("HeaderSwipe", "Attached listener to headerScrollView")
+        android.util.Log.d("HeaderSwipe", "Attached listener to headerScrollView, clickable=${headerScrollView.isClickable}")
 
+        titleView.isClickable = true
         titleView.setOnTouchListener(headerTouchListener)
-        android.util.Log.d("HeaderSwipe", "Attached listener to titleView, visibility=${titleView.visibility}")
+        android.util.Log.d("HeaderSwipe", "Attached listener to titleView, visibility=${titleView.visibility}, clickable=${titleView.isClickable}")
 
+        headerTextView.isClickable = true
         headerTextView.setOnTouchListener(headerTouchListener)
-        android.util.Log.d("HeaderSwipe", "Attached listener to headerTextView, visibility=${headerTextView.visibility}")
+        android.util.Log.d("HeaderSwipe", "Attached listener to headerTextView, visibility=${headerTextView.visibility}, clickable=${headerTextView.isClickable}")
     }
 
     /**
