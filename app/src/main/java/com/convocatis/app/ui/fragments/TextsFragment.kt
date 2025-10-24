@@ -105,22 +105,18 @@ class TextsFragment : Fragment() {
                 filteredTexts = filteredTexts.filter { it.categoryCode == selectedCategoryCode }
             }
 
-            // Filter by favorites
-            if (showOnlyFavorites) {
-                val favoriteRids = favoritesManager.getFavorites()
-                filteredTexts = filteredTexts.filter { favoriteRids.contains(it.rid) }
-            }
-
-            // Sort
+            // Sort alphabetically
             filteredTexts = if (sortAscending) {
                 filteredTexts.sortedBy { it.title }
             } else {
                 filteredTexts.sortedByDescending { it.title }
             }
 
-            // Sort favorites first
-            val favoriteRids = favoritesManager.getFavorites()
-            filteredTexts = filteredTexts.sortedByDescending { favoriteRids.contains(it.rid) }
+            // If favorites filter is ON, sort favorites to top (all texts still visible)
+            if (showOnlyFavorites) {
+                val favoriteRids = favoritesManager.getFavorites()
+                filteredTexts = filteredTexts.sortedByDescending { favoriteRids.contains(it.rid) }
+            }
 
             adapter.submitList(filteredTexts)
         }
