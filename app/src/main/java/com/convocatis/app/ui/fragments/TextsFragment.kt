@@ -144,6 +144,13 @@ class TextsFragment : Fragment() {
     fun getShowOnlyFavorites() = showOnlyFavorites
 
     /**
+     * Refresh data from database (for re-import)
+     */
+    fun refreshData() {
+        loadTexts()
+    }
+
+    /**
      * Show category filter dropdown menu
      */
     fun showCategoryFilterDropdown() {
