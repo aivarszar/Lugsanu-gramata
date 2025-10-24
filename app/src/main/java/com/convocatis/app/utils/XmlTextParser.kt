@@ -74,7 +74,9 @@ class XmlTextParser(private val context: Context) {
                                 val textType = map["Text_type"]?.toIntOrNull()
                                 val code = map["Code"]
 
-                                if (rid != null && description != null && string != null) {
+                                // Skip texts marked for deletion
+                                if (rid != null && description != null && string != null &&
+                                    !description.startsWith("--delete", ignoreCase = true)) {
                                     texts.add(
                                         TextEntity(
                                             rid = rid,
@@ -156,7 +158,9 @@ class ImprovedXmlTextParser(private val context: Context) {
                                 val textType = map["Text_type"]?.toIntOrNull()
                                 val code = map["Code"]
 
-                                if (rid != null && description != null && string != null) {
+                                // Skip texts marked for deletion
+                                if (rid != null && description != null && string != null &&
+                                    !description.startsWith("--delete", ignoreCase = true)) {
                                     texts.add(
                                         TextEntity(
                                             rid = rid,

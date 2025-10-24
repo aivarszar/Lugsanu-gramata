@@ -17,6 +17,7 @@ import com.convocatis.app.MainActivity
 import com.convocatis.app.R
 import com.convocatis.app.database.entity.TextEntity
 import com.convocatis.app.utils.FavoritesManager
+import com.convocatis.app.utils.TextTypesParser
 import kotlinx.coroutines.launch
 
 class TextsFragment : Fragment() {
@@ -25,11 +26,16 @@ class TextsFragment : Fragment() {
     private lateinit var adapter: TextsAdapter
     private lateinit var favoritesManager: FavoritesManager
     private lateinit var categorySpinner: Spinner
+    private lateinit var prefs: android.content.SharedPreferences
 
     private var sortAscending = true
     private var showOnlyFavorites = false
     private var searchTerm = ""
     private var selectedCategoryCode: String? = null
+
+    companion object {
+        private const val PREF_LAST_CATEGORY = "last_category_code"
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -39,6 +45,7 @@ class TextsFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_texts, container, false)
 
         favoritesManager = FavoritesManager(requireContext())
+        prefs = requireContext().getSharedPreferences("convocatis_prefs", android.content.Context.MODE_PRIVATE)
 
         categorySpinner = view.findViewById(R.id.categoryCodeSpinner)
         recyclerView = view.findViewById(R.id.recyclerView)
@@ -137,9 +144,18 @@ class TextsFragment : Fragment() {
             val database = ConvocatisApplication.getInstance().database
             val codes = database.textDao().getUniqueCategoryCodes()
 
-            // Create spinner items with "All" option
+            // Get code -> description mapping
+            val typesParser = TextTypesParser(requireContext())
+            val codeToDescription = typesParser.getCodeToDescriptionMap()
+
+            // Get last selected category
+            val lastCategory = prefs.getString(PREF_LAST_CATEGORY, "all") ?: "all"
+
+            // Create spinner items with "All" option and descriptions
             val spinnerItems = mutableListOf("All")
-            spinnerItems.addAll(codes.map { "Type $it" })
+            spinnerItems.addAll(codes.map { code ->
+                codeToDescription[code] ?: "Type $code"
+            })
 
             val spinnerAdapter = ArrayAdapter(
                 requireContext(),
@@ -149,6 +165,17 @@ class TextsFragment : Fragment() {
             spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
 
             categorySpinner.adapter = spinnerAdapter
+
+            // Restore last selection
+            val restoredPosition = if (lastCategory == "all") {
+                0
+            } else {
+                codes.indexOf(lastCategory) + 1
+            }
+            if (restoredPosition >= 0 && restoredPosition < spinnerItems.size) {
+                categorySpinner.setSelection(restoredPosition)
+            }
+
             categorySpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
                 override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
                     selectedCategoryCode = if (position == 0) {
@@ -156,6 +183,8 @@ class TextsFragment : Fragment() {
                     } else {
                         codes[position - 1]
                     }
+                    // Save selection
+                    prefs.edit().putString(PREF_LAST_CATEGORY, selectedCategoryCode).apply()
                     loadTexts()
                 }
 

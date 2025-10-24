@@ -25,6 +25,14 @@ class MainActivity : AppCompatActivity() {
         setSupportActionBar(findViewById(R.id.toolbar))
         supportActionBar?.title = getString(R.string.app_name)
 
+        // Listen for back stack changes
+        supportFragmentManager.addOnBackStackChangedListener {
+            val fragment = supportFragmentManager.findFragmentById(R.id.fragment_container)
+            currentFragment = fragment
+            supportActionBar?.setDisplayHomeAsUpEnabled(fragment is TextReadingFragment)
+            invalidateOptionsMenu()
+        }
+
         if (savedInstanceState == null) {
             showTextsFragment()
         }

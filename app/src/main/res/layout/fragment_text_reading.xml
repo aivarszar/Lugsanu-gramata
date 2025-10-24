@@ -40,7 +40,8 @@
             android:layout_height="8dp"
             android:layout_weight="1"
             android:layout_marginEnd="8dp"
-            android:max="100" />
+            android:max="100"
+            android:progressTint="?attr/colorPrimary" />
 
         <TextView
             android:id="@+id/pageIndicator"
@@ -73,7 +74,8 @@
             android:layout_height="8dp"
             android:layout_weight="1"
             android:layout_marginEnd="8dp"
-            android:max="100" />
+            android:max="100"
+            android:progressTint="?attr/colorPrimary" />
 
         <TextView
             android:id="@+id/repetitionIndicator"
