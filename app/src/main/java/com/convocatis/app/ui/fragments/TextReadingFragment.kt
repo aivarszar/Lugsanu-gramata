@@ -119,9 +119,16 @@ class TextReadingFragment : Fragment() {
         }
 
         // Set up swipe gesture for header navigation
+        android.util.Log.d("HeaderSwipe", "Setting up header swipe gesture detector")
+
         val headerGestureDetector = GestureDetector(requireContext(), object : GestureDetector.SimpleOnGestureListener() {
             private val SWIPE_THRESHOLD = 100
             private val SWIPE_VELOCITY_THRESHOLD = 100
+
+            override fun onDown(e: MotionEvent): Boolean {
+                android.util.Log.d("HeaderSwipe", "onDown detected at x=${e.x}, y=${e.y}")
+                return true  // Must return true to receive subsequent events
+            }
 
             override fun onFling(e1: MotionEvent?, e2: MotionEvent, velocityX: Float, velocityY: Float): Boolean {
                 if (e1 == null) return false
@@ -160,18 +167,24 @@ class TextReadingFragment : Fragment() {
 
         // Attach swipe to header area - navigation container, ScrollView and its children
         val headerTouchListener = View.OnTouchListener { v, event ->
+            android.util.Log.d("HeaderSwipe", "Touch event on ${v.javaClass.simpleName}: action=${event.action}, visibility=${v.visibility}")
             headerGestureDetector.onTouchEvent(event)
-            android.util.Log.d("HeaderSwipe", "Touch on ${v.javaClass.simpleName}: action=${event.action}")
             false  // Don't consume, allow scrolling
         }
 
         // Apply to navigation container (outside ScrollView - most reliable)
         headerNavigationContainer.setOnTouchListener(headerTouchListener)
+        android.util.Log.d("HeaderSwipe", "Attached listener to headerNavigationContainer, visibility=${headerNavigationContainer.visibility}")
 
         // Also apply to ScrollView and its children for full area coverage (reuse headerScrollView from above)
         headerScrollView.setOnTouchListener(headerTouchListener)
+        android.util.Log.d("HeaderSwipe", "Attached listener to headerScrollView")
+
         titleView.setOnTouchListener(headerTouchListener)
+        android.util.Log.d("HeaderSwipe", "Attached listener to titleView, visibility=${titleView.visibility}")
+
         headerTextView.setOnTouchListener(headerTouchListener)
+        android.util.Log.d("HeaderSwipe", "Attached listener to headerTextView, visibility=${headerTextView.visibility}")
 
         // Set up page navigation
         prevPageButton.setOnClickListener {
