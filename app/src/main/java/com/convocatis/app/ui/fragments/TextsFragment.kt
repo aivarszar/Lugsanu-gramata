@@ -146,10 +146,9 @@ class TextsFragment : Fragment() {
     /**
      * Show category filter dropdown menu
      */
-    fun showCategoryFilterDropdown(anchorView: android.view.View) {
+    fun showCategoryFilterDropdown() {
         val dropdown = com.convocatis.app.ui.views.CategoryDropdownMenu(
             context = requireContext(),
-            anchorView = anchorView,
             onFilterSelected = { filter ->
                 currentFilter = filter
                 saveLastFilter()

@@ -108,11 +108,7 @@ class MainActivity : AppCompatActivity() {
         return when (item.itemId) {
             R.id.action_category_filter -> {
                 val textsFragment = currentFragment as? TextsFragment
-                // Use toolbar as anchor for dropdown
-                val toolbar = findViewById<androidx.appcompat.widget.Toolbar>(R.id.toolbar)
-                if (toolbar != null && textsFragment != null) {
-                    textsFragment.showCategoryFilterDropdown(toolbar)
-                }
+                textsFragment?.showCategoryFilterDropdown()
                 true
             }
             R.id.action_sort_toggle -> {

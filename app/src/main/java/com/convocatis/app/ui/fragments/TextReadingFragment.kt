@@ -237,37 +237,40 @@ class TextReadingFragment : Fragment() {
 
         val page = pages[position]
 
-        // Only show page counter if this is a repetition (has repetitionIndex)
-        // Don't show counters for regular pages separated by |
-        val isRepetition = page.repetitionIndex != null && page.totalRepetitions != null
-
-        if (isRepetition) {
-            pageProgressContainer.visibility = View.VISIBLE
-
-            // Show repetition counter (e.g., "3/10" for 3rd repetition out of 10)
-            pageIndicator.text = "${page.repetitionIndex}/${page.totalRepetitions}"
-            val progress = if (page.totalRepetitions!! > 0) {
-                (page.repetitionIndex!! * 100) / page.totalRepetitions!!
-            } else 100
-            pageProgressBar.progress = progress
-        } else {
-            pageProgressContainer.visibility = View.GONE
-        }
-
-        // Show navigation arrows if there are multiple pages (regardless of repetition)
+        // Show navigation bar if there are multiple pages
         if (pages.size > 1) {
             pageNavigationContainer.visibility = View.VISIBLE
+
+            // Only show counter and progress if this is a repetition
+            val isRepetition = page.repetitionIndex != null && page.totalRepetitions != null
+
+            if (isRepetition) {
+                pageIndicator.visibility = View.VISIBLE
+                pageProgressBar.visibility = View.VISIBLE
+
+                // Show repetition counter (e.g., "3/10")
+                pageIndicator.text = "${page.repetitionIndex}/${page.totalRepetitions}"
+                val progress = if (page.totalRepetitions!! > 0) {
+                    (page.repetitionIndex!! * 100) / page.totalRepetitions!!
+                } else 100
+                pageProgressBar.progress = progress
+            } else {
+                // No repetition - hide counter and progress bar
+                pageIndicator.visibility = View.GONE
+                pageProgressBar.visibility = View.GONE
+            }
+
+            // Determine if we're at absolute first or last across all sections
+            val isAbsoluteFirst = currentSectionIndex == 0 && position == 0
+            val isAbsoluteLast = currentSectionIndex == sections.size - 1 && position == pages.size - 1
+
+            // Hide arrows at absolute boundaries
+            prevPageButton.visibility = if (isAbsoluteFirst) View.INVISIBLE else View.VISIBLE
+            nextPageButton.visibility = if (isAbsoluteLast) View.INVISIBLE else View.VISIBLE
         } else {
+            // Only one page - hide navigation bar completely
             pageNavigationContainer.visibility = View.GONE
         }
-
-        // Determine if we're at absolute first or last across all sections
-        val isAbsoluteFirst = currentSectionIndex == 0 && position == 0
-        val isAbsoluteLast = currentSectionIndex == sections.size - 1 && position == pages.size - 1
-
-        // Hide < button if at first page of first section, > if at last page of last section
-        prevPageButton.visibility = if (isAbsoluteFirst) View.INVISIBLE else View.VISIBLE
-        nextPageButton.visibility = if (isAbsoluteLast) View.INVISIBLE else View.VISIBLE
     }
 
     private fun getDefaultEntity() = TextEntity(

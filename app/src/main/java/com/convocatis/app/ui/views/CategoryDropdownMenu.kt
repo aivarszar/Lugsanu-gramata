@@ -1,60 +1,46 @@
 package com.convocatis.app.ui.views
 
+import android.app.AlertDialog
 import android.content.Context
-import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.ListView
-import android.widget.PopupWindow
 import android.widget.TextView
-import com.convocatis.app.R
 import com.convocatis.app.utils.TextTypesParser
 
 /**
  * Dropdown menu for hierarchical category filtering (Type -> Code)
- * Two-step process within a single dropdown:
- * Step 1: Shows Types
- * Step 2: After Type selection, shows Codes for that Type
+ * Two-step process: Shows Types, then Codes for selected Type
  */
 class CategoryDropdownMenu(
     private val context: Context,
-    private val anchorView: View,
     private val onFilterSelected: (TextTypesParser.CategoryFilter) -> Unit
 ) {
 
-    private var popupWindow: PopupWindow? = null
     private var currentFilter: TextTypesParser.CategoryFilter? = null
     private val parser = TextTypesParser(context)
-
-    private var isShowingCodes = false
-    private var selectedType: Int? = null
-    private var selectedTypeDescription: String? = null
+    private var currentDialog: AlertDialog? = null
 
     fun setCurrentFilter(filter: TextTypesParser.CategoryFilter?) {
         currentFilter = filter
     }
 
     fun show() {
-        if (popupWindow?.isShowing == true) {
-            popupWindow?.dismiss()
-            return
-        }
+        // Dismiss any existing dialog
+        currentDialog?.dismiss()
 
         // Start with Type selection
         showTypeSelection()
     }
 
     fun dismiss() {
-        popupWindow?.dismiss()
-        popupWindow = null
+        currentDialog?.dismiss()
+        currentDialog = null
     }
 
     private fun showTypeSelection() {
-        isShowingCodes = false
-        selectedType = null
-
         val typeDescriptions = parser.getTypeToDescriptionMap()
         val typeList = mutableListOf<Pair<Int, String>>()
 
@@ -63,85 +49,63 @@ class CategoryDropdownMenu(
             typeList.add(Pair(typeNum, typeDescriptions[typeNum] ?: "Type $typeNum"))
         }
 
-        val listView = createListView()
+        val listView = ListView(context)
         val adapter = TypeAdapter(typeList)
         listView.adapter = adapter
 
         listView.setOnItemClickListener { _, _, position, _ ->
             val (typeNum, typeDesc) = typeList[position]
-            selectedType = typeNum
-            selectedTypeDescription = typeDesc
 
             // Filter list immediately by Type
             onFilterSelected(TextTypesParser.CategoryFilter(typeNum, null, typeDesc))
+
+            // Dismiss current dialog
+            currentDialog?.dismiss()
 
             // Show codes for this type
             showCodeSelection(typeNum, typeDesc)
         }
 
-        showPopup(listView)
+        currentDialog = AlertDialog.Builder(context)
+            .setTitle("Select Category")
+            .setView(listView)
+            .setNegativeButton("Cancel") { dialog, _ -> dialog.dismiss() }
+            .create()
+
+        currentDialog?.show()
     }
 
     private fun showCodeSelection(typeNum: Int, typeDescription: String) {
-        isShowingCodes = true
-
         val hierarchy = parser.getTypeCodeHierarchy()
         val codes = hierarchy[typeNum] ?: emptyList()
 
         if (codes.isEmpty()) {
-            // No subcategories - dismiss
-            dismiss()
+            // No subcategories - we're done
             return
         }
 
-        val codeList = mutableListOf<Pair<String, String>>()
+        val codeList = codes.toMutableList()
 
-        // Add all codes
-        codes.forEach { (code, description) ->
-            codeList.add(Pair(code, description))
-        }
-
-        val listView = createListView()
+        val listView = ListView(context)
         val adapter = CodeAdapter(codeList)
         listView.adapter = adapter
 
         listView.setOnItemClickListener { _, _, position, _ ->
             val (code, description) = codeList[position]
             onFilterSelected(TextTypesParser.CategoryFilter(typeNum, code, description))
-            dismiss()
+            currentDialog?.dismiss()
         }
 
-        // Update popup content
-        popupWindow?.dismiss()
-        showPopup(listView)
-    }
+        currentDialog = AlertDialog.Builder(context)
+            .setTitle("Select Subcategory")
+            .setView(listView)
+            .setNegativeButton("Back") { dialog, _ ->
+                dialog.dismiss()
+                // Type-only filter already applied
+            }
+            .create()
 
-    private fun createListView(): ListView {
-        return ListView(context).apply {
-            layoutParams = ViewGroup.LayoutParams(
-                ViewGroup.LayoutParams.WRAP_CONTENT,
-                ViewGroup.LayoutParams.WRAP_CONTENT
-            )
-            dividerHeight = 1
-        }
-    }
-
-    private fun showPopup(contentView: View) {
-        popupWindow?.dismiss()
-
-        popupWindow = PopupWindow(
-            contentView,
-            600, // width in pixels
-            ViewGroup.LayoutParams.WRAP_CONTENT,
-            true // focusable
-        ).apply {
-            // Make it dismissible by clicking outside
-            isOutsideTouchable = true
-            isFocusable = true
-
-            // Show below anchor view
-            showAsDropDown(anchorView, 0, 0)
-        }
+        currentDialog?.show()
     }
 
     private inner class TypeAdapter(
