@@ -159,24 +159,27 @@ class TextReadingFragment : Fragment() {
             headerTextView.visibility = View.VISIBLE
             // Just show plain text header, no HTML formatting
             headerTextView.text = section.headerText
-        } else {
-            headerTextView.visibility = View.GONE
-        }
 
-        // Update header navigation counter - only count sections with headers
-        if (sectionsWithHeaders.isNotEmpty()) {
+            // Show header navigation when in a section with header
+            headerNavigationContainer.visibility = View.VISIBLE
+
+            // Update header navigation counter - only count sections with headers
             val headerSectionIndex = sectionsWithHeaders.indexOf(section)
             if (headerSectionIndex >= 0) {
                 headerIndicator.text = "${headerSectionIndex + 1}/${sectionsWithHeaders.size}"
-            } else {
-                // Current section has no header, don't show counter
-                headerIndicator.text = ""
-            }
-        }
 
-        // Hide << button if at first section, >> if at last
-        prevHeaderButton.visibility = if (currentSectionIndex > 0) View.VISIBLE else View.INVISIBLE
-        nextHeaderButton.visibility = if (currentSectionIndex < sections.size - 1) View.VISIBLE else View.INVISIBLE
+                // Hide << button if at first header section, >> if at last header section
+                val isFirstHeaderSection = headerSectionIndex == 0
+                val isLastHeaderSection = headerSectionIndex == sectionsWithHeaders.size - 1
+
+                prevHeaderButton.visibility = if (isFirstHeaderSection) View.INVISIBLE else View.VISIBLE
+                nextHeaderButton.visibility = if (isLastHeaderSection) View.INVISIBLE else View.VISIBLE
+            }
+        } else {
+            headerTextView.visibility = View.GONE
+            // Hide header navigation when not in a header section
+            headerNavigationContainer.visibility = View.GONE
+        }
     }
 
     /**
