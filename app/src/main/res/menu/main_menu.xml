@@ -5,21 +5,21 @@
         android:id="@+id/action_search"
         android:icon="@android:drawable/ic_menu_search"
         android:title="@string/search"
-        app:showAsAction="ifRoom|collapseActionView"
+        app:showAsAction="always|collapseActionView"
         app:actionViewClass="androidx.appcompat.widget.SearchView" />
-    <item
-        android:id="@+id/action_category_filter"
-        android:icon="@android:drawable/ic_menu_sort_by_size"
-        android:title="@string/filter_category"
-        app:showAsAction="ifRoom" />
     <item
         android:id="@+id/action_sort_toggle"
         android:icon="@android:drawable/arrow_down_float"
         android:title="@string/sort"
-        app:showAsAction="ifRoom" />
+        app:showAsAction="always" />
     <item
         android:id="@+id/action_filter_favorites"
-        android:icon="@android:drawable/checkbox_off_background"
+        android:icon="@android:drawable/btn_star_big_off"
         android:title="@string/filter_favorites"
-        app:showAsAction="ifRoom" />
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/action_category_filter"
+        android:icon="@android:drawable/ic_menu_sort_by_size"
+        android:title="@string/filter_category"
+        app:showAsAction="always" />
 </menu>

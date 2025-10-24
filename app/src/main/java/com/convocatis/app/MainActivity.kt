@@ -108,7 +108,11 @@ class MainActivity : AppCompatActivity() {
         return when (item.itemId) {
             R.id.action_category_filter -> {
                 val textsFragment = currentFragment as? TextsFragment
-                textsFragment?.showCategoryFilterDialog()
+                // Pass the menu item view as anchor for dropdown
+                val view = findViewById<android.view.View>(R.id.action_category_filter)
+                if (view != null && textsFragment != null) {
+                    textsFragment.showCategoryFilterDropdown(view)
+                }
                 true
             }
             R.id.action_sort_toggle -> {
@@ -138,11 +142,11 @@ class MainActivity : AppCompatActivity() {
             }
             sortMenuItem?.setIcon(sortIcon)
 
-            // Update favorites filter icon (checkbox on/off)
+            // Update favorites filter icon (star on/off)
             val favoritesIcon = if (textsFragment.getShowOnlyFavorites()) {
-                android.R.drawable.checkbox_on_background
+                android.R.drawable.btn_star_big_on
             } else {
-                android.R.drawable.checkbox_off_background
+                android.R.drawable.btn_star_big_off
             }
             favoritesMenuItem?.setIcon(favoritesIcon)
         }

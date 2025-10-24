@@ -163,8 +163,10 @@ class TextReadingFragment : Fragment() {
 
         // Update header navigation buttons
         headerIndicator.text = "${currentSectionIndex + 1}/${sections.size}"
-        prevHeaderButton.isEnabled = currentSectionIndex > 0
-        nextHeaderButton.isEnabled = currentSectionIndex < sections.size - 1
+
+        // Hide << button if at first section, >> if at last
+        prevHeaderButton.visibility = if (currentSectionIndex > 0) View.VISIBLE else View.INVISIBLE
+        nextHeaderButton.visibility = if (currentSectionIndex < sections.size - 1) View.VISIBLE else View.INVISIBLE
     }
 
     /**
@@ -175,11 +177,33 @@ class TextReadingFragment : Fragment() {
         val adapter = PageAdapter(section.pages)
         pageViewPager.adapter = adapter
 
-        // Set up page change listener
+        // Clear previous callbacks
+        pageViewPager.clearOnPageChangeCallbacks()
+
+        // Set up page change listener with auto-advance
+        var isUserScrolling = false
         pageViewPager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
+            override fun onPageScrollStateChanged(state: Int) {
+                super.onPageScrollStateChanged(state)
+                isUserScrolling = state == ViewPager2.SCROLL_STATE_DRAGGING
+            }
+
             override fun onPageSelected(position: Int) {
                 super.onPageSelected(position)
                 updatePageIndicator(position)
+
+                // Auto-advance to next section if at last page and user swiped forward
+                if (isUserScrolling && position == section.pages.size - 1 && currentSectionIndex < sections.size - 1) {
+                    // Small delay to allow current swipe to complete
+                    pageViewPager.postDelayed({
+                        if (pageViewPager.currentItem == section.pages.size - 1) {
+                            // Still at last page, advance to next section
+                            currentSectionIndex++
+                            updateHeaderDisplay()
+                            loadPagesForCurrentSection()
+                        }
+                    }, 300)
+                }
             }
         })
 
@@ -187,6 +211,7 @@ class TextReadingFragment : Fragment() {
         if (startAtEnd && section.pages.isNotEmpty()) {
             pageViewPager.setCurrentItem(section.pages.size - 1, false)
         } else {
+            pageViewPager.setCurrentItem(0, false)
             updatePageIndicator(0)
         }
     }
@@ -217,12 +242,13 @@ class TextReadingFragment : Fragment() {
             pageNavigationContainer.visibility = View.GONE
         }
 
-        // Enable/disable navigation buttons
-        val hasMoreSectionsBefore = currentSectionIndex > 0
-        val hasMoreSectionsAfter = currentSectionIndex < sections.size - 1
+        // Determine if we're at absolute first or last across all sections
+        val isAbsoluteFirst = currentSectionIndex == 0 && position == 0
+        val isAbsoluteLast = currentSectionIndex == sections.size - 1 && position == pages.size - 1
 
-        prevPageButton.isEnabled = position > 0 || hasMoreSectionsBefore
-        nextPageButton.isEnabled = position < pages.size - 1 || hasMoreSectionsAfter
+        // Hide < button if at first page of first section, > if at last page of last section
+        prevPageButton.visibility = if (isAbsoluteFirst) View.INVISIBLE else View.VISIBLE
+        nextPageButton.visibility = if (isAbsoluteLast) View.INVISIBLE else View.VISIBLE
     }
 
     private fun getDefaultEntity() = TextEntity(

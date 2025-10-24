@@ -144,18 +144,20 @@ class TextsFragment : Fragment() {
     fun getShowOnlyFavorites() = showOnlyFavorites
 
     /**
-     * Show category filter dialog
+     * Show category filter dropdown menu
      */
-    fun showCategoryFilterDialog() {
-        val dialog = CategoryFilterDialog.newInstance(
-            currentFilter = currentFilter,
+    fun showCategoryFilterDropdown(anchorView: android.view.View) {
+        val dropdown = com.convocatis.app.ui.views.CategoryDropdownMenu(
+            context = requireContext(),
+            anchorView = anchorView,
             onFilterSelected = { filter ->
                 currentFilter = filter
                 saveLastFilter()
                 loadTexts()
             }
         )
-        dialog.show(childFragmentManager, "CategoryFilterDialog")
+        dropdown.setCurrentFilter(currentFilter)
+        dropdown.show()
     }
 
     /**
