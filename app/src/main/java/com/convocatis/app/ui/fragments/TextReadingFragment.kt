@@ -5,6 +5,7 @@ import android.graphics.drawable.Drawable
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
+import android.text.Html
 import android.text.Spanned
 import android.text.method.LinkMovementMethod
 import android.text.style.ClickableSpan
@@ -442,7 +443,7 @@ class PageAdapter(private val pages: List<TextContentParser.Page>) :
             val context = itemView.context
 
             // Create ImageGetter to load images
-            val imageGetter = HtmlCompat.ImageGetter { source ->
+            val imageGetter = Html.ImageGetter { source ->
                 try {
                     // Create placeholder drawable
                     val placeholder = context.getDrawable(android.R.drawable.ic_menu_gallery)
