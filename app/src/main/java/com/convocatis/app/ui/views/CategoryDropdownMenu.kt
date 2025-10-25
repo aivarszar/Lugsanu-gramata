@@ -139,10 +139,20 @@ class CategoryDropdownMenu(
         }
 
         if (isTypeSelection) {
-            // Type selection view: NO navigation buttons (user hasn't selected anything yet)
-            // Just spacer to push close button to right
+            // Type selection view: home button to show all
+            val homeButton = ImageButton(context).apply {
+                setImageResource(android.R.drawable.ic_menu_mylocation) // Home icon
+                setBackgroundColor(Color.TRANSPARENT)
+                layoutParams = LinearLayout.LayoutParams(48, 48)
+                setOnClickListener {
+                    currentTypeNum = null
+                    onFilterSelected(TextTypesParser.CategoryFilter.all())
+                    dismiss()
+                }
+            }
+            headerLayout.addView(homeButton)
         } else {
-            // Code selection view: back button (to type selection)
+            // Code selection view: back button (to type selection) + home button (to All)
             val backButton = ImageButton(context).apply {
                 setImageResource(android.R.drawable.ic_menu_revert) // Back icon
                 setBackgroundColor(Color.TRANSPARENT)
@@ -155,6 +165,24 @@ class CategoryDropdownMenu(
                 }
             }
             headerLayout.addView(backButton)
+
+            // Spacer between back and home buttons
+            val spacer = View(context).apply {
+                layoutParams = LinearLayout.LayoutParams(16, 1)
+            }
+            headerLayout.addView(spacer)
+
+            val homeButton = ImageButton(context).apply {
+                setImageResource(android.R.drawable.ic_menu_mylocation) // Home icon
+                setBackgroundColor(Color.TRANSPARENT)
+                layoutParams = LinearLayout.LayoutParams(48, 48)
+                setOnClickListener {
+                    currentTypeNum = null
+                    onFilterSelected(TextTypesParser.CategoryFilter.all())
+                    dismiss()
+                }
+            }
+            headerLayout.addView(homeButton)
         }
 
         // Spacer to push close button to right
