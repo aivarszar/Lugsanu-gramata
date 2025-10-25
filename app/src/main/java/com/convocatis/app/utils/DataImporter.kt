@@ -63,7 +63,9 @@ class DataImporter(private val context: Context) {
 
     /**
      * Force re-import (clears flag)
+     * Useful for debugging and testing
      */
+    @Suppress("unused")
     fun clearImportFlag() {
         prefs.edit().putBoolean(KEY_DATA_IMPORTED, false).apply()
     }
