@@ -17,7 +17,7 @@ class DataImporter(private val context: Context) {
 
     companion object {
         private const val TAG = "DataImporter"
-        private const val KEY_DATA_IMPORTED = "data_imported_v4"  // v4: Fixed Rožukronis text sequence (2024-10-25)
+        private const val KEY_DATA_IMPORTED = "data_imported_v5"  // v4: Fixed Rožukronis text sequence (2024-10-25)
     }
 
     /**
