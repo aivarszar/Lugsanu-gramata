@@ -2,20 +2,15 @@ package com.convocatis.app.utils
 
 import android.content.Context
 import android.graphics.Bitmap
-import android.graphics.Canvas
 import android.graphics.drawable.BitmapDrawable
 import android.graphics.drawable.Drawable
 import android.text.Html
 import android.widget.TextView
 import com.bumptech.glide.Glide
-import com.bumptech.glide.request.Request
-import com.bumptech.glide.request.target.SizeReadyCallback
-import com.bumptech.glide.request.target.Target
+import com.bumptech.glide.request.target.CustomTarget
 import com.bumptech.glide.request.transition.Transition
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 
 /**
  * Custom ImageGetter that uses Glide to load images from URLs
@@ -32,60 +27,40 @@ class GlideImageGetter(
         val placeholder = context.getDrawable(android.R.drawable.ic_menu_gallery)
         placeholder?.setBounds(0, 0, 100, 100)
 
-        val drawableTarget = object : Target<Drawable> {
-            override fun onResourceReady(resource: Drawable, transition: Transition<in Drawable>?) {
-                // Calculate scaled dimensions to fit within max size
-                val imageWidth = resource.intrinsicWidth
-                val imageHeight = resource.intrinsicHeight
-
-                val (scaledWidth, scaledHeight) = calculateScaledDimensions(
-                    imageWidth, imageHeight, maxWidth, maxHeight
-                )
-
-                resource.setBounds(0, 0, scaledWidth, scaledHeight)
-
-                // Update TextView with new image
-                textView.text = textView.text
-                textView.invalidate()
-            }
-
-            override fun onLoadCleared(placeholder: Drawable?) {
-                // No-op
-            }
-
-            override fun onLoadFailed(errorDrawable: Drawable?) {
-                // Show error icon
-                val error = errorDrawable ?: context.getDrawable(android.R.drawable.stat_notify_error)
-                error?.setBounds(0, 0, 50, 50)
-                textView.text = textView.text
-                textView.invalidate()
-            }
-
-            override fun onLoadStarted(placeholder: Drawable?) {
-                // No-op
-            }
-
-            override fun getSize(cb: SizeReadyCallback) {
-                cb.onSizeReady(maxWidth, maxHeight)
-            }
-
-            override fun removeCallback(cb: SizeReadyCallback) {
-                // No-op
-            }
-
-            override fun setRequest(request: Request?) {
-                // No-op
-            }
-
-            override fun getRequest(): Request? = null
-        }
-
-        // Load image with Glide asynchronously
+        // Load image with Glide asynchronously using CustomTarget
         MainScope().launch {
             try {
                 Glide.with(context)
                     .load(source)
-                    .into(drawableTarget)
+                    .into(object : CustomTarget<Drawable>() {
+                        override fun onResourceReady(resource: Drawable, transition: Transition<in Drawable>?) {
+                            // Calculate scaled dimensions to fit within max size
+                            val imageWidth = resource.intrinsicWidth
+                            val imageHeight = resource.intrinsicHeight
+
+                            val (scaledWidth, scaledHeight) = calculateScaledDimensions(
+                                imageWidth, imageHeight, maxWidth, maxHeight
+                            )
+
+                            resource.setBounds(0, 0, scaledWidth, scaledHeight)
+
+                            // Update TextView with new image
+                            textView.text = textView.text
+                            textView.invalidate()
+                        }
+
+                        override fun onLoadCleared(placeholder: Drawable?) {
+                            // No-op
+                        }
+
+                        override fun onLoadFailed(errorDrawable: Drawable?) {
+                            // Show error icon
+                            val error = errorDrawable ?: context.getDrawable(android.R.drawable.stat_notify_error)
+                            error?.setBounds(0, 0, 50, 50)
+                            textView.text = textView.text
+                            textView.invalidate()
+                        }
+                    })
             } catch (e: Exception) {
                 android.util.Log.e("GlideImageGetter", "Error loading image: $source", e)
             }
