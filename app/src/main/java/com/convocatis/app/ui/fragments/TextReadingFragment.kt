@@ -28,7 +28,14 @@ class TextReadingFragment : Fragment() {
     private lateinit var parser: TextContentParser
     private var sections: List<TextContentParser.HeaderSection> = emptyList()
     private var sectionsWithHeaders: List<TextContentParser.HeaderSection> = emptyList()
-    private var currentSectionIndex = 0
+
+    // Flat list of all pages with their header information
+    private data class PageWithHeader(
+        val page: TextContentParser.Page,
+        val headerText: String?,
+        val sectionIndex: Int
+    )
+    private var allPages: List<PageWithHeader> = emptyList()
 
     // Views
     private lateinit var titleView: TextView
@@ -101,74 +108,51 @@ class TextReadingFragment : Fragment() {
             }
         }
 
-        // Set up header navigation
+        // Set up header navigation - navigate to previous/next header
         prevHeaderButton.setOnClickListener {
-            if (currentSectionIndex > 0) {
-                currentSectionIndex--
-                updateHeaderDisplay()
-                loadPagesForCurrentSection()
+            val currentPos = pageViewPager.currentItem
+            if (currentPos < allPages.size) {
+                val currentHeader = allPages[currentPos].headerText
+
+                // Find previous page with different header (going backwards)
+                for (i in currentPos - 1 downTo 0) {
+                    val pageHeader = allPages[i].headerText
+                    if (pageHeader != currentHeader && pageHeader != null) {
+                        pageViewPager.currentItem = i
+                        break
+                    }
+                }
             }
         }
 
         nextHeaderButton.setOnClickListener {
-            if (currentSectionIndex < sections.size - 1) {
-                currentSectionIndex++
-                updateHeaderDisplay()
-                loadPagesForCurrentSection()
+            val currentPos = pageViewPager.currentItem
+            if (currentPos < allPages.size) {
+                val currentHeader = allPages[currentPos].headerText
+
+                // Find next page with different header (going forwards)
+                for (i in currentPos + 1 until allPages.size) {
+                    val pageHeader = allPages[i].headerText
+                    if (pageHeader != currentHeader && pageHeader != null) {
+                        pageViewPager.currentItem = i
+                        break
+                    }
+                }
             }
         }
 
-        // Set up page navigation
+        // Set up page navigation - simple next/previous in flat list
         prevPageButton.setOnClickListener {
             val currentItem = pageViewPager.currentItem
             if (currentItem > 0) {
                 pageViewPager.currentItem = currentItem - 1
-            } else {
-                // At first page, go to previous section with header (if headers exist)
-                if (sectionsWithHeaders.isNotEmpty()) {
-                    // Find previous header section BEFORE current position
-                    val prevHeaderSection = sectionsWithHeaders.lastOrNull { headerSection ->
-                        val headerIndex = sections.indexOf(headerSection)
-                        headerIndex < currentSectionIndex
-                    }
-                    if (prevHeaderSection != null) {
-                        currentSectionIndex = sections.indexOf(prevHeaderSection)
-                        updateHeaderDisplay()
-                        loadPagesForCurrentSection(startAtEnd = true)
-                    }
-                } else if (currentSectionIndex > 0) {
-                    // No headers, just go to previous section
-                    currentSectionIndex--
-                    updateHeaderDisplay()
-                    loadPagesForCurrentSection(startAtEnd = true)
-                }
             }
         }
 
         nextPageButton.setOnClickListener {
-            val currentSection = sections[currentSectionIndex]
             val currentItem = pageViewPager.currentItem
-            if (currentItem < currentSection.pages.size - 1) {
+            if (currentItem < allPages.size - 1) {
                 pageViewPager.currentItem = currentItem + 1
-            } else {
-                // At last page, go to next section with header (if headers exist)
-                if (sectionsWithHeaders.isNotEmpty()) {
-                    // Find next header section AFTER current position
-                    val nextHeaderSection = sectionsWithHeaders.firstOrNull { headerSection ->
-                        val headerIndex = sections.indexOf(headerSection)
-                        headerIndex > currentSectionIndex
-                    }
-                    if (nextHeaderSection != null) {
-                        currentSectionIndex = sections.indexOf(nextHeaderSection)
-                        updateHeaderDisplay()
-                        loadPagesForCurrentSection()
-                    }
-                } else if (currentSectionIndex < sections.size - 1) {
-                    // No headers, just go to next section
-                    currentSectionIndex++
-                    updateHeaderDisplay()
-                    loadPagesForCurrentSection()
-                }
             }
         }
 
@@ -179,19 +163,20 @@ class TextReadingFragment : Fragment() {
             // Filter sections that have headers (for header navigation counter)
             sectionsWithHeaders = sections.filter { it.headerText != null }
 
-            if (sections.isNotEmpty()) {
-                val hasHeaders = sectionsWithHeaders.isNotEmpty()
-
-                // Show/hide header navigation based on whether there are headers
-                if (hasHeaders) {
-                    headerNavigationContainer.visibility = View.VISIBLE
-                    updateHeaderDisplay()
-                } else {
-                    headerNavigationContainer.visibility = View.GONE
-                    headerTextView.visibility = View.GONE
+            // Flatten all sections into a single list of pages with header info
+            allPages = sections.flatMapIndexed { sectionIndex, section ->
+                section.pages.map { page ->
+                    PageWithHeader(
+                        page = page,
+                        headerText = section.headerText,
+                        sectionIndex = sectionIndex
+                    )
                 }
+            }
 
-                loadPagesForCurrentSection()
+            if (allPages.isNotEmpty()) {
+                // Load all pages into ViewPager
+                loadAllPages()
 
                 // Set up header swipe gesture AFTER views are visible
                 setupHeaderSwipeGesture()
@@ -203,17 +188,14 @@ class TextReadingFragment : Fragment() {
 
     /**
      * Set up swipe gesture for header navigation
-     * Called after sections are parsed and views are visible
+     * Called after pages are loaded and views are visible
      */
     private fun setupHeaderSwipeGesture() {
-        android.util.Log.d("HeaderSwipe", "Setting up header swipe gesture detector")
-
         val headerGestureDetector = GestureDetector(requireContext(), object : GestureDetector.SimpleOnGestureListener() {
             private val SWIPE_THRESHOLD = 100
             private val SWIPE_VELOCITY_THRESHOLD = 100
 
             override fun onDown(e: MotionEvent): Boolean {
-                android.util.Log.d("HeaderSwipe", "onDown detected at x=${e.x}, y=${e.y}")
                 return true  // Must return true to receive subsequent events
             }
 
@@ -223,28 +205,27 @@ class TextReadingFragment : Fragment() {
                 val diffX = e2.x - e1.x
                 val diffY = e2.y - e1.y
 
-                android.util.Log.d("HeaderSwipe", "onFling: diffX=$diffX, diffY=$diffY, velocityX=$velocityX")
-
                 if (abs(diffX) > abs(diffY) && abs(diffX) > SWIPE_THRESHOLD && abs(velocityX) > SWIPE_VELOCITY_THRESHOLD) {
+                    val currentPos = pageViewPager.currentItem
+                    val currentHeader = if (currentPos < allPages.size) allPages[currentPos].headerText else null
+
                     if (diffX > 0) {
-                        // Swipe right - go to previous section
-                        val headerSectionIndex = sectionsWithHeaders.indexOf(sections[currentSectionIndex])
-                        android.util.Log.d("HeaderSwipe", "Swipe right, headerSectionIndex=$headerSectionIndex")
-                        if (headerSectionIndex > 0) {
-                            currentSectionIndex = sections.indexOf(sectionsWithHeaders[headerSectionIndex - 1])
-                            updateHeaderDisplay()
-                            loadPagesForCurrentSection()
-                            return true
+                        // Swipe right - go to previous header
+                        for (i in currentPos - 1 downTo 0) {
+                            val pageHeader = allPages[i].headerText
+                            if (pageHeader != currentHeader && pageHeader != null) {
+                                pageViewPager.currentItem = i
+                                return true
+                            }
                         }
                     } else {
-                        // Swipe left - go to next section
-                        val headerSectionIndex = sectionsWithHeaders.indexOf(sections[currentSectionIndex])
-                        android.util.Log.d("HeaderSwipe", "Swipe left, headerSectionIndex=$headerSectionIndex, total=${sectionsWithHeaders.size}")
-                        if (headerSectionIndex >= 0 && headerSectionIndex < sectionsWithHeaders.size - 1) {
-                            currentSectionIndex = sections.indexOf(sectionsWithHeaders[headerSectionIndex + 1])
-                            updateHeaderDisplay()
-                            loadPagesForCurrentSection()
-                            return true
+                        // Swipe left - go to next header
+                        for (i in currentPos + 1 until allPages.size) {
+                            val pageHeader = allPages[i].headerText
+                            if (pageHeader != currentHeader && pageHeader != null) {
+                                pageViewPager.currentItem = i
+                                return true
+                            }
                         }
                     }
                 }
@@ -252,199 +233,129 @@ class TextReadingFragment : Fragment() {
             }
         })
 
-        // Attach swipe to header area - navigation container, ScrollView and its children
-        val headerTouchListener = View.OnTouchListener { v, event ->
-            android.util.Log.d("HeaderSwipe", "Touch event on ${v.javaClass.simpleName}: action=${event.action}, visibility=${v.visibility}")
+        // Attach swipe to header area
+        val headerTouchListener = View.OnTouchListener { _, event ->
             headerGestureDetector.onTouchEvent(event)
             false  // Don't consume, allow scrolling
         }
 
-        // KEY FIX: Apply to progress bar and indicator - they don't intercept horizontal swipes
-        // Must set clickable=true for them to receive touch events
+        // Apply to progress bar and indicator
         headerProgressBar.isClickable = true
-        headerProgressBar.isFocusable = true
         headerProgressBar.setOnTouchListener(headerTouchListener)
-        headerProgressBar.setOnClickListener { android.util.Log.d("HeaderSwipe", "Progress bar clicked") }
-        android.util.Log.d("HeaderSwipe", "Attached listener to headerProgressBar, clickable=${headerProgressBar.isClickable}")
 
         headerIndicator.isClickable = true
-        headerIndicator.isFocusable = true
         headerIndicator.setOnTouchListener(headerTouchListener)
-        headerIndicator.setOnClickListener { android.util.Log.d("HeaderSwipe", "Indicator clicked") }
-        android.util.Log.d("HeaderSwipe", "Attached listener to headerIndicator, clickable=${headerIndicator.isClickable}")
 
-        // Apply to navigation container (outside ScrollView - most reliable)
-        // Make it clickable and add background so it receives touch events
+        // Apply to navigation container
         headerNavigationContainer.isClickable = true
-        headerNavigationContainer.isFocusable = true
         headerNavigationContainer.setBackgroundColor(android.graphics.Color.TRANSPARENT)
         headerNavigationContainer.setOnTouchListener(headerTouchListener)
-        // Add onClick to ensure it's truly clickable
-        headerNavigationContainer.setOnClickListener {
-            android.util.Log.d("HeaderSwipe", "Navigation container clicked")
-        }
-        android.util.Log.d("HeaderSwipe", "Attached listener to headerNavigationContainer, visibility=${headerNavigationContainer.visibility}, clickable=${headerNavigationContainer.isClickable}")
 
-        // Also apply to ScrollView and its children for full area coverage
+        // Apply to ScrollView and its children
         val headerScrollView = requireView().findViewById<View>(R.id.headerScrollView)
         headerScrollView.isClickable = true
         headerScrollView.setOnTouchListener(headerTouchListener)
-        android.util.Log.d("HeaderSwipe", "Attached listener to headerScrollView, clickable=${headerScrollView.isClickable}")
 
         titleView.isClickable = true
         titleView.setOnTouchListener(headerTouchListener)
-        android.util.Log.d("HeaderSwipe", "Attached listener to titleView, visibility=${titleView.visibility}, clickable=${titleView.isClickable}")
 
         headerTextView.isClickable = true
         headerTextView.setOnTouchListener(headerTouchListener)
-        android.util.Log.d("HeaderSwipe", "Attached listener to headerTextView, visibility=${headerTextView.visibility}, clickable=${headerTextView.isClickable}")
     }
 
     /**
-     * Update header display with current section's header text
+     * Update header display based on current page position
      */
-    private fun updateHeaderDisplay() {
-        val section = sections[currentSectionIndex]
+    private fun updateHeaderDisplay(position: Int) {
+        if (position >= allPages.size) return
 
-        if (section.headerText != null) {
+        val currentPageWithHeader = allPages[position]
+        val currentHeader = currentPageWithHeader.headerText
+
+        if (currentHeader != null) {
             // Hide title when header is shown
             titleView.visibility = View.GONE
 
             headerTextView.visibility = View.VISIBLE
-            // Just show plain text header, no HTML formatting
-            headerTextView.text = section.headerText
+            headerTextView.text = currentHeader
 
             // Show header navigation when in a section with header
             headerNavigationContainer.visibility = View.VISIBLE
 
-            // Update header navigation counter - only count sections with headers
-            val headerSectionIndex = sectionsWithHeaders.indexOf(section)
-            if (headerSectionIndex >= 0) {
-                // Hide progress bar and indicator if only one header
-                if (sectionsWithHeaders.size <= 1) {
-                    headerProgressBar.visibility = View.GONE
-                    headerIndicator.visibility = View.GONE
-                    prevHeaderButton.visibility = View.INVISIBLE
-                    nextHeaderButton.visibility = View.INVISIBLE
-                } else {
-                    headerProgressBar.visibility = View.VISIBLE
-                    headerIndicator.visibility = View.VISIBLE
+            // Find which header section we're in (count unique headers up to this point)
+            val uniqueHeadersBefore = allPages.take(position + 1)
+                .mapNotNull { it.headerText }
+                .distinct()
+            val currentHeaderIndex = uniqueHeadersBefore.indexOf(currentHeader)
+            val totalHeaders = sectionsWithHeaders.size
 
-                    headerIndicator.text = "${headerSectionIndex + 1}/${sectionsWithHeaders.size}"
+            // Hide progress bar and indicator if only one header
+            if (totalHeaders <= 1) {
+                headerProgressBar.visibility = View.GONE
+                headerIndicator.visibility = View.GONE
+                prevHeaderButton.visibility = View.INVISIBLE
+                nextHeaderButton.visibility = View.INVISIBLE
+            } else {
+                headerProgressBar.visibility = View.VISIBLE
+                headerIndicator.visibility = View.VISIBLE
 
-                    // Update header progress bar
-                    val progress = ((headerSectionIndex + 1) * 100) / sectionsWithHeaders.size
-                    headerProgressBar.progress = progress
+                headerIndicator.text = "${currentHeaderIndex + 1}/$totalHeaders"
 
-                    // Hide < button if at first header section, > if at last header section
-                    val isFirstHeaderSection = headerSectionIndex == 0
-                    val isLastHeaderSection = headerSectionIndex == sectionsWithHeaders.size - 1
+                // Update header progress bar
+                val progress = ((currentHeaderIndex + 1) * 100) / totalHeaders
+                headerProgressBar.progress = progress
 
-                    prevHeaderButton.visibility = if (isFirstHeaderSection) View.INVISIBLE else View.VISIBLE
-                    nextHeaderButton.visibility = if (isLastHeaderSection) View.INVISIBLE else View.VISIBLE
-                }
+                // Check if there's a previous/next header available
+                val hasPrevHeader = allPages.take(position).any { it.headerText != null && it.headerText != currentHeader }
+                val hasNextHeader = allPages.drop(position + 1).any { it.headerText != null && it.headerText != currentHeader }
+
+                prevHeaderButton.visibility = if (hasPrevHeader) View.VISIBLE else View.INVISIBLE
+                nextHeaderButton.visibility = if (hasNextHeader) View.VISIBLE else View.INVISIBLE
             }
         } else {
             // Show title when no header
             titleView.visibility = View.VISIBLE
 
             headerTextView.visibility = View.GONE
-            // Hide header navigation when not in a header section
             headerNavigationContainer.visibility = View.GONE
         }
     }
 
     /**
-     * Load pages for the current section into ViewPager
+     * Load all pages into ViewPager (flat list from all sections)
      */
-    private fun loadPagesForCurrentSection(startAtEnd: Boolean = false) {
-        val section = sections[currentSectionIndex]
-        val adapter = PageAdapter(section.pages)
+    private fun loadAllPages() {
+        // Extract just the Page objects for the adapter
+        val pages = allPages.map { it.page }
+        val adapter = PageAdapter(pages)
         pageViewPager.adapter = adapter
 
-        // Set up page change listener
+        // Set up page change listener to update header display
         pageViewPager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
             override fun onPageSelected(position: Int) {
                 super.onPageSelected(position)
+                updateHeaderDisplay(position)
                 updatePageIndicator(position)
             }
         })
 
-        // Set up gesture detector for swipe at boundaries
-        val gestureDetector = GestureDetector(requireContext(), object : GestureDetector.SimpleOnGestureListener() {
-            override fun onFling(e1: MotionEvent?, e2: MotionEvent, velocityX: Float, velocityY: Float): Boolean {
-                if (e1 == null) return false
-
-                val diffX = e2.x - e1.x
-                val currentPos = pageViewPager.currentItem
-
-                // Check if swiping left (forward) at last page
-                if (diffX < -100 && currentPos == section.pages.size - 1) {
-                    android.util.Log.d("TextReading", "Swipe forward from last page, currentIndex=$currentSectionIndex")
-
-                    // Find next section with header AFTER current position
-                    for (i in currentSectionIndex + 1 until sections.size) {
-                        if (sections[i].headerText != null) {
-                            android.util.Log.d("TextReading", "Found next header section at index $i: ${sections[i].headerText}")
-                            currentSectionIndex = i
-                            updateHeaderDisplay()
-                            loadPagesForCurrentSection()
-                            return true
-                        }
-                    }
-                    android.util.Log.d("TextReading", "No more header sections found")
-                }
-
-                // Check if swiping right (backward) at first page
-                if (diffX > 100 && currentPos == 0) {
-                    android.util.Log.d("TextReading", "Swipe backward from first page, currentIndex=$currentSectionIndex")
-
-                    // Find previous section with header BEFORE current position
-                    for (i in currentSectionIndex - 1 downTo 0) {
-                        if (sections[i].headerText != null) {
-                            android.util.Log.d("TextReading", "Found prev header section at index $i: ${sections[i].headerText}")
-                            currentSectionIndex = i
-                            updateHeaderDisplay()
-                            loadPagesForCurrentSection(startAtEnd = true)
-                            return true
-                        }
-                    }
-                    android.util.Log.d("TextReading", "No previous header sections found")
-                }
-
-                return false
-            }
-        })
-
-        // Attach touch listener to ViewPager2's RecyclerView child
-        val recyclerView = pageViewPager.getChildAt(0) as? RecyclerView
-        recyclerView?.setOnTouchListener { v, event ->
-            gestureDetector.onTouchEvent(event)
-            false  // Don't consume, let ViewPager2 handle it too
-        }
-
-        // Navigate to first or last page
-        if (startAtEnd && section.pages.isNotEmpty()) {
-            pageViewPager.setCurrentItem(section.pages.size - 1, false)
-        } else {
-            pageViewPager.setCurrentItem(0, false)
-            updatePageIndicator(0)
-        }
+        // Start at first page
+        pageViewPager.setCurrentItem(0, false)
+        updateHeaderDisplay(0)
+        updatePageIndicator(0)
     }
 
     /**
      * Update page indicator and navigation
      */
     private fun updatePageIndicator(position: Int) {
-        val section = sections[currentSectionIndex]
-        val pages = section.pages
+        if (position >= allPages.size) return
 
-        if (pages.isEmpty()) return
-
-        val page = pages[position]
+        val pageWithHeader = allPages[position]
+        val page = pageWithHeader.page
 
         // Show navigation bar if there are multiple pages
-        if (pages.size > 1) {
+        if (allPages.size > 1) {
             pageNavigationContainer.visibility = View.VISIBLE
 
             // Only show counter and progress if this is a repetition
@@ -466,11 +377,10 @@ class TextReadingFragment : Fragment() {
                 pageProgressBar.visibility = View.GONE
             }
 
-            // Determine if we're at absolute first or last across all sections
-            val isAbsoluteFirst = currentSectionIndex == 0 && position == 0
-            val isAbsoluteLast = currentSectionIndex == sections.size - 1 && position == pages.size - 1
-
             // Hide arrows at absolute boundaries
+            val isAbsoluteFirst = position == 0
+            val isAbsoluteLast = position == allPages.size - 1
+
             prevPageButton.visibility = if (isAbsoluteFirst) View.INVISIBLE else View.VISIBLE
             nextPageButton.visibility = if (isAbsoluteLast) View.INVISIBLE else View.VISIBLE
         } else {
