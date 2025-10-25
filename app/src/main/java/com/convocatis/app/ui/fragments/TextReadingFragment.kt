@@ -442,25 +442,13 @@ class PageAdapter(private val pages: List<TextContentParser.Page>) :
         fun bind(page: TextContentParser.Page) {
             val context = itemView.context
 
-            // Create ImageGetter to load images
-            val imageGetter = Html.ImageGetter { source ->
-                try {
-                    // Create placeholder drawable
-                    val placeholder = context.getDrawable(android.R.drawable.ic_menu_gallery)
-                    placeholder?.setBounds(0, 0, 200, 200)
-
-                    // Load image asynchronously
-                    val drawable = placeholder
-                    if (source.startsWith("http://") || source.startsWith("https://")) {
-                        // For remote images, show placeholder icon
-                        // Full image loading would require external library (Glide, Picasso)
-                        drawable?.setBounds(0, 0, 100, 100)
-                    }
-                    drawable
-                } catch (e: Exception) {
-                    null
-                }
-            }
+            // Use Glide-based ImageGetter for loading images
+            val imageGetter = com.convocatis.app.utils.GlideImageGetter(
+                context = context,
+                textView = contentView,
+                maxWidth = 800,
+                maxHeight = 600
+            )
 
             // Render HTML content with image support
             val spanned = HtmlCompat.fromHtml(

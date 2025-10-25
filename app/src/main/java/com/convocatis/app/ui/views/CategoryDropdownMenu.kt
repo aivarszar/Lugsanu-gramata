@@ -13,16 +13,19 @@ import android.widget.ListView
 import android.widget.PopupWindow
 import android.widget.TextView
 import android.widget.LinearLayout
+import com.convocatis.app.database.entity.TextEntity
 import com.convocatis.app.utils.TextTypesParser
 
 /**
  * Dropdown menu for hierarchical category filtering (Type -> Code)
  * Shows as a proper dropdown with ListView
+ * Automatically hides empty categories and subcategories
  */
 class CategoryDropdownMenu(
     private val context: Context,
     private val anchorView: View,
-    private val onFilterSelected: (TextTypesParser.CategoryFilter) -> Unit
+    private val onFilterSelected: (TextTypesParser.CategoryFilter) -> Unit,
+    private val availableTexts: List<TextEntity> = emptyList() // For filtering empty categories
 ) {
 
     private var popupWindow: PopupWindow? = null
@@ -40,7 +43,14 @@ class CategoryDropdownMenu(
             return
         }
 
-        showTypeSelection()
+        // If a subcategory (code) is selected, show that type's codes
+        // Otherwise show type selection
+        if (currentFilter?.code != null && currentFilter?.type != null) {
+            val typeDesc = parser.getTypeToDescriptionMap()[currentFilter!!.type] ?: "Category"
+            showCodeSelection(currentFilter!!.type!!, typeDesc)
+        } else {
+            showTypeSelection()
+        }
     }
 
     fun dismiss() {
@@ -50,15 +60,33 @@ class CategoryDropdownMenu(
 
     private fun showTypeSelection() {
         val typeDescriptions = parser.getTypeToDescriptionMap()
+        val hierarchy = parser.getTypeCodeHierarchy()
         val typeList = mutableListOf<Pair<Int, String>>()
 
-        // Add all types sorted by number
+        // Add types that have either:
+        // 1. At least one subcategory with texts, OR
+        // 2. Texts directly in that type (no code)
         typeDescriptions.keys.sorted().forEach { typeNum ->
-            typeList.add(Pair(typeNum, typeDescriptions[typeNum] ?: "Type $typeNum"))
+            // Check if type has any texts
+            val hasTextsInType = availableTexts.any { it.categoryType == typeNum }
+
+            // Check if type has any subcategories with texts
+            val subcodes = hierarchy[typeNum] ?: emptyList()
+            val hasNonEmptySubcategories = subcodes.any { (code, _) ->
+                availableTexts.any { text ->
+                    text.categoryType == typeNum &&
+                    (text.categoryCode == code || text.categoryCode?.split(",")?.map { it.trim() }?.contains(code) == true)
+                }
+            }
+
+            // Only add type if it has texts or non-empty subcategories
+            if (hasTextsInType || hasNonEmptySubcategories) {
+                typeList.add(Pair(typeNum, typeDescriptions[typeNum] ?: "Type $typeNum"))
+            }
         }
 
         // Debug logging
-        android.util.Log.d("CategoryDropdown", "Found ${typeList.size} types: $typeList")
+        android.util.Log.d("CategoryDropdown", "Found ${typeList.size} non-empty types: $typeList")
 
         val contentView = createDropdownView(typeList, true)
         showPopup(contentView)
@@ -66,15 +94,23 @@ class CategoryDropdownMenu(
 
     private fun showCodeSelection(typeNum: Int, typeDescription: String) {
         val hierarchy = parser.getTypeCodeHierarchy()
-        val codes = hierarchy[typeNum] ?: emptyList()
+        val allCodes = hierarchy[typeNum] ?: emptyList()
 
-        if (codes.isEmpty()) {
+        // Filter out subcategories that have no texts
+        val codesWithTexts = allCodes.filter { (code, _) ->
+            availableTexts.any { text ->
+                text.categoryType == typeNum &&
+                (text.categoryCode == code || text.categoryCode?.split(",")?.map { it.trim() }?.contains(code) == true)
+            }
+        }
+
+        if (codesWithTexts.isEmpty()) {
             dismiss()
             return
         }
 
         currentTypeNum = typeNum
-        val contentView = createDropdownView(codes, false, typeNum)
+        val contentView = createDropdownView(codesWithTexts, false, typeNum)
 
         // Dismiss old popup and show new one
         popupWindow?.dismiss()

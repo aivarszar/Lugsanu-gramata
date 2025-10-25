@@ -28,6 +28,7 @@ class TextsFragment : Fragment() {
     private var showOnlyFavorites = false
     private var searchTerm = ""
     private var currentFilter: TextTypesParser.CategoryFilter = TextTypesParser.CategoryFilter.all()
+    private var allTexts: List<TextEntity> = emptyList() // Cache all texts for category filtering
 
     companion object {
         private const val PREF_LAST_FILTER_TYPE = "last_filter_type"
@@ -87,6 +88,9 @@ class TextsFragment : Fragment() {
 
         val database = ConvocatisApplication.getInstance().database
         database.textDao().getAllTexts().observe(viewLifecycleOwner) { allTexts ->
+            // Cache all texts for category filtering
+            this@TextsFragment.allTexts = allTexts
+
             var filteredTexts = allTexts.toMutableList()
 
             // Filter by search term
@@ -273,7 +277,8 @@ class TextsFragment : Fragment() {
                     currentFilter = filter
                     saveLastFilter()
                     loadTexts()
-                }
+                },
+                availableTexts = allTexts
             )
             dropdown.setCurrentFilter(currentFilter)
             dropdown.show()
