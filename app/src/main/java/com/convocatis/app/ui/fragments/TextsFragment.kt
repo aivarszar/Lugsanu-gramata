@@ -102,7 +102,10 @@ class TextsFragment : Fragment() {
                 // Filter by both Type and Code
                 currentFilter.type != null && currentFilter.code != null -> {
                     filteredTexts.filter {
-                        it.categoryType == currentFilter.type && it.categoryCode == currentFilter.code
+                        // Support comma-separated codes (e.g., "21,22,1")
+                        val codes = it.categoryCode?.split(",")?.map { code -> code.trim() } ?: emptyList()
+                        it.categoryType == currentFilter.type &&
+                            (it.categoryCode == currentFilter.code || codes.contains(currentFilter.code))
                     }.toMutableList()
                 }
                 // Filter by Type only
@@ -177,6 +180,14 @@ class TextsFragment : Fragment() {
                       <li>⭐ Novērtē aplikāciju</li>
                       <li>📤 Dalies ar draugiem</li>
                     </ul>
+
+                    <br/>
+
+                    Izstrādātājs: <a href="http://convocatis.net"><b>Convocatis</b></a><br/>
+                    <a href="https://www.madonasdraudze.lv/Avize_2020/1.pdf"><b>Kalnā par Convocatis</b></a>
+
+                    <br/><br/>
+                    <img src="https://png.pngtree.com/png-vector/20211103/ourmid/pngtree-christian-religious-symbol-cross-brush-illustration-png-image_4020809.png" />
 
                     <p><small>Versija 1.0 | Izstrādāts ar ❤️ Latvijā</small></p>
                 """.trimIndent(),

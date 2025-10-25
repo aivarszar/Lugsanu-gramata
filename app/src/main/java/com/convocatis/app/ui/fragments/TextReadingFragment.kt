@@ -1,7 +1,14 @@
 package com.convocatis.app.ui.fragments
 
+import android.content.Intent
+import android.graphics.drawable.Drawable
+import android.net.Uri
 import android.os.Build
 import android.os.Bundle
+import android.text.Spanned
+import android.text.method.LinkMovementMethod
+import android.text.style.ClickableSpan
+import android.text.style.URLSpan
 import android.view.GestureDetector
 import android.view.LayoutInflater
 import android.view.MotionEvent
@@ -19,7 +26,10 @@ import com.convocatis.app.ConvocatisApplication
 import com.convocatis.app.R
 import com.convocatis.app.database.entity.TextEntity
 import com.convocatis.app.utils.TextContentParser
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
+import java.net.URL
 import kotlin.math.abs
 
 class TextReadingFragment : Fragment() {
@@ -429,11 +439,71 @@ class PageAdapter(private val pages: List<TextContentParser.Page>) :
         private val contentView: TextView = view.findViewById(R.id.pageContent)
 
         fun bind(page: TextContentParser.Page) {
-            // Render HTML content
-            contentView.text = HtmlCompat.fromHtml(
+            val context = itemView.context
+
+            // Create ImageGetter to load images
+            val imageGetter = HtmlCompat.ImageGetter { source ->
+                try {
+                    // Create placeholder drawable
+                    val placeholder = context.getDrawable(android.R.drawable.ic_menu_gallery)
+                    placeholder?.setBounds(0, 0, 200, 200)
+
+                    // Load image asynchronously
+                    val drawable = placeholder
+                    if (source.startsWith("http://") || source.startsWith("https://")) {
+                        // For remote images, show placeholder icon
+                        // Full image loading would require external library (Glide, Picasso)
+                        drawable?.setBounds(0, 0, 100, 100)
+                    }
+                    drawable
+                } catch (e: Exception) {
+                    null
+                }
+            }
+
+            // Render HTML content with image support
+            val spanned = HtmlCompat.fromHtml(
                 page.content,
-                HtmlCompat.FROM_HTML_MODE_LEGACY
+                HtmlCompat.FROM_HTML_MODE_LEGACY,
+                imageGetter,
+                null
             )
+
+            contentView.text = spanned
+
+            // Make links clickable
+            contentView.movementMethod = LinkMovementMethod.getInstance()
+
+            // Custom link click handler to open in browser/external app
+            makeLinkClickable(contentView, spanned)
+        }
+
+        private fun makeLinkClickable(textView: TextView, spanned: Spanned) {
+            val urlSpans = spanned.getSpans(0, spanned.length, URLSpan::class.java)
+
+            for (span in urlSpans) {
+                val start = spanned.getSpanStart(span)
+                val end = spanned.getSpanEnd(span)
+                val flags = spanned.getSpanFlags(span)
+
+                val clickable = object : ClickableSpan() {
+                    override fun onClick(widget: View) {
+                        val url = span.url
+                        val context = widget.context
+
+                        try {
+                            // Open URL in default browser/app
+                            val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
+                            context.startActivity(intent)
+                        } catch (e: Exception) {
+                            android.util.Log.e("PageAdapter", "Error opening URL: $url", e)
+                        }
+                    }
+                }
+
+                (spanned as? android.text.SpannableString)?.setSpan(clickable, start, end, flags)
+                (spanned as? android.text.SpannableStringBuilder)?.setSpan(clickable, start, end, flags)
+            }
         }
     }
 }

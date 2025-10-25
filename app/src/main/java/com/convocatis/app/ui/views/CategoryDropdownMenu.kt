@@ -106,7 +106,7 @@ class CategoryDropdownMenu(
             // Type selection view: NO navigation buttons (user hasn't selected anything yet)
             // Just spacer to push close button to right
         } else {
-            // Code selection view: back button (to type selection) + home button (to All)
+            // Code selection view: back button (to type selection)
             val backButton = ImageButton(context).apply {
                 setImageResource(android.R.drawable.ic_menu_revert) // Back icon
                 setBackgroundColor(Color.TRANSPARENT)
@@ -119,28 +119,6 @@ class CategoryDropdownMenu(
                 }
             }
             headerLayout.addView(backButton)
-
-            // Spacer to push home button to middle
-            val middleSpacer = View(context).apply {
-                layoutParams = LinearLayout.LayoutParams(
-                    0,
-                    1,
-                    1f // weight = 1
-                )
-            }
-            headerLayout.addView(middleSpacer)
-
-            val homeButton = ImageButton(context).apply {
-                setImageResource(android.R.drawable.ic_menu_mylocation) // Home/location icon
-                setBackgroundColor(Color.TRANSPARENT)
-                layoutParams = LinearLayout.LayoutParams(48, 48)
-                setOnClickListener {
-                    currentTypeNum = null
-                    onFilterSelected(TextTypesParser.CategoryFilter.all())
-                    dismiss()
-                }
-            }
-            headerLayout.addView(homeButton)
         }
 
         // Spacer to push close button to right
