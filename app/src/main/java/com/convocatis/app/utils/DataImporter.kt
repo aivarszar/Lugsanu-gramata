@@ -17,7 +17,7 @@ class DataImporter(private val context: Context) {
 
     companion object {
         private const val TAG = "DataImporter"
-        private const val KEY_DATA_IMPORTED = "data_imported_v9.8"  // v9.5 labojumi xml 7-40
+        private const val KEY_DATA_IMPORTED = "data_imported_v9.9"  // v9.5 labojumi xml 7-40
     }
 
     /**
