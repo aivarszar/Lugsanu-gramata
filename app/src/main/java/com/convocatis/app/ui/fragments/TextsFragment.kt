@@ -232,7 +232,7 @@ class TextsFragment : Fragment() {
                       <li>📤 Share with friends</li>
                     </ul>
 
-                    <p><small>Version 1.0 | Made with ❤️ in Latvia</small></p>
+                    <p><small>Version 1.0 Made with ❤️ in Latvia</small></p>
                 """.trimIndent(),
                 categoryType = 0,
                 categoryCode = null,

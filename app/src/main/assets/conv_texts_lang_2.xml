@@ -3,19 +3,15 @@
 	<item>
 		<RID>2</RID>
 		<Description>Rožukronis, 1. daļa</Description>
-		<String>&gt;&gt;Kristus Atnākšanas noslēpumi &lt;&lt;
+		<String>
+            &gt;&gt;Kristus Atnākšanas noslēpumi&lt;&lt;
+
 Rožukronis Vissvētākās Jaunavas Marijas godam 
  + Dieva Tēva un Dēla un Svētā Gara vārdā. Amen!
 
-Tēvs mūsu, kas esi Debesīs, svētīts lai top Tavs vārds; 
- Lai atnāk Tava Valstība, Tavs prāts lai notiek kā Debesīs tā arī virs zemes; 
- Mūsu dienišķo maizi dod mums šodien un piedod mums mūsu parādus, kā arī mēs piedodam saviem parādniekiem; 
- Un neieved mūs kārdināšanā, bet atpestī mūs no ļauna!
-|3^Esi sveicināta, Marija, žēlastības pilnā, 
- Kungs ir ar tevi, tu esi svētīta starp sievietēm, un svētīts ir tavas miesas auglis Jēzus
- Svētā Marija, Dieva māte, lūdz par mums, grēciniekiem
- Tagad un mūsu nāves stundā. Amen! &lt;&lt;
-|Gods lai ir Tēvam un Dēlam, un Svētajam Garam; kā tas no iesākuma ir bijis, tā tagad un vienmēr un mūžīgi mūžos. Amen!
+            |%49
+            |3^%341
+            |%342
 &gt;&gt;Pirmais noslēpums 
  Eņģeļa pasludinājums Jaunavai Marijai 
  Dievs sūtīja eņģeli Gabriēlu uz Galilejas pilsētu Nācareti pie Jaunavas, kas bija saderināta Dāvida cilts vīram Jāzepam; un Jaunavas vārds bija Marija. Un eņģelis, ienācis pie viņas, sacīja: “Esi sveicināta, žēlastības pilnā! Kungs ir ar tevi; tu esi svētīta starp sievietēm. Lūk, tu ieņemsi un dzemdēsi Dēlu, un nosauksi Viņu vārdā Jēzus.”&lt;&lt;
@@ -51,9 +47,9 @@ Tēvs mūsu, kas esi Debesīs, svētīts lai top Tavs vārds;
 |10^%341
 |%342
 |%345
-&gt;&gt;Apustuļu ticības apliecība&lt;&lt;
+            &gt;&gt;Nobeigums&lt;&lt;
 |%50
-&gt;&gt;Litānija Vissvētākajai Jaunavai Marijai&lt;&lt;
+
 |%51</String>
 		<Text_type>1</Text_type>
 		<Code>1</Code>
@@ -65,15 +61,9 @@ Tēvs mūsu, kas esi Debesīs, svētīts lai top Tavs vārds;
 Rožukronis Vissvētākās Jaunavas Marijas godam 
  + Dieva Tēva un Dēla un Svētā Gara vārdā. Amen!
 
-Tēvs mūsu, kas esi Debesīs, svētīts lai top Tavs vārds; 
- Lai atnāk Tava Valstība, Tavs prāts lai notiek kā Debesīs tā arī virs zemes; 
- Mūsu dienišķo maizi dod mums šodien un piedod mums mūsu parādus, kā arī mēs piedodam saviem parādniekiem; 
- Un neieved mūs kārdināšanā, bet atpestī mūs no ļauna!
-|3^Esi sveicināta, Marija, žēlastības pilnā, 
- Kungs ir ar tevi, tu esi svētīta starp sievietēm, un svētīts ir tavas miesas auglis Jēzus
- Svētā Marija, Dieva māte, lūdz par mums, grēciniekiem
- Tagad un mūsu nāves stundā. Amen!|
-Gods lai ir Tēvam un Dēlam, un Svētajam Garam; kā tas no iesākuma ir bijis, tā tagad un vienmēr un mūžīgi mūžos. Amen! 
+|%49
+            |3^%341
+            |%342
 &gt;&gt;Pirmais noslēpums
  Jēzus kristības Jordānā
  Jēzus atnāca no Galilejas uz Jordānu pie Jāņa, lai tas Viņu kristītu. Pēc kristībām Jēzus tūlīt izkāpa no ūdens. Un, lūk, debesis atvērās, un Viņš redzēja Dieva Garu baloža veidā nolaižamies pār sevi. Un balss no debesīm sacīja: “Šis ir mans mīļais Dēls, kurš man ļoti labpatīk.” &lt;&lt;
@@ -108,9 +98,11 @@ Gods lai ir Tēvam un Dēlam, un Svētajam Garam; kā tas no iesākuma ir bijis,
 |%49
 |10^%341
 |%342
-|%345
-&gt;&gt;Apustuļu ticības apliecība&lt;<%50
-&gt;&gt;Litānija Vissvētākajai Jaunavai Marijai&lt;&lt;%51</String>
+
+            |%345
+            &gt;&gt;Nobeigums&lt;&lt;
+            |%50
+|%51</String>
 		<Text_type>1</Text_type>
 		<Code>1</Code>
 	</item>
@@ -121,15 +113,9 @@ Gods lai ir Tēvam un Dēlam, un Svētajam Garam; kā tas no iesākuma ir bijis,
 Rožukronis Vissvētākās Jaunavas Marijas godam 
  + Dieva Tēva un Dēla un Svētā Gara vārdā. Amen!
 
-Tēvs mūsu, kas esi Debesīs, svētīts lai top Tavs vārds; 
- Lai atnāk Tava Valstība, Tavs prāts lai notiek kā Debesīs tā arī virs zemes; 
- Mūsu dienišķo maizi dod mums šodien un piedod mums mūsu parādus, kā arī mēs piedodam saviem parādniekiem; 
- Un neieved mūs kārdināšanā, bet atpestī mūs no ļauna!
-|3^Esi sveicināta, Marija, žēlastības pilnā, 
- Kungs ir ar tevi, tu esi svētīta starp sievietēm, un svētīts ir tavas miesas auglis Jēzus
- Svētā Marija, Dieva māte, lūdz par mums, grēciniekiem
- Tagad un mūsu nāves stundā. Amen!|
-Gods lai ir Tēvam un Dēlam, un Svētajam Garam; kā tas no iesākuma ir bijis, tā tagad un vienmēr un mūžīgi mūžos. Amen!
+            |%49
+            |3^%341
+            |%342
 &gt;&gt;Pirmais noslēpums
  Kungs Jēzus lūdzas Olīvdārzā
  Jēzus, ceļos nometies, lūdza Dievu, sacīdams: “Tēvs, ja Tu vēlies, atņem šo biķeri no manis! Tomēr ne mans, bet Tavs prāts lai notiek!” Nāves baiļu pārņemts, Viņš lūdza Dievu jo karstāk. Un sviedri kā karstas asins lāses ritēja pār Viņa dievišķo vaigu. &lt;&lt;
@@ -164,8 +150,9 @@ Gods lai ir Tēvam un Dēlam, un Svētajam Garam; kā tas no iesākuma ir bijis,
 |%49
 |10^%341
 |%342
-|%345
-&gt;&gt;Apustuļu ticības apliecība&lt;&lt;%50
+            |%345
+            &gt;&gt;Nobeigums&lt;&lt;
+            |%50
 |Lūgsimies.
 Kungs, Dievs, mēs Tevi lūdzam:
 Liec, lai mūsu, Tavu kalpu dvēsele un miesa vienmēr būtu vesela,
@@ -174,7 +161,7 @@ Mēs tiktu atbrīvoti no laicīgā ļaunuma
 Un priecātos mūžīgā dzīvē.
 Caur Jēzu Kristu, mūsu Kungu.
 Amen.
-&gt;&gt;Litānija Vissvētākajai Jaunavai Marijai&lt;&lt;%51</String>
+|%51</String>
 		<Text_type>1</Text_type>
 		<Code>1</Code>
 	</item>
@@ -185,14 +172,9 @@ Amen.
 Rožukronis Vissvētākās Jaunavas Marijas godam 
  + Dieva Tēva un Dēla un Svētā Gara vārdā. Amen!
 
-Tēvs mūsu, kas esi Debesīs, svētīts lai top Tavs vārds; 
- Lai atnāk Tava Valstība, Tavs prāts lai notiek kā Debesīs tā arī virs zemes; 
- Mūsu dienišķo maizi dod mums šodien un piedod mums mūsu parādus, kā arī mēs piedodam saviem parādniekiem; 
- Un neieved mūs kārdināšanā, bet atpestī mūs no ļauna!
-|3^Esi sveicināta, Marija, žēlastības pilnā, 
- Kungs ir ar tevi, tu esi svētīta starp sievietēm, un svētīts ir tavas miesas auglis Jēzus
- Svētā Marija, Dieva māte, lūdz par mums, grēciniekiem
- Tagad un mūsu nāves stundā. Amen!|Gods lai ir Tēvam un Dēlam, un Svētajam Garam; kā tas no iesākuma ir bijis, tā tagad un vienmēr un mūžīgi mūžos. Amen!
+            |%49
+            |3^%341
+            |%342
 &gt;&gt;Pirmais noslēpums
  Augšāmcelšanās
  Eņģelis uzrunāja sievietes un sacīja: “Nebīstieties! Es zinu, ka jūs meklējat Jēzu, krustā sisto. Viņa šeit nav, jo Viņš ir augšāmcēlies, kā bija sacījis!”&lt;&lt;
@@ -227,8 +209,9 @@ Tēvs mūsu, kas esi Debesīs, svētīts lai top Tavs vārds;
 |%49
 |10^%341
 |%342
-|%345
-&gt;&gt;Apustuļu ticības apliecība&lt;&lt;%50
+            |%345
+            &gt;&gt;Nobeigums&lt;&lt;
+            |%50
 |Lūgsimies.
 Kungs, Dievs, mēs Tevi lūdzam:
 Liec, lai mūsu, Tavu kalpu dvēsele un miesa vienmēr būtu vesela,
@@ -237,7 +220,7 @@ Mēs tiktu atbrīvoti no laicīgā ļaunuma
 Un priecātos mūžīgā dzīvē.
 Caur Jēzu Kristu, mūsu Kungu.
 Amen.
-&gt;&gt;Litānija Vissvētākajai Jaunavai Marijai&lt;&lt;%51</String>
+|%51</String>
 		<Text_type>1</Text_type>
 		<Code>1</Code>
 	</item>
@@ -3058,7 +3041,8 @@ bet atpestī mūs no ļauna.
 	<item>
 		<RID>50</RID>
 		<Description>Apustuļu ticības apliecība</Description>
-		<String>Es ticu Dievam, visvarenajam Tēvam, debesu un zemes Radītājam, un Jēzum Kristum, viņa viendzimušajam Dēlam, mūsu Kungam, kas ir ieņemts no Svētā Gara, piedzimis no Jaunavas Marijas, cietis Poncija Pilāta laikā, krustā sists, nomiris un apbedīts, nokāpis ellē, trešajā dienā augšāmcēlies no mirušajiem, uzkāpis debesīs, sēž pie Dieva, visvarenā Tēva, labās rokas, no kurienes Viņš atnāks tiesāt dzīvos un mirušos.
+		<String>
+                      Es ticu Dievam, visvarenajam Tēvam, debesu un zemes Radītājam, un Jēzum Kristum, viņa viendzimušajam Dēlam, mūsu Kungam, kas ir ieņemts no Svētā Gara, piedzimis no Jaunavas Marijas, cietis Poncija Pilāta laikā, krustā sists, nomiris un apbedīts, nokāpis ellē, trešajā dienā augšāmcēlies no mirušajiem, uzkāpis debesīs, sēž pie Dieva, visvarenā Tēva, labās rokas, no kurienes Viņš atnāks tiesāt dzīvos un mirušos.
 Es ticu Svētajam Garam, svētajai katoliskajai Baznīcai, svēto sadraudzībai, grēku piedošanai, miesas augšāmcelšanai un mūžīgajai dzīvei. Amen.</String>
 		<Text_type>1</Text_type>
 		<Code>4</Code>
@@ -3066,7 +3050,7 @@ Es ticu Svētajam Garam, svētajai katoliskajai Baznīcai, svēto sadraudzībai,
 	<item>
 		<RID>51</RID>
 		<Description>Litānija Vissvētākajai Jaunavai Marijai</Description>
-		<String>&gt;&gt;Litānija&lt;&lt;
+		<String>Litānija Vissvētākajai Jaunavai Marijai
 
 Kyrie, eleison!
  Christe, eleison!
@@ -3166,57 +3150,26 @@ Visgudrākā Jaunava, Lūdz par mums!
 	<Text_type>3</Text_type>
 	</item>
 	<item>
-		<RID>52</RID>
-		<Description>Rožukronis, 1. daļa (īsa)</Description>
-		<String>&gt;&gt;Kristus Atnākšanas noslēpumi &lt;&lt; 
-Rožukronis Vissvētākās Jaunavas Marijas godam 
- + Dieva Tēva un Dēla un Svētā Gara vārdā. Amen!
+        <RID>52</RID>
+        <Description>Rožukronis, 1. daļa (īsa)</Description>
+        <String>&gt;&gt;Kristus Atnākšanas noslēpumi&lt;&lt;
+            Rožukronis Vissvētākās Jaunavas Marijas godam + Dieva Tēva un Dēla un Svētā Gara vārdā. Amen!
 
-Tēvs mūsu, kas esi Debesīs, svētīts lai top Tavs vārds; 
- Lai atnāk Tava Valstība, Tavs prāts lai notiek kā Debesīs tā arī virs zemes; 
- Mūsu dienišķo maizi dod mums šodien un piedod mums mūsu parādus, kā arī mēs piedodam saviem parādniekiem; 
- Un neieved mūs kārdināšanā, bet atpestī mūs no ļauna!
-&gt;&gt;3^Esi sveicināta, Marija, žēlastības pilnā, 
- Kungs ir ar tevi, tu esi svētīta starp sievietēm, un svētīts ir tavas miesas auglis Jēzus
- Svētā Marija, Dieva māte, lūdz par mums, grēciniekiem
- Tagad un mūsu nāves stundā. Amen! &lt;&lt;
-&gt;&gt;Gods lai ir Tēvam un Dēlam, un Svētajam Garam; kā tas no iesākuma ir bijis, tā tagad un vienmēr un mūžīgi mūžos. Amen!&lt;&lt;
-&gt;&gt;Pirmais noslēpums 
-Eņģeļa sludinājums (Lk. 1.)
-Eņģelis Gabriels pasludina Vissvētajai Jaunavai Marijai, ka Dievs viņu izredzējis par pasaules Pestītāja Māti. Dziļā pazemībā Marija atbild: “Redzi, es esmu Kunga kalpone, lai notiek man pēc Tava vārda.”
-&lt;&lt;
-%49
-&gt;&gt;Otrais noslēpums 
-Apmeklēšana (Lk. 1.)
-Pēc pasludināšanas Marija iet apmeklēt svēto Elizabeti. Uz Elizabetes apsveikumu viņas sirds gavilēs sauc: “Augsti slavē Kungu, mana dvēsele...”
-&lt;&lt;
-%49
-&gt;&gt;Trešais noslēpums
-Kristus piedzimšana (Lk. 2.)
-Betlēme vislielākā nabadzība piedzimst Bērns Jēzus. Marija, satinusi drēbītēs, Viņu ieliek silītē, jo cilvēki viņiem nedeva mājvietu. 
-&lt;&lt;
-%49
-&gt;&gt;Ceturtais noslēpums
-Jēzus upurēšana templī (Lk. 2.)
-Četrdesmitajā dienā pēc piedzimšanas Jāzeps un Marija nes Bērnu Jēzu uz Jeruzalemi, lai Dieva svētnīcā to veltītu Debesu Tēvam. 
-&lt;&lt;
-%49
-&gt;&gt;Piektais noslēpums
-Bērna Jēzus atrašana svētnīcā (Lk. 2.)
+            Pirmais noslēpums
+            Eņģeļa sludinājums (Lk. 1.) Eņģelis Gabriels pasludina Vissvētajai Jaunavai Marijai, ka Dievs viņu izredzējis par pasaules Pestītāja Māti. Dziļā pazemībā Marija atbild: “Redzi, es esmu Kunga kalpone, lai notiek man pēc Tava vārda.”
 
-Kad Jēzum bija divpadsmit gadu, Viņš kopā ar Jāzepu un Marija ceļo uz Jeruzalemi. Nemanot Viņš paliek templī pie Rakstu mācītājiem, kur Viņu atrod Marija un Jāzeps.&lt;&lt;
-%49
-|%50
-|Lūgsimies.
-Kungs, Dievs, mēs Tevi lūdzam:
-Liec, lai mūsu, Tavu kalpu dvēsele un miesa vienmēr būtu vesela,
-Un ar slavējamās Vissvētākās Jaunavas Marijas aizbildniecību
-Mēs tiktu atbrīvoti no laicīgā ļaunuma
-Un priecātos mūžīgā dzīvē.
-Caur Jēzu Kristu, mūsu Kungu.
-Amen.
+            Otrais noslēpums
+            Apmeklēšana (Lk. 1.) Pēc pasludināšanas Marija iet apmeklēt svēto Elizabeti. Uz Elizabetes apsveikumu viņas sirds gavilēs sauc: “Augsti slavē Kungu, mana dvēsele...”
 
-#51</String>
+            Trešais noslēpums
+            Kristus piedzimšana (Lk. 2.) Betlēme vislielākā nabadzība piedzimst Bērns Jēzus. Marija, satinusi drēbītēs, Viņu ieliek silītē, jo cilvēki viņiem nedeva mājvietu.
+
+            Ceturtais noslēpums
+            Jēzus upurēšana templī (Lk. 2.) Četrdesmitajā dienā pēc piedzimšanas Jāzeps un Marija nes Bērnu Jēzu uz Jeruzalemi, lai Dieva svētnīcā to veltītu Debesu Tēvam.
+
+            Piektais noslēpums
+            Bērna Jēzus atrašana svētnīcā (Lk. 2.) Kad Jēzum bija divpadsmit gadu, Viņš kopā ar Jāzepu un Marija ceļo uz Jeruzalemi. Nemanot Viņš paliek templī pie Rakstu mācītājiem, kur Viņu atrod Marija un Jāzeps.|%50
+            |%51</String>
 		<Text_type>1</Text_type>
 		<Code>1</Code>
 	</item>
@@ -3227,48 +3180,22 @@ Amen.
 Rožukronis Vissvētākās Jaunavas Marijas godam 
  + Dieva Tēva un Dēla un Svētā Gara vārdā. Amen!
 
-Tēvs mūsu, kas esi Debesīs, svētīts lai top Tavs vārds; 
- Lai atnāk Tava Valstība, Tavs prāts lai notiek kā Debesīs tā arī virs zemes; 
- Mūsu dienišķo maizi dod mums šodien un piedod mums mūsu parādus, kā arī mēs piedodam saviem parādniekiem; 
- Un neieved mūs kārdināšanā, bet atpestī mūs no ļauna!
-&gt;&gt;3^Esi sveicināta, Marija, žēlastības pilnā, 
- Kungs ir ar tevi, tu esi svētīta starp sievietēm, un svētīts ir tavas miesas auglis Jēzus
- Svētā Marija, Dieva māte, lūdz par mums, grēciniekiem
- Tagad un mūsu nāves stundā. Amen! 
+            PIRMAIS NOSLĒPUMS
+            Jēzus Kristība Jordānā Jēzus atnāca no Galilejas uz Jordānu pie Jāņa, lai tas Viņu kristītu. Pēc kristības Jēzus tūlīt izkāpa no ūdens. Un, lūk, debess atvērās, un Viņš redzēja Dieva Garu baloža veidā nolaižamies uz sevi. Un, lūk, balss no debesīm sacīja: „Šis ir mans mīļais Dēls, kurš Man ļoti patīk” .(Sal. Mt 3)
 
-Gods lai ir Tēvam un Dēlam, un Svētajam Garam; kā tas no iesākuma ir bijis, tā tagad un vienmēr un mūžīgi mūžos. Amen! 
-&gt;&gt; PIRMAIS NOSLĒPUMS
-Jēzus Kristība Jordānā
-Jēzus atnāca no Galilejas uz Jordānu pie Jāņa, lai tas Viņu kristītu. Pēc kristības Jēzus tūlīt izkāpa no ūdens. Un, lūk, debess atvērās, un Viņš redzēja Dieva Garu baloža veidā nolaižamies uz sevi. Un, lūk, balss no debesīm sacīja: „Šis ir mans mīļais Dēls, kurš Man ļoti patīk” .(Sal. Mt 3) &lt;&lt;
-%49
-&gt;&gt;Otrais noslēpums
-OTRAIS NOSLĒPUMS
-Jēzus atklāšanās kāzās Kānā
-Un trešajā dienā Galilejas Kānā bija kāzas. Un, kad pietrūka vīna, Jēzus Māte sacīja Jēzum: „Viņiem nav vīna” . Bet Jēzus viņai sacīja: „Vēl Mana stunda nav pienākusi!” Viņa Māte sacīja apkalpotājiem: „Dariet visu, ko Viņš jums sacīs.” Jēzus sacīja viņiem: „Piepildiet traukus ar ūdeni!” Un viņi tos piepildīja līdz malām. Kad galdzinis nogaršoja ūdeni, tas bija pārvērsts vīnā, un viņš sacīja līgavainim: „Ikviens cilvēks vispirms pasniedz labo vīnu, bet tu taupīji labo vīnu līdz šim.” Šo sākumu brīnumiem Jēzus darīja Galilejas Kānā, atklādams savu godību, un Viņa mācekļi ticēja Viņam. (Sal. Jņ 2) &lt;&lt;
-%49
-&gt;&gt; TREŠAIS NOSLĒPUMS
-Dieva valstības sludināšana un aicinājums atgriezties
-Un Jēzus sacīja: „Laiks piepildījies, un Dieva Valstība tuvu klāt! Gandariet par grēkiem un ticiet Evaņģēlijam!” (Sal. Mk 1) Jēzus izdziedināja triekas slimo, sacīdams: „Dēls, tavi grēki tev tiek piedoti! (..) Celies, ņem savu gultu un ej savās mājās!” Un tas tūlīt uzcēlās un, gultu paņēmis, aizgāja, visiem redzot, tā, ka visi brīnījās un godināja Dievu, sacīdami: „To mēs vēl nekad neesam redzējuši”. (Sal. Mk 2,5.11 – 12) &lt;&lt;
-%49
-&gt;&gt; CETURTAIS NOSLĒPUMS
-Pārveidošanās Tabora kalnā
-Jēzus ņēma līdz Pēteri un Jēkabu, un Jāni uzkāpa kalnā, lai lūgtu Dievu. Un Viņa sejas izskats kļuva citāds, un Viņa apģērbs tapa balts un staroja. Un, lūk, divi vīri sarunājās ar Viņu; tie bija Mozus un Elija. Viņi parādījās godībā; un tie runāja par Viņa gala norisi, ko Viņš piepildīs Jeruzalemē. Bet Pēteris un tie, kas atradās pie Viņa, bija miega nomākti; un uzmodušies tie redzēja Viņa godību un divus vīrus, stāvot pie Viņa. Un Pēteris sacīja Jēzum: „Mācītāj, mums ir labi šeit būt; mēs taisīsim trīs teltis: vienu Tev, vienu Mozum un vienu Elijam”. Viņiem tā runājot, parādījās mākonis un apēnoja viņus. Un balss atskanēja padebesī, sacīdama: „Šis ir Mans mīļais Dēls, Viņu klausiet!” (sal. Lk 9,28 – 35) &lt;&lt;
-%49
-&gt;&gt; PIEKTAIS NOSLĒPUMS
-Euharistijas iedibināšana
-Pirms Lieldienu svētkiem Jēzus, zinādams, ka Viņa stunda atnākusi, lai no šīs pasaules aizietu pie Tēva, mīlēdams savējos, kas bija pasaulē, mīlēja tos līdz galam (Jņ 13,1). Un Jēzus, viņiem ēdot, paņēma maizi, svētīja to, lauza, deva viņiem un sacīja: „Ņemiet, šī ir Mana Miesa”. Un Viņš ņēma biķeri, pateicās un deva viņiem; un tie visi dzēra no tā. Un Viņš tiem sacīja: „Šīs ir manas jaunās derības Asinis, kas par daudziem tiks izlietas”. (Mk 14,22 – 24) &lt;&lt;
-%49
-|%50
-|Lūgsimies.
-Kungs, Dievs, mēs Tevi lūdzam:
-Liec, lai mūsu, Tavu kalpu dvēsele un miesa vienmēr būtu vesela,
-Un ar slavējamās Vissvētākās Jaunavas Marijas aizbildniecību
-Mēs tiktu atbrīvoti no laicīgā ļaunuma
-Un priecātos mūžīgā dzīvē.
-Caur Jēzu Kristu, mūsu Kungu.
-Amen.
+            OTRAIS NOSLĒPUMS
+            Jēzus atklāšanās kāzās Kānā Un trešajā dienā Galilejas Kānā bija kāzas. Un, kad pietrūka vīna, Jēzus Māte sacīja Jēzum: „Viņiem nav vīna” . Bet Jēzus viņai sacīja: „Vēl Mana stunda nav pienākusi!” Viņa Māte sacīja apkalpotājiem: „Dariet visu, ko Viņš jums sacīs.” Jēzus sacīja viņiem: „Piepildiet traukus ar ūdeni!” Un viņi tos piepildīja līdz malām. Kad galdzinis nogaršoja ūdeni, tas bija pārvērsts vīnā, un viņš sacīja līgavainim: „Ikviens cilvēks vispirms pasniedz labo vīnu, bet tu taupīji labo vīnu līdz šim.” Šo sākumu brīnumiem Jēzus darīja Galilejas Kānā, atklādams savu godību, un Viņa mācekļi ticēja Viņam. (Sal. Jņ 2)
 
-#51</String>
+            TREŠAIS NOSLĒPUMS
+            Dieva valstības sludināšana un aicinājums atgriezties Un Jēzus sacīja: „Laiks piepildījies, un Dieva Valstība tuvu klāt! Gandariet par grēkiem un ticiet Evaņģēlijam!” (Sal. Mk 1) Jēzus izdziedināja triekas slimo, sacīdams: „Dēls, tavi grēki tev tiek piedoti! (..) Celies, ņem savu gultu un ej savās mājās!” Un tas tūlīt uzcēlās un, gultu paņēmis, aizgāja, visiem redzot, tā, ka visi brīnījās un godināja Dievu, sacīdami: „To mēs vēl nekad neesam redzējuši”. (Sal. Mk 2,5.11 – 12)
+
+            CETURTAIS NOSLĒPUMS
+            Pārveidošanās Tabora kalnā Jēzus ņēma līdz Pēteri un Jēkabu, un Jāni uzkāpa kalnā, lai lūgtu Dievu. Un Viņa sejas izskats kļuva citāds, un Viņa apģērbs tapa balts un staroja. Un, lūk, divi vīri sarunājās ar Viņu; tie bija Mozus un Elija. Viņi parādījās godībā; un tie runāja par Viņa gala norisi, ko Viņš piepildīs Jeruzalemē. Bet Pēteris un tie, kas atradās pie Viņa, bija miega nomākti; un uzmodušies tie redzēja Viņa godību un divus vīrus, stāvot pie Viņa. Un Pēteris sacīja Jēzum: „Mācītāj, mums ir labi šeit būt; mēs taisīsim trīs teltis: vienu Tev, vienu Mozum un vienu Elijam”. Viņiem tā runājot, parādījās mākonis un apēnoja viņus. Un balss atskanēja padebesī, sacīdama: „Šis ir Mans mīļais Dēls, Viņu klausiet!” (sal. Lk 9,28 – 35)
+
+            PIEKTAIS NOSLĒPUMS
+            Euharistijas iedibināšana Pirms Lieldienu svētkiem Jēzus, zinādams, ka Viņa stunda atnākusi, lai no šīs pasaules aizietu pie Tēva, mīlēdams savējos, kas bija pasaulē, mīlēja tos līdz galam (Jņ 13,1). Un Jēzus, viņiem ēdot, paņēma maizi, svētīja to, lauza, deva viņiem un sacīja: „Ņemiet, šī ir Mana Miesa”. Un Viņš ņēma biķeri, pateicās un deva viņiem; un tie visi dzēra no tā. Un Viņš tiem sacīja: „Šīs ir manas jaunās derības Asinis, kas par daudziem tiks izlietas”. (Mk 14,22 – 24)
+            |%50
+|%51</String>
 		<Text_type>1</Text_type>
 		<Code>1</Code>
 	</item>
@@ -3278,48 +3205,22 @@ Amen.
 		<String>&gt;&gt;Kristus Ciešanu noslēpumi&lt;&lt;
 Rožukronis Vissvētākās Jaunavas Marijas godam 
  + Dieva Tēva un Dēla un Svētā Gara vārdā. Amen!
+            PIRMAIS NOSLĒPUMS
+            Jēzus Ģetzemanes dārzā (Lk. 22.) Pēc pēdējā svētā Vakarēdiena Jēzus ar mācekļiem iet uz Ģetzemanes dārzu. Skumju un nāves baiļu pārņemts, Viņš karsti lūdzas, un sviedri kā asins lāses rit no Vņa dievišķā vaiga.
 
-Tēvs mūsu, kas esi Debesīs, svētīts lai top Tavs vārds; 
- Lai atnāk Tava Valstība, Tavs prāts lai notiek kā Debesīs tā arī virs zemes; 
- Mūsu dienišķo maizi dod mums šodien un piedod mums mūsu parādus, kā arī mēs piedodam saviem parādniekiem; 
- Un neieved mūs kārdināšanā, bet atpestī mūs no ļauna!
-|3^Esi sveicināta, Marija, žēlastības pilnā, 
- Kungs ir ar tevi, tu esi svētīta starp sievietēm, un svētīts ir tavas miesas auglis Jēzus
- Svētā Marija, Dieva māte, lūdz par mums, grēciniekiem
- Tagad un mūsu nāves stundā. Amen! 
-|Gods lai ir Tēvam un Dēlam, un Svētajam Garam; kā tas no iesākuma ir bijis, tā tagad un vienmēr un mūžīgi mūžos. Amen!
-&gt;&gt; PIRMAIS NOSLĒPUMS
-Jēzus Ģetzemanes dārzā (Lk. 22.)
-Pēc pēdējā svētā Vakarēdiena Jēzus ar mācekļiem iet uz Ģetzemanes dārzu. Skumju un nāves baiļu pārņemts, Viņš karsti lūdzas, un sviedri kā asins lāses rit no Vņa dievišķā vaiga. &lt;&lt;
-%49
-&gt;&gt; OTRAIS NOSLĒPUMS
-Šaustīšana (Mt. 27.)
-Uz Pilāta pavēli Jēzus tiek šaustīts un nodots, lai sistu krustā. &lt;&lt;
-%49
-&gt;&gt; TREŠAIS NOSLĒPUMS
-Kronēšana ar ērkšķiem (Jāņa 19.)
-Tūlīt pēc šaustīšanas kareivji nopin ērkšķu kroni un uzliek to Jēzum galvā. Tie ietērpj Viņu purpura drānās, liek Viņa labajā rokā niedri un zobodamies loka ceļus, saukdami: “Esi sveicināts, jūdu karali!” &lt;&lt;
-%49
-&gt;&gt; CETURTAIS NOSLĒPUMS
-Krusta nešana (Jāņa 19.)
-Uz nāvi notiesātais Jēzus pats nes smago krustu, trīs reizes krītot zem tā smaguma. &lt;&lt;
-%49
+            OTRAIS NOSLĒPUMS
+            Šaustīšana (Mt. 27.) Uz Pilāta pavēli Jēzus tiek šaustīts un nodots, lai sistu krustā.
 
-PIEKTAIS NOSLĒPUMS
-Krustā sišana (Jāņa 19.)
-Jēzus tiek krustā sists un mirst pēc grūtām mokām, skaļā balsī saukdams: “Tēvs, Tavās rokās es nododu savu garu!” &lt;&lt;
-%49
+            TREŠAIS NOSLĒPUMS
+            Kronēšana ar ērkšķiem (Jāņa 19.) Tūlīt pēc šaustīšanas kareivji nopin ērkšķu kroni un uzliek to Jēzum galvā. Tie ietērpj Viņu purpura drānās, liek Viņa labajā rokā niedri un zobodamies loka ceļus, saukdami: “Esi sveicināts, jūdu karali!”
+
+            CETURTAIS NOSLĒPUMS
+            Krusta nešana (Jāņa 19.) Uz nāvi notiesātais Jēzus pats nes smago krustu, trīs reizes krītot zem tā smaguma.
+
+            PIEKTAIS NOSLĒPUMS
+            Krustā sišana (Jāņa 19.) Jēzus tiek krustā sists un mirst pēc grūtām mokām, skaļā balsī saukdams: “Tēvs, Tavās rokās es nododu savu garu!”
 |%50
-|Lūgsimies.
-Kungs, Dievs, mēs Tevi lūdzam:
-Liec, lai mūsu, Tavu kalpu dvēsele un miesa vienmēr būtu vesela,
-Un ar slavējamās Vissvētākās Jaunavas Marijas aizbildniecību
-Mēs tiktu atbrīvoti no laicīgā ļaunuma
-Un priecātos mūžīgā dzīvē.
-Caur Jēzu Kristu, mūsu Kungu.
-Amen.
-
-#51</String>
+|%51</String>
 		<Text_type>1</Text_type>
 		<Code>1</Code>
 	</item>
@@ -3328,49 +3229,25 @@ Amen.
 		<Description>Rožukronis, 4. daļa (īsa)</Description>
 		<String>&gt;&gt;Kristus Ciešanu noslēpumi&lt;&lt;
 
-Rožukronis Vissvētākās Jaunavas Marijas godam 
- + Dieva Tēva un Dēla un Svētā Gara vārdā. Amen!
+Rožukronis Vissvētākās Jaunavas Marijas godam
+            + Dieva Tēva un Dēla un Svētā Gara vārdā. Amen!
 
-Tēvs mūsu, kas esi Debesīs, svētīts lai top Tavs vārds; 
- Lai atnāk Tava Valstība, Tavs prāts lai notiek kā Debesīs tā arī virs zemes; 
- Mūsu dienišķo maizi dod mums šodien un piedod mums mūsu parādus, kā arī mēs piedodam saviem parādniekiem; 
- Un neieved mūs kārdināšanā, bet atpestī mūs no ļauna!
-|3^Esi sveicināta, Marija, žēlastības pilnā, 
- Kungs ir ar tevi, tu esi svētīta starp sievietēm, un svētīts ir tavas miesas auglis Jēzus
- Svētā Marija, Dieva māte, lūdz par mums, grēciniekiem
- Tagad un mūsu nāves stundā. Amen! 
+            PIRMAIS NOSLĒPUMS
+            Augšāmcelšanās (Mk. 16.) Trešajā dienā pēc nāves Kungs Jēzus cēlās augšā no miroņiem un parādījās Vissvētākajai Jaunavai Marijai un saviem mācekļiem.
 
-|Gods lai ir Tēvam un Dēlam, un Svētajam Garam; kā tas no iesākuma ir bijis, tā tagad un vienmēr un mūžīgi mūžos. Amen!
-&gt;&gt; PIRMAIS NOSLĒPUMS
-Augšāmcelšanās (Mk. 16.)
-Trešajā dienā pēc nāves Kungs Jēzus cēlās augšā no miroņiem un parādījās Vissvētākajai Jaunavai Marijai un saviem mācekļiem. &lt;&lt;
-%49
-&gt;&gt; OTRAIS NOSLĒPUMS
-Uzkāpšana debesīs (Lk. 24)
-Četrdesmitajā dienā pēc augšāmcelšanās Jēzus, svētīdams savus mācekļus, uzkāpa debesīs, kur sēž pie Dieva Tēva labās rokas. &lt;&lt;
-%49
-&gt;&gt;TREŠAIS NOSLĒPUMS
-Svētā Gara nosūtīšana (Ap. darbi 2.)
-Vasarsvētku dienā Svētais Gars ugunsmēļu veidā nolaidās no debesīm uz Vissvētāko Jaunavu Mariju un apustuļiem. &lt;&lt;
-%49
-&gt;&gt; CETURTAIS NOSLĒPUMS
-Vissv. Jaunavas Marijas uzņemšana debesīs
-Pēc Jēzus uzkāpšanas debesīs Vissvētākā Jaunava nemitējās ilgoties pēs sava dievišķā Dēla. Pēc viņa nāves eņģeļi to pārnes ar miesu un dvēseli uz debesīm. &lt;&lt;
-%49
-PIEKTAIS NOSLĒPUMS
-Debesīs Vissvētākā Jaunava Marija tiek kronēta ar godības kroni kā debesu un zemes Karaliene. &lt;&lt;
-%49
+            OTRAIS NOSLĒPUMS
+            Uzkāpšana debesīs (Lk. 24) Četrdesmitajā dienā pēc augšāmcelšanās Jēzus, svētīdams savus mācekļus, uzkāpa debesīs, kur sēž pie Dieva Tēva labās rokas.
+
+            TREŠAIS NOSLĒPUMS
+            Svētā Gara nosūtīšana (Ap. darbi 2.) Vasarsvētku dienā Svētais Gars ugunsmēļu veidā nolaidās no debesīm uz Vissvētāko Jaunavu Mariju un apustuļiem.
+
+            CETURTAIS NOSLĒPUMS
+            Vissv. Jaunavas Marijas uzņemšana debesīs Pēc Jēzus uzkāpšanas debesīs Vissvētākā Jaunava nemitējās ilgoties pēs sava dievišķā Dēla. Pēc viņa nāves eņģeļi to pārnes ar miesu un dvēseli uz debesīm.
+
+            PIEKTAIS NOSLĒPUMS
+            Debesīs Vissvētākā Jaunava Marija tiek kronēta ar godības kroni kā debesu un zemes Karaliene.
 |%50
-|Lūgsimies.
-Kungs, Dievs, mēs Tevi lūdzam:
-Liec, lai mūsu, Tavu kalpu dvēsele un miesa vienmēr būtu vesela,
-Un ar slavējamās Vissvētākās Jaunavas Marijas aizbildniecību
-Mēs tiktu atbrīvoti no laicīgā ļaunuma
-Un priecātos mūžīgā dzīvē.
-Caur Jēzu Kristu, mūsu Kungu.
-Amen.
-
-#51</String>
+|%51</String>
 		<Text_type>1</Text_type>
 		<Code>1</Code>
 	</item>
@@ -3393,22 +3270,14 @@ Amen.
 		<Description>Dieva žēlsirdības kronītis</Description>
 		<String>&gt;&gt;Dieva žēlsirdības kronītis&lt;&lt;
 Dieva Tēva un Dēla, un Svētā Gara vārdā. Āmen.
-
 Ievadā:
-
 Tēvs mūsu, kas esi Debesīs, svētīts lai top Tavs vārds, lai atnāk Tava valstība, Tavs prāts lai notiek kā Debesīs, tā arī virs zemes, mūsu dienišķo maizi dod mums šodien un piedod mums mūsu parādus, kā arī mēs piedodam saviem parādniekiem; un neieved mūs kārdināšanā, bet atpestī mūs no ļauna. Āmen...
-
-Esi sveicināta, Marija, žēlastības pilnā, 
-
+Esi sveicināta, Marija, žēlastības pilnā,
 Kungs ir ar tevi, tu esi svētīta starp sievietēm, un svētīts ir tavas miesas auglis Jēzus.
-
 Svētā Marija, Dieva māte, lūdz par mums, grēciniekiem, tagad un mūsu nāves stundā. Āmen!
 |%50
-
 &gt;&gt;5^Mūžīgais Tēvs, es upurēju Tev Tava mīļā Dēla, mūsu Kunga Jēzus Kristus, Miesu un Asinis, Dvēseli un Dievišķību, kā pārlūgumu par mūsu un visas pasaules grēkiem.&lt;&lt;
-
 |10^Jēzus sāpīgo ciešanu dēļ, esi žēlsirdīgs mums un visai pasaulei!
-
 &gt;&gt;Nobeigums&lt;&lt;
 |3^Svētais Dievs, svētais, varenais Dievs, svētais, mūžīgais Dievs, apžēlojies par mums un par visu pasauli!</String>
 		<Text_type>1</Text_type>
