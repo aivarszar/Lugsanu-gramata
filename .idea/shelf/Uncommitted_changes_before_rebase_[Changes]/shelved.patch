@@ -1,0 +1,36 @@
+Index: gradle/wrapper/gradle-wrapper.properties
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>distributionBase=GRADLE_USER_HOME\r\ndistributionPath=wrapper/dists\r\ndistributionUrl=https\\://services.gradle.org/distributions/gradle-8.2-bin.zip\r\nnetworkTimeout=10000\r\nvalidateDistributionUrl=true\r\nzipStoreBase=GRADLE_USER_HOME\r\nzipStorePath=wrapper/dists\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>ISO-8859-1
+===================================================================
+diff --git a/gradle/wrapper/gradle-wrapper.properties b/gradle/wrapper/gradle-wrapper.properties
+--- a/gradle/wrapper/gradle-wrapper.properties	(revision c31bc7d64060653c4f4985dc1ac5ae3b01bc92b1)
++++ b/gradle/wrapper/gradle-wrapper.properties	(date 1761427627845)
+@@ -1,6 +1,6 @@
+ distributionBase=GRADLE_USER_HOME
+ distributionPath=wrapper/dists
+-distributionUrl=https\://services.gradle.org/distributions/gradle-8.2-bin.zip
++distributionUrl=https\://services.gradle.org/distributions/gradle-8.13-bin.zip
+ networkTimeout=10000
+ validateDistributionUrl=true
+ zipStoreBase=GRADLE_USER_HOME
+Index: build.gradle.kts
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>// Top-level build file where you can add configuration options common to all sub-projects/modules.\r\nplugins {\r\n    id(\"com.android.application\") version \"8.1.4\" apply false\r\n    id(\"org.jetbrains.kotlin.android\") version \"1.9.20\" apply false\r\n    id(\"com.google.devtools.ksp\") version \"1.9.20-1.0.14\" apply false\r\n}\r\n\r\ntasks.register(\"clean\", Delete::class) {\r\n    delete(layout.buildDirectory)\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/build.gradle.kts b/build.gradle.kts
+--- a/build.gradle.kts	(revision c31bc7d64060653c4f4985dc1ac5ae3b01bc92b1)
++++ b/build.gradle.kts	(date 1761427627837)
+@@ -1,6 +1,6 @@
+ // Top-level build file where you can add configuration options common to all sub-projects/modules.
+ plugins {
+-    id("com.android.application") version "8.1.4" apply false
++    id("com.android.application") version "8.13.0" apply false
+     id("org.jetbrains.kotlin.android") version "1.9.20" apply false
+     id("com.google.devtools.ksp") version "1.9.20-1.0.14" apply false
+ }
