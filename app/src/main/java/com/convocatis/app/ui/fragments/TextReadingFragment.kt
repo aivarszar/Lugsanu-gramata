@@ -377,9 +377,11 @@ class TextReadingFragment : Fragment() {
                 pageProgressBar.visibility = View.VISIBLE
 
                 // Show repetition counter (e.g., "3/10")
-                pageIndicator.text = "${page.repetitionIndex}/${page.totalRepetitions}"
-                val progress = if (page.totalRepetitions!! > 0) {
-                    (page.repetitionIndex!! * 100) / page.totalRepetitions!!
+                val repIndex = page.repetitionIndex ?: 1
+                val repTotal = page.totalRepetitions ?: 1
+                pageIndicator.text = "$repIndex/$repTotal"
+                val progress = if (repTotal > 0) {
+                    (repIndex * 100) / repTotal
                 } else 100
                 pageProgressBar.progress = progress
             } else {
@@ -464,10 +466,10 @@ class PageAdapter(private val pages: List<TextContentParser.Page>) :
             contentView.movementMethod = LinkMovementMethod.getInstance()
 
             // Custom link click handler to open in browser/external app
-            makeLinkClickable(contentView, spanned)
+            makeLinkClickable(spanned)
         }
 
-        private fun makeLinkClickable(textView: TextView, spanned: Spanned) {
+        private fun makeLinkClickable(spanned: Spanned) {
             val urlSpans = spanned.getSpans(0, spanned.length, URLSpan::class.java)
 
             for (span in urlSpans) {

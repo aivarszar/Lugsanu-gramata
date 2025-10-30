@@ -92,7 +92,7 @@ class CategoryDropdownMenu(
         showPopup(contentView)
     }
 
-    private fun showCodeSelection(typeNum: Int, typeDescription: String) {
+    private fun showCodeSelection(typeNum: Int, @Suppress("UNUSED_PARAMETER") typeDescription: String) {
         val hierarchy = parser.getTypeCodeHierarchy()
         val allCodes = hierarchy[typeNum] ?: emptyList()
 
