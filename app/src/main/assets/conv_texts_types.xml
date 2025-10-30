@@ -7,31 +7,16 @@
 		<Code>1</Code>
 	</item>
 	<item>
-		<RID>7</RID>
-		<Description>Vienkāršas lūgšanas</Description>
-		<Type>1</Type>
-		<Code>2</Code>
-	</item>
-	<item>
 		<RID>8</RID>
 		<Description>Rožukronis</Description>
 		<Type>1</Type>
 		<Code>1</Code>
 	</item>
 	<item>
-		<RID>9</RID>
-		<Description>Liturģiskie teksti</Description>
-		<Type>2</Type>
-	</item>
-	<item>
-		<RID>10</RID>
-		<Description>Litānijas</Description>
-		<Type>3</Type>
-	</item>
-	<item>
-		<RID>11</RID>
-		<Description>Novennas latviski</Description>
-		<Type>4</Type>
+		<RID>23</RID>
+		<Description>Liturģija</Description>
+		<Type>1</Type>
+		<Code>2</Code>
 	</item>
 	<item>
 		<RID>12</RID>
@@ -99,69 +84,46 @@
 		<Code>10</Code>
 	</item>
 	<item>
-		<RID>23</RID>
-		<Description>Svētā Mise</Description>
-		<Type>2</Type>
-		<Code>1</Code>
-	</item>
-	<item>
-		<RID>24</RID>
-		<Description>Laudes latviski</Description>
-		<Type>2</Type>
-		<Code>4</Code>
-	</item>
-	<item>
-		<RID>54</RID>
-		<Description>Citi teksti</Description>
-		<Type>2</Type>
+		<RID>200</RID>
+		<Description>Laudes</Description>
+		<Type>1</Type>
 		<Code>3</Code>
 	</item>
 	<item>
-		<RID>56</RID>
-		<Description>Krustaceļš</Description>
-		<Type>2</Type>
-		<Code>2</Code>
+		<RID>219</RID>
+		<Description>Vesperes</Description>
+		<Type>1</Type>
+		<Code>4</Code>
 	</item>
 	<item>
-		<RID>58</RID>
-		<Description>Vesperes latviski</Description>
-		<Type>2</Type>
+		<RID>86</RID>
+		<Description>Kompletorijs</Description>
+		<Type>1</Type>
 		<Code>5</Code>
 	</item>
 	<item>
-		<RID>65</RID>
-		<Description>Lūgšanas</Description>
+		<RID>196</RID>
+		<Description>Pāvestu lūgšanas</Description>
 		<Type>1</Type>
+		<Code>8</Code>
+	</item>
+	<item>
+		<RID>7</RID>
+		<Description>Vienkāršas lūgšanas</Description>
+		<Type>1</Type>
+		<Code>9</Code>
 	</item>
 	<item>
 		<RID>68</RID>
 		<Description>Lūgšanas īpašos gadījumos</Description>
 		<Type>1</Type>
-		<Code>3</Code>
+		<Code>10</Code>
 	</item>
 	<item>
 		<RID>69</RID>
 		<Description>Pamatlūgšanas</Description>
 		<Type>1</Type>
-		<Code>4</Code>
-	</item>
-	<item>
-		<RID>74</RID>
-		<Description>Saistībā ar sakramentiem</Description>
-		<Type>1</Type>
-		<Code>5</Code>
-	</item>
-	<item>
-		<RID>75</RID>
-		<Description>Iekļāvumi citām lūgšanām</Description>
-		<Type>2</Type>
-		<Code>6</Code>
-	</item>
-	<item>
-		<RID>86</RID>
-		<Description>Kompletorijs</Description>
-		<Type>2</Type>
-		<Code>7</Code>
+		<Code>11</Code>
 	</item>
 	<item>
 		<RID>87</RID>
@@ -184,70 +146,53 @@
 	<item>
 		<RID>184</RID>
 		<Description>Slavēšanas dziesmas</Description>
-		<Type>5</Type>
+		<Type>4</Type>
 		<Code>20</Code>
 	</item>
 	<item>
 		<RID>186</RID>
 		<Description>Slavēšana - Svētajam Garam</Description>
-		<Type>5</Type>
+		<Type>4</Type>
 		<Code>21</Code>
 	</item>
 	<item>
 		<RID>187</RID>
 		<Description>Slavēšana - Marijai</Description>
-		<Type>5</Type>
+		<Type>4</Type>
 		<Code>22</Code>
 	</item>
 	<item>
 		<RID>188</RID>
 		<Description>Slavēšana - Marijai</Description>
-		<Type>5</Type>
+		<Type>4</Type>
 		<Code>22</Code>
 	</item>
 	<item>
 		<RID>189</RID>
 		<Description>Slavēšana - Svētajam Garam</Description>
-		<Type>5</Type>
+		<Type>4</Type>
 		<Code>21</Code>
 	</item>
 	<item>
 		<RID>190</RID>
-		<Description>Slavēšanas dziesmas</Description>
-		<Type>5</Type>
+		<Description>Citas slavēšanas dziesmas</Description>
+		<Type>4</Type>
 		<Code>20</Code>
 	</item>
 	<item>
 		<RID>191</RID>
-		<Description>Novenas</Description>
+		<Description>Slavēšanas dziesmas</Description>
 		<Type>4</Type>
 	</item>
 	<item>
-		<RID>192</RID>
-		<Description>Svētības</Description>
-		<Type>6</Type>
-	</item>
-	<item>
-		<RID>195</RID>
-		<Description>Konsekrācijas</Description>
-		<Type>7</Type>
-	</item>
-	<item>
-		<RID>196</RID>
-		<Description>Pāvestu lūgšanas</Description>
+		<RID>74</RID>
+		<Description>Saistībā ar sakramentiem</Description>
 		<Type>1</Type>
-		<Code>6</Code>
+		<Code>12</Code>
 	</item>
 	<item>
-		<RID>200</RID>
-		<Description>Laudes</Description>
-		<Type>2</Type>
-		<Code>4</Code>
-	</item>
-	<item>
-		<RID>219</RID>
-		<Description>Vesperes</Description>
-		<Type>2</Type>
-		<Code>5</Code>
+		<RID>65</RID>
+		<Description>Lūgšanas</Description>
+		<Type>1</Type>
 	</item>
 </root>

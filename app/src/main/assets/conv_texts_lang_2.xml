@@ -232,7 +232,7 @@ Gods lai ir Tēvam un Dēlam, un Svētajam Garam, kā tas no iesākuma ir bijis,
 Es ticu Dievam, visvarenajam Tēvam, debesu un zemes Radītājam, un Jēzum Kristum, viņa viendzimušajam Dēlam, mūsu Kungam, kas ir ieņemts no Svētā Gara, piedzimis no Jaunavas Marijas, cietis Poncija Pilāta laikā, krustā sists, nomiris un apbedīts, nokāpis ellē, trešajā dienā augšāmcēlies no mirušajiem, uzkāps debesīs, sēž pie Dieva, visvarenā Tēva, labās rokas, no kurienes viņš atnāks tiesāt dzīvos un mirušos. Es ticu Svētajam Garam, svētajai, katoliskajai Baznīcai, svēto sadraudzībai, grēku piedošanai, miesas augšāmcelšanai un mūžīgajai dzīvei. Amen.
 Ja vēlas, var pievienot kādu no litānijām, piem., litāniju #279#{Jēzus vārdam}.</String>
 		<Text_type>1</Text_type>
-		<Code>2</Code>
+		<Code>9</Code>
 	</item>
 	<item>
 		<RID>22</RID>
@@ -242,7 +242,7 @@ Svētī, Kungs, mūs un šīs dāvanas, ko no Tavas devības saņemam. Caur Jēz
 |Pēc ēšanas:
 Visvarenais Dievs**, mēs Tev pateicamies par visām dāvanām, ko esam saņēmuši no Tevis, kas dzīvo un valdi mūžīgi mūžam. Amen.</String>
 		<Text_type>1</Text_type>
-		<Code>2</Code>
+		<Code>9</Code>
 	</item>
 	<item>
 		<RID>23</RID>
@@ -261,7 +261,7 @@ Gods lai ir Tēvam un Dēlam, un Svētajam Garam, kā tas no iesākuma ir bijis,
 Es ticu Dievam, visvarenajam Tēvam, debesu un zemes Radītājam, un Jēzum Kristum, viņa viendzimušajam Dēlam, mūsu Kungam, kas ir ieņemts no Svētā Gara, piedzimis no Jaunavas Marijas, cietis Poncija Pilāta laikā, krustā sists, nomiris un apbedīts, nokāpis ellē, trešajā dienā augšāmcēlies no mirušajiem, uzkāps debesīs, sēž pie Dieva, visvarenā Tēva, labās rokas, no kurienes viņš atnāks tiesāt dzīvos un mirušos. Es ticu Svētajam Garam, svētajai, katoliskajai Baznīcai, svēto sadraudzībai, grēku piedošanai, miesas augšāmcelšanai un mūžīgajai dzīvei. Amen.
 (Ja vēlas, var pievienot kādu no litānijām, piem., #51#{litāniju Vissv. Jaunavai Marijai})</String>
 		<Text_type>1</Text_type>
-		<Code>2</Code>
+		<Code>9</Code>
 	</item>
 	<item>
 		<RID>24</RID>
@@ -289,7 +289,7 @@ tiekam ievesti augšāmcelšanās godībā.
 Caur Jēzu Kristu, mūsu Kungu.
 Āmen.</String>
 		<Text_type>2</Text_type>
-		<Code>3</Code>
+		<Code>2</Code>
 	</item>
 	<item>
 		<RID>25</RID>
@@ -302,7 +302,7 @@ P. Priecājies un līksmojies, Jaunava Marija, alleluja.
 V. Jo Kungs ir patiesi augšāmcēlies, alleluja. 
 |Lūgsimies. Dievs, Tev ir labpaticis ar sava Dēla, mūsu Kunga Jēzus Kristus augšāmcelšanos iepriecināt pasauli: mēs Tevi lūdzam, aizbilstot Viņa Mātei Jaunavai Marijai, ļauj mums iemantot mūžīgās dzīves priekus. Caur Jēzu Kristu, mūsu Kungu. Amen.</String>
 		<Text_type>1</Text_type>
-		<Code>3</Code>
+		<Code>11</Code>
 	</item>
 	<item>
 		<RID>26</RID>
@@ -379,7 +379,7 @@ Mēs, grēcinieki, Tevi, žēlīgu Dievu, lūdzam, uzklausi mūs, Kungs un Dievs
 Jēzu, Jēzu, Jēzu, apžēlojies par mums!
 Marija, Marija, Dieva Māte, lūdzi Dievu par mums!</String>
 		<Text_type>1</Text_type>
-		<Code>5</Code>
+		<Code>12</Code>
 	</item>
 	<item>
 		<RID>27</RID>
@@ -396,7 +396,7 @@ Marija, Marija, Dieva Māte, lūdzi Dievu par mums!</String>
 	Jēzu, Jēzu, Jēzu, apžēlojies par mums!
 	Marija, Marija, Dieva Māte, lūdzi Dievu par mums!</String>
 		<Text_type>2</Text_type>
-		<Code>3</Code>
+		<Code>2</Code>
 	</item>
 	<item>
 		<RID>28</RID>
@@ -722,13 +722,13 @@ Par mums pārdurtu ar šķēpu!
 Jēzu, Jēzu Tev mēs grēkus sūdzam, 
 Visi, visi piedošanu lūdzam.</String>
 		<Text_type>2</Text_type>
-		<Code>3</Code>
+		<Code>2</Code>
 	</item>
 	<item>
 		<RID>30</RID>
 		<Description>I KRUSTACEĻŠ</Description>
 		<String>&gt;&gt;IESĀKUMA DZIESMA&lt;&lt;
-|Cik sāpīga šī piemiņa, 
+Cik sāpīga šī piemiņa, 
 Kas domājis to būtu, 
 Ka pats vienīgs Dieva Dēls
 Krustā piekalts kļūtu. 
@@ -753,14 +753,14 @@ Būt dzīvē uzticīgi,
 Un tad uz mājām mūžīgām
 Tev sekot pazemīgi. 
 &gt;&gt;NODOMS&lt;&lt;
-|Krustaceļu iedami, apcerēsim un pagodināsim mūsu Kunga Jēzus Kristus ciešanas, izlūdzoties sev grēku piedošanu un citas vajadzīgās Dieva žēlastības. 
+Krustaceļu iedami, apcerēsim un pagodināsim mūsu Kunga Jēzus Kristus ciešanas, izlūdzoties sev grēku piedošanu un citas vajadzīgās Dieva žēlastības. 
 Lūgsimies:
 Uzlūko, Kungs, šo savu tautu, kuras dēļ Jēzus Kristus neatteicās sevi nodot grēcinieku rokās un uzņemties krusta ciešanas. Mēs Tevi lūdzam, kas dzīvo un valdi no mūžības mūžībā. Amen. 
 &gt;&gt;IEVADS&lt;&lt;
-|Dievišķais Pestītāj, iedami šo krustaceļu, mēs ar dziļu cieņu un mīlestību gribam apcerēt Tavas rūgtās mokas un nāvi, ko Tu izcieti mūsu pestīšanas dēļ. 
+Dievišķais Pestītāj, iedami šo krustaceļu, mēs ar dziļu cieņu un mīlestību gribam apcerēt Tavas rūgtās mokas un nāvi, ko Tu izcieti mūsu pestīšanas dēļ. 
 Godinot Tavas ciešanas un nožēlodami savas vainas, mēs pazemībā lūdzam sev grēku piedošanu un atlaidu žēlastības
 &gt;&gt;I stacija. KUNGS JĒZUS NOTIESĀTS UZ NĀVI&lt;&lt;
-|Ak, Jēzu, mans, Tev tiesu spriež, 
+Ak, Jēzu, mans, Tev tiesu spriež, 
 Tev rūgtā nāve jāizcieš, 
 Tev, caur ko gūstam dzīvību
 Un debess laimi mūžīgu. 
@@ -779,7 +779,7 @@ Esi sveicināta Marija... .
 Gods lai ir... .
 Krustā sistais Kungs Jēzu Kristu, apžēlojies par mums!
 &gt;&gt;II stacija. KUNGS JĒZUS ŅEM SAVU KRUSTU&lt;&lt;
-|Ak, Jēzu mans — Tu nevainīgs
+Ak, Jēzu mans — Tu nevainīgs
 Nes savu krustu pazemīgs, 
 Kurp Tevi vada — eji Tu
 Ar lēnprātību brīnišķu. 
@@ -797,7 +797,7 @@ Esi sveicināta Marija... .
 Gods lai ir... .
 Krustā sistais Kungs Jēzu Kristu, apžēlojies par mums!
 &gt;&gt;III stacija.  KUNGS JĒZUS PIRMO REIZI PAKRĪT ZEM KRUSTA&lt;&lt;
-|Ak, sirds! Tavs Kungs te noguris, 
+Ak, sirds! Tavs Kungs te noguris, 
 Zem smagā krusta saļimis. 
 Te nav, kas Viņu žēlotu, —
 To pavada ar izsmieklu. 
@@ -815,7 +815,7 @@ Esi sveicināta Marija... .
 Gods lai ir... .
 Krustā sistais Kungs Jēzu Kristu, apžēlojies par mums!
 &gt;&gt;IV stacija. KUNGS JĒZUS KRUSTA CEĻĀ SATIEKAS AR SAVU VISSVĒTO MĀTI&lt;&lt;
-|Kā cieš te Māte skaidrākā!
+Kā cieš te Māte skaidrākā!
 Dēls, ko tik karsti mīlēja, 
 Te bezgalīgas mokas nes
 Dēļ necienīgās pasaules. 
@@ -832,7 +832,7 @@ Esi sveicināta Marija... .
 Gods lai ir... .
 Krustā sistais Kungs Jēzu Kristu, apžēlojies par mums!
 &gt;&gt;V stacija. KIRĒNAS SĪMANIS PALĪDZ JĒZUM NEST KRUSTU&lt;&lt;
-|Jel mācies, mana dvēsele, —
+Jel mācies, mana dvēsele, —
 Tev Jēzus Kristus priekšzīme —
 Tā ciest kā Viņš — kas darīja
 Tik labu. Kāda atmaksa!
@@ -850,7 +850,7 @@ Esi sveicināta Marija... .
 Gods lai ir... .
 Krustā sistais Kungs Jēzu Kristu, apžēlojies par mums!
 &gt;&gt;VI stacija. VERONIKA NOSLAUKA KUNGAM JĒZUM VAIGU&lt;&lt;
-|Kungs Jēzu! Lai šo piemiņu
+Kungs Jēzu! Lai šo piemiņu
 Visdziļāk sirdī glabāju:
 Pat Tavu seju dievišķo —
 Kā sāpes pārvērtušas to!
@@ -885,7 +885,7 @@ Esi sveicināta Marija... .
 Gods lai ir... .
 Krustā sistais Kungs Jēzu Kristu, apžēlojies par mums!
 &gt;&gt;VIII stacija. SIEVIETES APRAUD KUNGU JĒZU&lt;&lt;
-|Kaut Jēzum spēka pietrūka, 
+Kaut Jēzum spēka pietrūka, 
 Viņš sievietes vēl mierina —
 Lai lej par sevi asaras
 Un bērniem — ne par Viņu tās. 
@@ -902,7 +902,7 @@ Esi sveicināta Marija... .
 Gods lai ir... .
 Krustā sistais Kungs Jēzu Kristu, apžēlojies par mums!
 &gt;&gt;IX stacija. KUNGS JĒZUS KRUSTA CEĻĀ PAKRĪT TREŠO REIZI&lt;&lt;
-|Cik skaudru sāpju smags šis krusts, 
+Cik skaudru sāpju smags šis krusts, 
 Kāds rūgtums, mūsu neizjusts, —
 Vēl katru savu sitienu
 Tie pavada ar izsmieklu. 
@@ -919,7 +919,7 @@ Esi sveicināta Marija... .
 Gods lai ir... .
 Krustā sistais Kungs Jēzu Kristu, apžēlojies par mums!
 &gt;&gt;X stacija. KUNGAM JĒZUM NOVELK DRĒBES&lt;&lt;
-|Cik skumju pilna stunda šī —
+Cik skumju pilna stunda šī —
 Lūk, Jēzu izģērbj kareivji. 
 To, kurā mūsu glābšana, 
 Ar rūgtu žulti dzirdina. 
@@ -937,7 +937,7 @@ Esi sveicināta Marija... .
 Gods lai ir... .
 Krustā sistais Kungs Jēzu Kristu, apžēlojies par mums!
 &gt;&gt;XI stacija. KUNGU JĒZU PIESIT KRUSTĀ&lt;&lt;
-|To moka pūlis nežēlīgs, 
+To moka pūlis nežēlīgs, 
 Viņš krustā piekalts pazemīgs, 
 Un mātei sāpju biķeris
 Līdz’ Dēlam jāizbauda viss. 
@@ -954,7 +954,7 @@ Esi sveicināta Marija... .
 Gods lai ir... .
 Krustā sistais Kungs Jēzu Kristu, apžēlojies par mums!
 &gt;&gt;XII stacija. KUNGS JĒZUS MIRST PIE KRUSTA&lt;&lt;
-|Kungs mirst pie krusta paceltā!
+Kungs mirst pie krusta paceltā!
 To mūsu grēki nopelna. 
 Ak, raudiet par šo brīnumu, 
 Tas nes mums atpestīšanu!
@@ -971,7 +971,7 @@ Esi sveicināta Marija... .
 Gods lai ir... .
 Krustā sistais Kungs Jēzu Kristu, apžēlojies par mums!
 &gt;&gt;XIII stacija. KUNGA JĒZUS MIESAS NOŅEM NO KRUSTA&lt;&lt;
-|Ar Mariju lai noskumstam
+Ar Mariju lai noskumstam
 Par viņas lielām ciešanām. 
 Kas nācis pestīt cilvēkus, 
 Nu miris viņas rokās dus. 
@@ -988,7 +988,7 @@ Esi sveicināta Marija... .
 Gods lai ir... .
 Krustā sistais Kungs Jēzu Kristu, apžēlojies par mums!
 &gt;&gt;XIV stacija. KUNGA JĒZUS MIESAS TIEK GULDĪTAS KAPĀ&lt;&lt;
-|Nu dusi Tu! Kaps izvēlēts, 
+Nu dusi Tu! Kaps izvēlēts, 
 Tas mūsu sirdīm paliks svēts, —
 Ar kapu šo, lai pieminam, 
 Mēs pestīšanu ieguvām. 
@@ -1004,20 +1004,20 @@ Tēvs mūsu, kas esi Debesīs, svētīts lai top Tavs vārds, lai atnāk Tava va
 Esi sveicināta Marija... .
 Gods lai ir... .
 &gt;&gt; NOSLĒGUMA LŪGŠANA&lt;&lt;
-|Virs zemes šeit un mūžībā
+Virs zemes šeit un mūžībā
 Tev vienam slava dodama, 
 Jo Tu, ak Kungs, kā it neviens
 Mūs esi mīlējis paties’!
 Lūgsimies: 
 Mēs Tevi lūdzam, Kungs, lai nāk bagātīga svētība pār Taviem ļaudīm, kas ar dievbijīgu prātu ir apcerējuši Tava Dēla ciešanas un nāvi: lai viņiem tiek atlaisti grēki, dots iepriecinājums, stiprināta ticība un nodrošināta mūžīgā pestīšana. Caur Jēzu Kristu, mūsu Kungu. Amen.</String>
-		<Text_type>2</Text_type>
+		<Text_type>1</Text_type>
 		<Code>2</Code>
 	</item>
 	<item>
 		<RID>31</RID>
 		<Description>II KRUSTACEĻŠ</Description>
 		<String>&gt;&gt;IESĀKUMA DZIESMA&lt;&lt;
-|Cik sāpīga šī piemiņa, 
+Cik sāpīga šī piemiņa, 
 Kas domājis to būtu, 
 Ka pats vienīgs Dieva Dēls
 Krustā piekalts kļūtu. 
@@ -1042,14 +1042,14 @@ Būt dzīvē uzticīgi,
 Un tad uz mājām mūžīgām
 Tev sekot pazemīgi. 
 &gt;&gt;NODOMS&lt;&lt;
-|Krustaceļa iedami, apcerēsim un pagodināsim mūsu Kunga Jēzus Kristus ciešanas, izlūdzoties sev grēku piedošanu un citas vajadzīgās Dieva žēlastības. 
+Krustaceļa iedami, apcerēsim un pagodināsim mūsu Kunga Jēzus Kristus ciešanas, izlūdzoties sev grēku piedošanu un citas vajadzīgās Dieva žēlastības. 
 Lūgsimies:
 Uzlūko, Kungs, šo savu tautu, kuras dēļ Jēzus Kristus neatteicās sevi nodot grēcinieku rokās un uzņemties krusta ciešanas. Mēs Tevi lūdzam, kas dzīvo un valdi no mūžības mūžībā. Amen. 
 &gt;&gt;IEVADS&lt;&lt;
-|Dievišķais Pestītāj, iedami šo krustaceļu, mēs ar dziļu cieņu un mīlestību gribam apcerēt Tavas rūgtās mokas un nāvi, ko Tu izcieti mūsu pestīšanas dēļ. 
+Dievišķais Pestītāj, iedami šo krustaceļu, mēs ar dziļu cieņu un mīlestību gribam apcerēt Tavas rūgtās mokas un nāvi, ko Tu izcieti mūsu pestīšanas dēļ. 
 Godinot Tavas ciešanas un nožēlodami savas vainas, mēs pazemībā lūdzam sev grēku piedošanu un atlaidu žēlastības. 
 &gt;&gt;I stacija. KUNGS JĒZUS NOTIESĀTS UZ NĀVI&lt;&lt;
-|Ak, Jēzu, mans, Tev tiesu spriež, 
+Ak, Jēzu, mans, Tev tiesu spriež, 
 Tev rūgtā nāve jāizcieš, 
 Tev, caur ko gūstam dzīvību
 Un debess laimi mūžīgu. 
@@ -1068,7 +1068,7 @@ Esi sveicināta Marija...,
 Gods lai ir...,
 Krustā sistais Kungs Jēzu Kristu, apžēlojies par mums!
 &gt;&gt;II stacija. KUNGS JĒZUS ŅEM SAVU KRUSTU&lt;&lt;
-|Ak, Jēzu mans — Tu nevainīgs
+Ak, Jēzu mans — Tu nevainīgs
 Nes savu krustu pazemīgs, 
 Kurp Tevi vada — eji Tu
 Ar lēnprātību brīnišķu. 
@@ -1087,7 +1087,7 @@ Esi sveicināta Marija...,
 Gods lai ir...,
 Krustā sistais Kungs Jēzu Kristu, apžēlojies par mums!
 &gt;&gt;III stacija.  KUNGS JĒZUS PIRMO REIZI PAKRĪT ZEM KRUSTA&lt;&lt;
-|Ak, sirds! Tavs Kungs te noguris, 
+Ak, sirds! Tavs Kungs te noguris, 
 Zem smagā krusta saļimis. 
 Te nav, kas Viņu žēlotu, —
 To pavada ar izsmieklu. 
@@ -1106,7 +1106,7 @@ Esi sveicināta Marija...,
 Gods lai ir...,
 Krustā sistais Kungs Jēzu Kristu, apžēlojies par mums!
 &gt;&gt;IV stacija. KUNGS JĒZUS KRUSTA CEĻĀ SATIEKAS AR SAVU VISSVĒTO MĀTI&lt;&lt;
-|Kā cieš te Māte skaidrākā!
+Kā cieš te Māte skaidrākā!
 Dēls, ko tik karsti mīlēja, 
 Te bezgalīgas mokas nes
 Dēļ necienīgās pasaules. 
@@ -1125,7 +1125,7 @@ Esi sveicināta Marija...,
 Gods lai ir...,
 Krustā sistais Kungs Jēzu Kristu, apžēlojies par mums!
 &gt;&gt;V stacija. KIRĒNAS SĪMANIS PALĪDZ JĒZUM NEST KRUSTU&lt;&lt;
-|Jel mācies, mana dvēsele, —
+Jel mācies, mana dvēsele, —
 Tev Jēzus Kristus priekšzīme —
 Tā ciest kā Viņš — kas darīja
 Tik labu. Kāda atmaksa!
@@ -1144,7 +1144,7 @@ Esi sveicināta Marija...,
 Gods lai ir...,
 Krustā sistais Kungs Jēzu Kristu, apžēlojies par mums!
 &gt;&gt;VI stacija. VERONIKA NOSLAUKA KUNGAM JĒZUM VAIGU&lt;&lt;
-|Kungs Jēzu! Lai šo piemiņu
+Kungs Jēzu! Lai šo piemiņu
 Visdziļāk sirdī glabāju:
 Pat Tavu seju dievišķo —
 Kā sāpes pārvērtušas to!
@@ -1163,7 +1163,7 @@ Esi sveicināta Marija...,
 Gods lai ir...,
 Krustā sistais Kungs Jēzu Kristu, apžēlojies par mums!
 &gt;&gt;VII stacija. KUNGS JĒZUS OTRU REIZI PAKRĪT ZEM KRUSTA&lt;&lt;
-|Dēļ tevis, zeme grēcīgā, 
+Dēļ tevis, zeme grēcīgā, 
 Krīt Kungs zem krusta smaguma, 
 Cik ļauni Viņš te pazemots, 
 Kam nāktos slava vien un gods. 
@@ -1182,7 +1182,7 @@ Esi sveicināta Marija...,
 Gods lai ir...,
 Krustā sistais Kungs Jēzu Kristu, apžēlojies par mums!
 &gt;&gt;VIII stacija. SIEVIETES APRAUD KUNGU JĒZU&lt;&lt;
-|Kaut Jēzum spēka pietrūka, 
+Kaut Jēzum spēka pietrūka, 
 Viņš sievietes vēl mierina —
 Lai lej par sevi asaras
 Un bērniem — ne par Viņu tās. 
@@ -1201,7 +1201,7 @@ Esi sveicināta Marija...,
 Gods lai ir...,
 Krustā sistais Kungs Jēzu Kristu, apžēlojies par mums!
 &gt;&gt;IX stacija. KUNGS JĒZUS KRUSTA CEĻĀ PAKRĪT TREŠO REIZI&lt;&lt;
-|Cik skaudru sāpju smags šis krusts, 
+Cik skaudru sāpju smags šis krusts, 
 Kāds rūgtums, mūsu neizjusts, —
 Vēl katru savu sitienu
 Tie pavada ar izsmieklu. 
@@ -1220,7 +1220,7 @@ Esi sveicināta Marija...,
 Gods lai ir...,
 Krustā sistais Kungs Jēzu Kristu, apžēlojies par mums!
 &gt;&gt;X stacija. KUNGAM JĒZUM NOVELK DRĒBES&lt;&lt;
-|Cik skumju pilna stunda šī —
+Cik skumju pilna stunda šī —
 Lūk, Jēzu izģērbj kareivji. 
 To, kurā mūsu glābšana, 
 Ar rūgtu žulti dzirdina. 
@@ -1239,7 +1239,7 @@ Esi sveicināta Marija...,
 Gods lai ir...,
 Krustā sistais Kungs Jēzu Kristu, apžēlojies par mums!
 &gt;&gt;XI stacija. KUNGU JĒZU PIESIT KRUSTĀ&lt;&lt;
-|To moka pūlis nežēlīgs, 
+To moka pūlis nežēlīgs, 
 Viņš krustā piekalts pazemīgs, 
 Un mātei sāpju biķeris
 Līdz’ Dēlam jāizbauda viss. 
@@ -1258,7 +1258,7 @@ Esi sveicināta Marija...,
 Gods lai ir...,
 Krustā sistais Kungs Jēzu Kristu, apžēlojies par mums!
 &gt;&gt;XII stacija. KUNGS JĒZUS MIRST PIE KRUSTA&lt;&lt;
-|Kungs mirst pie krusta paceltā!
+Kungs mirst pie krusta paceltā!
 To mūsu grēki nopelna. 
 Ak, raudiet par šo brīnumu, 
 Tas nes mums atpestīšanu!
@@ -1277,7 +1277,7 @@ Esi sveicināta Marija...,
 Gods lai ir...,
 Krustā sistais Kungs Jēzu Kristu, apžēlojies par mums!
 &gt;&gt;XIII stacija. KUNGA JĒZUS MIESAS NOŅEM NO KRUSTA&lt;&lt;
-|Ar Mariju lai noskumstam
+Ar Mariju lai noskumstam
 Par viņas lielām ciešanām. 
 Kas nācis pestīt cilvēkus, 
 Nu miris viņas rokās dus. 
@@ -1296,7 +1296,7 @@ Esi sveicināta Marija...,
 Gods lai ir...,
 Krustā sistais Kungs Jēzu Kristu, apžēlojies par mums!
 &gt;&gt;XIV stacija. KUNGA JĒZUS MIESAS TIEK GULDĪTAS KAPĀ&lt;&lt;
-|Nu dusi Tu! Kaps izvēlēts, 
+Nu dusi Tu! Kaps izvēlēts, 
 Tas mūsu sirdīm paliks svēts, —
 Ar kapu šo, lai pieminam, 
 Mēs pestīšanu ieguvām. 
@@ -1314,12 +1314,12 @@ Tēvs mūsu, kas esi Debesīs, svētīts lai top Tavs vārds, lai atnāk Tava va
 Esi sveicināta Marija..., 
 Gods lai ir...,
 &gt;&gt; NOSLĒGUMA LŪGŠANA&lt;&lt;
-|Virs zemes šeit un mūžībā
+Virs zemes šeit un mūžībā
 Tev vienam slava dodama, 
 Jo Tu, ak Kungs, kā it neviens
 Mūs esi mīlējis paties’!
 Krustā sistais Pestītāj! Pieņem šīs lūgšanas, ko mēs upurējam, godinot Tavu ciešanu un nāves svēto noslēpumu, un dāvā mūsu dvēselēm savu žēlastību. Mēs Tevi lūdzam, kas dzīvo un valdi mūžu mūžos. Amen.</String>
-		<Text_type>2</Text_type>
+		<Text_type>1</Text_type>
 		<Code>2</Code>
 	</item>
 	<item>
@@ -1333,14 +1333,14 @@ Liec, lai tie drīz atgrieztos tēva mājās, lai neaizietu bojā no posta un ba
 Esi Karalis arī tiem, kas ar maldu mācībām vai šķelšanos ir no Tevis šķirti; sauc viņus atpakaļ drošajā patiesības ostā un ticības vienībā, lai drīzumā būtu viens ganāmpulks un viens gans. Dāvā, Kungs, savai Baznīcai drošu brīvību un labklājību, dod visām tautām kārtību un mieru. Liec, lai no vienas pasaules malas līdz otrai skanētu viens un tas pats sauciens: 
 Slava dievišķajai Sirdij, caur kuru mums nākusi pestīšana! Slava tai un gods mūžīgi! Amen.</String>
 		<Text_type>1</Text_type>
-		<Code>2</Code>
+		<Code>9</Code>
 	</item>
 	<item>
 		<RID>34</RID>
 		<Description>GANDARĪŠANAS LŪGŠANA VISSVĒTAJAI JĒZUS SIRDIJ</Description>
 		<String>Visžēlsirdīgais Jēzu, kura bezgalīgā mīlestība uz mums, cilvēkiem, tiek atmaksāta ar tādu lielu vienaldzību, nolaidību, nicināšanu un nepateicību, mēs krītam ceļos šeit, Tava altāra priekšā, lai ar sevišķu dievbijību gandarītu par cilvēku vienaldzību un to negodu, ko viņi nodara Tavai mīlestības pilnajai Sirdij. — Tomēr zinot, ka arī mēs paši reiz piederējām pie necienīgo skaita, karstas nožēlas sāpju pārņemti, lūdzam Tavu žēlsirdību mums pašiem. Mēs esam gatavi labprāt gandarīt ne tikai par saviem grēkiem, bet arī par to grēkiem, kas ir tālu nomaldījušies no pestīšanas ceļa, kas, neticībā nocietinājušies, negrib sekot Tev kā savam Ganam un Vadonim vai arī ir lauzuši savas kristības solījumus un atsakās nest Tavu bauslības vieglo jūgu. — Mēs stingri apsolāmies gandarīt par visiem šiem nožēlojamajiem pārkāpumiem, bet sevišķi mēs gribam labot visu negodīgo un netikumīgo dzīvesveidā un apģērbā, ar ko tiek ievilkts samaitāšanā tik daudz nevainīgu dvēseļu; mēs gribam gandarīt par svētdienu un svētku dienu nesvinēšanu, par riebīgiem lāstiem pret Tevi un Taviem svētajiem, par Tava Vietnieka un priesteru kārtas zaimošanu, par Tavas dievišķās Mīlestības sakramenta apgānīšanu ar nolaidību vai apkaunojošām svēt¬zādzībām, beidzot par tautu atklātiem pārkāpumiem, kuras pretojas Tavas Baznīcas likumiem un mācībai. Lai kaut cik vērstu par labu Tava dievišķā goda aizskaršanu, mēs kopā ar Tavu jaunavīgo Māti, ar visiem svētajiem un ar visiem dievbijīgajiem ticīgajiem upurējam Tev to gandarījumu, kuru Tu pats pie krusta sniedzi savam Tēvam un kuru Tu ik dienas atjauno uz altāriem. Tavas žēlastības stiprināti, mēs Tev nopietni apsolām ar dziļu ticību un dzīves šķīstību, ievērojot Evaņģēlija bauslību, it sevišķi ar mīlestības likuma izpildīšanu, cik tas no mums ir atkarīgs, novērst to ļaunumu, kuru mēs vai citi esam izdarījuši, atstādami novārtā Tavu lielo mīlestību. Visiem spēkiem mēs gribam turpmāk novērst no Tevis visus apvainojumus un pamudināt pēc iespējas vairāk cilvēku, kas Tev sekotu. — Mēs Tevi lūdzam, Vislabais Jēzu, aizbildinot par mums Vissvētākajai Jaunavai Marijai, — pieņem žēlīgi šo mūsu labprātīgo gandarījuma piedāvājumu un ar savu žēlastību padari mūs līdz nāvei uzticīgus dievbijīgā Tev kalpošanā, lai, mēs beidzot visi sasniegtu īsto Tēviju, kur Tu ar Tēvu un Svēto Garu dzīvo un valdi no mūžības mūžībā. Amen.</String>
 		<Text_type>1</Text_type>
-		<Code>2</Code>
+		<Code>9</Code>
 	</item>
 	<item>
 		<RID>35</RID>
@@ -1349,7 +1349,7 @@ Slava dievišķajai Sirdij, caur kuru mums nākusi pestīšana! Slava tai un god
 Es veltīju un atdodu mūsu Kunga Jēzus Kristus Vissvētākajai Sirdij savu personu, savu dzīvību, savus darbus, savas grūtības un ciešanas, lai nākotnē es pilnīgi atdotos dievišķās Sirds mīlestībai un tās godināšanai.
 Mana nopietnā un neatsaucamā apņemšanās ir piederēt tai pavisam, darīt visu aiz mīlestības pret Viņu un no visas sirds atteikties no visa, kas nepatiktu Jēzus dievišķajai Sirdij. — Tādēļ es izvēlējos Tevi, Vissvētākā Sirds, par savas mīlestības vienīgo priekšmetu, par savas dzīvības aizsargātāju, par savas pestīšanas drošību, par atbalstu savā vājumā un par visas savas dzīves gandarīšanas upuri. Tu, maiguma un žēlastības pilnā Sirds, esi man drošs patvērums arī manā nāves stundā, esi mana attaisnotāja Dieva priekšā un novērs no manis Viņa taisnīgo dusmu sodu. Tu, mīlestības pilnā Sirds, uz Tevi es lieku visu savu cerību. Sava ļaunuma dēļ es bīstos visa, bet ar Tavu žēlastību es ceru uz visu. Iznīcini manī visu, kas Tev nepatiktu, vai Tev pretotos. Lai Tava svētā mīlestība tik dziļi iespiežas manā sirdī, ka es nekad Tevis neaizmirstu un nekad netiktu no Tevis atšķirts. Dievišķā Sirds, Tavas bezgalīgās žēlsirdības dēļ, es Tevi, lūdzu, dari, lai mans vārds tiktu ierakstīts Tevī, jo Tavā kalpošanā es gribu dzīvot un mirt. Amen.</String>
 		<Text_type>1</Text_type>
-		<Code>2</Code>
+		<Code>9</Code>
 	</item>
 	<item>
 		<RID>36</RID>
@@ -1395,7 +1395,7 @@ un neieved mūs kārdināšanā,
 bet atpestī mūs no ļauna.
 Āmen.</String>
 		<Text_type>1</Text_type>
-		<Code>4</Code>
+		<Code>11</Code>
 	</item>
 	<item>
 		<RID>50</RID>
@@ -1403,7 +1403,7 @@ bet atpestī mūs no ļauna.
 		<String>Es ticu Dievam, visvarenajam Tēvam, debesu un zemes Radītājam, un Jēzum Kristum, viņa viendzimušajam Dēlam, mūsu Kungam, kas ir ieņemts no Svētā Gara, piedzimis no Jaunavas Marijas, cietis Poncija Pilāta laikā, krustā sists, nomiris un apbedīts, nokāpis ellē, trešajā dienā augšāmcēlies no mirušajiem, uzkāpis debesīs, sēž pie Dieva, visvarenā Tēva, labās rokas, no kurienes Viņš atnāks tiesāt dzīvos un mirušos.
 Es ticu Svētajam Garam, svētajai katoliskajai Baznīcai, svēto sadraudzībai, grēku piedošanai, miesas augšāmcelšanai un mūžīgajai dzīvei. Amen.</String>
 		<Text_type>1</Text_type>
-		<Code>4</Code>
+		<Code>11</Code>
 	</item>
 	<item>
 		<RID>51</RID>
@@ -1504,7 +1504,8 @@ Visgudrākā Jaunava, Lūdz par mums!
  Un pēc šīs dzīves ved mūs pie Jēzus,
  pie Tava dievišķā Dēla.
  Tu žēlīgā un laipnā, Vissvētākā Jaunava Marija.</String>
-		<Text_type>3</Text_type>
+		<Text_type>1</Text_type>
+		<Code>2</Code>
 	</item>
 	<item>
 		<RID>52</RID>
@@ -1593,14 +1594,14 @@ Rožukronis Vissvētākās Jaunavas Marijas godam
 		<Description>Kungs, apžēlojies par mums</Description>
 		<String>Kungs, apžēlojies par mums</String>
 		<Text_type>1</Text_type>
-		<Code>2</Code>
+		<Code>13</Code>
 	</item>
 	<item>
 		<RID>57</RID>
 		<Description>Mēs Tevi lūdzam, Kungs un Dievs!</Description>
 		<String>Mēs Tevi lūdzam, Kungs un Dievs!</String>
 		<Text_type>1</Text_type>
-		<Code>2</Code>
+		<Code>13</Code>
 	</item>
 	<item>
 		<RID>62</RID>
@@ -5278,7 +5279,7 @@ R. Amen.
 V. Dieva žēlastība lai jūs pavada.
 R. Pateicība Dievam.</String>
 		<Text_type>2</Text_type>
-		<Code>5</Code>
+		<Code>4</Code>
 	</item>
 	<item>
 		<RID>213</RID>
@@ -5312,7 +5313,7 @@ un Svētajam Garam,
 	kā tas no iesākuma ir bijis, tā tagad un vienmēr,*
 	un mūžīgi mūžam. Amen.</String>
 		<Text_type>2</Text_type>
-		<Code>6</Code>
+		<Code>2</Code>
 	</item>
 	<item>
 		<RID>214</RID>
@@ -5340,7 +5341,7 @@ un Svētajam Garam,
 kā tas no iesākuma ir bijis, tā tagad un vienmēr,*
 un mūžīgi mūžam. Amen.</String>
 		<Text_type>2</Text_type>
-		<Code>6</Code>
+		<Code>2</Code>
 	</item>
 	<item>
 		<RID>215</RID>
@@ -5521,7 +5522,7 @@ R. Amen.
 V. Dieva žēlastība lai jūs pavada.
 R. Pateicība Dievam.</String>
 		<Text_type>2</Text_type>
-		<Code>4</Code>
+		<Code>3</Code>
 	</item>
 	<item>
 		<RID>216</RID>
@@ -5674,7 +5675,7 @@ R. Amen.
 V. Dieva žēlastība lai jūs pavada.
 R. Pateicība Dievam.</String>
 		<Text_type>2</Text_type>
-		<Code>5</Code>
+		<Code>4</Code>
 	</item>
 	<item>
 		<RID>217</RID>
@@ -5840,7 +5841,7 @@ R. Amen.
 V. Dieva žēlastība lai jūs pavada.
 R. Pateicība Dievam.</String>
 		<Text_type>2</Text_type>
-		<Code>4</Code>
+		<Code>3</Code>
 	</item>
 	<item>
 		<RID>218</RID>
@@ -5986,7 +5987,7 @@ R. Amen.
 V. Dieva žēlastība lai jūs pavada.
 R. Pateicība Dievam.</String>
 		<Text_type>2</Text_type>
-		<Code>5</Code>
+		<Code>4</Code>
 	</item>
 	<item>
 		<RID>219</RID>
@@ -6188,7 +6189,7 @@ R. Amen.
 V. Dieva žēlastība lai jūs pavada.
 R. Pateicība Dievam.</String>
 		<Text_type>2</Text_type>
-		<Code>4</Code>
+		<Code>3</Code>
 	</item>
 	<item>
 		<RID>220</RID>
@@ -6328,7 +6329,7 @@ R. Amen.
 V. Dieva žēlastība lai jūs pavada.
 R. Pateicība Dievam.</String>
 		<Text_type>2</Text_type>
-		<Code>5</Code>
+		<Code>4</Code>
 	</item>
 	<item>
 		<RID>221</RID>
@@ -6488,7 +6489,7 @@ R. Amen.
 V. Dieva žēlastība lai jūs pavada.
 R. Pateicība Dievam.</String>
 		<Text_type>2</Text_type>
-		<Code>4</Code>
+		<Code>3</Code>
 	</item>
 	<item>
 		<RID>222</RID>
@@ -6647,7 +6648,7 @@ R. Amen.
 V. Dieva žēlastība lai jūs pavada.
 R. Pateicība Dievam.</String>
 		<Text_type>2</Text_type>
-		<Code>5</Code>
+		<Code>4</Code>
 	</item>
 	<item>
 		<RID>223</RID>
@@ -6828,7 +6829,7 @@ R. Amen.
 V. Dieva žēlastība lai jūs pavada.
 R. Pateicība Dievam.</String>
 		<Text_type>2</Text_type>
-		<Code>4</Code>
+		<Code>3</Code>
 	</item>
 	<item>
 		<RID>224</RID>
@@ -7002,7 +7003,7 @@ R. Amen.
 V. Dieva žēlastība lai jūs pavada.
 R. Pateicība Dievam.</String>
 		<Text_type>2</Text_type>
-		<Code>5</Code>
+		<Code>4</Code>
 	</item>
 	<item>
 		<RID>225</RID>
@@ -7195,7 +7196,7 @@ R. Amen.
 V. Dieva žēlastība lai jūs pavada.
 R. Pateicība Dievam.</String>
 		<Text_type>2</Text_type>
-		<Code>4</Code>
+		<Code>3</Code>
 	</item>
 	<item>
 		<RID>226</RID>
@@ -7352,7 +7353,7 @@ R. Amen.
 V. Dieva žēlastība lai jūs pavada.
 R. Pateicība Dievam.</String>
 		<Text_type>2</Text_type>
-		<Code>5</Code>
+		<Code>4</Code>
 	</item>
 	<item>
 		<RID>227</RID>
@@ -7502,7 +7503,7 @@ R. Amen.
 V. Dieva žēlastība lai jūs pavada.
 R. Pateicība Dievam.</String>
 		<Text_type>2</Text_type>
-		<Code>4</Code>
+		<Code>3</Code>
 	</item>
 	<item>
 		<RID>228</RID>
@@ -7536,7 +7537,7 @@ un apspiestajiem brīvību un aklajiem atgriezt redzi.
 To mēs lūdzam ar Žēlsirdības Mātes Marijas aizbildniecību Tev, 
 kas dzīvo un valdi ar Dievu Tēvu Svētā Gara vienībā, Dievs visos mūžu mūžos. Āmen.</String>
 		<Text_type>1</Text_type>
-		<Code>2</Code>
+		<Code>9</Code>
 	</item>
 	<item>
 		<RID>229</RID>
@@ -7687,7 +7688,7 @@ R. Amen.
 V. Dieva žēlastība lai jūs pavada.
 R. Pateicība Dievam.</String>
 		<Text_type>2</Text_type>
-		<Code>5</Code>
+		<Code>4</Code>
 	</item>
 	<item>
 		<RID>230</RID>
@@ -7862,7 +7863,7 @@ R. Amen.
 V. Dieva žēlastība lai jūs pavada.
 R. Pateicība Dievam.</String>
 		<Text_type>2</Text_type>
-		<Code>4</Code>
+		<Code>3</Code>
 	</item>
 	<item>
 		<RID>231</RID>
@@ -8036,7 +8037,7 @@ R. Amen.
 V. Dieva žēlastība lai jūs pavada.
 R. Pateicība Dievam.</String>
 		<Text_type>2</Text_type>
-		<Code>5</Code>
+		<Code>4</Code>
 	</item>
 	<item>
 		<RID>232</RID>
@@ -8199,7 +8200,7 @@ R. Amen.
 V. Dieva žēlastība lai jūs pavada.
 R. Pateicība Dievam.</String>
 		<Text_type>2</Text_type>
-		<Code>4</Code>
+		<Code>3</Code>
 	</item>
 	<item>
 		<RID>233</RID>
@@ -8355,7 +8356,7 @@ R. Amen.
 V. Dieva žēlastība lai jūs pavada.
 R. Pateicība Dievam.</String>
 		<Text_type>2</Text_type>
-		<Code>5</Code>
+		<Code>4</Code>
 	</item>
 	<item>
 		<RID>234</RID>
@@ -8537,7 +8538,7 @@ R. Amen.
 V. Dieva žēlastība lai jūs pavada.
 R. Pateicība Dievam.</String>
 		<Text_type>2</Text_type>
-		<Code>4</Code>
+		<Code>3</Code>
 	</item>
 	<item>
 		<RID>235</RID>
@@ -8693,7 +8694,7 @@ R. Amen.
 V. Dieva žēlastība lai jūs pavada.
 R. Pateicība Dievam.</String>
 		<Text_type>2</Text_type>
-		<Code>5</Code>
+		<Code>4</Code>
 	</item>
 	<item>
 		<RID>236</RID>
@@ -8902,7 +8903,7 @@ R. Amen.
 V. Dieva žēlastība lai jūs pavada.
 R. Pateicība Dievam.</String>
 		<Text_type>2</Text_type>
-		<Code>4</Code>
+		<Code>3</Code>
 	</item>
 	<item>
 		<RID>237</RID>
@@ -9069,7 +9070,7 @@ R. Amen.
 V. Dieva žēlastība lai jūs pavada.
 R. Pateicība Dievam.</String>
 		<Text_type>2</Text_type>
-		<Code>5</Code>
+		<Code>4</Code>
 	</item>
 	<item>
 		<RID>238</RID>
@@ -9258,7 +9259,7 @@ R. Amen.
 V. Dieva žēlastība lai jūs pavada.
 R. Pateicība Dievam.</String>
 		<Text_type>2</Text_type>
-		<Code>4</Code>
+		<Code>3</Code>
 	</item>
 	<item>
 		<RID>239</RID>
@@ -9409,7 +9410,7 @@ R. Amen.
 V. Dieva žēlastība lai jūs pavada.
 R. Pateicība Dievam.</String>
 		<Text_type>2</Text_type>
-		<Code>5</Code>
+		<Code>4</Code>
 	</item>
 	<item>
 		<RID>240</RID>
@@ -9596,7 +9597,7 @@ R. Amen.
 V. Dieva žēlastība lai jūs pavada.
 R. Pateicība Dievam.</String>
 		<Text_type>2</Text_type>
-		<Code>4</Code>
+		<Code>3</Code>
 	</item>
 	<item>
 		<RID>241</RID>
@@ -9733,7 +9734,7 @@ R. Amen.
 V. Dieva žēlastība lai jūs pavada.
 R. Pateicība Dievam.</String>
 		<Text_type>2</Text_type>
-		<Code>5</Code>
+		<Code>4</Code>
 	</item>
 	<item>
 		<RID>242</RID>
@@ -9920,7 +9921,7 @@ R. Amen.
 V. Dieva žēlastība lai jūs pavada.
 R. Pateicība Dievam.</String>
 		<Text_type>2</Text_type>
-		<Code>4</Code>
+		<Code>3</Code>
 	</item>
 	<item>
 		<RID>245</RID>
@@ -10068,7 +10069,7 @@ R. Amen.
 V. Dieva žēlastība lai jūs pavada.
 R. Pateicība Dievam.</String>
 		<Text_type>2</Text_type>
-		<Code>5</Code>
+		<Code>4</Code>
 	</item>
 	<item>
 		<RID>246</RID>
@@ -10256,7 +10257,7 @@ R. Amen.
 V. Dieva žēlastība lai jūs pavada.
 R. Pateicība Dievam.</String>
 		<Text_type>2</Text_type>
-		<Code>4</Code>
+		<Code>3</Code>
 	</item>
 	<item>
 		<RID>247</RID>
@@ -10415,7 +10416,7 @@ R. Amen.
 V. Dieva žēlastība lai jūs pavada.
 R. Pateicība Dievam.</String>
 		<Text_type>2</Text_type>
-		<Code>5</Code>
+		<Code>4</Code>
 	</item>
 	<item>
 		<RID>248</RID>
@@ -10587,7 +10588,7 @@ R. Amen.
 V. Dieva žēlastība lai jūs pavada.
 R. Pateicība Dievam.</String>
 		<Text_type>2</Text_type>
-		<Code>4</Code>
+		<Code>3</Code>
 	</item>
 	<item>
 		<RID>249</RID>
@@ -10730,7 +10731,7 @@ R. Amen.
 V. Dieva žēlastība lai jūs pavada.
 R. Pateicība Dievam.</String>
 		<Text_type>2</Text_type>
-		<Code>5</Code>
+		<Code>4</Code>
 	</item>
 	<item>
 		<RID>250</RID>
@@ -10887,7 +10888,7 @@ R. Amen.
 V. Dieva žēlastība lai jūs pavada.
 R. Pateicība Dievam.</String>
 		<Text_type>2</Text_type>
-		<Code>4</Code>
+		<Code>3</Code>
 	</item>
 	<item>
 		<RID>251</RID>
@@ -11015,7 +11016,7 @@ R. Amen.
 V. Dieva žēlastība lai jūs pavada.
 R. Pateicība Dievam.</String>
 		<Text_type>2</Text_type>
-		<Code>5</Code>
+		<Code>4</Code>
 	</item>
 	<item>
 		<RID>252</RID>
@@ -11188,7 +11189,7 @@ R. Amen.
 V. Dieva žēlastība lai jūs pavada.
 R. Pateicība Dievam.</String>
 		<Text_type>2</Text_type>
-		<Code>4</Code>
+		<Code>3</Code>
 	</item>
 	<item>
 		<RID>253</RID>
@@ -11330,7 +11331,7 @@ R. Amen.
 V. Dieva žēlastība lai jūs pavada.
 R. Pateicība Dievam.</String>
 		<Text_type>2</Text_type>
-		<Code>5</Code>
+		<Code>4</Code>
 	</item>
 	<item>
 		<RID>254</RID>
@@ -11489,7 +11490,7 @@ R. Amen.
 V. Dieva žēlastība lai jūs pavada.
 R. Pateicība Dievam.</String>
 		<Text_type>2</Text_type>
-		<Code>4</Code>
+		<Code>3</Code>
 	</item>
 	<item>
 		<RID>255</RID>
@@ -11648,7 +11649,7 @@ R. Amen.
 V. Dieva žēlastība lai jūs pavada.
 R. Pateicība Dievam.</String>
 		<Text_type>2</Text_type>
-		<Code>5</Code>
+		<Code>4</Code>
 	</item>
 	<item>
 		<RID>256</RID>
@@ -11821,7 +11822,7 @@ R. Amen.
 V. Dieva žēlastība lai jūs pavada.
 R. Pateicība Dievam.</String>
 		<Text_type>2</Text_type>
-		<Code>4</Code>
+		<Code>3</Code>
 	</item>
 	<item>
 		<RID>257</RID>
@@ -11971,7 +11972,7 @@ R. Amen.
 V. Dieva žēlastība lai jūs pavada.
 R. Pateicība Dievam.</String>
 		<Text_type>2</Text_type>
-		<Code>5</Code>
+		<Code>4</Code>
 	</item>
 	<item>
 		<RID>258</RID>
@@ -12108,7 +12109,7 @@ R. Amen.
 V. Dieva žēlastība lai jūs pavada.
 R. Pateicība Dievam.</String>
 		<Text_type>2</Text_type>
-		<Code>4</Code>
+		<Code>3</Code>
 	</item>
 	<item>
 		<RID>259</RID>
@@ -12251,7 +12252,7 @@ R. Amen.
 V. Dieva žēlastība lai jūs pavada.
 R. Pateicība Dievam.</String>
 		<Text_type>2</Text_type>
-		<Code>5</Code>
+		<Code>4</Code>
 	</item>
 	<item>
 		<RID>260</RID>
@@ -12425,7 +12426,7 @@ R. Amen.
 V. Dieva žēlastība lai jūs pavada.
 R. Pateicība Dievam.</String>
 		<Text_type>2</Text_type>
-		<Code>4</Code>
+		<Code>3</Code>
 	</item>
 	<item>
 		<RID>261</RID>
@@ -12583,7 +12584,7 @@ R. Amen.
 V. Dieva žēlastība lai jūs pavada.
 R. Pateicība Dievam.</String>
 		<Text_type>2</Text_type>
-		<Code>5</Code>
+		<Code>4</Code>
 	</item>
 	<item>
 		<RID>262</RID>
@@ -12770,7 +12771,7 @@ R. Amen.
 V. Dieva žēlastība lai jūs pavada.
 R. Pateicība Dievam.</String>
 		<Text_type>2</Text_type>
-		<Code>4</Code>
+		<Code>3</Code>
 	</item>
 	<item>
 		<RID>264</RID>
@@ -12939,7 +12940,7 @@ R. Amen.
 V. Dieva žēlastība lai jūs pavada.
 R. Pateicība Dievam.</String>
 		<Text_type>2</Text_type>
-		<Code>5</Code>
+		<Code>4</Code>
 	</item>
 	<item>
 		<RID>265</RID>
@@ -13116,7 +13117,7 @@ R. Amen.
 V. Dieva žēlastība lai jūs pavada.
 R. Pateicība Dievam.</String>
 		<Text_type>2</Text_type>
-		<Code>4</Code>
+		<Code>3</Code>
 	</item>
 	<item>
 		<RID>266</RID>
@@ -13262,7 +13263,7 @@ R. Amen.
 V. Dieva žēlastība lai jūs pavada.
 R. Pateicība Dievam.</String>
 		<Text_type>2</Text_type>
-		<Code>5</Code>
+		<Code>4</Code>
 	</item>
 	<item>
 		<RID>267</RID>
@@ -13445,7 +13446,7 @@ R. Amen.
 V. Dieva žēlastība lai jūs pavada.
 R. Pateicība Dievam.</String>
 		<Text_type>2</Text_type>
-		<Code>4</Code>
+		<Code>3</Code>
 	</item>
 	<item>
 		<RID>268</RID>
@@ -13613,7 +13614,7 @@ R. Amen.
 V. Dieva žēlastība lai jūs pavada.
 R. Pateicība Dievam.</String>
 		<Text_type>2</Text_type>
-		<Code>5</Code>
+		<Code>4</Code>
 	</item>
 	<item>
 		<RID>269</RID>
@@ -13783,7 +13784,7 @@ R. Amen.
 V. Dieva žēlastība lai jūs pavada.
 R. Pateicība Dievam.</String>
 		<Text_type>2</Text_type>
-		<Code>4</Code>
+		<Code>3</Code>
 	</item>
 	<item>
 		<RID>270</RID>
@@ -13926,7 +13927,7 @@ R. Amen.
 V. Dieva žēlastība lai jūs pavada.
 R. Pateicība Dievam.</String>
 		<Text_type>2</Text_type>
-		<Code>5</Code>
+		<Code>4</Code>
 	</item>
 	<item>
 		<RID>271</RID>
@@ -14107,7 +14108,7 @@ R. Amen.
 V. Dieva žēlastība lai jūs pavada.
 R. Pateicība Dievam.</String>
 		<Text_type>2</Text_type>
-		<Code>4</Code>
+		<Code>3</Code>
 	</item>
 	<item>
 		<RID>272</RID>
@@ -14253,7 +14254,7 @@ R. Amen.
 V. Dieva žēlastība lai jūs pavada.
 R. Pateicība Dievam.</String>
 		<Text_type>2</Text_type>
-		<Code>5</Code>
+		<Code>4</Code>
 	</item>
 	<item>
 		<RID>273</RID>
@@ -14420,7 +14421,7 @@ R. Amen.
 V. Dieva žēlastība lai jūs pavada.
 R. Pateicība Dievam.</String>
 		<Text_type>2</Text_type>
-		<Code>4</Code>
+		<Code>3</Code>
 	</item>
 	<item>
 		<RID>277</RID>
@@ -14465,7 +14466,8 @@ V. Tu esi mūs atpircis, Kungs, ar savām Asinīm. 
 R. Un esi mūs darījis par Valstību mūsu Dievam. 
 LŪGSIMIES! 
 Visvarenais mūžīgais Dievs, kas esi sūtījis pasaulē savu Viendzimušo Dēlu, lai ar Viņa Asinīm mēs tiktu atpestīti, - Tevi lūdzam, liec, lai mēs, godinot Viņa ciešanu noslēpumu, tiktu pasargāti no visa ļauna un iemantotu mūžīgo algu Debesīs. Caur Jēzu Kristu, mūsu Kungu. Āmen.</String>
-		<Text_type>3</Text_type>
+		<Text_type>1</Text_type>
+		<Code>2</Code>
 	</item>
 	<item>
 		<RID>278</RID>
@@ -14520,7 +14522,8 @@ V. Jēzu, lēnprātīgais un pazemīgu Sirdi.
 R. Veido mūsu sirdis pēc savas Sirds.
 LŪGSIMIES!
 Visvarenais mūžīgais Dievs, raugies uz sava visumīļā Dēla Sirdi un uz to slavu un gandarīšanu, ko Viņa Tev sniedz grēcinieku vārdā, un tiem, kas lūdz Tavu žēlsirdību, dāva piedošanu tā paša Tava Dēla Jēzus Kristus vārdā, kas ar Tevi Svētā Gara vienībā dzīvo un valda mūžu mūžos. Āmen.</String>
-		<Text_type>3</Text_type>
+		<Text_type>1</Text_type>
+		<Code>2</Code>
 	</item>
 	<item>
 		<RID>279</RID>
@@ -14604,7 +14607,8 @@ Jēzu, uzklausi mūs! 
 LŪGSIMIES!
 Kungs Jēzu Kristu, Tu esi sacījis: „Lūdziet un jūs saņemsiet, meklējiet un jūs atradīsiet, klauvējiet un jums atdarīs.” Mēs Tevi lūdzam, iededz mūsos savas dievišķās mīlestības uguni, lai mēs Tevi no visas sirds vārdos un darbos mīlētu un nekad nepagurtu Tevi slavēt. 
 Kungs, liec mums Tavu svēto vārdu arvien bīties un to mīlēt, jo Tu nekad neatrauj savu gādību tiem, kurus Tu esi nostiprinājis savā mīlestībā. Mēs Tevi lūdzam, kas dzīvo un valdi mūžu mūžos. Āmen</String>
-		<Text_type>3</Text_type>
+		<Text_type>1</Text_type>
+		<Code>2</Code>
 	</item>
 	<item>
 		<RID>280</RID>
@@ -14661,7 +14665,8 @@ Dievs, Tu savā neizsakāmā gādībā esi izvēlējies svēto Jāzepu par savas
 |LŪGŠANA SV. JĀZEPAM
 Pie Tevis, svētais Jāzep, mēs steidzamies savās bēdās un, Tavas Vissvētākās Līgavas palīdzību piesaukuši, paļāvīgi lūdzam arī Tavu aizbildniecību. Tās mīlestības dēļ, kas Tevi vienoja ar bezvainīgo Jaunavu, Dieva Dzemdētāju, un tās tēvišķās gādības dēļ, ar kuru Tu rūpējies par bērniņu Jēzu, mēs Tevi pazemīgi lūdzam, uzlūko žēlīgi Jēzus Kristus asinīm atpirkto mantojumu un palīdzi mums ar savu spēcīgo pārstāvību mūsu vajadzībās.
 Sargi, Dieva aizgādības dotais svētās ģimenes sargs, izredzētos Jēzus Kristus bērnus, izglāb mūs, visumīļais Tēvs, no ikvienas samaitāšanas un maldiem, ar debesu spēku stiprini mūs, spēcīgais palīdzētāj, cīņā ar tumsības spēkiem. Un kā Tu citkārt izglābi bērniņu Jēzu no draudošām nāves briesmām, tā tagad aizstāvi svēto Dieva Baznīcu pret ienaidnieku uzbrukumiem un ikvienu nelaimi. Uzņem mūs visus savā pastāvīgā patvērumā, ka mēs, pēc Tava parauga dzīvodami un Tavas palīdzības spēcināti, varētu dievbijīgi dzīvot, svētīgi nomirt un iemantot mūžīgo līksmību debesīs. Amen</String>
-		<Text_type>3</Text_type>
+		<Text_type>1</Text_type>
+		<Code>2</Code>
 	</item>
 	<item>
 		<RID>292</RID>
@@ -14681,21 +14686,21 @@ Vai tev nav kaut kas, ko tu varētu Man apsolīt? Tu taču zini, ka Es spēju ie
 Vai tu esi apņēmies izvairīties no grēka, atmetot visu, kas var tevi novest no ceļa - nelasīt grāmatu, kas uzbudina tavu fantāziju, liekot tai darboties nelabvēlīgā virzienā; atsacīties no draudzības ar personu, kam trūkst godbijības pret Dievu un kuras klātbūtne tāpēc atņem tavai dvēselei mieru? Vai tu esi gatavs jau tūlīt salabt ar biedru, kas bija tevi nokaitinājis?
 Ej nu, mans bērns, un atsāc darīt savus dienas darbus. Esi kluss, godīgs, pacietīgs un žēlsirdīgs. Mīli arī ļoti sirsnīgi sava Kunga svēto Māti. Bet rītdien nāc pie Manis ar vēl mīlošāku, vēl uzticīgāku sirdi. Rīt Man būs jaunas žēlastības, ko tev dot.</String>
 		<Text_type>1</Text_type>
-		<Code>5</Code>
+		<Code>12</Code>
 	</item>
 	<item>
 		<RID>293</RID>
 		<Description>Lūgšana Vissvētākā Sakramenta priekšā</Description>
 		<String>Mans Brāli Jēzu, vienīgi tāpēc, ka Tu mūs mīli, Tu paliec šajā Sakramentā dienu un nakti, gaidot, aicinot un apmīļojot katru cilvēku, kas pie Tevis atnāk. Es ticu, ka Tu šai tabernakulā esi patiesi klātesošs. Es atzīstu Tevi par savu Dievu un Pestītāju. Un es Tev pateicos par visu, ko Tu manā labā esi darījis, bet it īpaši par Tavas sakramentālās klātbūtnes dāvanu. Mans Jēzu, es vēlos Tev dāvāt pats sevi, izpildot Tavu gribu tik pilnīgi, cik vien tas iespējams. Piedod man, ka līdz šim ne vienmēr esmu spējis tā rīkoties. Kaut arī pats esmu vājš un bezspēcīgs, ar Tavu palīdzību es turpmāk centīšos kļūt labāks. Lai arī ko Tu man nebūtu sagatavojis, es būšu gatavs to pieņemt. Es lūdzu vienīgi to, lai varētu būt ar Tevi kopā kā tagad, tā vienmēr un lai man pietiktu spēka Tev sekot.</String>
 		<Text_type>1</Text_type>
-		<Code>5</Code>
+		<Code>12</Code>
 	</item>
 	<item>
 		<RID>294</RID>
 		<Description>Lūgšana Vissvētākā Sakramenta priekšā - svētdien.</Description>
 		<String>Mans Brāli Jēzu, es esmu atnācis Tava altāra priekšā, uz kura Tu dienām un naktīm atrodies arī manis dēļ. Tu esi cēlonis visam, kas labs. Tu esi ikvienas vainas Dziedinātājs un katra cietēja vislabākais Draugs. Pieņem mani, grēcinieku, kas esmu starp nabagiem nabadzīgākais un starp slimiem slimākais, kad es lūdzoties stāvu uz ceļiem Tava altāra priekšā. Apžēlojies par mani. Raugoties uz Tevi Vissvētākajā Sakramentā, uz Tevi, kas esi nonācis no debesīm vienīgi tādēļ, lai varētu darīt man labu, es vairs nespēju tik ļoti satraukties par savu postu. Es Tevi slavēju un Tev pateicos, es Tevi mīlu, un, ja Tu vēlies, lai es Tev kaut ko lūgtu, tad es gribētu Tevi lūgt vienīgi to, lai Tu dāvā man žēlastību vairs nekad Tevi neapvainot un lai es varētu kļūt Tev patīkams. Kungs, es patiesi Tevi mīlu. Liec, lai es turpmāk vienmēr runātu tikai patiesību. Vissvētā Jaunava Marija, mani svētie aizbildņi, visi eņģeļi un svētie, lūdzieties par mani, lai es spētu pienācīgi mīlēt savu Dievu, kas ir pelnījis vislielāko mīlestību. Labais Gans, mūsu Dzīvības Maize, Jēzu, apžēlojies par mums, uzturi mūs, sargā mūs un parādi mums visas labās lietas, kas ved pie dzīvības pārpilnības.</String>
 		<Text_type>1</Text_type>
-		<Code>5</Code>
+		<Code>12</Code>
 	</item>
 	<item>
 		<RID>295</RID>
@@ -15232,7 +15237,7 @@ dzied himnu Gods Dievam.&lt;/i&gt;</String>
 		<String>Visvarenais un žēlsirdīgais Dievs, sava Dēla vārdā Tu mani atvedi uz šejieni, lai es vajadzīgajā brīdī saņemtu Tavu žēlastību un piedošanu. Atver manas acis, lai es redzētu ļaunumu, kuru esmu izdarījis. Pieskaries manai sirdij un laipni pievērsies man, nabaga grēciniekam, lai tur, kur grēks ir nošķīris mani no Tevis, Tava mīlestība mani atkal Tev tuvina, lai tur, kur grēks ir mani darījis vāju, Tavs spēks mani dziedina un stiprina; lai tur, kur grēks ir atnesis nāvi, Tavs Gars mani paceļ jaunai dzīvei. Dāvā man jaunu sirdi, lai es mīlētu Tevi tā, ka manā dzīvē atspoguļotos Tava Dēla atveids. Lai pasaule redz Kristus godu, kas atklājas Tavā Baznīcā, un nāk pie atziņas, ka Viņš, Jēzus Kristus, Tavs Dēls, ir mūsu Kungs, kuru Tu esi sūtījis. Āmen.
 Debesu Tēvs, es esmu grēkojis Tavā priekšā un vairs neesmu cienīgs saukties par Tavu bērnu. Es apņemos vairs negrēkot ar (nosauciet savu galveno grēku). Dāvā man žēlastību turēties pie šīs apņemšanās. Mans Dievs, Tu vienmēr esi gatavs pieņemt grēcinieku, kas nožēlo savas kļūdas. Šodien es nāku pie Tevis, lai atzītos savos grēkos. Atsvaidzini manu atmiņu un apgaismo manu prātu, lai es spētu atcerēties visu, ar ko es esmu Tevi apvainojis. Aizskar manu sirdi tā, lai es spētu izjust patiesu nožēlu; māci, kā man runāt, lai mana grēksūdze būtu laba Tavā priekšā un es varētu saņemt piedošanu.</String>
 		<Text_type>1</Text_type>
-		<Code>5</Code>
+		<Code>12</Code>
 	</item>
 	<item>
 		<RID>297</RID>
@@ -15240,7 +15245,7 @@ Debesu Tēvs, es esmu grēkojis Tavā priekšā un vairs neesmu cienīgs sauktie
 		<String>Mans Dievs, es Tev pateicos un slavēju Tevi par lielo žēlastību, kādu Tu man esi devis, kaut arī esmu tik bezvērtīgs Tavā priekšā. Paldies Tev, Kungs, par Tavu lēnprātību, ar kādu Tu esi mani gaidījis, par Tavu saudzīgumu, ar kādu Tu esi mani labojis, par Tavu maigumu, ar kādu Tu esi mani saucis, par Tavu labsirdību, ar kādu esi mani pieņēmis, par Tavu žēlsirdību, ar kādu esi man piedevis, par Tavu devību, ar kādu esi man dāvājis žēlastības, par Tavu pacietību, ar kādu esi aizmirsis manus apvainojumus, par Tavu pazemību, ar kādu esi mani mierinājis, par Tavu līdzjūtību, ar kādu esi mani aizsargājis, par Tavu vēlēšanos mani uzturēt un par Tavu taisnību, kas mani atalgo.
 Man grūti atrast pat vārdus, lai Tevi vēl pienācīgi cildinātu par visiem šiem labumiem, bet es Tev pateicos, Visvarenais Dievs, par Tavu bezgalīgo mīlestību. Liec, Kungs, lai manī arvien vairāk pieaug Tava žēlastība un nepieļauj, ka es to kādreiz pazaudētu. Dari, lai, palicis Tavā žēlastībā, es, mūžībā aizejot, varētu saņemt Tavu atalgojumu. Āmen.</String>
 		<Text_type>1</Text_type>
-		<Code>5</Code>
+		<Code>12</Code>
 	</item>
 	<item>
 		<RID>298</RID>
@@ -15251,7 +15256,7 @@ Dāvā man grēku nožēlas garu. Palīdzi man patiesi nožēlot savus grēkus u
 Dari manas lūgšanas dziļākas, lai es spētu labāk novērtēt to neizsakāmi lielo dāvanu, kādu mēs esam no Tevis saņēmuši ar svēto Euharistiju, kā arī Tavu mīlestību un žēlsirdību, un ļauj man atbildēt, atdodot Tev manu sirdi, manu dzīvi, manas spējas un manu gribu. Piepildi mani ar svētu dedzību, lai es spētu veicināt Tavas mīlestības, miera un prieka valstības atnākšanu uz zemes.
 Svētī manus radiniekus un draugus, kā arī visus cilvēkus, kurus es satieku, un arī tos, kuriem nav neviena, kas par viņiem lūgtos. Svētī mūsu priesteri, kurš celebrēs šo svēto Misi, dāvā viņam dziļu ticību Tavai klātbūtnei svētajā Euharistijā un aicini arī vēl daudzus citus jaunus cilvēkus kļūt par dedzīgiem priesteriem, lai kalpotu Tavai tautai. Āmen.</String>
 		<Text_type>1</Text_type>
-		<Code>5</Code>
+		<Code>12</Code>
 	</item>
 	<item>
 		<RID>299</RID>
@@ -15263,7 +15268,7 @@ Dievs, es Tev pateicos caur Vissvēto Jēzus Sirdi, kas savā mīlestībā upur�
 Paldies Tev par visu labo, ko Tu mums esi devis. Paldies Tev par mūsu radīšanu, par to, ka sūtīji mums Pestītāju un devi mums svētos sakramentus; īpaši es Tev pateicos par svēto Euharistiju un par visām tām neskaitāmajām žēlastībām, kādas Tu man esi devis.
 Kungs Jēzu, es vēlos Tev pateikties gan savā, gan visu cilvēku vārdā un atlīdzināt Tev tik lielā mērā, cik es spēju, par daudzu cilvēku nepateicību. Es vēlētos, kaut es varētu pievērst visu cilvēku sirdis un domas Tev un kopā ar viņiem un arī par viņiem dāvāt Tev pretī pilnvērtīgu mīlestību tā, kā Tu to savā taisnībā no mums gaidi.</String>
 		<Text_type>1</Text_type>
-		<Code>5</Code>
+		<Code>12</Code>
 	</item>
 	<item>
 		<RID>300</RID>
@@ -15271,7 +15276,7 @@ Kungs Jēzu, es vēlos Tev pateikties gan savā, gan visu cilvēku vārdā un at
 		<String>(Šo lūgšanu ģimenes tēvs var noskaitīt sava bērna kristību dienā ar visiem kristībās ielūgtajiem viesiem pirms došanās uz baznīcu.)
 Debesu Tēvs, mēs gatavojamies vest savu vismazāko bērniņu uz baznīcu, lai viņu kristītu. Šobrīd viņš/viņa vēl ir tikai mūsu bērns, bet pavisam drīz viņš kļūs arī par Tavu bērnu un varēs ņemt dalību Tavā dievišķajā dzīvē. Viņš saņems tieības mantot Tavas valstības bagātības. Un Kristus, mūsu Brālis, kļūs arī par viņa Brāli. Dari, Kungs, lai mēs spētu visos turpmākajos gados par šo bērnu tā rūpēties, lai viņš nekad nepazaudētu laimi dzīvot Dieva žēlastībā, kas viņam šodien tiks dāvāta. Palīdzi mums vienam otru tā mīlēt, lai mūsu māja, kaut arī tā būtu nabadzīga, viņam vienmēr būtu vieta, kur atrast sirds siltumu, mieru un gara veselību. Dari, lai mūsu cilvēciskās kļūdas būtu tik nenozīmīgas, ka tad, kad viņš paaugsies un sāks vērtēt apkārtējo pasauli, viņš varētu izjust, ka dzīvo vidē, kur valda labestība. To mēs lūdzam Jēzus Kristus vārdā. Āmen.</String>
 		<Text_type>1</Text_type>
-		<Code>5</Code>
+		<Code>12</Code>
 	</item>
 	<item>
 		<RID>301</RID>
@@ -15282,7 +15287,7 @@ Ikviens cilvēks var nokristīt mazu bērnu, kuram draud nāve, ja vien viņš v
 Tomēr vēlāk, ja bērns izveseļojas, viņš tik un tā ir jāaizved uz draudzes baznīcu, lai varētu nourēt kristību ceremoniju visā pilnībā, kā arī lai kristības reģistrētu draudzes arhīvā.
 Ļoti svarīgi ir atcerēties, ka arī spontānā aborta jeb priekšlaicīgu dzemdību gadījumā embrijs, kaut arī tikai dažas stundas vecs, ir nekavējoties jānokristī. To dara, pāršķeļot apvalku un iegremdējot embriju traukā ar ūdeni, no kurienes to atkal izceļ ārā, vienlaicīgi sakot vārdus: „N., es tevi kristīju Dieva Tēva un Dēla, un Svētā Gara vārdā.”</String>
 		<Text_type>1</Text_type>
-		<Code>3</Code>
+		<Code>9</Code>
 	</item>
 	<item>
 		<RID>302</RID>
@@ -15291,7 +15296,7 @@ Tomēr vēlāk, ja bērns izveseļojas, viņš tik un tā ir jāaizved uz draudz
 Solījumu atjaunošana:
 Es, N., vēlreiz atsakos no sātana un visiem viņa darbiem. Un šajā manu kristību gadadienā es svinīgi apliecinu savu kristīgo ticību ar vārdiem, kas ņemti no apustuļu ticības apliecinājuma. (Seko ticības apliecinājums.)</String>
 		<Text_type>1</Text_type>
-		<Code>3</Code>
+		<Code>12</Code>
 	</item>
 	<item>
 		<RID>303</RID>
@@ -15299,14 +15304,14 @@ Es, N., vēlreiz atsakos no sātana un visiem viņa darbiem. Un šajā manu kris
 		<String>Visvarenais mūžīgais Dievs, kad Jēzus tika kristīts Jordānas upē, pār Viņu nāca Svētais Gars un Tava balss no debesīm sacīja: „Šis ir mans mīļais Dēls.” Atjauno ikvienā no mums svētās kristības žēlastības. Lai mūsu sirdis kļūst par labu augsni Tavam dzīvības Vārdam. Dari, lai mēs, kas no ūdens un Svētā Gara esam kļuvuši par Tavu ģimeni, varētu katru dienu dzīvot Tavā mīlestībā.
 Caur Jēzu Kristu, mūsu Kungu. Āmen.</String>
 		<Text_type>1</Text_type>
-		<Code>2</Code>
+		<Code>9</Code>
 	</item>
 	<item>
 		<RID>304</RID>
 		<Description>Lūgšana pirms iestiprināšanas</Description>
 		<String>Svētais Gars, palīdzi man manas Iestiprināšanas dienā pilnībā apzināties, ka man tiek dotas lielas garīgas bagātības, un palīdzi man arī saprast, ka tagad es varēšu ņemt daudz lielāku dalību Kristus valstības izplatīšanā. Dari, lai es labi izlietotu garaspēku, kas man tiek dāvāts. Nav vairs tālu tas laiks, kad jau būšu izaudzis un kļuvis patstāvīgs. Tāpēc es Tevi vēl jo vairāk lūdzu, nekad nepieļauj, ka es sāktu kaunēties par savu saistību ar Kristu, bet liec man ar savu dzīvesveidu likt visiem skaidri saprast, ka Kristus man ir viss. Āmen.</String>
 		<Text_type>1</Text_type>
-		<Code>3</Code>
+		<Code>12</Code>
 	</item>
 	<item>
 		<RID>305</RID>
@@ -15314,7 +15319,7 @@ Caur Jēzu Kristu, mūsu Kungu. Āmen.</String>
 		<String>(Šādu lūgšanu persona, kas svin savu iestiprināšanas gadadienu, varētu lūgties savā ģimenē pie galda pēc kopīgas ēdienreizes.)
 Svētais Gars, šajā manas iestiprināšanas gadadienā es Tev vēlreiz pateicos par to, ka esmu saņēmis šo sakramentu. Es apzinos, ka neesmu spējis pilnībā izmantot man doto laiku kopā ar Tevi. Piedod man, Svētais Gars! Palīdzi man, lai turpmāk es varētu vairāk nekā līdz šim atgādināt stipru, pārliecinātu un nobriedušu kristieti. Dari, lai es kļūtu paklausīgāks Tavām iedvesmām. Liec man skaidrāk apzināties, ka līdz ar Iestiprināšanu es esmu saņēmis pienākumu dzīvot tā, lai ar savu dzīvi varētu citiem pierādīt, ka ir labi sekot Kristum. Mīlestības Gars, liec man vairāk mīlēt Dievu un savu tuvāko. Āmen.</String>
 		<Text_type>1</Text_type>
-		<Code>3</Code>
+		<Code>12</Code>
 	</item>
 	<item>
 		<RID>306</RID>
@@ -15341,7 +15346,7 @@ un liec, lai mana dzīve būtu
 kā spārnota slavas dziesma
 Svētajai Trīsvienībai.</String>
 		<Text_type>1</Text_type>
-		<Code>3</Code>
+		<Code>12</Code>
 	</item>
 	<item>
 		<RID>307</RID>
@@ -15351,14 +15356,14 @@ Debesu Tēvs, mēs priecīgi pieņemam mūsu meitas aiziešanu no šīs ģimenes
 Visbeidzot, dari, lai viņa neaizmirst ielūgt savās kāzās arī savu Brāli Kristu un Viņa Laulības sakramenta spēkā uzticēt Viņam visu savu laulības dzīvi.
 To mēs lūdzam Jēzus Kristus vārdā. Āmen.</String>
 		<Text_type>1</Text_type>
-		<Code>3</Code>
+		<Code>12</Code>
 	</item>
 	<item>
 		<RID>308</RID>
 		<Description>Lūgšana, pieņemot slimnieku sakramentu</Description>
 		<String>Mans Brāli Jēzu Kristu, drīz es satikšu Tevi, pieņemot slimnieku sakramentu. Kaut arī es zinu, ka esmu nāves briesmās, palīdzi man nebaidīties. Ļauj man saprast, ka, ja debesu Tēvs vēlas, lai es atgrieztos pie Viņa, Tu mani paņemsi pie rokas un izvedīsi cauri nāves ielejai, lai pēc tam ievestu savas valstības godībā. Ļauj man nomirt ar Taviem vārdiem uz lūpām: „Tēvs, Tavās rokās es nododu savu garu.”</String>
 		<Text_type>1</Text_type>
-		<Code>3</Code>
+		<Code>12</Code>
 	</item>
 	<item>
 		<RID>309</RID>
@@ -15366,7 +15371,7 @@ To mēs lūdzam Jēzus Kristus vārdā. Āmen.</String>
 		<String>Jēzu, es upurēju Tev savas šīsdienas lūgšanas, darbus, priekus un bēdas, pievienojot tās svētās Mises upurim visā pasaulē, Tavas Vissvētās Sirds nodomā, par grēcinieku atgriešanos, par visu savu draugu un domubiedru vajadzībām, un jo sevišķi Svētā tēva nodomā. Kungs, visvarenais Dievs, Tu esi licis mums sagaidīt šīs dienas sākumu. Aizsargā mūs šodien ar savu vareno spēku, lai mēs nekristu nevienā grēkā, bet lai visas mūsu domas, visi mūsu vārdi un darbi būtu taisnīgi Tavā priekšā. Caur Jēzu Kristu, mūsu Kungu. Āmen.
 Mans Dievs, es upurēju Tev visus darbus, ko šodien darīšu. To daru Jēzus Svētās Sirds nodomos un tās godam. Es gribu svētīt savas sirds pukstienus, savas domas un visvienkāršākos darbus, vienojot tos ar Tavas Sirds bezgalīgajiem nopelniem, un izlabot savas kļūdas, tās iemetot Tavas žēlsirdīgās mīlestības kausētavā. Ak, mans Dievs, sev un man tuviem cilvēkiem es lūdzu no Tevis žēlastību izpildīt visā pilnībā Tavu svēto gribu, Tavas mīlestības dēļ pieņemt šīs pārejošās dzīves priekus un bēdas, lai reiz mēs būtu vienoti uz mūžīgiem laikiem debesīs. Āmen.</String>
 		<Text_type>1</Text_type>
-		<Code>2</Code>
+		<Code>9</Code>
 	</item>
 	<item>
 		<RID>310</RID>
@@ -15411,21 +15416,21 @@ Debesu Tēvs, mēs Tevi lūdzam, dāvā mums savu svētību arī turpmāk un pal
 Šāda vakara lūgšana, kā arī rīta lūgšana, ir obligāta ikvienam, un nav pieļaujami to izlaist. Ar rīta lūgšanu jūs atverat savas dvēseles logu taisnības saules stariem, bet ar vakara lūgšanām jūs to aizverat, lai pasargātu dvēseli no elles ēnām.
 Sv. Francis no Sales</String>
 		<Text_type>1</Text_type>
-		<Code>2</Code>
+		<Code>9</Code>
 	</item>
 	<item>
 		<RID>311</RID>
 		<Description>Lūgšana jebkurā laikā</Description>
 		<String>Kungs, piedod mums mūsu neskaitāmos grēkus, dāvā mums visu šai dienai nepieciešamo palīdzību un uzturi mūs prāta un miesas veselībā. Tā kā paši esam vāji um nepastāvīgi, dāvā mums visas žēlastības, kādas mums vajadzīgas, lai dzīvotu Tev patīkamu dzīvi. To mēs lūdzam caur Jēzu Kristu, mūsu Kungu. Āmen.</String>
 		<Text_type>1</Text_type>
-		<Code>2</Code>
+		<Code>9</Code>
 	</item>
 	<item>
 		<RID>312</RID>
 		<Description>Lūgšana šai dienai</Description>
 		<String>Dievs, es pavadu tik daudz laika, atceroties vakardienu un gaidot rītdienu, ka zaudēju kontroli pār tagadni... Bet Tu dod man šai dienā vienu minūti katru brīdi. Un tas ir viss, kas man ir, viss, kas man jebkad arī būs. Dod man ticību, lai es spētu saprast, ka katrs mirklis satur tieši to, kas man ir visvajadzīgākais. Dāvā man cerību, lai es spētu uzticēties Tev visos dzīves pārbaudījumos. Dod man tādu mīlestību, kas pārvērstu katru dzīves minūti gaidās pēc mūžības kopā ar Tevi.</String>
 		<Text_type>1</Text_type>
-		<Code>2</Code>
+		<Code>9</Code>
 	</item>
 	<item>
 		<RID>313</RID>
@@ -15446,7 +15451,7 @@ Sv. Francis no Sales</String>
 - Vissvētā Jēzus Sirds, es ticu, ka Tu mani mīli!
 - Jēzu, lēnprātīgais un pazemīgu Sirdi, veido manu sirdi pēc savas Sirds!</String>
 		<Text_type>1</Text_type>
-		<Code>2</Code>
+		<Code>9</Code>
 	</item>
 	<item>
 		<RID>314</RID>
@@ -15455,7 +15460,7 @@ Sv. Francis no Sales</String>
 Svētais un žēlsirdīgais Dievs, dāvā mums savu gudrību, lai mēs spētu Tevi pazīt, apskaidro mūsu prātu, lai mēs varētu Tevi labāk saprast; palīdzi mums Tevi uzcītīgi meklēt un pacietīgi gaidīt; apgaismo mūsu acis, lai mēs spētu Tevi saskatīt; ieliec mūsu sirdīs vēlēšanos bieži par Tevi domāt un liec, lai mēs spētu Tevi slavēt ar visu savu dzīvi.
 Caur Jēzu Kristu, mūsu Kungu. Āmen.</String>
 		<Text_type>1</Text_type>
-		<Code>2</Code>
+		<Code>9</Code>
 	</item>
 	<item>
 		<RID>315</RID>
@@ -15466,7 +15471,7 @@ Kungs, dari lai mana ticība būtu prieka pilna, lai tā atnestu manam garam mie
 Kungs, liec man savā ticībā būt pazemīgam, lai es nesāktu iedomāties, ka mana ticība izriet no manu domu vai izjūtu pieredzes; liec man vērtēt vienīgi Svētā Gara atstāto liecību un nemeklēt nekādu labāku pārliecību, kā vienīgi to, ko var iegūt, pieņemot Tradīciju un pilnībā uzticoties svētās Baznīcas maģistērijam. Āmen.
 Pāvests Pāvils VI</String>
 		<Text_type>1</Text_type>
-		<Code>2</Code>
+		<Code>9</Code>
 	</item>
 	<item>
 		<RID>316</RID>
@@ -15480,7 +15485,7 @@ Piektkārt, es lūdzu pacietības un izturības žēlastību. Es gan zinu, ka vi
 Dāvā man, mūžīgais Tēvs, arī žēlastību vienmēr lūgties Jēzus vārdā. Āmen.
 Sv. Alfonss Ligūri</String>
 		<Text_type>1</Text_type>
-		<Code>2</Code>
+		<Code>9</Code>
 	</item>
 	<item>
 		<RID>317</RID>
@@ -15517,14 +15522,14 @@ savu mūžīgo Vārdu:
 Jēzus! Āmen.
 Serafino Falvo</String>
 		<Text_type>1</Text_type>
-		<Code>2</Code>
+		<Code>9</Code>
 	</item>
 	<item>
 		<RID>318</RID>
 		<Description>Ikdienas lūgšana</Description>
 		<String>Kungs, dāvā mums cerību sagaidīt laimīgu rītdienu. Dāvā mums drosmi stāties pretī grūtībām, nezaudējot cerību. Dāvā mums ticību, lai Kristus klātbūtnes prieks mūs vestu pie kalpošanas tuvākam. Dāvā mums spēju novērtēt želastības, kuras esam saņēmuši, lai mēs mācētu tās izlietot ar atbildības sajūtu, nebaidoties tuvākiem veltīt draudzību, palīdzību un mīlestību.</String>
 		<Text_type>1</Text_type>
-		<Code>2</Code>
+		<Code>9</Code>
 	</item>
 	<item>
 		<RID>319</RID>
@@ -15532,7 +15537,7 @@ Serafino Falvo</String>
 		<String>Stiprini mani, Kungs, ar Svētā Gara žēlastību un dāvā manai dvēselei savu mieru, lai es varētu atbrīvoties no jebkādām nevajadzīgām rūpēm, raizēm un satraukuma. Palīdzi man vienmēr vēlēties to, kas Tev ir patīkams un pieņemams, tā, lai Tava griba kļūtu arī par manu gribu. Dari, lai es spētu sevi atbrīvot no visām vēlmēm, kas nav svētas, un lai Tavas mīlestības dēļ es paliktu tālu no šīs pasaules un meklētu vienīgi Tevi. Nekad neļauj man uzskatīt par saviem nopelniem visu labo, ko Tu manī un caur mani dari, bet liec, lai es drīzāk, no visas sirds godinot Tavu visvarenību, priecīgi samierinātos ar to, ka man ir tik daudz nepilnību, un lai, atsakoties no šīs pasaules iedomības, es tiektos pēc tās patiesās un paliekošās godības, kas ir atrodama vienīgi Tevī. Āmen.
 Sv. Franciska Ksavjē Kabrīni</String>
 		<Text_type>1</Text_type>
-		<Code>2</Code>
+		<Code>9</Code>
 	</item>
 	<item>
 		<RID>320</RID>
@@ -15540,7 +15545,7 @@ Sv. Franciska Ksavjē Kabrīni</String>
 		<String>Mans Dievs, savā mīlestībā Tu esi mani radījis un izvēlējis, lai es varētu Tev kādā īpašā veidā kalpot. Tu esi mani paredzējis kādam darbam, kuru Tu nedevi darīt nevienam citam. Man ir sava vieta Tavā plānā. Šīs dzīves laikā es varu arī neuzzināt, kāda ir mana loma, bet nākamajā dzīvē tas man tiks atklāts. Tādēļ es Tev uzticēšos visās lietās. Ja esmu slims, pat mana slimība var kaut kādā veidā pakalpot. Ja man par kaut ko jāuztraucas, arī mans uztraukums var Tev noderēt. Un, ja esmu noskumis, manas sirdssāpes var sekmēt Tavu mērķu piepildīšanu. Tu neko nedari tāpat vien; Tu zini, kādēļ Tu ko dari. Ja arī Tu atņemtu man draugus, aizvestu mani dzīvot svešumā, liktu man justies visu aizmirstam, darītu manu garu nomāktu un piezemētu un turētu no manis noslēpumā manu nākotni, — tik un tā, Tu zini, ko Tu dari, un es Tev uzticos.
 Kardināls Ņūmens</String>
 		<Text_type>1</Text_type>
-		<Code>2</Code>
+		<Code>9</Code>
 	</item>
 	<item>
 		<RID>321</RID>
@@ -15552,14 +15557,14 @@ Ak, Dievs, mūsu Tēvs, kas esi tik neizsakāmi labs, kas esi visu skaisto lietu
 Caur Jēzu Kristu, mūsu Kungu.
 Sv. Augustīns</String>
 		<Text_type>1</Text_type>
-		<Code>2</Code>
+		<Code>9</Code>
 	</item>
 	<item>
 		<RID>322</RID>
 		<Description>Lūgšana par izturību ticībā</Description>
 		<String>Mūžīgais Tēvs, kas caur savu mīļo Dēlu mūs mācīji vienmēr lūgties „Lai atnāk Tava Valstība”, dāvā mums, Kungs, žēlastību palikt līdz galam uzticīgiem Tavai mīlestībai, lai pēc tam, kad būsim ar pilnīgu sevis atdevi vairojuši Tavu godu virs zemes, mēs varētu baudīt Tavu labvēlību visā mūžībā. Āmen.</String>
 		<Text_type>1</Text_type>
-		<Code>2</Code>
+		<Code>9</Code>
 	</item>
 	<item>
 		<RID>323</RID>
@@ -15586,14 +15591,14 @@ Kad esmu slims, un mana galva un rokas nespēj strādāt, un es jūtos vientuļ�
 Jēzu, palīdzi man!
 Neraugies uz manu vājumu, neveiksmēm un nepilnībām, Vissvētā Jēzus Sirds, bet vienmēr palīdzi man un nekad mani nepamet!</String>
 		<Text_type>1</Text_type>
-		<Code>2</Code>
+		<Code>9</Code>
 	</item>
 	<item>
 		<RID>324</RID>
 		<Description>Uzticēšanas lūgšana</Description>
 		<String>Jēzu, Tavai Sirdij es uzticu visu savu dzīvi. Dari, Kungs, kā Tavai Sirdij šķiet labāk... Ak, Jēzu, es paļaujos uz Tevi... Es uzticos Tev... Es atdodu sevi Tev... Es esmu drošs par Tevi... Vissvētā Jēzus Sirds, es ticu Tavai mīlestībai pret mani. Vissvētā Jēzus Sirds, lai atnāk Tava Valstība.</String>
 		<Text_type>1</Text_type>
-		<Code>2</Code>
+		<Code>9</Code>
 	</item>
 	<item>
 		<RID>325</RID>
@@ -15602,7 +15607,7 @@ Neraugies uz manu vājumu, neveiksmēm un nepilnībām, Vissvētā Jēzus Sirds,
 UZ MAZAJĀM ZĪLĪTĒM: Mans Jēzu, piedod un apžēlojies par mums savu Svēto Brūču dēļ.
 Šīs divas šautru lūgšanas mūsu Kungs iemācīja māsai Marijai Martai Šambonai, kura nomira svētuma slavā Šamberī Dievmātes apmeklēšanas klosterī Francijā 1907. gada 21. martā. Šī vienkāršā māsa saņēma no mūsu Kunga dubultīgu misiju: viņai vajadzēja nepārtraukti pielūgt Svētās Brūces pašai, kā arī iedzīvināt šo kultu pasaulē.</String>
 		<Text_type>1</Text_type>
-		<Code>2</Code>
+		<Code>1</Code>
 	</item>
 	<item>
 		<RID>326</RID>
@@ -15616,7 +15621,7 @@ Dzīvā Dieva Gars, nāc pār mani no jauna, izkausē mani, veido mani, piepildi
 Tēvs, nosūti savai tautai Svēto Garu un liec mums jaunā gaismā saskatīt Tavu godību, liec no jauna izjust Tavu spēku, dāvā mums jaunu uzticību Tavam Vārdam, un liec mums no jauna sevi veltīt kalpošanai Tev, lai mūsu sirdīs pieaug Tava mīlestība un lai atnāk Tava Valstība.
 Caur Jēzu Kristu, mūsu Kungu.</String>
 		<Text_type>1</Text_type>
-		<Code>2</Code>
+		<Code>9</Code>
 	</item>
 	<item>
 		<RID>327</RID>
@@ -15731,7 +15736,7 @@ tūkstoš reižu priecājies!
 Gods lai ir Tēvam...
 Lūgsimies! Esi sveicināta, Marija, Dieva Tēva Meita; Esi sveicināta, Marija, Dieva Dēla Māte; Esi sveicināta, Marija, Svētā Gara Līgava; Esi sveicināta, Marija, Vissvētākās Trīsvienības Svētnīca; Esi sveicināta, Marija, mana Kundze, mans dārgums, mans prieks, manas sirds Karaliene; mana Māte, mana dzīve, mana laime, mana dārgākā cerība, jā, mana sirds un mana dvēsele! Es esmu viss tavs un viss, kas man ir, ir tavs, ak, uzticīgā Jaunava, augstāk svētītā pār visām lietām! Lai tava dvēsele ir manī un gavilē Dievā! Uzliec sevi pati, ak, uzticīgā Jaunava, kā zīmogu uz manas sirds, lai tevī un caur tevi es tiktu atrasts uzticīgs Dievam. Pieņem mani, ak, Labsirdīgā Jaunava, starp tiem, kurus tu mīli un māci, kurus vadi, baro un sargā kā savus bērnus. Dāvā, lai mīlestības dēļ uz tevi es nicinātu visus pasaulīgos priekus un vienmēr turētos pie debesu priekiem, līdz caur Svēto Garu, tavu uzticīgo Līgavaini, un caur tevi, Viņa uzticīgo Līgavu, manī tiktu veidots Jēzus Kristus, tavs Dēls, Dieva Tēva godam. Āmen.</String>
 		<Text_type>1</Text_type>
-		<Code>2</Code>
+		<Code>1</Code>
 	</item>
 	<item>
 		<RID>328</RID>
@@ -16011,7 +16016,7 @@ Gūt dzīvību mūžīgo!
 Liec, lai arī mani rotā
 Paradīzes godība! Āmen!</String>
 		<Text_type>1</Text_type>
-		<Code>4</Code>
+		<Code>2</Code>
 	</item>
 	<item>
 		<RID>330</RID>
@@ -16022,8 +16027,8 @@ Lai saulstari padara gaišāku tavu sirdi.
 Lai dienas nastas nogulstas uz tevi viegli
 un lai Dievs tevi ietin
 savas mīlestības apmetnī.</String>
-		<Text_type>1</Text_type>
-		<Code>2</Code>
+		<Text_type>4</Text_type>
+		<Code>20</Code>
 	</item>
 	<item>
 		<RID>331</RID>
@@ -16039,21 +16044,21 @@ esi ar mani,Kungs:
 tā, lai, mūžībā aizejot,
 ar Tavu žēlastību es beidzot varētu būt pie Tevis, Kungs.</String>
 		<Text_type>1</Text_type>
-		<Code>2</Code>
+		<Code>9</Code>
 	</item>
 	<item>
 		<RID>332</RID>
 		<Description>Vienmēr noderīga lūgšana</Description>
 		<String>Kungs, mūsu Dievs, dāvā savai saimei pastāvīgu prāta un miesas veselību. Palīdzi mums, sargā un vadi mūs šai svētceļnieku dzīves ceļā, līdz mēs varam sasniegt mūžīgās dzīves laimi kopā ar Tevi. To mēs lūdzam caur Jēzu Kristu, mūsu Kungu. Āmen</String>
 		<Text_type>1</Text_type>
-		<Code>2</Code>
+		<Code>9</Code>
 	</item>
 	<item>
 		<RID>333</RID>
 		<Description>Lūgšana krusta priekšā</Description>
 		<String>Mīlestības Tēvs, nenoniecini mūsu lūgšanas. Paskaties uz sava Dēla Jēzus ciešanām un upuri. Ieklausies Viņa un Viņa Mātes, un visas savas Baznīcas lūgšanās un apžēlojies par mums!</String>
 		<Text_type>1</Text_type>
-		<Code>2</Code>
+		<Code>9</Code>
 	</item>
 	<item>
 		<RID>334</RID>
@@ -16064,7 +16069,7 @@ Palīdzi man dzīvē atrast savu patieso aicinājumu un dari, lai tajā es spēt
 Kungs, dāvā augstsirdību tiem, kurus Tu aicini uz priesterību vai dzīvi ordeņos, lai viņi spētu atbildēt uz Tavu aicinājumu, tā, lai tie, kam vajadzīga Tava palīdzība, varētu to vienmēr atrast.
 To mēs lūdzam caur Jēzu Kristu, mūsu Kungu. Āmen.</String>
 		<Text_type>1</Text_type>
-		<Code>2</Code>
+		<Code>9</Code>
 	</item>
 	<item>
 		<RID>335</RID>
@@ -16075,14 +16080,14 @@ lai es spētu cīnīties, nebaidoties no brūcēm;
 lai es spētu strādāt, negaidot atlīdzību: 
 lai es patiesi varētu izpildīt Tavu gribu. Āmen.</String>
 		<Text_type>1</Text_type>
-		<Code>2</Code>
+		<Code>9</Code>
 	</item>
 	<item>
 		<RID>336</RID>
 		<Description>Lūgšana, lai sakautu sātana spēku</Description>
 		<String>Mūžības Tēvs, vienībā ar Tavu Dēlu un Svēto Garu un caur Marijas Bezvainīgo Sirdi es Tevi lūdzu, iznīcini ļaunā gara spēku. Iemet to visdziļākajos elles bezdibeņos un sasaisti viņu tur uz mūžīgiem laikiem!Debesu Tēvs, liec, lai pār mums valda Vissvētā Jēzus Sirds. To es lūdzu dziļā un patiesā mīlestībā pret Tevi. Āmen.</String>
 		<Text_type>1</Text_type>
-		<Code>2</Code>
+		<Code>9</Code>
 	</item>
 	<item>
 		<RID>337</RID>
@@ -16096,7 +16101,7 @@ Dāvā man sirds siltumu un sajūsmu, lai manas domas spēj ātri pacelties pie 
 Dari, labais Kungs, lai mēs visi spētu cienīgi pieņemt šo Vissvēto Sakramentu un lai kļūtu par dzīviem Tavas svētās mistiskās miesas, Tavas katoliskās Baznīcas locekļiem.
 Dod man, Kungs, žēlastību arī pašam piestrādāt, lai sasniegtu visas lietas, kuras es no Tevis lūdzu. Āmen.</String>
 		<Text_type>1</Text_type>
-		<Code>2</Code>
+		<Code>9</Code>
 	</item>
 	<item>
 		<RID>338</RID>
@@ -16116,7 +16121,7 @@ Lai ir slavēts svētais Jāzeps, viņas sirdsskaidrais līgavainis.
 Lai ir slavēts Dievs savos eņģeļos un svētajos.
 Lai mūžīgi mūžos ikvienu brīdi ir slavēta, pielūgta un pateicībā mīlēta Jēzus Sirds Vissvētākajā Sakramentā visos pasaules tabernākulos. Āmen.</String>
 		<Text_type>1</Text_type>
-		<Code>2</Code>
+		<Code>9</Code>
 	</item>
 	<item>
 		<RID>339</RID>
@@ -16180,7 +16185,8 @@ V. Kungs, uzklausi manu lūgšanu.
 R. Un mans sauciens lai aizsniedz Tevi.
 LŪGSIMIES!
 Dievs, kas ar Svētā Gara gaismu esi mācījis ticīgo sirdis, dāvā mums tā paša Svētā Gara spēkā saprast, kas ir patiess, un vienmēr baudīt Viņa iepriecinājumu. Caur Kristu, mūsu Kungu. Āmen.</String>
-		<Text_type>3</Text_type>
+		<Text_type>1</Text_type>
+		<Code>2</Code>
 	</item>
 	<item>
 		<RID>340</RID>
@@ -16334,7 +16340,8 @@ vislabākā veidā pielietot savas spējas un turpināt profesionāli izaugt. Pa
 plašu lauku apustulātam, kuru Dievs uzticēja visiem kristītajiem, lai es varētu izmantot šo Tavu dāvanu, palīdzot saviem kolēģiem, draugiem un klientiem atklāt kristīgās ticības brīnumu.
 Cienīgā darba nodomā.
 Kungs, palīdzi man atrast savā darbā plašu lauku apustulātam, kuru Dievs uzticēja visiem kristītajiem, lai es varētu izmantot šo Tavu dāvanu, palīdzot saviem kolēģiem, draugiem un klientiem atklāt kristīgās ticības brīnumu.</String>
-		<Text_type>4</Text_type>
+		<Text_type>1</Text_type>
+		<Code>2</Code>
 	</item>
 	<item>
 		<RID>341</RID>
@@ -16342,21 +16349,21 @@ Kungs, palīdzi man atrast savā darbā plašu lauku apustulātam, kuru Dievs uz
 		<String>Esi sveicināta, Marija, žēlastības pilnā, Kungs ir ar tevi, tu esi svētīta starp sievietēm, un svētīts ir tavas miesas auglis Jēzus.
 Svētā Marija, Dieva māte, lūdz par mums, grēciniekiem, tagad un mūsu nāves stundā. Āmen!</String>
 		<Text_type>1</Text_type>
-		<Code>4</Code>
+		<Code>11</Code>
 	</item>
 	<item>
 		<RID>342</RID>
 		<Description>Gods lai ir...</Description>
 		<String>Gods lai ir Tēvam un Dēlam, un Svētajam Garam; kā tas no iesākuma ir bijis, tā tagad un vienmēr, un mūžīgi mūžos. Āmen!</String>
 		<Text_type>1</Text_type>
-		<Code>4</Code>
+		<Code>11</Code>
 	</item>
 	<item>
 		<RID>343</RID>
 		<Description>Es ticu (apustuļu simbols)</Description>
 		<String>Es ticu Dievam, visvarenajam Tēvam, debesu un zemes Radītājam, un Jēzum Kristum, viņa viendzimušajam Dēlam, mūsu Kungam, kas ir ieņemts no Svētā Gara, piedzimis no Jaunavas Marijas, cietis Poncija Pilāta laikā, krustā sists, nomiris un apbedīts, nokāpis ellē, trešajā dienā augšāmcēlies no mirušajiem, uzkāps debesīs, sēž pie Dieva, visvarenā Tēva, labās rokas, no kurienes viņš atnāks tiesāt dzīvos un mirušos. Es ticu Svētajam Garam, svētajai, katoliskajai Baznīcai, svēto sadraudzībai, grēku piedošanai, miesas augšāmcelšanai un mūžīgajai dzīvei. Amen.</String>
 		<Text_type>1</Text_type>
-		<Code>4</Code>
+		<Code>11</Code>
 	</item>
 	<item>
 		<RID>344</RID>
@@ -16367,7 +16374,7 @@ Es ticu Svētajam Garam, Kungam un Dzīvinātājam, kas no Tēva un Dēla iziet,
 Es ticu vienai, svētai, katoliskai un apustuliskai Baznīcai.
 Es atzīstu vienu Kristību grēku piedošanai. Gaidu mirušo augšāmcelšanos un dzīvi nākamajā mūžībā. Amen.</String>
 		<Text_type>1</Text_type>
-		<Code>4</Code>
+		<Code>11</Code>
 	</item>
 	<item>
 		<RID>345</RID>
@@ -16375,7 +16382,7 @@ Es atzīstu vienu Kristību grēku piedošanai. Gaidu mirušo augšāmcelšanos 
 		<String>Marija, bez grēka ieņemtā, lūdz par mums, kas steidzamies pie tevis!
 Mans Jēzu, piedod mums mūsu vainas, pasargā mūs no elles uguns un aizved visas dvēseles uz debesīm, it sevišķi tās, kurām visvairāk vajadzīga Tava žēlsirdība!</String>
 		<Text_type>1</Text_type>
-		<Code>4</Code>
+		<Code>13</Code>
 	</item>
 	<item>
 		<RID>364</RID>
@@ -16391,6 +16398,7 @@ Katru rītu TUALETĒ skaļi: JĒZUS VĀRDĀ UN KRISTUS ASIŅU SPĒKĀ ES SADRAG�
 Šo lūgšanu sacīt vismaz čukstus: Jēzus vārdā atsakos baidīties no..., jo DIEVS MAN NAV DEVIS BAILĪBAS GARU, BET SPĒKA, MĪLESTĪBAS UN SKAIDRA SAPRĀTA GARU.
 Varbūt citreiz klusām saki: JĒZUS VĀRDĀ PASLUDINU ŠO TELPU PAR PILNĪGU DIEVA ĪPAŠUMU UN PAVĒLU NO ŠEJIENES AIZIET VISIEM ĻAUNAJIEM GARIEM, KURI TE IENAKUŠI KĀDU CILVĒKU RĪCĪBAS DĒĻ! SVĒTIE BETLĒMES EŅĢEĻI, LŪDZU PIEPILDIET ŠO VIETU AR DEBESU MĪLESTĪBU, KURAI LĪDZI NĀK MIERS UN PRIEKS!</String>
 		<Text_type>1</Text_type>
+		<Code>9</Code>
 	</item>
 	<item>
 		<RID>375</RID>
@@ -16398,6 +16406,7 @@ Varbūt citreiz klusām saki: JĒZUS VĀRDĀ PASLUDINU ŠO TELPU PAR PILNĪGU DI
 		<String>Kungs Jēzu Kristu, dziedini manu sirdi no nocietināšanās. Dari manu sirdi līdzīgu Tavai Sirdij - spēcīgu un žēlsirdīgu, modru un devīgu, tādu, kas neļaujas noslēgties pati sevī un kas neiekrīt pasaulīguma, egoisma un vienaldzības lamatās.
 (Pāvests Francisks)</String>
 		<Text_type>1</Text_type>
+		<Code>9</Code>
 	</item>
 	<item>
 		<RID>376</RID>
@@ -16425,6 +16434,7 @@ Tik ļoti es vēlētos atlauzt sava cietuma durvis, kuru atslēgu pats esmu nogl
 Saki man, ka es varu saņemt dziedinājumu Tava skatiena un Tava Vārda gaismā.
 (Mišels Ibo)</String>
 		<Text_type>1</Text_type>
+		<Code>0</Code>
 	</item>
 	<item>
 		<RID>377</RID>
@@ -16443,6 +16453,7 @@ jo Kungs mani sargāja.
 Nemaz es nebīšos no ļaužu tūkstošiem, kas mani ielenc.
 Celies, Kungs! Mans Dievs, atpestī mani! R.</String>
 		<Text_type>0</Text_type>
+		<Code>0</Code>
 	</item>
 	<item>
 		<RID>378</RID>
@@ -16454,6 +16465,7 @@ Kungs Jēzu!
 Tu par maniem grēkiem nomiri uz krusta. Es lūdzu piedošanu par to, ka esmu Tevi apvainojis ar saviem grēkiem. Piedod, ka esmu darījis pāri citiem cilvēkiem. Piedod man, Jēzu. Es atkal gribu būt kopā ar Tevi. Amen.
 Apņemšanās laboties.</String>
 		<Text_type>0</Text_type>
+		<Code>0</Code>
 	</item>
 	<item>
 		<RID>383</RID>
@@ -16507,6 +16519,7 @@ un savas dienas svēti pavadītu!
 Atļauj pēc nāves ieraudzīt mums Tevi, 
 svētlaimi iegūt, ko mums nopelnīji!</String>
 		<Text_type>5</Text_type>
+		<Code>3</Code>
 	</item>
 	<item>
 		<RID>384</RID>
@@ -16516,6 +16529,7 @@ Lūdz par mums, svētā Dieva Dzemdētāja,
 lai mēs Kristus solījumu cienīgi topam. 
 Lūgsimies! Kungs Dievs, mēs Tevi lūdzam, liec, lai mūsu, Tavu kalpu (un draugu) dvēsele un miesa vienmēr būtu vesela, un ar slavējamās, vissvētākās Jaunavas Marijas aizbildniecību mēs tiktu atbrīvoti no laicīgā ļaunuma un grēka un priecātos mūžīgajā dzīvē. Caur Jēzu Kristu, mūsu Kungu. Amen.</String>
 		<Text_type>1</Text_type>
+		<Code>9</Code>
 	</item>
 	<item>
 		<RID>385</RID>
@@ -16733,7 +16747,7 @@ pie Tava dievišķā Dēla.
 Tu žēlīgā un laipnā,
 Vissvētā Jaunava Marija.</String>
 		<Text_type>2</Text_type>
-		<Code>7</Code>
+		<Code>4</Code>
 	</item>
 	<item>
 		<RID>389</RID>
@@ -16887,7 +16901,7 @@ pie Tava dievišķā Dēla.
 Tu žēlīgā un laipnā,
 Vissvētā Jaunava Marija.</String>
 		<Text_type>2</Text_type>
-		<Code>7</Code>
+		<Code>4</Code>
 	</item>
 	<item>
 		<RID>390</RID>
@@ -17016,7 +17030,7 @@ pie Tava dievišķā Dēla.
 Tu žēlīgā un laipnā,
 Vissvētā Jaunava Marija.</String>
 		<Text_type>2</Text_type>
-		<Code>7</Code>
+		<Code>5</Code>
 	</item>
 	<item>
 		<RID>391</RID>
@@ -17144,7 +17158,7 @@ pie Tava dievišķā Dēla.
 Tu žēlīgā un laipnā,
 Vissvētā Jaunava Marija.</String>
 		<Text_type>2</Text_type>
-		<Code>7</Code>
+		<Code>5</Code>
 	</item>
 	<item>
 		<RID>392</RID>
@@ -17259,7 +17273,7 @@ pie Tava dievišķā Dēla.
 Tu žēlīgā un laipnā,
 Vissvētā Jaunava Marija.</String>
 		<Text_type>2</Text_type>
-		<Code>7</Code>
+		<Code>5</Code>
 	</item>
 	<item>
 		<RID>393</RID>
@@ -17384,7 +17398,7 @@ pie Tava dievišķā Dēla.
 Tu žēlīgā un laipnā,
 Vissvētā Jaunava Marija.</String>
 		<Text_type>2</Text_type>
-		<Code>7</Code>
+		<Code>5</Code>
 	</item>
 	<item>
 		<RID>394</RID>
@@ -17512,7 +17526,7 @@ pie Tava dievišķā Dēla.
 Tu žēlīgā un laipnā,
 Vissvētā Jaunava Marija.</String>
 		<Text_type>2</Text_type>
-		<Code>7</Code>
+		<Code>5</Code>
 	</item>
 	<item>
 		<RID>395</RID>
@@ -17529,7 +17543,7 @@ Vissvētā Jaunava Marija.</String>
 |Marija, bez grēka ieņemtā, lūdz par mums, kas steidzamies pie tevis!
  Mans Jēzu, piedod mums mūsu vainas, pasargā mūs elles uguns un aizved visas dvēseles uz debesīm, it sevišķi tās, kurām visvairāk vajadzīga Tava žēlsirdība!</String>
 		<Text_type>1</Text_type>
-		<Code>6</Code>
+		<Code>13</Code>
 	</item>
 	<item>
 		<RID>396</RID>
@@ -17721,7 +17735,7 @@ Lai viņas liesma sagaida rīta Zvaigzni, To Zvaigzni, kas nepazīst rietu, Jēz
 Šo seno himnu „Exsultet" diakons, priesteris vai atsevišķos gadījumos kantors dzied Lieldienu vigīlijas dievkalpojuma pašā sākumā pēc uguns svētīšanas, kā arī Lieldienu sveces aizdegšanas un ienešanas baznīcā.
 Tradīcija svētīt Lieldienu sveci un dziedāt Lieldienu slavas himnu Lieldienu vigīlijas dievkalpojumā Rietumu Baznīcā ir pazīstama kopš 5.gs. Šis himnas teksts tiek datēts ar laika posmu starp 5. un 7.gs.</String>
 		<Text_type>2</Text_type>
-		<Code>6</Code>
+		<Code>2</Code>
 	</item>
 	<item>
 		<RID>408</RID>
@@ -17739,7 +17753,7 @@ un liels valdnieks pāri pār visiem dieviem,
 5 jo viņam pieder jūra, un viņš to ir radījis,*
 un sauszeme ir viņa roku darbs.
 (Atkārto antifonu)
-	6 Nāciet, pielūgsim un kritīsim pie zemes,*
+	2 Nāciet, pielūgsim un kritīsim pie zemes,*
 	locīsim ceļus Kunga, mūsu Radītāja, priekšā,
 7 jo viņš ir mūsu Dievs,*
 bet mēs – viņa tauta un viņa ganāmpulka avis.
@@ -17762,7 +17776,7 @@ kā tas no iesākuma ir bijis tā tagad un vienmēr,*
 un mūžīgi mūžam. Amen
 (Atkārto antifonu)</String>
 		<Text_type>2</Text_type>
-		<Code>6</Code>
+		<Code>2</Code>
 	</item>
 	<item>
 		<RID>410</RID>
@@ -17786,6 +17800,7 @@ Mēs zinām, ka Kristus
 patiesi ir augšāmcēlies no kapa: 
 ak, Karali, kas guvi uzvaru, esi mums žēlīgs!</String>
 		<Text_type>2</Text_type>
+		<Code>9</Code>
 	</item>
 	<item>
 		<RID>413</RID>
@@ -17814,6 +17829,7 @@ bet, kurš atrodas nāves briesmās.
 Lūdzu, dāvā vecākiem mīlestību un drosmi,
 lai savu bērnu, kuru Tu viņiem dāvāji, tie atstātu dzīvu. Amen.</String>
 		<Text_type>2</Text_type>
+		<Code>9</Code>
 	</item>
 	<item>
 		<RID>433</RID>
@@ -17825,14 +17841,14 @@ Amen.
 #4#{Rožukronis, 3. daļa (2., 5.)}
 #5#{Rožukronis, 4. daļa (3., 7.)}</String>
 		<Text_type>1</Text_type>
-		<Code>2</Code>
+		<Code>9</Code>
 	</item>
 	<item>
 		<RID>448</RID>
 		<Description>Studenta lūgšana (sv. Akvīnas Toms)</Description>
 		<String>Marija, gaišās mīlestības Māte, pateicoties Tavām lūgšanām daudzi neattapīgi un tumši cilvēki ir brīnumainā veidā pieņēmušies gudrībā un svētumā. Es izvēlos Tevi par savu studiju vadītāju un aizbildni. Es pazemīgi lūdzu, savā patiesi mātišķās mīlestības maigumā un, vēl jo vairāk, tās Mūžīgās Gudrības dēļ, kas pieņēma no Tevis cilvēcīgo miesu un apdāvināja Tevi visvairāk par visiem svētīgajiem ar garīgu izpratni, izlūdz man to pašu Svētā Gara dāvanu, lai es vienmēr spētu uztvert ar savu prātu, saglabāt atmiņā un vairot ar savu runu un darbiem visu to, kas dara godu Tev un Tavam Dievišķajam Dēlam, kā arī visu to, kas vedina uz veselīgu dzīvi šeit un mūžībā. Amen</String>
 		<Text_type>1</Text_type>
-		<Code>2</Code>
+		<Code>9</Code>
 	</item>
 	<item>
 		<RID>451</RID>
@@ -17858,6 +17874,7 @@ un Dieva Dēlam dzimušam
 ar Svēto Garu vienībā
 uz mūžiem debess valstībā.</String>
 		<Text_type>5</Text_type>
+		<Code>1</Code>
 	</item>
 	<item>
 		<RID>452</RID>
@@ -17895,6 +17912,7 @@ Mans Dievs, pazemīgi lūdzu,
 Lai pie Tevis mītu tikmēr,
 Kamēr dzīvosi Tu. Āmen.</String>
 		<Text_type>5</Text_type>
+		<Code>1</Code>
 	</item>
 	<item>
 		<RID>453</RID>
@@ -17916,6 +17934,7 @@ Tu — debesu krāšņākais zieds!
 Tu — Māte mums visiem, mēs godinām Tevi, 
 jel cilvēkiem palīgu sniedz!</String>
 		<Text_type>5</Text_type>
+		<Code>10</Code>
 	</item>
 	<item>
 		<RID>575</RID>
@@ -17936,7 +17955,8 @@ Jo esi mīļā Dieva gribēts,
 Tev debesīs ir varens Tēvs.
 Par Ķēniņa bērnu tevi saucis Kungs
 Un savā valstībā vietu taisījis.</String>
-		<Text_type>5</Text_type>
+		<Text_type>4</Text_type>
+		<Code>20</Code>
 	</item>
 	<item>
 		<RID>577</RID>
@@ -17949,7 +17969,8 @@ Pateicies, līksmo,
 Kungs tev žēlastību dod,
 Vienojies ar Jēzu
 Un paliec Viņā tu!</String>
-		<Text_type>5</Text_type>
+		<Text_type>4</Text_type>
+		<Code>20</Code>
 	</item>
 	<item>
 		<RID>578</RID>
@@ -17958,7 +17979,8 @@ Un paliec Viņā tu!</String>
 Mūs aizstāvi savās lūgsnās.
 Glāb mūs, glāb mūs,
 Glāb, mēs Tevi lūdzam.</String>
-		<Text_type>5</Text_type>
+		<Text_type>4</Text_type>
+		<Code>22</Code>
 	</item>
 	<item>
 		<RID>579</RID>
@@ -17966,7 +17988,8 @@ Glāb, mēs Tevi lūdzam.</String>
 		<String>Lai Tavs Gaišais Vaigs, Kungs un Dievs,
 Vienmēr atspīd pār mani Kungs,
 Lai tā spīdums caurstrāvo mūs.</String>
-		<Text_type>5</Text_type>
+		<Text_type>4</Text_type>
+		<Code>20</Code>
 	</item>
 	<item>
 		<RID>580</RID>
@@ -17983,14 +18006,16 @@ Svētam Garam lai slava,
 Atspīd gaisma lai Tava,
 Mīlu Tevi,
 Mīlu Tevi.</String>
-		<Text_type>5</Text_type>
+		<Text_type>4</Text_type>
+		<Code>20</Code>
 	</item>
 	<item>
 		<RID>582</RID>
 		<Description>LAUDATE DOMINUM</Description>
 		<String>Laudate Dominum, laudate Dominum,
 Omnes gentes Alleluja. /2x</String>
-		<Text_type>5</Text_type>
+		<Text_type>4</Text_type>
+		<Code>20</Code>
 	</item>
 	<item>
 		<RID>583</RID>
@@ -18085,7 +18110,8 @@ Tēvs mūsu... Esi sveicināta... Gods lai ir...
 Noslēguma lūgšana
 Dievs, paaugstinot savu Dēlu, mūsu Kungu Jēzu Kristu, un sūtot Svēto Garu, Tu esi mums atvēris mūžīgās dzīves vārtus, dari, lai Tavas vārdos neizsakāmās dāvanas stiprina mūsu veltīšanos Tev un vairo mūsu ticību, cerību un mīlestību. Caur Jēzu Kristu, mūsu Kungu. Amen.
 #339#{Litānija Dieva Svētā Gara godam}</String>
-		<Text_type>4</Text_type>
+		<Text_type>1</Text_type>
+		<Code>2</Code>
 	</item>
 	<item>
 		<RID>585</RID>
@@ -18099,7 +18125,8 @@ Dievs, Tu ar savu Garu mūs vadi un sargā, esi mums žēlīgs un uzklausi mūsu
 |%49
 |%341
 |%342</String>
-		<Text_type>4</Text_type>
+		<Text_type>1</Text_type>
+		<Code>2</Code>
 	</item>
 	<item>
 		<RID>586</RID>
@@ -18112,7 +18139,8 @@ Ak, lai es vienmēr Tevi
 Mīlētu,
 Esi ar mani, esi ar mani
 Visa ceļa garumā.</String>
-		<Text_type>5</Text_type>
+		<Text_type>4</Text_type>
+		<Code>20</Code>
 	</item>
 	<item>
 		<RID>587</RID>
@@ -18137,7 +18165,8 @@ Gūt prieku mūžīgu,
 pat bēdās dalītu.&lt;&lt;
 |Un es atdodu
 visu Tev, visu Tev.</String>
-		<Text_type>5</Text_type>
+		<Text_type>4</Text_type>
+		<Code>20</Code>
 	</item>
 	<item>
 		<RID>588</RID>
@@ -18152,7 +18181,8 @@ Jā, Kungs, jā, Kungs, jā, jā, Kungs,
 Jā, Kungs, jā, Kungs, jā, jā, Kungs,
 Jā, Kungs, jā, Kungs, jā, jā, Kungs,
 Amen!</String>
-		<Text_type>5</Text_type>
+		<Text_type>4</Text_type>
+		<Code>20</Code>
 	</item>
 	<item>
 		<RID>589</RID>
@@ -18169,7 +18199,8 @@ Lai atbrīvo tā saistītos
 Un brīvus dara mūs;
 Tava mīlestība dziedinošā
 Dziedē dvēseli.</String>
-		<Text_type>5</Text_type>
+		<Text_type>4</Text_type>
+		<Code>20</Code>
 	</item>
 	<item>
 		<RID>590</RID>
@@ -18246,7 +18277,8 @@ Visu Debesu dāvanu radītāj, es ļoti lūdzu, atdzīvini mani savā žēlastī
 |%49
 |%341
 |%342</String>
-		<Text_type>4</Text_type>
+		<Text_type>1</Text_type>
+		<Code>2</Code>
 	</item>
 	<item>
 		<RID>592</RID>
@@ -18275,11 +18307,12 @@ Mūsu Tēvs, kas debesīs Tu valdi,
 un svētīts ar'lai top Tavs vārds. 
 Jel patvērumā savā stiprā ņem zemi, 
 tautu šo, ak, Dievs!</String>
-		<Text_type>5</Text_type>
+		<Text_type>4</Text_type>
+		<Code>20</Code>
 	</item>
 	<item>
 		<RID>594</RID>
-		<Description>LŪGŠANA PAR IEKŠĒJO DZIEDINĀŠANU (SEV)</Description>
+		<Description>LŪGŠANA PAR IEKŠĒJO DZIEDINĀŠANU</Description>
 		<String>Visa labuma Tēvs, Mīlestības Tēvs, slavēju Tevi, pielūdzu Tevi un pateicos Tev par to, ka no Mīlestības devi mums Jēzu. 
 Pateicos Tev, ka caur Svētā Gara gaismu sapratām to, ka Viņš ir Gaisma, Patiesība un Labais Gans, kurš atnāca, lai dāvātu dzīvību pārpilnībā. 
 Šodien, Tēvs, gribu stādīt Tavā priekšā sevi. 
@@ -18314,10 +18347,11 @@ Pateicamies Tev, Kungs, par to, ka esam Tava Svētā Gara svētnīca un ka šī 
 Pateicamies Tev, Kungs, par ticību, par mīlestību, kuru mūsu sirdīs esi ielicis. 
 Cik liels ir Kungs! Esi slavēts un godināts!</String>
 		<Text_type>1</Text_type>
+		<Code>0</Code>
 	</item>
 	<item>
 		<RID>595</RID>
-		<Description>LŪGŠANA PAR IEKŠĒJO DZIEDINĀŠANU (citiem)</Description>
+		<Description>LŪGŠANA PAR IEKŠĒJO DZIEDINĀŠANU</Description>
 		<String>Visa labuma Tēvs, Mīlestības Tēvs, slavēju Tevi, pielūdzu Tevi un pateicos Tev par to, ka no Mīlestības devi mums Jēzu. 
 Pateicos Tev, ka caur Svētā Gara gaismu sapratām to, ka Viņš ir Gaisma, Patiesība un Labais Gans, kurš atnāca, lai dzīvību dāvātu pārpilnībā. 
 Šodien, Tēvs, gribu stādīt Tavā priekšā šo Tavu dēlu (meitu). 
@@ -18358,6 +18392,7 @@ Cik liels ir Kungs! Esi slavēts un godināts!</String>
 		<Description>LŪGŠANA SVĒTAJAM ERCEŅĢELIM MIĶELIM</Description>
 		<String>Svētais Erceņģeli Miķeli, palīdzi mums cīņā, esi mūsu aizsargs pret velna ļaunumu un viltībām. Dievs lai viņam pavēl, tā mēs pazemīgi lūdzam, bet Tu, Debesu Karapulka Vadoni, ar dievišķo spēku iedzen ellē sātanu un visus ļaunos garus, kas klejo pa pasauli, lai samaitātu dvēseles. Amen.</String>
 		<Text_type>1</Text_type>
+		<Code>9</Code>
 	</item>
 	<item>
 		<RID>598</RID>
@@ -18892,6 +18927,7 @@ un tu sasniegsi savu sirds ilgu piepildījumu.
 4. nedēļa - 
 #261#{svētdiena 1}, #259#{svētdiena 2}, #264#{pirmdiena}, #266#{otrdiena}, #268#{trešdiena}, #270#{ceturtdiena}, #272#{piektdiena}, #274#{sestdiena}</String>
 		<Text_type>2</Text_type>
+		<Code>4</Code>
 	</item>
 	<item>
 		<RID>2605</RID>
@@ -18915,6 +18951,7 @@ tā, lai kādu dienu
 mēs būtu savienoti Debesīs
 uz mūžiem. Amen.</String>
 		<Text_type>1</Text_type>
+		<Code>9</Code>
 	</item>
 	<item>
 		<RID>2607</RID>
@@ -18923,6 +18960,7 @@ uz mūžiem. Amen.</String>
 (Kungs, visvarenais Dievs, Tu esi licis mums(man) sagaidīt šīs dienas sākumu. Aizsargā mūs(mani) šodien ar savu vareno spēku, lai mēs(es) nekristu nevienā grēkā, bet lai visas mūsu(manas) domas, visi mūsu(mani) vārdi un darbi būtu taisnīgi Tavā priekšā. Caur Jēzu Kristu, mūsu Kungu. Āmen.
 Mans Dievs, es upurēju Tev visus darbus, ko šodien darīšu. To daru Jēzus Svētās Sirds nodomos un tās godam. Es gribu svētīt savas sirds pukstienus, savas domas un visvienkāršākos darbus, vienojot tos ar Tavas Sirds bezgalīgajiem nopelniem, un izlabot savas kļūdas, tās iemetot Tavas žēlsirdīgās mīlestības kausētavā. Ak, mans Dievs, sev un man tuviem cilvēkiem es lūdzu no Tevis žēlastību izpildīt visā pilnībā Tavu svēto gribu, Tavas mīlestības dēļ pieņemt šīs pārejošās dzīves priekus un bēdas, lai reiz mēs būtu vienoti uz mūžīgiem laikiem debesīs. Āmen.</String>
 		<Text_type>1</Text_type>
+		<Code>0</Code>
 	</item>
 	<item>
 		<RID>2611</RID>
@@ -18931,6 +18969,7 @@ Mans Dievs, es upurēju Tev visus darbus, ko šodien darīšu. To daru Jēzus Sv
 Kungs, visvarenais Dievs, Tu esi licis mums sagaidīt šo dienu. Aizsargā mūs šodien ar savu vareno spēku, lai mēs nekristu nevienā grēkā, bet lai visas mūsu domas, visi mūsu vārdi un darbi būtu taisnīgi Tavā priekšā. Caur Jēzu Kristu, mūsu Kungu. Āmen.
 Mans Dievs, es upurēju Tev visus darbus, ko šodien darīšu. To daru Jēzus Svētās Sirds nodomos un tās godam. Es gribu svētīt savas sirds pukstienus, savas domas un visvienkāršākos darbus, vienojot tos ar Tavas Sirds bezgalīgajiem nopelniem, un izlabot savas kļūdas, tās iemetot Tavas žēlsirdīgās mīlestības kausētavā. Ak, mans Dievs, sev un sev tuviem cilvēkiem es lūdzu no Tevis žēlastību izpildīt visā pilnībā Tavu svēto gribu, Tavas mīlestības dēļ pieņemt šīs pārejošās dzīves priekus un bēdas, lai reiz mēs būtu vienoti uz mūžīgiem laikiem debesīs. Āmen.</String>
 		<Text_type>1</Text_type>
+		<Code>3</Code>
 	</item>
 	<item>
 		<RID>2615</RID>
@@ -18945,7 +18984,7 @@ Lai slavēts ir Dievs!
 3. Kungs Svētais Gars, lūdzu, dāvā priesterim ............. XXX (gudrības, saprāta, padoma, drosmes, zinību, dievbijības, Dieva bijāšanas) dāvanu!
 GODS LAI IR TĒVAM ...</String>
 		<Text_type>1</Text_type>
-		<Code>2</Code>
+		<Code>9</Code>
 	</item>
 	<item>
 		<RID>2616</RID>
@@ -19089,12 +19128,13 @@ Un pēc šīs dzīves ved mūs pie Jēzus, 
 Pie Tava dievišķā Dēla. 
 Tu žēlīgā un laipnā
 Vissvētākā Jaunava Marija. </String>
-		<Text_type>2</Text_type>
+		<Text_type>5</Text_type>
+		<Code>11</Code>
 	</item>
 	<item>
 		<RID>2619</RID>
-		<Description>Lūgšana par priesteri Ingaru Stepkānu</Description>
-		<String>Lūgšana par priesteri
+		<Description>Lūgšana par priesteri X</Description>
+		<String>Lūgšana par priesteriem
  1.Lūgšana par priesteriem:
 Mans Jēzu, visas Baznīcas vārdā es lūdzu Tevi: dāvā Baznīcai savu mīlestību un gaismu, piešķir spēku priesteru vārdiem, lai tie modinātu nocietinātās sirdīs nožēlu un vēlēšanos atgriezties pie Tevis, Kungs.
 Kungs, dāvā mums svētus priesterus; Tu pats uzturi viņus svētumā. Dievišķais Visaugstais priesteri, lai Tavas žēlsirdības spēks pavada viņus visur un pasargā no sātana lamatām, kuras nepārtraukti tiek izliktas priesteru dvēselēm. Lai Tavas žēlsirdības spēks, Kungs, sagrauj un iznīcina visu, kas varētu aptraipīt priesteru svētumu, jo Tu spēj visu.
@@ -19123,7 +19163,7 @@ Lūgšana
 Kungs, mūsu Dievs, ikvienas dzīvības Radītājs, uzlūko un svētī mani un manu gaidāmo bērnu; piepildi mani ar patiesu prieku par šīs jaunās dzīvības brīnumu; svētī mūs, viņa vecākus, un ņem mūs visus Savā gādībā. Dari, lai bērns, kuru mēs gaidām, ieraudzītu Tavas pasaules gaismu vesels garā un miesā. Lai viņam netrūkst vecāku gādības un mīlestības, pēc kuras tik ļoti ilgojas ikviena cilvēkbērna sirds.
 Visvarenais, žēlsirdīgais Dievs, Visuma Radītāj, Tu Svētā Gara spēkā sagatavoji Vissvēto Jaunavu Mariju kā cienīgu mājokli Savam Dēlam; Tu ar Svēto Garu piepildīji Jāni Kristītāju un liki viņam priecāties savas mātes miesās; pieņem savas kalpones pazemīgās lūgšanas un saglabā bērnu, kuru Tu esi aicinājis un apveltījis ar dzīvības dāvanu. Lai ar Tavu svētību un palīdzību bērns laimīgi ierauga dienas gaismu un saņem Svētās Kristības žēlastību. Lai viņš uzticīgi pilda Tavu svēto gribu un iemanto mūžīgo dzīvību debesīs. Tevi lūdzam caur Jēzu Kristu, mūsu Kungu. Amen.</String>
 		<Text_type>1</Text_type>
-		<Code>2</Code>
+		<Code>9</Code>
 	</item>
 	<item>
 		<RID>2623</RID>
@@ -19226,6 +19266,7 @@ Kungs Jēzu, mani pavadi,
 un Tēva mājās aizvadi,
 kad kājas pagurs ceļot.</String>
 		<Text_type>5</Text_type>
+		<Code>3</Code>
 	</item>
 	<item>
 		<RID>2628</RID>
@@ -19238,7 +19279,8 @@ Jēzū!  Jēzū!  • Jēzū! Jēzū!
 3_Dievs ir šodien... 
 4_Dievs ir tagad… 
 5_Dievs būs vienmēr…</String>
-		<Text_type>5</Text_type>
+		<Text_type>4</Text_type>
+		<Code>20</Code>
 	</item>
 	<item>
 		<RID>2632</RID>
@@ -19263,7 +19305,8 @@ a F
 Nav, nav nevienas domas,
 C G a F
 Laimi lielāku, kas spētu dod.</String>
-		<Text_type>5</Text_type>
+		<Text_type>4</Text_type>
+		<Code>20</Code>
 	</item>
 	<item>
 		<RID>2633</RID>
@@ -19316,7 +19359,8 @@ D A G DA
 Jesus, adoramus Te, 
 G A D
 adoramus Te!</String>
-		<Text_type>5</Text_type>
+		<Text_type>4</Text_type>
+		<Code>20</Code>
 	</item>
 	<item>
 		<RID>2635</RID>
@@ -19333,7 +19377,8 @@ Sūti uguni!  d C B C
 Sūti uguni!  	d C B C 
 Sūti uguni!  d C B C 
 Sūti uguni!  d C B C</String>
-		<Text_type>5</Text_type>
+		<Text_type>4</Text_type>
+		<Code>20</Code>
 	</item>
 	<item>
 		<RID>2639</RID>
@@ -19362,7 +19407,8 @@ Lai citi tiek vairāk ievēroti, bet es - atstāts novārtā – Jēzu, dod man
 Lai citi kļūst svētāki, bet man tajā pašā laikā palīdzi iespēju robežās kļūt svētākam – Jēzu, dod man žēlastību to vēlēties!
 Ak, Jēzu, dod man spēku to vienmēr no jauna vēlēties!
 Kardināls Rafaēls Meri del Vals, pāvesta Pija X sekretārs</String>
-		<Text_type>3</Text_type>
+		<Text_type>1</Text_type>
+		<Code>2</Code>
 	</item>
 	<item>
 		<RID>2640</RID>
@@ -19377,6 +19423,7 @@ Kardināls Rafaēls Meri del Vals, pāvesta Pija X sekretārs</String>
 Karmela kalna Dievmāte, vispamestāko grēcinieku aizstāve, paļaujoties uz to, ka tu uzklausi savu bērnu lūgšanas, es uzticu tev kāda cilvēka dvēseli, kam īpaši vajadzīgi tavi aizlūgumi (nosauc šī cilvēka vārdu). Izlūdz šai dvēselei pestīšanu, lai var priecāties Debesis un lai ellei tiek atņemta tās vara! 
 Es pateicos tev par neskaitāmajām žēlastībām, kas saņemtas tavas žēlsirdības un spēcīgās aizbildniecības dēļ. Esi vienmēr mana aizstāve briesmās, mana pavadone dzīves ceļā un mierinājums nāves stundā. Amen.</String>
 		<Text_type>1</Text_type>
+		<Code>9</Code>
 	</item>
 	<item>
 		<RID>2643</RID>
@@ -19386,6 +19433,7 @@ Lūdz Dievu, lai Viņš man dod stipru gribu darīt labu un neieredzēt grēku! 
 Es esmu ar mieru pat uzņemties rūgtus pārbaudījumus, ja Dievs man nākotnē tādus pieļautu, es tikai lūdzu, lai Kungs man dāvā spēku un pacietību visu panest un paciest. 
 Spēcīgais aizbildni, svētais Antonij, kas daudziem esi palīdzējis viņu bēdās un grūtībās, aizlūdzot pie visvarenā Dieva, palīdzi arī ar savām lūgšanām man, kas ar stipru cerību steidzos pie tevis. Lai es savā paļāvībā uz tevi nepalieku kaunā! Neatstāj mani neuzklausītu, lai manas lūgšanas tiek vainagotas ar panākumiem un es, slavējot tevi, varētu sacīt arī citiem: vērsieties pie svētā Antonija, ja gribat rast iepriecinājumu savās skumjās un palīdzību savās vajadzībās. Amen.</String>
 		<Text_type>1</Text_type>
+		<Code>9</Code>
 	</item>
 	<item>
 		<RID>2648</RID>
@@ -19412,7 +19460,8 @@ Kuram slāpst, lai nāk pie manis
 Un lai dzer no ūdens šī. 
 Ja tu ticēsi, tad tevī plūdīs 
 Dzīvā ūdens strauts.</String>
-		<Text_type>5</Text_type>
+		<Text_type>4</Text_type>
+		<Code>20</Code>
 	</item>
 	<item>
 		<RID>2649</RID>
@@ -19441,7 +19490,8 @@ Bet savam Dēlam mūs dāvini.
 Pasargā mūs no niecības un maldiem; 
 Tu esi saņēmusi vainagu, 
 Tu svētā Dieva Dzemdētāja.</String>
-		<Text_type>5</Text_type>
+		<Text_type>4</Text_type>
+		<Code>20</Code>
 	</item>
 	<item>
 		<RID>2656</RID>
@@ -19480,7 +19530,8 @@ Vadi mūs cīņās un spēku mums dod.
 Uz žēlsirdību tie sirdīs vēl cer.
 Ciešanās savās uz Tevi tie sauc,
 Uzklausi lūgšanas, palīgā steidz.</String>
-		<Text_type>5</Text_type>
+		<Text_type>4</Text_type>
+		<Code>20</Code>
 	</item>
 	<item>
 		<RID>2658</RID>
@@ -19531,7 +19582,8 @@ Alleluja x3
 12. Gods lai Tēvam–Radītājam, Dēlam–ļaužu Pestītājam,
 Garam Svētajam uz mūžiem! 
 Alleluja x3</String>
-		<Text_type>5</Text_type>
+		<Text_type>4</Text_type>
+		<Code>20</Code>
 	</item>
 	<item>
 		<RID>2659</RID>
@@ -19541,7 +19593,8 @@ Ruah. Ruah. Ruah.
 Ne mūsu spēkā, ne varā, bet tikai Svētajā Garā.
 Pēc Zah. 4,6
 Ne ar spēku un ne ar varu, bet ar manu Garu! – saka Pulku Kungs.</String>
-		<Text_type>5</Text_type>
+		<Text_type>4</Text_type>
+		<Code>20</Code>
 	</item>
 	<item>
 		<RID>2660</RID>
@@ -19575,7 +19628,8 @@ Kā bērns Tev pieglaužos,
 Un droši paļaujos, 
 Tev vienam uzticos: 
 Māci man lūgt!</String>
-		<Text_type>5</Text_type>
+		<Text_type>4</Text_type>
+		<Code>20</Code>
 	</item>
 	<item>
 		<RID>2661</RID>
@@ -19584,6 +19638,7 @@ Māci man lūgt!</String>
 Māte un Karaliene
 http://convocatis.net/Pages/KDs_breviars.htm</String>
 		<Text_type>2</Text_type>
+		<Code>9</Code>
 	</item>
 	<item>
 		<RID>2663</RID>
@@ -19643,7 +19698,8 @@ Dieva Jērs, kas nes pasaules grēkus, apžēlojies par mums, Kungs.
 Lai mēs Kristus solījumu cienīgi topam.
 |Lūgsimies. 
 Lūdzam Tevi, Kungs Dievs, caur svētās Filomenas, jaunavas un mocekles, kura vienmēr iepriecina Tavas acis ar savu izcilo šķīstību un tikumu pilnību, aizbildniecību piedod mums mūsu grēkus un vājības, un dāvā mums visas nepieciešamās žēlastības, jo īpaši… (minēt visnepieciešamāko žēlastību). Caur Jēzu Kristu, mūsu Kungu. Āmen.</String>
-		<Text_type>3</Text_type>
+		<Text_type>1</Text_type>
+		<Code>2</Code>
 	</item>
 	<item>
 		<RID>2665</RID>
@@ -19665,7 +19721,8 @@ Dievam pretī iet.
 Dieva Mātes maigā sirds, 
 Lai es varu arvien no jauna 
 Dievam pretī iet.</String>
-		<Text_type>5</Text_type>
+		<Text_type>4</Text_type>
+		<Code>20</Code>
 	</item>
 	<item>
 		<RID>2666</RID>
@@ -19687,7 +19744,8 @@ Tevi gaidām mēs!
 Nāc, Kungs nāc, mūs apmīļo,
 Nāc, Kungs, nāc, mūs iedvesmo,
 Tevi gaidām mēs!</String>
-		<Text_type>5</Text_type>
+		<Text_type>4</Text_type>
+		<Code>21</Code>
 	</item>
 	<item>
 		<RID>2667</RID>
@@ -19753,7 +19811,8 @@ patvērumā Tava              G
 jauna gaisma aust!             Fis h
 vai:
 d C Bb A  •  d C Bb A d&lt;&lt;</String>
-		<Text_type>5</Text_type>
+		<Text_type>4</Text_type>
+		<Code>22</Code>
 	</item>
 	<item>
 		<RID>2668</RID>
@@ -19775,7 +19834,8 @@ aizlūdz par mums!
 ESI SVEICINĀTA, MARIJA, žēlastības pilnā, Kungs ir ar tevi, tu esi svētīta starp sievietēm, un svētīts ir tavas miesas auglis Jēzus. Svētā Marija, Dieva Māte, lūdz par mums, grēciniekiem, tagad un mūsu nāves stundā! Amen. 
 GODS LAI IR TĒVAM un Dēlam, un Svētajam Garam, kā tas no iesākuma ir bijis, tā tagad un vienmēr, un mūžīgi mūžos. Amen. 
 |Priesteri un mocekli Vladislav, aizlūdz par mani! Ar savu dzīvi, ciešanām un nāvi tu tik ļoti līdzinājies pašam Kristum - izlūdz man no Dieva žēlastību, kuru lūdzu, ………………  (minēt savu lūgšanas nodomu), ja tas saskan ar Dieva gribu. Amen.</String>
-		<Text_type>4</Text_type>
+		<Text_type>1</Text_type>
+		<Code>2</Code>
 	</item>
 	<item>
 		<RID>2674</RID>
@@ -19849,7 +19909,8 @@ V. Lūdz par mums, svētais Anton! 
 R. Lai mēs Kristus solījumu cienīgi topam! 
 LŪGSIMIES! 
 Visžēlīgais Dievs, kas savu svētīgo apliecinātāju Antonu apskaidro ar pastāvīgu brīnumu spožumu, dod žēlīgi, ka mēs ar viņa aizlūgumu droši saņemtu to, ko viņa nopelnu dēļ uzticīgi lūdzam. Caur Kristu, mūsu Kungu. Āmen.</String>
-		<Text_type>3</Text_type>
+		<Text_type>1</Text_type>
+		<Code>2</Code>
 	</item>
 	<item>
 		<RID>2675</RID>
@@ -19916,6 +19977,7 @@ Liec, lai arī mani rotā
 Paradīzes godība! Āmen! 
 (J. LULLES ATDZEJOJUMS)</String>
 		<Text_type>5</Text_type>
+		<Code>3</Code>
 	</item>
 	<item>
 		<RID>2676</RID>
@@ -19960,7 +20022,8 @@ Dieva Jērs, kas nes pasaules grēkus, uzklausi mūs, Kungs,
 Dieva Jērs, kas nes pasaules grēkus, apžēlojies par mums, Kungs!
 |Lūgsimies!
 Kungs, kurš sacīji : ja nekļūsit kā bērni, neieiesiet Debesu Valstībā, palīdzi mums kā svētajai Terēzei, jaunavai, dzīvot pazemībā un sirds vienkāršībā, lai iemantojam mūžīgo algu. Kas dzīvo un valdi mūžu mūžos. Āmen.</String>
-		<Text_type>3</Text_type>
+		<Text_type>1</Text_type>
+		<Code>2</Code>
 	</item>
 	<item>
 		<RID>2677</RID>
@@ -19979,7 +20042,8 @@ pie Tevis nākt aicini mani,
 lai līdz ar Taviem svētajiem 
 es slavētu Tevi mūžīgi. Amen. 
 (Svētais Ignācijs no Lojolas)</String>
-		<Text_type>5</Text_type>
+		<Text_type>4</Text_type>
+		<Code>20</Code>
 	</item>
 	<item>
 		<RID>2681</RID>
@@ -20030,7 +20094,8 @@ V. Es priecāšos Jēzū, manā Dievā.
 Lūgsimies: 
 Kungs Jēzu, kas aiz mīlestības uz mums kļuvi nabadzīgs un pazemīgs Bērns un atdusējies silītē, mēs pielūdzam Tevi un līdz ar Gudrajiem upurējam Tev kvēlas mīlestības zeltu un dzīvas lūgšanas vīraku; svētdari mūsu sirdis, kā Tu reiz svētdarīji nabaga ganiņu sirdis, lai mēs Tev vienmēr uzticīgi kalpotu un nepārstātu Tevi slavēt.
 V. Amen</String>
-		<Text_type>3</Text_type>
+		<Text_type>1</Text_type>
+		<Code>2</Code>
 	</item>
 	<item>
 		<RID>2682</RID>
@@ -20106,7 +20171,8 @@ Amen.
 Imprimi potest
 Rigae, A.D. 08.05.2008
 +Joannes Card. Pujats</String>
-		<Text_type>3</Text_type>
+		<Text_type>1</Text_type>
+		<Code>2</Code>
 	</item>
 	<item>
 		<RID>2683</RID>
@@ -20159,7 +20225,8 @@ Dievs, Tu savā neizsakāmā gādībā esi izvēlējies svēto Jāzepu par savas
 LŪGŠANA SV. JĀZEPAM
 Pie Tevis, svētais Jāzep, mēs steidzamies savās bēdās un, Tavas Vissvētākās Līgavas palīdzību piesaukuši, paļāvīgi lūdzam arī Tavu aizbildniecību. Tās mīlestības dēļ, kas Tevi vienoja ar bezvainīgo Jaunavu, Dieva Dzemdētāju, un tās tēvišķās gādības dēļ, ar kuru Tu rūpējies par bērniņu Jēzu, mēs Tevi pazemīgi lūdzam, uzlūko žēlīgi Jēzus Kristus asinīm atpirkto mantojumu un palīdzi mums ar savu spēcīgo pārstāvību mūsu vajadzībās.
 Sargi, Dieva aizgādības dotais svētās ģimenes sargs, izredzētos Jēzus Kristus bērnus, izglāb mūs, visumīļais Tēvs, no ikvienas samaitāšanas un maldiem, ar debesu spēku stiprini mūs, spēcīgais palīdzētāj, cīņā ar tumsības spēkiem. Un kā Tu citkārt izglābi bērniņu Jēzu no draudošām nāves briesmām, tā tagad aizstāvi svēto Dieva Baznīcu pret ienaidnieku uzbrukumiem un ikvienu nelaimi. Uzņem mūs visus savā pastāvīgā patvērumā, ka mēs, pēc Tava parauga dzīvodami un Tavas palīdzības spēcināti, varētu dievbijīgi dzīvot, svētīgi nomirt un iemantot mūžīgo līksmību debesīs. Amen</String>
-		<Text_type>3</Text_type>
+		<Text_type>1</Text_type>
+		<Code>2</Code>
 	</item>
 	<item>
 		<RID>2684</RID>
@@ -20205,7 +20272,8 @@ Caur Jēzu Kristu, mūsu Kungu.
 Āmen. 
 |Avots:
 "Veltīšanās Svētajai Trīsvienībai caur Vissvētāko Jaunavu Mariju. Rekolekcijas." lpp. 217.-218.</String>
-		<Text_type>3</Text_type>
+		<Text_type>1</Text_type>
+		<Code>2</Code>
 	</item>
 	<item>
 		<RID>2685</RID>
@@ -20251,7 +20319,8 @@ Caur Jēzu Kristu, mūsu Kungu.
 Āmen. 
 |Avots:
 "Veltīšanās Svētajai Trīsvienībai caur Vissvētāko Jaunavu Mariju. Rekolekcijas." lpp. 217.-218.</String>
-		<Text_type>3</Text_type>
+		<Text_type>1</Text_type>
+		<Code>2</Code>
 	</item>
 	<item>
 		<RID>2686</RID>
@@ -20276,7 +20345,8 @@ C G a • F C G   x2
 d e  F7+ G	 
 a G d7 • F7+ C G	
  x2</String>
-		<Text_type>5</Text_type>
+		<Text_type>4</Text_type>
+		<Code>20</Code>
 	</item>
 	<item>
 		<RID>2687</RID>
@@ -20293,7 +20363,8 @@ izlūdziet tiem žēlsirdību.
 plūda kā	avots šajā raudu lejā.
 Atdodam tām godu, pateiksimies mūžam 
 līdz ar eņģeļiem un svētiem.</String>
-		<Text_type>5</Text_type>
+		<Text_type>4</Text_type>
+		<Code>20</Code>
 	</item>
 	<item>
 		<RID>2688</RID>
@@ -20342,7 +20413,8 @@ Ir jāglabā, jāglabā,
 kas mīļš un dārgs! 
 Ir jāglabā, jāglabā, 
 kas mīļš un dārgs!</String>
-		<Text_type>5</Text_type>
+		<Text_type>4</Text_type>
+		<Code>20</Code>
 	</item>
 	<item>
 		<RID>2690</RID>
@@ -20832,12 +20904,14 @@ Gods lai ir Tēvam...
 (1, 3―5)
 Lai ir slavēts Diev</String>
 		<Text_type>1</Text_type>
+		<Code>2</Code>
 	</item>
 	<item>
 		<RID>2692</RID>
 		<Description>GARĪGĀ KOMŪNIJA</Description>
 		<String>Mans Jēzu, es ticu, ka Tu esi klātesošs Vissvētākajā Sakramentā. Es Tevi mīlu vairāk par visu, un es vēlos uzņemt Tevi savā dvēselē. Tā kā patlaban man nav iespējams Tevi pieņemt sakramentālā veidā, ienāc manā sirdī vismaz garīgi. Es vēlos būt pilnībā vienots ar Tevi; nekad nepieļauj, ka mani no Tevis kaut kas varētu šķirt.</String>
 		<Text_type>1</Text_type>
+		<Code>2</Code>
 	</item>
 	<item>
 		<RID>2697</RID>
@@ -20908,52 +20982,8 @@ Dieva Jērs, kas savā neizmērojamā žēlsirdībā dzēs mūsu grēkus,		apž�
 P. Dieva žēlsirdība, kas pārsniedz visus Viņa darbus!
 V. Tāpēc es mūžam slavēšu Kunga žēlsirdību!
 Lūgsimies! Mūžīgais Dievs, Tava žēlsirdība ir neaptverama un apžēlošanās neizsmeļama – uzlūko mūs ar savu labvēlības skatienu un vairo savu žēlsirdību mūsos, lai grūtos brīžos mēs neļautos izmisumam un nezaudētu drosmi, bet gan ar lielu paļāvību pakļautos Tavai svētajai gribai, kas ir pati mīlestība un žēlsirdība. Caur Jēzu Kristu, mūsu Kungu – žēlsirdības Karali, kas ar Tevi un Svēto Garu sniedz mums žēlsirdību mūžīgi mūžos. Āmen.</String>
-		<Text_type>3</Text_type>
-	</item>
-	<item>
-		<RID>2705</RID>
-		<Description>FLOS Carmeli,</Description>
-		<String>FLOS Carmeli,
-vitis florigera,
-splendor caeli,
-virgo puerpera
-singularis.
-Mater mitis
-sed viri nescia
-Carmelitis
-esto propitia
-stella maris.
-Radix Iesse
-germinans flosculum
-nos ad esse
-tecum in saeculum
-patiaris.
-Inter spinas
-quae crescis lilium
-serva puras
-mentes fragilium
-tutelaris.
-Armatura
-fortis pugnantium
-furunt bella
-tende praesidium
-scapularis.
-Per incerta
-prudens consilium
-per adversa
-iuge solatium
-largiaris.
-Mater dulcis
-Carmeli domina,
-plebem tuam
-reple laetitia
-qua bearis.
-Paradisi
-clavis et ianua,
-fac nos duci
-quo, Mater, gloria
-coronaris. Amen</String>
-		<Text_type>5</Text_type>
+		<Text_type>1</Text_type>
+		<Code>2</Code>
 	</item>
 	<item>
 		<RID>2706</RID>
@@ -20962,7 +20992,8 @@ coronaris. Amen</String>
 |Radix Iesse, germinans flosculum • hic adesse me tibi servulum • patiaris. *** Inter spinas, quae crescis lilium, • serva puras mentes fragilium • tutelaris. 
 |Armatura fortis pugnantium, • furunt bella tende praesidium • scapularis. *** Per incerta prudens consilium • per adversa iuge solatium • largiaris. 
 |Mater dulcis, Carmeli domina, • plebem tuam reple laetitia, • qua bearis. *** Paradisi clavis et ianua, • fac nos duci, quo, Mater, gloria • coronaris. Amen.</String>
-		<Text_type>5</Text_type>
+		<Text_type>4</Text_type>
+		<Code>20</Code>
 	</item>
 	<item>
 		<RID>2707</RID>
@@ -20984,6 +21015,7 @@ Mēs dziesmā pieminam,
 Vēl šodien Kristus bērniņu
 Mēs visi mīlējam.</String>
 		<Text_type>5</Text_type>
+		<Code>2</Code>
 	</item>
 	<item>
 		<RID>2708</RID>
@@ -21014,5 +21046,6 @@ par dāvanu sniegt.
 Jel dari tās svētas un līdzīgas sev, 
 Jo tad vien mēs mūžīgi patiksim Tev.</String>
 		<Text_type>5</Text_type>
+		<Code>2</Code>
 	</item>
 </root>
