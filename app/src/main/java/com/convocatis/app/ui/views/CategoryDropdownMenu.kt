@@ -128,7 +128,10 @@ class CategoryDropdownMenu(
             setTextColor(0xFF333333.toInt()) // Dark gray
             gravity = Gravity.CENTER
             setPadding(16, 16, 16, 16)
-            layoutParams = LinearLayout.LayoutParams(72, 72)
+            layoutParams = LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.WRAP_CONTENT, // Platums pielāgojas saturam
+                LinearLayout.LayoutParams.WRAP_CONTENT  // Augstums pielāgojas saturam
+            )
             setOnClickListener { onClick() }
 
             // Add ripple effect background
