@@ -10,6 +10,7 @@ import android.text.Spanned
 import android.text.method.LinkMovementMethod
 import android.text.style.ClickableSpan
 import android.text.style.URLSpan
+import android.util.Log
 import android.view.GestureDetector
 import android.view.LayoutInflater
 import android.view.MotionEvent
@@ -39,6 +40,7 @@ class TextReadingFragment : Fragment() {
     private lateinit var parser: TextContentParser
     private var sections: List<TextContentParser.HeaderSection> = emptyList()
     private var sectionsWithHeaders: List<TextContentParser.HeaderSection> = emptyList()
+    private var savedPagePosition: Int = 0
 
     // Flat list of all pages with their header information
     private data class PageWithHeader(
@@ -85,6 +87,10 @@ class TextReadingFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_text_reading_two_level, container, false)
+
+        // Restore saved page position
+        savedPagePosition = savedInstanceState?.getInt(KEY_CURRENT_PAGE, 0) ?: 0
+        Log.d(TAG, "Restoring state: saved page = $savedPagePosition")
 
         // Initialize views
         titleView = view.findViewById(R.id.titleText)
@@ -350,10 +356,16 @@ class TextReadingFragment : Fragment() {
             }
         })
 
-        // Start at first page
-        pageViewPager.setCurrentItem(0, false)
-        updateHeaderDisplay(0)
-        updatePageIndicator(0)
+        // Restore saved position or start at first page
+        val startPosition = if (savedPagePosition > 0 && savedPagePosition < allPages.size) {
+            Log.d(TAG, "Restoring page position to $savedPagePosition")
+            savedPagePosition
+        } else {
+            0
+        }
+        pageViewPager.setCurrentItem(startPosition, false)
+        updateHeaderDisplay(startPosition)
+        updatePageIndicator(startPosition)
     }
 
     /**
@@ -377,9 +389,11 @@ class TextReadingFragment : Fragment() {
                 pageProgressBar.visibility = View.VISIBLE
 
                 // Show repetition counter (e.g., "3/10")
-                pageIndicator.text = "${page.repetitionIndex}/${page.totalRepetitions}"
-                val progress = if (page.totalRepetitions!! > 0) {
-                    (page.repetitionIndex!! * 100) / page.totalRepetitions!!
+                val repIndex = page.repetitionIndex ?: 1
+                val repTotal = page.totalRepetitions ?: 1
+                pageIndicator.text = "$repIndex/$repTotal"
+                val progress = if (repTotal > 0) {
+                    (repIndex * 100) / repTotal
                 } else 100
                 pageProgressBar.progress = progress
             } else {
@@ -407,8 +421,28 @@ class TextReadingFragment : Fragment() {
         languageCode = "lv"
     )
 
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        if (::pageViewPager.isInitialized) {
+            outState.putInt(KEY_CURRENT_PAGE, pageViewPager.currentItem)
+            Log.d(TAG, "Saving state: current page = ${pageViewPager.currentItem}")
+        }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Log.d(TAG, "Fragment resumed - textEntity: ${textEntity.title}")
+    }
+
+    override fun onPause() {
+        super.onPause()
+        Log.d(TAG, "Fragment paused - textEntity: ${textEntity.title}")
+    }
+
     companion object {
+        private const val TAG = "TextReadingFragment"
         private const val ARG_TEXT = "text_entity"
+        private const val KEY_CURRENT_PAGE = "current_page"
 
         fun newInstance(textEntity: TextEntity) = TextReadingFragment().apply {
             arguments = Bundle().apply {
@@ -464,10 +498,10 @@ class PageAdapter(private val pages: List<TextContentParser.Page>) :
             contentView.movementMethod = LinkMovementMethod.getInstance()
 
             // Custom link click handler to open in browser/external app
-            makeLinkClickable(contentView, spanned)
+            makeLinkClickable(spanned)
         }
 
-        private fun makeLinkClickable(textView: TextView, spanned: Spanned) {
+        private fun makeLinkClickable(spanned: Spanned) {
             val urlSpans = spanned.getSpans(0, spanned.length, URLSpan::class.java)
 
             for (span in urlSpans) {
