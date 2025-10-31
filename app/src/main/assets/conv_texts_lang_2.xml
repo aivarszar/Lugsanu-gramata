@@ -288,7 +288,7 @@ ar Viņa ciešanām un krustu
 tiekam ievesti augšāmcelšanās godībā.
 Caur Jēzu Kristu, mūsu Kungu.
 Āmen.</String>
-		<Text_type>2</Text_type>
+		<Text_type>1</Text_type>
 		<Code>2</Code>
 	</item>
 	<item>
@@ -395,7 +395,7 @@ Marija, Marija, Dieva Māte, lūdzi Dievu par mums!</String>
 	Mēs, grēcinieki, Tevi žēlīgu Dievu, lūdzam, uzklausi mūs, Kungs un Dievs!
 	Jēzu, Jēzu, Jēzu, apžēlojies par mums!
 	Marija, Marija, Dieva Māte, lūdzi Dievu par mums!</String>
-		<Text_type>2</Text_type>
+		<Text_type>1</Text_type>
 		<Code>2</Code>
 	</item>
 	<item>
@@ -721,7 +721,7 @@ Pielūdz Jēzus Sirdi svētu,
 Par mums pārdurtu ar šķēpu!
 Jēzu, Jēzu Tev mēs grēkus sūdzam, 
 Visi, visi piedošanu lūdzam.</String>
-		<Text_type>2</Text_type>
+		<Text_type>1</Text_type>
 		<Code>2</Code>
 	</item>
 	<item>
@@ -2853,7 +2853,7 @@ Un Dieva Dēlam vienīgam,
 Un Garam Visusvētajam,
 Šai Trīsvienībai dievišķai. Āmen.</String>
 		<Text_type>5</Text_type>
-		<Code>5</Code>
+		<Code>9</Code>
 	</item>
 	<item>
 		<RID>125</RID>
@@ -2889,7 +2889,7 @@ Dod mums dzīvi svētīgu,
 nāves stundu mierīgu,
 svētlaimīgu mūžību.</String>
 		<Text_type>5</Text_type>
-		<Code>5</Code>
+		<Code>9</Code>
 	</item>
 	<item>
 		<RID>126</RID>
@@ -3758,7 +3758,7 @@ augstākā mērķa nevaru zināt.
 Ļauj Tevi redzēt debesu laimē,
 priecāties mūžam tur svēto saimē.</String>
 		<Text_type>5</Text_type>
-		<Code>8</Code>
+		<Code>7</Code>
 	</item>
 	<item>
 		<RID>160</RID>
@@ -3784,7 +3784,7 @@ palīdz, Kungs, man saglabāt,
 jo pēc Tava prāta gribu
 dzīves ceļu nostaigāt.</String>
 		<Text_type>5</Text_type>
-		<Code>8</Code>
+		<Code>7</Code>
 	</item>
 	<item>
 		<RID>161</RID>
@@ -3806,7 +3806,7 @@ ko no Jēzus mantoju.
 Augstākā laime — būt debess saimē,
 lai tur mūžam dzīvotu.</String>
 		<Text_type>5</Text_type>
-		<Code>8</Code>
+		<Code>7</Code>
 	</item>
 	<item>
 		<RID>162</RID>
@@ -3828,7 +3828,7 @@ Un vienmēr pielūdzams Tu, labais Jēzu,
 Tu sirdi mierini un prātu stiprini, 
 ak, labais Jēzu, mans labais Jēzu!</String>
 		<Text_type>5</Text_type>
-		<Code>8</Code>
+		<Code>7</Code>
 	</item>
 	<item>
 		<RID>163</RID>
@@ -3858,7 +3858,7 @@ Un vienmēr Tavi paliksim:
 Ved, lūdzam, mūs uz debesīm,
 kur mūžam Tevi slavēsim.</String>
 		<Text_type>5</Text_type>
-		<Code>8</Code>
+		<Code>7</Code>
 	</item>
 	<item>
 		<RID>164</RID>
@@ -3873,7 +3873,7 @@ Pat katrā grūtībā ir sava svētība.
 Ja Kungs tā nolicis — man krustu uzlicis:
 Kas Dievam uzticīgs, — būs mūžam atpestīts.</String>
 		<Text_type>5</Text_type>
-		<Code>8</Code>
+		<Code>7</Code>
 	</item>
 	<item>
 		<RID>165</RID>
@@ -3897,7 +3897,7 @@ Mani vienu neatstāj!
 Labu nakti, mīļais Jēzu,”
 atvados no visas sirds.</String>
 		<Text_type>5</Text_type>
-		<Code>8</Code>
+		<Code>7</Code>
 	</item>
 	<item>
 		<RID>166</RID>
@@ -3919,7 +3919,7 @@ noskumušos mierini,
 dāvini mums nakti klusu
 un no ļauna pasargi.</String>
 		<Text_type>5</Text_type>
-		<Code>8</Code>
+		<Code>7</Code>
 	</item>
 	<item>
 		<RID>167</RID>
@@ -3949,7 +3949,7 @@ viss kad Viņam piederu;
 svētnīca man sirdī klusa,
 kur Viņš ņēmis mājvietu.</String>
 		<Text_type>5</Text_type>
-		<Code>8</Code>
+		<Code>7</Code>
 	</item>
 	<item>
 		<RID>168</RID>
@@ -3975,7 +3975,7 @@ es gaišā bērna ticībā
 caur zemes dzīvi ceļoju
 uz skaisto, svēto Mūžību.</String>
 		<Text_type>5</Text_type>
-		<Code>8</Code>
+		<Code>7</Code>
 	</item>
 	<item>
 		<RID>169</RID>
@@ -4011,7 +4011,7 @@ Mans karstais ilgojums
 ir — lielais ieguvums:
 būt mūžībā pie Tevis!</String>
 		<Text_type>5</Text_type>
-		<Code>8</Code>
+		<Code>7</Code>
 	</item>
 	<item>
 		<RID>170</RID>
@@ -4037,7 +4037,7 @@ Labais Jēzus kad pie manis,
 zinu — sava Labā Gana
 sargāšanā atrodos.</String>
 		<Text_type>5</Text_type>
-		<Code>8</Code>
+		<Code>7</Code>
 	</item>
 	<item>
 		<RID>171</RID>
@@ -4063,7 +4063,7 @@ par visu to, kas grēkots tika miesā.
 Liec laimē skatīt Tavu vaigu svēto
 un Tevi slavēt pulkā izredzēto.</String>
 		<Text_type>5</Text_type>
-		<Code>8</Code>
+		<Code>7</Code>
 	</item>
 	<item>
 		<RID>172</RID>
@@ -4085,7 +4085,7 @@ ka Viņš, Visaugstais Dievs, Hostija kļūst.
 Viņš mūs no altāra pie sevis aicina
 ar mīļu sveicienu: „Mans miers ar jums!”</String>
 		<Text_type>5</Text_type>
-		<Code>8</Code>
+		<Code>7</Code>
 	</item>
 	<item>
 		<RID>173</RID>
@@ -4107,7 +4107,7 @@ un sviedru lāses, un vientulību.
 sirdis zvejot prom dvēseļu jūrā 
 ar patiesības Dievvārdu tīkliem.</String>
 		<Text_type>5</Text_type>
-		<Code>8</Code>
+		<Code>7</Code>
 	</item>
 	<item>
 		<RID>174</RID>
@@ -4137,7 +4137,7 @@ Tev augstais Dievs, ir mūžīga!
 Un visa Tava radība
 lai vienmēr Tevi godina!</String>
 		<Text_type>5</Text_type>
-		<Code>8</Code>
+		<Code>7</Code>
 	</item>
 	<item>
 		<RID>175</RID>
@@ -5278,7 +5278,7 @@ V. Lai jūs svētī visvarenais Dievs, Tēvs un Dēls ✝ un Svētais Gars.
 R. Amen.
 V. Dieva žēlastība lai jūs pavada.
 R. Pateicība Dievam.</String>
-		<Text_type>2</Text_type>
+		<Text_type>1</Text_type>
 		<Code>4</Code>
 	</item>
 	<item>
@@ -5312,7 +5312,7 @@ Gods lai ir Tēvam un Dēlam,*
 un Svētajam Garam,
 	kā tas no iesākuma ir bijis, tā tagad un vienmēr,*
 	un mūžīgi mūžam. Amen.</String>
-		<Text_type>2</Text_type>
+		<Text_type>1</Text_type>
 		<Code>2</Code>
 	</item>
 	<item>
@@ -5340,7 +5340,7 @@ Gods lai ir Tēvam un Dēlam,*
 un Svētajam Garam,
 kā tas no iesākuma ir bijis, tā tagad un vienmēr,*
 un mūžīgi mūžam. Amen.</String>
-		<Text_type>2</Text_type>
+		<Text_type>1</Text_type>
 		<Code>2</Code>
 	</item>
 	<item>
@@ -5521,7 +5521,7 @@ V. Lai jūs svētī visvarenais Dievs, Tēvs un Dēls ✝ un Svētais Gars.
 R. Amen.
 V. Dieva žēlastība lai jūs pavada.
 R. Pateicība Dievam.</String>
-		<Text_type>2</Text_type>
+		<Text_type>1</Text_type>
 		<Code>3</Code>
 	</item>
 	<item>
@@ -5674,7 +5674,7 @@ V. Lai jūs svētī visvarenais Dievs, Tēvs un Dēls ✝ un Svētais Gars.
 R. Amen.
 V. Dieva žēlastība lai jūs pavada.
 R. Pateicība Dievam.</String>
-		<Text_type>2</Text_type>
+		<Text_type>1</Text_type>
 		<Code>4</Code>
 	</item>
 	<item>
@@ -5840,7 +5840,7 @@ V. Lai jūs svētī visvarenais Dievs, Tēvs un Dēls ✝ un Svētais Gars.
 R. Amen.
 V. Dieva žēlastība lai jūs pavada.
 R. Pateicība Dievam.</String>
-		<Text_type>2</Text_type>
+		<Text_type>1</Text_type>
 		<Code>3</Code>
 	</item>
 	<item>
@@ -5986,7 +5986,7 @@ V. Lai jūs svētī visvarenais Dievs, Tēvs un Dēls ✝ un Svētais Gars.
 R. Amen.
 V. Dieva žēlastība lai jūs pavada.
 R. Pateicība Dievam.</String>
-		<Text_type>2</Text_type>
+		<Text_type>1</Text_type>
 		<Code>4</Code>
 	</item>
 	<item>
@@ -6188,7 +6188,7 @@ V. Lai jūs svētī visvarenais Dievs, Tēvs un Dēls ✝ un Svētais Gars.
 R. Amen.
 V. Dieva žēlastība lai jūs pavada.
 R. Pateicība Dievam.</String>
-		<Text_type>2</Text_type>
+		<Text_type>1</Text_type>
 		<Code>3</Code>
 	</item>
 	<item>
@@ -6328,7 +6328,7 @@ V. Lai jūs svētī visvarenais Dievs, Tēvs un Dēls ✝ un Svētais Gars.
 R. Amen.
 V. Dieva žēlastība lai jūs pavada.
 R. Pateicība Dievam.</String>
-		<Text_type>2</Text_type>
+		<Text_type>1</Text_type>
 		<Code>4</Code>
 	</item>
 	<item>
@@ -6488,7 +6488,7 @@ V. Lai jūs svētī visvarenais Dievs, Tēvs un Dēls ✝ un Svētais Gars.
 R. Amen.
 V. Dieva žēlastība lai jūs pavada.
 R. Pateicība Dievam.</String>
-		<Text_type>2</Text_type>
+		<Text_type>1</Text_type>
 		<Code>3</Code>
 	</item>
 	<item>
@@ -6647,7 +6647,7 @@ V. Lai jūs svētī visvarenais Dievs, Tēvs un Dēls ✝ un Svētais Gars.
 R. Amen.
 V. Dieva žēlastība lai jūs pavada.
 R. Pateicība Dievam.</String>
-		<Text_type>2</Text_type>
+		<Text_type>1</Text_type>
 		<Code>4</Code>
 	</item>
 	<item>
@@ -6828,7 +6828,7 @@ V. Lai jūs svētī visvarenais Dievs, Tēvs un Dēls ✝ un Svētais Gars.
 R. Amen.
 V. Dieva žēlastība lai jūs pavada.
 R. Pateicība Dievam.</String>
-		<Text_type>2</Text_type>
+		<Text_type>1</Text_type>
 		<Code>3</Code>
 	</item>
 	<item>
@@ -7002,7 +7002,7 @@ V. Lai jūs svētī visvarenais Dievs, Tēvs un Dēls ✝ un Svētais Gars.
 R. Amen.
 V. Dieva žēlastība lai jūs pavada.
 R. Pateicība Dievam.</String>
-		<Text_type>2</Text_type>
+		<Text_type>1</Text_type>
 		<Code>4</Code>
 	</item>
 	<item>
@@ -7195,7 +7195,7 @@ V. Lai jūs svētī visvarenais Dievs, Tēvs un Dēls ✝ un Svētais Gars.
 R. Amen.
 V. Dieva žēlastība lai jūs pavada.
 R. Pateicība Dievam.</String>
-		<Text_type>2</Text_type>
+		<Text_type>1</Text_type>
 		<Code>3</Code>
 	</item>
 	<item>
@@ -7352,7 +7352,7 @@ V. Lai jūs svētī visvarenais Dievs, Tēvs un Dēls ✝ un Svētais Gars.
 R. Amen.
 V. Dieva žēlastība lai jūs pavada.
 R. Pateicība Dievam.</String>
-		<Text_type>2</Text_type>
+		<Text_type>1</Text_type>
 		<Code>4</Code>
 	</item>
 	<item>
@@ -7502,7 +7502,7 @@ V. Lai jūs svētī visvarenais Dievs, Tēvs un Dēls ✝ un Svētais Gars.
 R. Amen.
 V. Dieva žēlastība lai jūs pavada.
 R. Pateicība Dievam.</String>
-		<Text_type>2</Text_type>
+		<Text_type>1</Text_type>
 		<Code>3</Code>
 	</item>
 	<item>
@@ -7687,7 +7687,7 @@ V. Lai jūs svētī visvarenais Dievs, Tēvs un Dēls ✝ un Svētais Gars.
 R. Amen.
 V. Dieva žēlastība lai jūs pavada.
 R. Pateicība Dievam.</String>
-		<Text_type>2</Text_type>
+		<Text_type>1</Text_type>
 		<Code>4</Code>
 	</item>
 	<item>
@@ -7862,7 +7862,7 @@ V. Lai jūs svētī visvarenais Dievs, Tēvs un Dēls ✝ un Svētais Gars.
 R. Amen.
 V. Dieva žēlastība lai jūs pavada.
 R. Pateicība Dievam.</String>
-		<Text_type>2</Text_type>
+		<Text_type>1</Text_type>
 		<Code>3</Code>
 	</item>
 	<item>
@@ -8036,7 +8036,7 @@ V. Lai jūs svētī visvarenais Dievs, Tēvs un Dēls ✝ un Svētais Gars.
 R. Amen.
 V. Dieva žēlastība lai jūs pavada.
 R. Pateicība Dievam.</String>
-		<Text_type>2</Text_type>
+		<Text_type>1</Text_type>
 		<Code>4</Code>
 	</item>
 	<item>
@@ -8199,7 +8199,7 @@ V. Lai jūs svētī visvarenais Dievs, Tēvs un Dēls ✝ un Svētais Gars.
 R. Amen.
 V. Dieva žēlastība lai jūs pavada.
 R. Pateicība Dievam.</String>
-		<Text_type>2</Text_type>
+		<Text_type>1</Text_type>
 		<Code>3</Code>
 	</item>
 	<item>
@@ -8355,7 +8355,7 @@ V. Lai jūs svētī visvarenais Dievs, Tēvs un Dēls ✝ un Svētais Gars.
 R. Amen.
 V. Dieva žēlastība lai jūs pavada.
 R. Pateicība Dievam.</String>
-		<Text_type>2</Text_type>
+		<Text_type>1</Text_type>
 		<Code>4</Code>
 	</item>
 	<item>
@@ -8537,7 +8537,7 @@ V. Lai jūs svētī visvarenais Dievs, Tēvs un Dēls ✝ un Svētais Gars.
 R. Amen.
 V. Dieva žēlastība lai jūs pavada.
 R. Pateicība Dievam.</String>
-		<Text_type>2</Text_type>
+		<Text_type>1</Text_type>
 		<Code>3</Code>
 	</item>
 	<item>
@@ -8693,7 +8693,7 @@ V. Lai jūs svētī visvarenais Dievs, Tēvs un Dēls ✝ un Svētais Gars.
 R. Amen.
 V. Dieva žēlastība lai jūs pavada.
 R. Pateicība Dievam.</String>
-		<Text_type>2</Text_type>
+		<Text_type>1</Text_type>
 		<Code>4</Code>
 	</item>
 	<item>
@@ -8902,7 +8902,7 @@ V. Lai jūs svētī visvarenais Dievs, Tēvs un Dēls ✝ un Svētais Gars.
 R. Amen.
 V. Dieva žēlastība lai jūs pavada.
 R. Pateicība Dievam.</String>
-		<Text_type>2</Text_type>
+		<Text_type>1</Text_type>
 		<Code>3</Code>
 	</item>
 	<item>
@@ -9069,7 +9069,7 @@ V. Lai jūs svētī visvarenais Dievs, Tēvs un Dēls ✝ un Svētais Gars.
 R. Amen.
 V. Dieva žēlastība lai jūs pavada.
 R. Pateicība Dievam.</String>
-		<Text_type>2</Text_type>
+		<Text_type>1</Text_type>
 		<Code>4</Code>
 	</item>
 	<item>
@@ -9258,7 +9258,7 @@ V. Lai jūs svētī visvarenais Dievs, Tēvs un Dēls ✝ un Svētais Gars.
 R. Amen.
 V. Dieva žēlastība lai jūs pavada.
 R. Pateicība Dievam.</String>
-		<Text_type>2</Text_type>
+		<Text_type>1</Text_type>
 		<Code>3</Code>
 	</item>
 	<item>
@@ -9409,7 +9409,7 @@ V. Lai jūs svētī visvarenais Dievs, Tēvs un Dēls ✝ un Svētais Gars.
 R. Amen.
 V. Dieva žēlastība lai jūs pavada.
 R. Pateicība Dievam.</String>
-		<Text_type>2</Text_type>
+		<Text_type>1</Text_type>
 		<Code>4</Code>
 	</item>
 	<item>
@@ -9596,7 +9596,7 @@ V. Lai jūs svētī visvarenais Dievs, Tēvs un Dēls ✝ un Svētais Gars.
 R. Amen.
 V. Dieva žēlastība lai jūs pavada.
 R. Pateicība Dievam.</String>
-		<Text_type>2</Text_type>
+		<Text_type>1</Text_type>
 		<Code>3</Code>
 	</item>
 	<item>
@@ -9733,7 +9733,7 @@ V. Lai jūs svētī visvarenais Dievs, Tēvs un Dēls ✝ un Svētais Gars.
 R. Amen.
 V. Dieva žēlastība lai jūs pavada.
 R. Pateicība Dievam.</String>
-		<Text_type>2</Text_type>
+		<Text_type>1</Text_type>
 		<Code>4</Code>
 	</item>
 	<item>
@@ -9920,7 +9920,7 @@ V. Lai jūs svētī visvarenais Dievs, Tēvs un Dēls ✝ un Svētais Gars.
 R. Amen.
 V. Dieva žēlastība lai jūs pavada.
 R. Pateicība Dievam.</String>
-		<Text_type>2</Text_type>
+		<Text_type>1</Text_type>
 		<Code>3</Code>
 	</item>
 	<item>
@@ -10068,7 +10068,7 @@ V. Lai jūs svētī visvarenais Dievs, Tēvs un Dēls ✝ un Svētais Gars.
 R. Amen.
 V. Dieva žēlastība lai jūs pavada.
 R. Pateicība Dievam.</String>
-		<Text_type>2</Text_type>
+		<Text_type>1</Text_type>
 		<Code>4</Code>
 	</item>
 	<item>
@@ -10256,7 +10256,7 @@ V. Lai jūs svētī visvarenais Dievs, Tēvs un Dēls ✝ un Svētais Gars.
 R. Amen.
 V. Dieva žēlastība lai jūs pavada.
 R. Pateicība Dievam.</String>
-		<Text_type>2</Text_type>
+		<Text_type>1</Text_type>
 		<Code>3</Code>
 	</item>
 	<item>
@@ -10415,7 +10415,7 @@ V. Lai jūs svētī visvarenais Dievs, Tēvs un Dēls ✝ un Svētais Gars.
 R. Amen.
 V. Dieva žēlastība lai jūs pavada.
 R. Pateicība Dievam.</String>
-		<Text_type>2</Text_type>
+		<Text_type>1</Text_type>
 		<Code>4</Code>
 	</item>
 	<item>
@@ -10587,7 +10587,7 @@ V. Lai jūs svētī visvarenais Dievs, Tēvs un Dēls ✝ un Svētais Gars.
 R. Amen.
 V. Dieva žēlastība lai jūs pavada.
 R. Pateicība Dievam.</String>
-		<Text_type>2</Text_type>
+		<Text_type>1</Text_type>
 		<Code>3</Code>
 	</item>
 	<item>
@@ -10730,7 +10730,7 @@ V. Lai jūs svētī visvarenais Dievs, Tēvs un Dēls ✝ un Svētais Gars.
 R. Amen.
 V. Dieva žēlastība lai jūs pavada.
 R. Pateicība Dievam.</String>
-		<Text_type>2</Text_type>
+		<Text_type>1</Text_type>
 		<Code>4</Code>
 	</item>
 	<item>
@@ -10887,7 +10887,7 @@ V. Lai jūs svētī visvarenais Dievs, Tēvs un Dēls ✝ un Svētais Gars.
 R. Amen.
 V. Dieva žēlastība lai jūs pavada.
 R. Pateicība Dievam.</String>
-		<Text_type>2</Text_type>
+		<Text_type>1</Text_type>
 		<Code>3</Code>
 	</item>
 	<item>
@@ -11015,7 +11015,7 @@ V. Lai jūs svētī visvarenais Dievs, Tēvs un Dēls ✝ un Svētais Gars.
 R. Amen.
 V. Dieva žēlastība lai jūs pavada.
 R. Pateicība Dievam.</String>
-		<Text_type>2</Text_type>
+		<Text_type>1</Text_type>
 		<Code>4</Code>
 	</item>
 	<item>
@@ -11188,7 +11188,7 @@ V. Lai jūs svētī visvarenais Dievs, Tēvs un Dēls ✝ un Svētais Gars.
 R. Amen.
 V. Dieva žēlastība lai jūs pavada.
 R. Pateicība Dievam.</String>
-		<Text_type>2</Text_type>
+		<Text_type>1</Text_type>
 		<Code>3</Code>
 	</item>
 	<item>
@@ -11330,7 +11330,7 @@ V. Lai jūs svētī visvarenais Dievs, Tēvs un Dēls ✝ un Svētais Gars.
 R. Amen.
 V. Dieva žēlastība lai jūs pavada.
 R. Pateicība Dievam.</String>
-		<Text_type>2</Text_type>
+		<Text_type>1</Text_type>
 		<Code>4</Code>
 	</item>
 	<item>
@@ -11489,7 +11489,7 @@ V. Lai jūs svētī visvarenais Dievs, Tēvs un Dēls ✝ un Svētais Gars.
 R. Amen.
 V. Dieva žēlastība lai jūs pavada.
 R. Pateicība Dievam.</String>
-		<Text_type>2</Text_type>
+		<Text_type>1</Text_type>
 		<Code>3</Code>
 	</item>
 	<item>
@@ -11648,7 +11648,7 @@ V. Lai jūs svētī visvarenais Dievs, Tēvs un Dēls ✝ un Svētais Gars.
 R. Amen.
 V. Dieva žēlastība lai jūs pavada.
 R. Pateicība Dievam.</String>
-		<Text_type>2</Text_type>
+		<Text_type>1</Text_type>
 		<Code>4</Code>
 	</item>
 	<item>
@@ -11821,7 +11821,7 @@ V. Lai jūs svētī visvarenais Dievs, Tēvs un Dēls ✝ un Svētais Gars.
 R. Amen.
 V. Dieva žēlastība lai jūs pavada.
 R. Pateicība Dievam.</String>
-		<Text_type>2</Text_type>
+		<Text_type>1</Text_type>
 		<Code>3</Code>
 	</item>
 	<item>
@@ -11971,7 +11971,7 @@ V. Lai jūs svētī visvarenais Dievs, Tēvs un Dēls ✝ un Svētais Gars.
 R. Amen.
 V. Dieva žēlastība lai jūs pavada.
 R. Pateicība Dievam.</String>
-		<Text_type>2</Text_type>
+		<Text_type>1</Text_type>
 		<Code>4</Code>
 	</item>
 	<item>
@@ -12108,7 +12108,7 @@ V. Lai jūs svētī visvarenais Dievs, Tēvs un Dēls ✝ un Svētais Gars.
 R. Amen.
 V. Dieva žēlastība lai jūs pavada.
 R. Pateicība Dievam.</String>
-		<Text_type>2</Text_type>
+		<Text_type>1</Text_type>
 		<Code>3</Code>
 	</item>
 	<item>
@@ -12251,7 +12251,7 @@ V. Lai jūs svētī visvarenais Dievs, Tēvs un Dēls ✝ un Svētais Gars.
 R. Amen.
 V. Dieva žēlastība lai jūs pavada.
 R. Pateicība Dievam.</String>
-		<Text_type>2</Text_type>
+		<Text_type>1</Text_type>
 		<Code>4</Code>
 	</item>
 	<item>
@@ -12425,7 +12425,7 @@ V. Lai jūs svētī visvarenais Dievs, Tēvs un Dēls ✝ un Svētais Gars.
 R. Amen.
 V. Dieva žēlastība lai jūs pavada.
 R. Pateicība Dievam.</String>
-		<Text_type>2</Text_type>
+		<Text_type>1</Text_type>
 		<Code>3</Code>
 	</item>
 	<item>
@@ -12583,7 +12583,7 @@ V. Lai jūs svētī visvarenais Dievs, Tēvs un Dēls ✝ un Svētais Gars.
 R. Amen.
 V. Dieva žēlastība lai jūs pavada.
 R. Pateicība Dievam.</String>
-		<Text_type>2</Text_type>
+		<Text_type>1</Text_type>
 		<Code>4</Code>
 	</item>
 	<item>
@@ -12770,7 +12770,7 @@ V. Lai jūs svētī visvarenais Dievs, Tēvs un Dēls ✝ un Svētais Gars.
 R. Amen.
 V. Dieva žēlastība lai jūs pavada.
 R. Pateicība Dievam.</String>
-		<Text_type>2</Text_type>
+		<Text_type>1</Text_type>
 		<Code>3</Code>
 	</item>
 	<item>
@@ -12939,7 +12939,7 @@ V. Lai jūs svētī visvarenais Dievs, Tēvs un Dēls ✝ un Svētais Gars.
 R. Amen.
 V. Dieva žēlastība lai jūs pavada.
 R. Pateicība Dievam.</String>
-		<Text_type>2</Text_type>
+		<Text_type>1</Text_type>
 		<Code>4</Code>
 	</item>
 	<item>
@@ -13116,7 +13116,7 @@ V. Lai jūs svētī visvarenais Dievs, Tēvs un Dēls ✝ un Svētais Gars.
 R. Amen.
 V. Dieva žēlastība lai jūs pavada.
 R. Pateicība Dievam.</String>
-		<Text_type>2</Text_type>
+		<Text_type>1</Text_type>
 		<Code>3</Code>
 	</item>
 	<item>
@@ -13262,7 +13262,7 @@ V. Lai jūs svētī visvarenais Dievs, Tēvs un Dēls ✝ un Svētais Gars.
 R. Amen.
 V. Dieva žēlastība lai jūs pavada.
 R. Pateicība Dievam.</String>
-		<Text_type>2</Text_type>
+		<Text_type>1</Text_type>
 		<Code>4</Code>
 	</item>
 	<item>
@@ -13445,7 +13445,7 @@ V. Lai jūs svētī visvarenais Dievs, Tēvs un Dēls ✝ un Svētais Gars.
 R. Amen.
 V. Dieva žēlastība lai jūs pavada.
 R. Pateicība Dievam.</String>
-		<Text_type>2</Text_type>
+		<Text_type>1</Text_type>
 		<Code>3</Code>
 	</item>
 	<item>
@@ -13613,7 +13613,7 @@ V. Lai jūs svētī visvarenais Dievs, Tēvs un Dēls ✝ un Svētais Gars.
 R. Amen.
 V. Dieva žēlastība lai jūs pavada.
 R. Pateicība Dievam.</String>
-		<Text_type>2</Text_type>
+		<Text_type>1</Text_type>
 		<Code>4</Code>
 	</item>
 	<item>
@@ -13783,7 +13783,7 @@ V. Lai jūs svētī visvarenais Dievs, Tēvs un Dēls ✝ un Svētais Gars.
 R. Amen.
 V. Dieva žēlastība lai jūs pavada.
 R. Pateicība Dievam.</String>
-		<Text_type>2</Text_type>
+		<Text_type>1</Text_type>
 		<Code>3</Code>
 	</item>
 	<item>
@@ -13926,7 +13926,7 @@ V. Lai jūs svētī visvarenais Dievs, Tēvs un Dēls ✝ un Svētais Gars.
 R. Amen.
 V. Dieva žēlastība lai jūs pavada.
 R. Pateicība Dievam.</String>
-		<Text_type>2</Text_type>
+		<Text_type>1</Text_type>
 		<Code>4</Code>
 	</item>
 	<item>
@@ -14107,7 +14107,7 @@ V. Lai jūs svētī visvarenais Dievs, Tēvs un Dēls ✝ un Svētais Gars.
 R. Amen.
 V. Dieva žēlastība lai jūs pavada.
 R. Pateicība Dievam.</String>
-		<Text_type>2</Text_type>
+		<Text_type>1</Text_type>
 		<Code>3</Code>
 	</item>
 	<item>
@@ -14253,7 +14253,7 @@ V. Lai jūs svētī visvarenais Dievs, Tēvs un Dēls ✝ un Svētais Gars.
 R. Amen.
 V. Dieva žēlastība lai jūs pavada.
 R. Pateicība Dievam.</String>
-		<Text_type>2</Text_type>
+		<Text_type>1</Text_type>
 		<Code>4</Code>
 	</item>
 	<item>
@@ -14420,7 +14420,7 @@ V. Lai jūs svētī visvarenais Dievs, Tēvs un Dēls ✝ un Svētais Gars.
 R. Amen.
 V. Dieva žēlastība lai jūs pavada.
 R. Pateicība Dievam.</String>
-		<Text_type>2</Text_type>
+		<Text_type>1</Text_type>
 		<Code>3</Code>
 	</item>
 	<item>
@@ -15228,7 +15228,7 @@ viņa valstībā.&lt;/i&gt;
 &lt;b&gt;V: Amen.&lt;/b&gt;
 &lt;i&gt;Tad, ja paredzēts, recitē vai
 dzied himnu Gods Dievam.&lt;/i&gt;</String>
-		<Text_type>2</Text_type>
+		<Text_type>1</Text_type>
 		<Code>1</Code>
 	</item>
 	<item>
@@ -16027,8 +16027,8 @@ Lai saulstari padara gaišāku tavu sirdi.
 Lai dienas nastas nogulstas uz tevi viegli
 un lai Dievs tevi ietin
 savas mīlestības apmetnī.</String>
-		<Text_type>4</Text_type>
-		<Code>20</Code>
+		<Text_type>5</Text_type>
+		<Code>13</Code>
 	</item>
 	<item>
 		<RID>331</RID>
@@ -16581,7 +16581,7 @@ lai mūsu vainas netiesā bargi!
 Aizstāviet, Svētie, visus pie Dieva,
 Joahim, Anna, Jāzep, Marija!</String>
 		<Text_type>5</Text_type>
-		<Code>11</Code>
+		<Code>10</Code>
 	</item>
 	<item>
 		<RID>387</RID>
@@ -16610,7 +16610,7 @@ dzīves nastu atvieglo
 un, kad beigsies dzīves gaita, 
 nāves stundā stiprini!</String>
 		<Text_type>5</Text_type>
-		<Code>11</Code>
+		<Code>10</Code>
 	</item>
 	<item>
 		<RID>388</RID>
@@ -16746,7 +16746,7 @@ Un pēc šīs dzīves ved mūs pie Jēzus,
 pie Tava dievišķā Dēla.
 Tu žēlīgā un laipnā,
 Vissvētā Jaunava Marija.</String>
-		<Text_type>2</Text_type>
+		<Text_type>1</Text_type>
 		<Code>4</Code>
 	</item>
 	<item>
@@ -16900,7 +16900,7 @@ Un pēc šīs dzīves ved mūs pie Jēzus,
 pie Tava dievišķā Dēla.
 Tu žēlīgā un laipnā,
 Vissvētā Jaunava Marija.</String>
-		<Text_type>2</Text_type>
+		<Text_type>1</Text_type>
 		<Code>4</Code>
 	</item>
 	<item>
@@ -17029,7 +17029,7 @@ Un pēc šīs dzīves ved mūs pie Jēzus,
 pie Tava dievišķā Dēla.
 Tu žēlīgā un laipnā,
 Vissvētā Jaunava Marija.</String>
-		<Text_type>2</Text_type>
+		<Text_type>1</Text_type>
 		<Code>5</Code>
 	</item>
 	<item>
@@ -17157,7 +17157,7 @@ Un pēc šīs dzīves ved mūs pie Jēzus,
 pie Tava dievišķā Dēla.
 Tu žēlīgā un laipnā,
 Vissvētā Jaunava Marija.</String>
-		<Text_type>2</Text_type>
+		<Text_type>1</Text_type>
 		<Code>5</Code>
 	</item>
 	<item>
@@ -17272,7 +17272,7 @@ Un pēc šīs dzīves ved mūs pie Jēzus,
 pie Tava dievišķā Dēla.
 Tu žēlīgā un laipnā,
 Vissvētā Jaunava Marija.</String>
-		<Text_type>2</Text_type>
+		<Text_type>1</Text_type>
 		<Code>5</Code>
 	</item>
 	<item>
@@ -17397,7 +17397,7 @@ Un pēc šīs dzīves ved mūs pie Jēzus,
 pie Tava dievišķā Dēla.
 Tu žēlīgā un laipnā,
 Vissvētā Jaunava Marija.</String>
-		<Text_type>2</Text_type>
+		<Text_type>1</Text_type>
 		<Code>5</Code>
 	</item>
 	<item>
@@ -17525,7 +17525,7 @@ Un pēc šīs dzīves ved mūs pie Jēzus,
 pie Tava dievišķā Dēla.
 Tu žēlīgā un laipnā,
 Vissvētā Jaunava Marija.</String>
-		<Text_type>2</Text_type>
+		<Text_type>1</Text_type>
 		<Code>5</Code>
 	</item>
 	<item>
@@ -17583,7 +17583,7 @@ un kad Dieva tiesa gaidīs,
 tad, ak svētais Miķeli, 
 mūs pie Dieva aizstāvi!</String>
 		<Text_type>5</Text_type>
-		<Code>11</Code>
+		<Code>10</Code>
 	</item>
 	<item>
 		<RID>397</RID>
@@ -17611,7 +17611,7 @@ ar cerībām steidzamies mēs.
 Ņem lūgšanas, priekus un bēdas, 
 un debesu Tēvam tās nes.</String>
 		<Text_type>5</Text_type>
-		<Code>11</Code>
+		<Code>10</Code>
 	</item>
 	<item>
 		<RID>398</RID>
@@ -17648,7 +17648,7 @@ lai cilvēku dvēselēs krīt.
 Ar prieku, lai spētu nest upuri svētu, 
 mēs atdodam visu, lai dvēseles glābt</String>
 		<Text_type>5</Text_type>
-		<Code>11</Code>
+		<Code>10</Code>
 	</item>
 	<item>
 		<RID>399</RID>
@@ -17676,7 +17676,7 @@ salikuši dāvanā Baznīcas labā;
 Svētīgi ir pestīšanas kalpi, 
 Jaunās Derības drosmīgie tautas gani.</String>
 		<Text_type>5</Text_type>
-		<Code>11</Code>
+		<Code>10</Code>
 	</item>
 	<item>
 		<RID>400</RID>
@@ -17696,7 +17696,7 @@ Tavā Sirdī ko saliekam,
 lai Tavu kalpu upuris klusais 
 dziļu piemēru atstātu.</String>
 		<Text_type>5</Text_type>
-		<Code>11</Code>
+		<Code>10</Code>
 	</item>
 	<item>
 		<RID>402</RID>
@@ -17734,7 +17734,7 @@ Tāpēc, Kungs, mēs Tevi lūdzam, lai šī Tavam godam svētītā svece, nepār
 Lai viņas liesma sagaida rīta Zvaigzni, To Zvaigzni, kas nepazīst rietu, Jēzu Kristu, Tavu Dēlu, kas, atgriezies no nāves valstības, gaiši mirdz pār cilvēku cilti un dzīvo un valda mūžu mūžos, R. Amen.
 Šo seno himnu „Exsultet" diakons, priesteris vai atsevišķos gadījumos kantors dzied Lieldienu vigīlijas dievkalpojuma pašā sākumā pēc uguns svētīšanas, kā arī Lieldienu sveces aizdegšanas un ienešanas baznīcā.
 Tradīcija svētīt Lieldienu sveci un dziedāt Lieldienu slavas himnu Lieldienu vigīlijas dievkalpojumā Rietumu Baznīcā ir pazīstama kopš 5.gs. Šis himnas teksts tiek datēts ar laika posmu starp 5. un 7.gs.</String>
-		<Text_type>2</Text_type>
+		<Text_type>1</Text_type>
 		<Code>2</Code>
 	</item>
 	<item>
@@ -17775,7 +17775,7 @@ Viņi neieies manā mierā.”
 kā tas no iesākuma ir bijis tā tagad un vienmēr,*
 un mūžīgi mūžam. Amen
 (Atkārto antifonu)</String>
-		<Text_type>2</Text_type>
+		<Text_type>1</Text_type>
 		<Code>2</Code>
 	</item>
 	<item>
@@ -17799,7 +17799,7 @@ Viņš turp dosies pirms jums.”
 Mēs zinām, ka Kristus
 patiesi ir augšāmcēlies no kapa: 
 ak, Karali, kas guvi uzvaru, esi mums žēlīgs!</String>
-		<Text_type>2</Text_type>
+		<Text_type>1</Text_type>
 		<Code>9</Code>
 	</item>
 	<item>
@@ -17828,7 +17828,7 @@ kuru esmu garīgi adoptējis(-usi),
 bet, kurš atrodas nāves briesmās.
 Lūdzu, dāvā vecākiem mīlestību un drosmi,
 lai savu bērnu, kuru Tu viņiem dāvāji, tie atstātu dzīvu. Amen.</String>
-		<Text_type>2</Text_type>
+		<Text_type>1</Text_type>
 		<Code>9</Code>
 	</item>
 	<item>
@@ -17955,8 +17955,8 @@ Jo esi mīļā Dieva gribēts,
 Tev debesīs ir varens Tēvs.
 Par Ķēniņa bērnu tevi saucis Kungs
 Un savā valstībā vietu taisījis.</String>
-		<Text_type>4</Text_type>
-		<Code>20</Code>
+		<Text_type>5</Text_type>
+		<Code>13</Code>
 	</item>
 	<item>
 		<RID>577</RID>
@@ -17969,8 +17969,8 @@ Pateicies, līksmo,
 Kungs tev žēlastību dod,
 Vienojies ar Jēzu
 Un paliec Viņā tu!</String>
-		<Text_type>4</Text_type>
-		<Code>20</Code>
+		<Text_type>5</Text_type>
+		<Code>13</Code>
 	</item>
 	<item>
 		<RID>578</RID>
@@ -17979,8 +17979,8 @@ Un paliec Viņā tu!</String>
 Mūs aizstāvi savās lūgsnās.
 Glāb mūs, glāb mūs,
 Glāb, mēs Tevi lūdzam.</String>
-		<Text_type>4</Text_type>
-		<Code>22</Code>
+		<Text_type>5</Text_type>
+		<Code>13</Code>
 	</item>
 	<item>
 		<RID>579</RID>
@@ -17988,8 +17988,8 @@ Glāb, mēs Tevi lūdzam.</String>
 		<String>Lai Tavs Gaišais Vaigs, Kungs un Dievs,
 Vienmēr atspīd pār mani Kungs,
 Lai tā spīdums caurstrāvo mūs.</String>
-		<Text_type>4</Text_type>
-		<Code>20</Code>
+		<Text_type>5</Text_type>
+		<Code>13</Code>
 	</item>
 	<item>
 		<RID>580</RID>
@@ -18006,16 +18006,16 @@ Svētam Garam lai slava,
 Atspīd gaisma lai Tava,
 Mīlu Tevi,
 Mīlu Tevi.</String>
-		<Text_type>4</Text_type>
-		<Code>20</Code>
+		<Text_type>5</Text_type>
+		<Code>13</Code>
 	</item>
 	<item>
 		<RID>582</RID>
 		<Description>LAUDATE DOMINUM</Description>
 		<String>Laudate Dominum, laudate Dominum,
 Omnes gentes Alleluja. /2x</String>
-		<Text_type>4</Text_type>
-		<Code>20</Code>
+		<Text_type>5</Text_type>
+		<Code>13</Code>
 	</item>
 	<item>
 		<RID>583</RID>
@@ -18139,8 +18139,8 @@ Ak, lai es vienmēr Tevi
 Mīlētu,
 Esi ar mani, esi ar mani
 Visa ceļa garumā.</String>
-		<Text_type>4</Text_type>
-		<Code>20</Code>
+		<Text_type>5</Text_type>
+		<Code>13</Code>
 	</item>
 	<item>
 		<RID>587</RID>
@@ -18165,8 +18165,8 @@ Gūt prieku mūžīgu,
 pat bēdās dalītu.&lt;&lt;
 |Un es atdodu
 visu Tev, visu Tev.</String>
-		<Text_type>4</Text_type>
-		<Code>20</Code>
+		<Text_type>5</Text_type>
+		<Code>13</Code>
 	</item>
 	<item>
 		<RID>588</RID>
@@ -18181,8 +18181,8 @@ Jā, Kungs, jā, Kungs, jā, jā, Kungs,
 Jā, Kungs, jā, Kungs, jā, jā, Kungs,
 Jā, Kungs, jā, Kungs, jā, jā, Kungs,
 Amen!</String>
-		<Text_type>4</Text_type>
-		<Code>20</Code>
+		<Text_type>5</Text_type>
+		<Code>13</Code>
 	</item>
 	<item>
 		<RID>589</RID>
@@ -18199,8 +18199,8 @@ Lai atbrīvo tā saistītos
 Un brīvus dara mūs;
 Tava mīlestība dziedinošā
 Dziedē dvēseli.</String>
-		<Text_type>4</Text_type>
-		<Code>20</Code>
+		<Text_type>5</Text_type>
+		<Code>13</Code>
 	</item>
 	<item>
 		<RID>590</RID>
@@ -18307,8 +18307,8 @@ Mūsu Tēvs, kas debesīs Tu valdi,
 un svētīts ar'lai top Tavs vārds. 
 Jel patvērumā savā stiprā ņem zemi, 
 tautu šo, ak, Dievs!</String>
-		<Text_type>4</Text_type>
-		<Code>20</Code>
+		<Text_type>5</Text_type>
+		<Code>13</Code>
 	</item>
 	<item>
 		<RID>594</RID>
@@ -18913,7 +18913,7 @@ un tu sasniegsi savu sirds ilgu piepildījumu.
 #246#{svētdiena}, #248#{pirmdiena}, #250#{otrdiena}, #252#{trešdiena}, #254#{ceturtdiena}, #256#{piektdiena}, #258#{sestdiena}
 4. nedēļa - 
 #260#{svētdiena}, #262#{pirmdiena}, #265#{otrdiena}, #267#{trešdiena}, #269#{ceturtdiena}, #271#{piektdiena}, #273#{sestdiena}</String>
-		<Text_type>2</Text_type>
+		<Text_type>1</Text_type>
 	</item>
 	<item>
 		<RID>1049</RID>
@@ -18926,7 +18926,7 @@ un tu sasniegsi savu sirds ilgu piepildījumu.
 #247#{svētdiena 1}, #245#{svētdiena 2}, #249#{pirmdiena}, #251#{otrdiena}, #253#{trešdiena}, #255#{ceturtdiena}, #257#{piektdiena}, #259#{sestdiena}
 4. nedēļa - 
 #261#{svētdiena 1}, #259#{svētdiena 2}, #264#{pirmdiena}, #266#{otrdiena}, #268#{trešdiena}, #270#{ceturtdiena}, #272#{piektdiena}, #274#{sestdiena}</String>
-		<Text_type>2</Text_type>
+		<Text_type>1</Text_type>
 		<Code>4</Code>
 	</item>
 	<item>
@@ -18954,22 +18954,13 @@ uz mūžiem. Amen.</String>
 		<Code>9</Code>
 	</item>
 	<item>
-		<RID>2607</RID>
-		<Description>Upurēšanas lūgšana</Description>
-		<String>Jēzu, es upurēju Tev savas(-u;-us) (... šīsdienas lūgšanas, darbus, priekus un bēdas...), pievienojot tās(to, tos) svētās Mises upurim visā pasaulē, Tavas Vissvētās Sirds nodomā, (... par grēcinieku atgriešanos, par visu savu draugu un domubiedru vajadzībām, un jo sevišķi Svētā tēva nodomā...).
-(Kungs, visvarenais Dievs, Tu esi licis mums(man) sagaidīt šīs dienas sākumu. Aizsargā mūs(mani) šodien ar savu vareno spēku, lai mēs(es) nekristu nevienā grēkā, bet lai visas mūsu(manas) domas, visi mūsu(mani) vārdi un darbi būtu taisnīgi Tavā priekšā. Caur Jēzu Kristu, mūsu Kungu. Āmen.
-Mans Dievs, es upurēju Tev visus darbus, ko šodien darīšu. To daru Jēzus Svētās Sirds nodomos un tās godam. Es gribu svētīt savas sirds pukstienus, savas domas un visvienkāršākos darbus, vienojot tos ar Tavas Sirds bezgalīgajiem nopelniem, un izlabot savas kļūdas, tās iemetot Tavas žēlsirdīgās mīlestības kausētavā. Ak, mans Dievs, sev un man tuviem cilvēkiem es lūdzu no Tevis žēlastību izpildīt visā pilnībā Tavu svēto gribu, Tavas mīlestības dēļ pieņemt šīs pārejošās dzīves priekus un bēdas, lai reiz mēs būtu vienoti uz mūžīgiem laikiem debesīs. Āmen.</String>
-		<Text_type>1</Text_type>
-		<Code>9</Code>
-	</item>
-	<item>
 		<RID>2611</RID>
 		<Description>Upurēšanas lūgšana</Description>
 		<String>Jēzu, es upurēju Tev savas šīsdienas lūgšanas, darbus, priekus un bēdas, pievienojot tās svētās Mises upurim visā pasaulē, Tavas Vissvētās Sirds nodomā, par savu un visu citu grēcinieku atgriešanos, par savas ģimenes, visu savu draugu un domubiedru vajadzībām, un jo sevišķi Svētā tēva nodomā.
 Kungs, visvarenais Dievs, Tu esi licis mums sagaidīt šo dienu. Aizsargā mūs šodien ar savu vareno spēku, lai mēs nekristu nevienā grēkā, bet lai visas mūsu domas, visi mūsu vārdi un darbi būtu taisnīgi Tavā priekšā. Caur Jēzu Kristu, mūsu Kungu. Āmen.
 Mans Dievs, es upurēju Tev visus darbus, ko šodien darīšu. To daru Jēzus Svētās Sirds nodomos un tās godam. Es gribu svētīt savas sirds pukstienus, savas domas un visvienkāršākos darbus, vienojot tos ar Tavas Sirds bezgalīgajiem nopelniem, un izlabot savas kļūdas, tās iemetot Tavas žēlsirdīgās mīlestības kausētavā. Ak, mans Dievs, sev un sev tuviem cilvēkiem es lūdzu no Tevis žēlastību izpildīt visā pilnībā Tavu svēto gribu, Tavas mīlestības dēļ pieņemt šīs pārejošās dzīves priekus un bēdas, lai reiz mēs būtu vienoti uz mūžīgiem laikiem debesīs. Āmen.</String>
 		<Text_type>1</Text_type>
-		<Code>3</Code>
+		<Code>9</Code>
 	</item>
 	<item>
 		<RID>2615</RID>
@@ -19129,7 +19120,7 @@ Pie Tava dievišķā Dēla. 
 Tu žēlīgā un laipnā
 Vissvētākā Jaunava Marija. </String>
 		<Text_type>5</Text_type>
-		<Code>11</Code>
+		<Code>10</Code>
 	</item>
 	<item>
 		<RID>2619</RID>
@@ -19279,8 +19270,8 @@ Jēzū!  Jēzū!  • Jēzū! Jēzū!
 3_Dievs ir šodien... 
 4_Dievs ir tagad… 
 5_Dievs būs vienmēr…</String>
-		<Text_type>4</Text_type>
-		<Code>20</Code>
+		<Text_type>5</Text_type>
+		<Code>13</Code>
 	</item>
 	<item>
 		<RID>2632</RID>
@@ -19305,8 +19296,8 @@ a F
 Nav, nav nevienas domas,
 C G a F
 Laimi lielāku, kas spētu dod.</String>
-		<Text_type>4</Text_type>
-		<Code>20</Code>
+		<Text_type>5</Text_type>
+		<Code>13</Code>
 	</item>
 	<item>
 		<RID>2633</RID>
@@ -19359,8 +19350,8 @@ D A G DA
 Jesus, adoramus Te, 
 G A D
 adoramus Te!</String>
-		<Text_type>4</Text_type>
-		<Code>20</Code>
+		<Text_type>5</Text_type>
+		<Code>13</Code>
 	</item>
 	<item>
 		<RID>2635</RID>
@@ -19377,8 +19368,8 @@ Sūti uguni!  d C B C
 Sūti uguni!  	d C B C 
 Sūti uguni!  d C B C 
 Sūti uguni!  d C B C</String>
-		<Text_type>4</Text_type>
-		<Code>20</Code>
+		<Text_type>5</Text_type>
+		<Code>13</Code>
 	</item>
 	<item>
 		<RID>2639</RID>
@@ -19460,8 +19451,8 @@ Kuram slāpst, lai nāk pie manis
 Un lai dzer no ūdens šī. 
 Ja tu ticēsi, tad tevī plūdīs 
 Dzīvā ūdens strauts.</String>
-		<Text_type>4</Text_type>
-		<Code>20</Code>
+		<Text_type>5</Text_type>
+		<Code>13</Code>
 	</item>
 	<item>
 		<RID>2649</RID>
@@ -19490,8 +19481,8 @@ Bet savam Dēlam mūs dāvini.
 Pasargā mūs no niecības un maldiem; 
 Tu esi saņēmusi vainagu, 
 Tu svētā Dieva Dzemdētāja.</String>
-		<Text_type>4</Text_type>
-		<Code>20</Code>
+		<Text_type>5</Text_type>
+		<Code>13</Code>
 	</item>
 	<item>
 		<RID>2656</RID>
@@ -19530,8 +19521,8 @@ Vadi mūs cīņās un spēku mums dod.
 Uz žēlsirdību tie sirdīs vēl cer.
 Ciešanās savās uz Tevi tie sauc,
 Uzklausi lūgšanas, palīgā steidz.</String>
-		<Text_type>4</Text_type>
-		<Code>20</Code>
+		<Text_type>5</Text_type>
+		<Code>13</Code>
 	</item>
 	<item>
 		<RID>2658</RID>
@@ -19582,8 +19573,8 @@ Alleluja x3
 12. Gods lai Tēvam–Radītājam, Dēlam–ļaužu Pestītājam,
 Garam Svētajam uz mūžiem! 
 Alleluja x3</String>
-		<Text_type>4</Text_type>
-		<Code>20</Code>
+		<Text_type>5</Text_type>
+		<Code>13</Code>
 	</item>
 	<item>
 		<RID>2659</RID>
@@ -19593,8 +19584,8 @@ Ruah. Ruah. Ruah.
 Ne mūsu spēkā, ne varā, bet tikai Svētajā Garā.
 Pēc Zah. 4,6
 Ne ar spēku un ne ar varu, bet ar manu Garu! – saka Pulku Kungs.</String>
-		<Text_type>4</Text_type>
-		<Code>20</Code>
+		<Text_type>5</Text_type>
+		<Code>13</Code>
 	</item>
 	<item>
 		<RID>2660</RID>
@@ -19628,8 +19619,8 @@ Kā bērns Tev pieglaužos,
 Un droši paļaujos, 
 Tev vienam uzticos: 
 Māci man lūgt!</String>
-		<Text_type>4</Text_type>
-		<Code>20</Code>
+		<Text_type>5</Text_type>
+		<Code>13</Code>
 	</item>
 	<item>
 		<RID>2661</RID>
@@ -19637,7 +19628,7 @@ Māci man lūgt!</String>
 		<String>Karmela ordeņa galvenā Aizbildne,
 Māte un Karaliene
 http://convocatis.net/Pages/KDs_breviars.htm</String>
-		<Text_type>2</Text_type>
+		<Text_type>1</Text_type>
 		<Code>9</Code>
 	</item>
 	<item>
@@ -19721,8 +19712,8 @@ Dievam pretī iet.
 Dieva Mātes maigā sirds, 
 Lai es varu arvien no jauna 
 Dievam pretī iet.</String>
-		<Text_type>4</Text_type>
-		<Code>20</Code>
+		<Text_type>5</Text_type>
+		<Code>13</Code>
 	</item>
 	<item>
 		<RID>2666</RID>
@@ -19744,8 +19735,8 @@ Tevi gaidām mēs!
 Nāc, Kungs nāc, mūs apmīļo,
 Nāc, Kungs, nāc, mūs iedvesmo,
 Tevi gaidām mēs!</String>
-		<Text_type>4</Text_type>
-		<Code>21</Code>
+		<Text_type>5</Text_type>
+		<Code>13</Code>
 	</item>
 	<item>
 		<RID>2667</RID>
@@ -19811,8 +19802,8 @@ patvērumā Tava              G
 jauna gaisma aust!             Fis h
 vai:
 d C Bb A  •  d C Bb A d&lt;&lt;</String>
-		<Text_type>4</Text_type>
-		<Code>22</Code>
+		<Text_type>5</Text_type>
+		<Code>13</Code>
 	</item>
 	<item>
 		<RID>2668</RID>
@@ -20042,8 +20033,8 @@ pie Tevis nākt aicini mani,
 lai līdz ar Taviem svētajiem 
 es slavētu Tevi mūžīgi. Amen. 
 (Svētais Ignācijs no Lojolas)</String>
-		<Text_type>4</Text_type>
-		<Code>20</Code>
+		<Text_type>5</Text_type>
+		<Code>13</Code>
 	</item>
 	<item>
 		<RID>2681</RID>
@@ -20345,8 +20336,8 @@ C G a • F C G   x2
 d e  F7+ G	 
 a G d7 • F7+ C G	
  x2</String>
-		<Text_type>4</Text_type>
-		<Code>20</Code>
+		<Text_type>5</Text_type>
+		<Code>13</Code>
 	</item>
 	<item>
 		<RID>2687</RID>
@@ -20363,8 +20354,8 @@ izlūdziet tiem žēlsirdību.
 plūda kā	avots šajā raudu lejā.
 Atdodam tām godu, pateiksimies mūžam 
 līdz ar eņģeļiem un svētiem.</String>
-		<Text_type>4</Text_type>
-		<Code>20</Code>
+		<Text_type>5</Text_type>
+		<Code>13</Code>
 	</item>
 	<item>
 		<RID>2688</RID>
@@ -20413,8 +20404,8 @@ Ir jāglabā, jāglabā,
 kas mīļš un dārgs! 
 Ir jāglabā, jāglabā, 
 kas mīļš un dārgs!</String>
-		<Text_type>4</Text_type>
-		<Code>20</Code>
+		<Text_type>5</Text_type>
+		<Code>13</Code>
 	</item>
 	<item>
 		<RID>2690</RID>
@@ -20992,8 +20983,8 @@ Lūgsimies! Mūžīgais Dievs, Tava žēlsirdība ir neaptverama un apžēlošan
 |Radix Iesse, germinans flosculum • hic adesse me tibi servulum • patiaris. *** Inter spinas, quae crescis lilium, • serva puras mentes fragilium • tutelaris. 
 |Armatura fortis pugnantium, • furunt bella tende praesidium • scapularis. *** Per incerta prudens consilium • per adversa iuge solatium • largiaris. 
 |Mater dulcis, Carmeli domina, • plebem tuam reple laetitia, • qua bearis. *** Paradisi clavis et ianua, • fac nos duci, quo, Mater, gloria • coronaris. Amen.</String>
-		<Text_type>4</Text_type>
-		<Code>20</Code>
+		<Text_type>5</Text_type>
+		<Code>13</Code>
 	</item>
 	<item>
 		<RID>2707</RID>
