@@ -2,13 +2,13 @@ package com.convocatis.app.ui.views
 
 import android.content.Context
 import android.graphics.Color
+import android.graphics.Typeface
 import android.graphics.drawable.ColorDrawable
 import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
-import android.widget.ImageButton
 import android.widget.ListView
 import android.widget.PopupWindow
 import android.widget.TextView
@@ -117,6 +117,27 @@ class CategoryDropdownMenu(
         showPopup(contentView)
     }
 
+    /**
+     * Create a custom icon button using TextView with Unicode symbols
+     */
+    private fun createIconButton(symbol: String, onClick: () -> Unit): TextView {
+        return TextView(context).apply {
+            text = symbol
+            textSize = 28f
+            setTypeface(null, Typeface.BOLD)
+            setTextColor(0xFF333333.toInt()) // Dark gray
+            gravity = Gravity.CENTER
+            setPadding(16, 16, 16, 16)
+            layoutParams = LinearLayout.LayoutParams(72, 72)
+            setOnClickListener { onClick() }
+
+            // Add ripple effect background
+            val outValue = android.util.TypedValue()
+            context.theme.resolveAttribute(android.R.attr.selectableItemBackground, outValue, true)
+            setBackgroundResource(outValue.resourceId)
+        }
+    }
+
     private fun <T> createDropdownView(items: List<T>, isTypeSelection: Boolean, typeNum: Int? = null): View {
         val containerLayout = LinearLayout(context).apply {
             orientation = LinearLayout.VERTICAL
@@ -131,7 +152,8 @@ class CategoryDropdownMenu(
         val headerLayout = LinearLayout(context).apply {
             orientation = LinearLayout.HORIZONTAL
             gravity = Gravity.START or Gravity.CENTER_VERTICAL
-            setPadding(8, 8, 8, 0)
+            setPadding(16, 16, 16, 16)
+            setBackgroundColor(0xFFE8E8E8.toInt()) // Light gray background
             layoutParams = LinearLayout.LayoutParams(
                 LinearLayout.LayoutParams.MATCH_PARENT,
                 LinearLayout.LayoutParams.WRAP_CONTENT
@@ -146,29 +168,18 @@ class CategoryDropdownMenu(
             }
             headerLayout.addView(leftSpacer)
 
-            val homeButton = ImageButton(context).apply {
-                setImageResource(android.R.drawable.ic_menu_mylocation) // Home icon
-                setBackgroundColor(Color.TRANSPARENT)
-                layoutParams = LinearLayout.LayoutParams(48, 48)
-                setOnClickListener {
-                    currentTypeNum = null
-                    onFilterSelected(TextTypesParser.CategoryFilter.all())
-                    dismiss()
-                }
+            val homeButton = createIconButton("⌂") {
+                currentTypeNum = null
+                onFilterSelected(TextTypesParser.CategoryFilter.all())
+                dismiss()
             }
             headerLayout.addView(homeButton)
         } else {
             // Code selection view: back button + home button centered
-            val backButton = ImageButton(context).apply {
-                setImageResource(android.R.drawable.ic_menu_revert) // Back icon
-                setBackgroundColor(Color.TRANSPARENT)
-                layoutParams = LinearLayout.LayoutParams(48, 48)
-                rotation = 180f // Flip icon to point left
-                setOnClickListener {
-                    currentTypeNum = null
-                    popupWindow?.dismiss()
-                    showTypeSelection()
-                }
+            val backButton = createIconButton("◀") {
+                currentTypeNum = null
+                popupWindow?.dismiss()
+                showTypeSelection()
             }
             headerLayout.addView(backButton)
 
@@ -178,15 +189,10 @@ class CategoryDropdownMenu(
             }
             headerLayout.addView(leftSpacer)
 
-            val homeButton = ImageButton(context).apply {
-                setImageResource(android.R.drawable.ic_menu_mylocation) // Home icon
-                setBackgroundColor(Color.TRANSPARENT)
-                layoutParams = LinearLayout.LayoutParams(48, 48)
-                setOnClickListener {
-                    currentTypeNum = null
-                    onFilterSelected(TextTypesParser.CategoryFilter.all())
-                    dismiss()
-                }
+            val homeButton = createIconButton("⌂") {
+                currentTypeNum = null
+                onFilterSelected(TextTypesParser.CategoryFilter.all())
+                dismiss()
             }
             headerLayout.addView(homeButton)
         }
@@ -202,11 +208,8 @@ class CategoryDropdownMenu(
         headerLayout.addView(spacer)
 
         // Close button
-        val closeButton = ImageButton(context).apply {
-            setImageResource(android.R.drawable.ic_menu_close_clear_cancel)
-            setBackgroundColor(Color.TRANSPARENT)
-            layoutParams = LinearLayout.LayoutParams(48, 48)
-            setOnClickListener { dismiss() }
+        val closeButton = createIconButton("✕") {
+            dismiss()
         }
         headerLayout.addView(closeButton)
 
