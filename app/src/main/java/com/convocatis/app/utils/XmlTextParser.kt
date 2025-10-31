@@ -50,7 +50,6 @@ class XmlTextParser(private val context: Context) {
 
                     XmlPullParser.TEXT -> {
                         if (parser.text.isNotBlank()) {
-                            val tagName = parser.name ?: ""
                             currentText?.let {
                                 when {
                                     parser.text.trim().isNotEmpty() -> {

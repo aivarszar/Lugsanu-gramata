@@ -77,11 +77,24 @@ class GlideImageGetter(
     /**
      * Drawable that can be updated after async image load
      */
-    private class UrlDrawable : BitmapDrawable() {
+    private class UrlDrawable : Drawable() {
         var drawable: Drawable? = null
 
         override fun draw(canvas: Canvas) {
             drawable?.draw(canvas)
+        }
+
+        override fun setAlpha(alpha: Int) {
+            drawable?.alpha = alpha
+        }
+
+        override fun setColorFilter(colorFilter: android.graphics.ColorFilter?) {
+            drawable?.colorFilter = colorFilter
+        }
+
+        @Deprecated("Deprecated in Java")
+        override fun getOpacity(): Int {
+            return android.graphics.PixelFormat.TRANSLUCENT
         }
     }
 
