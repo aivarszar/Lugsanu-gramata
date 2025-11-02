@@ -10,6 +10,9 @@ import androidx.fragment.app.Fragment
 import com.convocatis.app.database.entity.TextEntity
 import com.convocatis.app.ui.fragments.TextReadingFragment
 import com.convocatis.app.ui.fragments.TextsFragment
+import androidx.activity.enableEdgeToEdge
+import androidx.core.view.WindowCompat
+import android.util.Log
 
 class MainActivity : AppCompatActivity() {
 
@@ -21,7 +24,12 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        Log.d("MainActivity", "onCreate started")
+        enableEdgeToEdge()
+        WindowCompat.setDecorFitsSystemWindows(window, false)
         setContentView(R.layout.activity_main)
+        Log.d("MainActivity", "onCreate finished")
+
 
         setSupportActionBar(findViewById(R.id.toolbar))
         supportActionBar?.title = getString(R.string.app_name)
