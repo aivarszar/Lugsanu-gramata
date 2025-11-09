@@ -14,5 +14,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Convocatis"
+rootProject.name = "MotionSounds"
 include(":app")
