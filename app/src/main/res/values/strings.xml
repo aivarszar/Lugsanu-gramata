@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Convocatis</string>
+
+    <!-- Main UI -->
+    <string name="texts">Teksti</string>
+    <string name="search">Meklēt</string>
+    <string name="categories">Kategorijas</string>
+
+    <!-- Text Reading -->
+    <string name="page_indicator">%1$d / %2$d</string>
+    <string name="previous">Iepriekšējā</string>
+    <string name="next">Nākamā</string>
+
+    <!-- Common -->
+    <string name="loading">Ielādē…</string>
+    <string name="error">Kļūda</string>
+    <string name="no_texts_found">Nav atrasti teksti</string>
+    <string name="favorite">Favorīts</string>
+    <string name="sort">Kārtot</string>
+    <string name="filter_favorites">Rādīt favorītus</string>
+    <string name="filter_category">Filtrēt pēc kategorijas</string>
+</resources>
