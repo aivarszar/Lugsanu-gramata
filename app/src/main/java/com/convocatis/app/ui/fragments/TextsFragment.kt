@@ -798,42 +798,31 @@ class TextsFragment : Fragment() {
                 title = "⭐ Informācija un atgriezeniskā saite",
                 rawContent = """
                     >>Sveicināti Convocatis!<<
-
                     Ja vēlies šādu programmu savam pasākumam, vai tev ir kādi ieteikumi vai problēmas ar šo programmu, raksti e-pastu:
-
                     <a href="mailto:aivarszar@gmail.com"><b>aivarszar@gmail.com</b></a>
-
-                    ---
-
                     <h3>Par šo programmu</h3>
-
                     Convocatis ir radīta, lai palīdzētu organizēt un lasīt lūgšanu un dziesmu tekstus pasākumos.
-
                     <ul>
                       <li>✅ Vienkārša navigācija</li>
                       <li>✅ Tekstu meklēšana un šķirošana</li>
                       <li>✅ Izlūkotāko tekstu saglabāšana</li>
                       <li>✅ Daudzu lapu un atkārtošanas atbalsts</li>
                     </ul>
-
                     <h3>Kā var palīdzēt?</h3>
-
                     <ul>
                       <li>💬 Nosūti savus ieteikumus</li>
                       <li>🐛 Ziņo par problēmām</li>
                       <li>⭐ Novērtē aplikāciju</li>
                       <li>📤 Dalies ar draugiem</li>
                     </ul>
-
                     <br/>
-
                     Izstrādātājs: <a href="http://convocatis.net"><b>Convocatis</b></a><br/>
                     <a href="https://www.madonasdraudze.lv/Avize_2020/1.pdf"><b>Kalnā par Convocatis</b></a>
 
                     <br/><br/>
                     <img src="https://png.pngtree.com/png-vector/20211103/ourmid/pngtree-christian-religious-symbol-cross-brush-illustration-png-image_4020809.png" />
 
-                    <p><small>Versija 1.0 | Izstrādāts ar ❤️ Latvijā</small></p>
+                    <p><small>Versija 2.0 </small></p>
                 """.trimIndent(),
                 categoryType = 0,
                 categoryCode = null,
@@ -845,34 +834,25 @@ class TextsFragment : Fragment() {
                 title = "⭐ Information and Feedback",
                 rawContent = """
                     >>Welcome to Convocatis!<<
-
                     If you want such a program for your event, or you have any suggestions or problems with this program, write an email to:
-
                     <a href="mailto:aivarszar@gmail.com"><b>aivarszar@gmail.com</b></a>
-
                     ---
-
                     <h3>About this app</h3>
-
                     Convocatis is designed to help organize and read prayer and song texts at events.
-
                     <ul>
                       <li>✅ Simple navigation</li>
                       <li>✅ Text search and sorting</li>
                       <li>✅ Save favorite texts</li>
                       <li>✅ Multi-page and repetition support</li>
                     </ul>
-
                     <h3>How can you help?</h3>
-
                     <ul>
                       <li>💬 Send your suggestions</li>
                       <li>🐛 Report problems</li>
                       <li>⭐ Rate the app</li>
                       <li>📤 Share with friends</li>
                     </ul>
-
-                    <p><small>Version 1.0 Made with ❤️ in Latvia</small></p>
+                    <p><small>Version 2.0</small></p>
                 """.trimIndent(),
                 categoryType = 0,
                 categoryCode = null,
