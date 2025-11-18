@@ -176,7 +176,23 @@ class TextsFragment : Fragment() {
             onFavoriteClick = { textEntity ->
                 favoritesManager.toggleFavorite(textEntity.rid)
                 loadTexts() // Refresh list
-            }
+            },
+            onSearchGoTo = { textEntity, pageIndex ->
+                // Open text at specific page (first match)
+                val layoutManager = recyclerView.layoutManager as? LinearLayoutManager
+                layoutManager?.let {
+                    scrollPosition = it.findFirstVisibleItemPosition()
+                    val view = it.findViewByPosition(scrollPosition)
+                    scrollOffset = view?.top ?: 0
+                }
+                savePaginationState()
+                (activity as? MainActivity)?.showTextReadingFragment(textEntity, pageIndex, searchTerm)
+            },
+            onSearchShowAll = { textEntity, matches ->
+                // Show dialog with all matches
+                showSearchMatchesDialog(textEntity, matches)
+            },
+            searchTerm = searchTerm
         )
         recyclerView.adapter = adapter
 
@@ -272,6 +288,22 @@ class TextsFragment : Fragment() {
             val paginatedTexts = applyAlphabetFilterAndPagination(filteredTexts)
 
             adapter.submitList(paginatedTexts)
+
+            // Calculate search matches if search term is not empty
+            if (searchTerm.isNotEmpty()) {
+                lifecycleScope.launch {
+                    val matches = mutableMapOf<Long, List<TextReadingFragment.SearchMatch>>()
+                    filteredTexts.forEach { text ->
+                        val textMatches = TextReadingFragment.findSearchMatches(text, searchTerm)
+                        if (textMatches.isNotEmpty()) {
+                            matches[text.rid] = textMatches
+                        }
+                    }
+                    adapter.setSearchMatches(matches)
+                }
+            } else {
+                adapter.setSearchMatches(emptyMap())
+            }
 
             // Update alphabet and pagination UI
             updateAlphabetFilter(filteredTexts)
@@ -920,6 +952,30 @@ class TextsFragment : Fragment() {
 
 
     /**
+     * Show dialog with all search matches for a text
+     */
+    private fun showSearchMatchesDialog(textEntity: TextEntity, matches: List<TextReadingFragment.SearchMatch>) {
+        val dialog = androidx.appcompat.app.AlertDialog.Builder(requireContext())
+            .setTitle("Meklēšanas rezultāti: ${textEntity.title}")
+            .setMessage("Atrasti ${matches.size} rezultāti meklējot \"$searchTerm\"")
+            .setItems(matches.map { match ->
+                "${match.pageIndex + 1}. ${match.headerText ?: "Bez virsraksta"}\n${match.contentSnippet}"
+            }.toTypedArray()) { _, which ->
+                // User selected a specific match - navigate to that page
+                val selectedMatch = matches[which]
+                (activity as? MainActivity)?.showTextReadingFragment(
+                    textEntity,
+                    selectedMatch.pageIndex,
+                    searchTerm
+                )
+            }
+            .setNegativeButton("Aizvērt", null)
+            .create()
+
+        dialog.show()
+    }
+
+    /**
      * Restore last filter from SharedPreferences
      */
     private fun restoreLastFilter() {
@@ -949,13 +1005,23 @@ class TextsFragment : Fragment() {
 class TextsAdapter(
     private val favoritesManager: FavoritesManager,
     private val onItemClick: (TextEntity) -> Unit,
-    private val onFavoriteClick: (TextEntity) -> Unit
+    private val onFavoriteClick: (TextEntity) -> Unit,
+    private val onSearchGoTo: ((TextEntity, Int) -> Unit)? = null,
+    private val onSearchShowAll: ((TextEntity, List<TextReadingFragment.SearchMatch>) -> Unit)? = null,
+    private val searchTerm: String = ""
 ) : RecyclerView.Adapter<TextsAdapter.ViewHolder>() {
 
     private var texts = listOf<TextEntity>()
+    private val searchMatches = mutableMapOf<Long, List<TextReadingFragment.SearchMatch>>()
 
     fun submitList(newTexts: List<TextEntity>) {
         texts = newTexts
+        notifyDataSetChanged()
+    }
+
+    fun setSearchMatches(matches: Map<Long, List<TextReadingFragment.SearchMatch>>) {
+        searchMatches.clear()
+        searchMatches.putAll(matches)
         notifyDataSetChanged()
     }
 
@@ -974,6 +1040,8 @@ class TextsAdapter(
     inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         private val titleView: TextView = view.findViewById(R.id.titleText)
         private val favoriteIcon: TextView = view.findViewById(R.id.favoriteIcon)
+        private val searchGoToIcon: TextView = view.findViewById(R.id.searchGoToIcon)
+        private val searchShowAllIcon: TextView = view.findViewById(R.id.searchShowAllIcon)
 
         fun bind(text: TextEntity) {
             titleView.text = text.title
@@ -1000,7 +1068,30 @@ class TextsAdapter(
                 }
             }
 
-            // Click on item -> open text
+            // Handle search icons
+            val matches = searchMatches[text.rid]
+            if (matches != null && matches.isNotEmpty() && searchTerm.isNotEmpty()) {
+                // Show "Go to first match" icon
+                searchGoToIcon.visibility = View.VISIBLE
+                searchGoToIcon.setOnClickListener {
+                    onSearchGoTo?.invoke(text, matches[0].pageIndex)
+                }
+
+                // Show "Show all matches" icon only if there are multiple matches
+                if (matches.size > 1) {
+                    searchShowAllIcon.visibility = View.VISIBLE
+                    searchShowAllIcon.setOnClickListener {
+                        onSearchShowAll?.invoke(text, matches)
+                    }
+                } else {
+                    searchShowAllIcon.visibility = View.GONE
+                }
+            } else {
+                searchGoToIcon.visibility = View.GONE
+                searchShowAllIcon.visibility = View.GONE
+            }
+
+            // Click on item -> open text (without search navigation)
             itemView.setOnClickListener { onItemClick(text) }
         }
     }

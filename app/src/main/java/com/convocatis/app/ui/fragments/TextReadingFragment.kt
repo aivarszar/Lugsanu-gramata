@@ -98,8 +98,10 @@ class TextReadingFragment : Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_text_reading_two_level, container, false)
 
-        // Restore saved page position
-        savedPagePosition = savedInstanceState?.getInt(KEY_CURRENT_PAGE, 0) ?: 0
+        // Restore saved page position (prioritize saved state, then argument, then default to 0)
+        savedPagePosition = savedInstanceState?.getInt(KEY_CURRENT_PAGE, 0)
+            ?: arguments?.getInt(ARG_START_PAGE, 0)
+            ?: 0
         Log.d(TAG, "Restoring state: saved page = $savedPagePosition")
 
         // Initialize views
@@ -477,14 +479,14 @@ class TextReadingFragment : Fragment() {
             // Start new segment if:
             // 1. mainText (header) changed
             // 2. isRepeated status changed
-            // 3. If isRepeated=true, subText changed (repeated content changed)
+            // 3. subText changed (content changed) - whether repeated or not
             val shouldStartNewSegment = if (prevMainText != null) {
                 // Header changed
                 mainText != prevMainText ||
                 // Repetition status changed
                 isRepeated != prevIsRepeated ||
-                // For repeated segments, subText must be same
-                (isRepeated && subText != prevSubText)
+                // SubText changed (for both repeated and non-repeated segments)
+                subText != prevSubText
             } else {
                 false
             }
@@ -772,12 +774,173 @@ class TextReadingFragment : Fragment() {
     companion object {
         private const val TAG = "TextReadingFragment"
         private const val ARG_TEXT = "text_entity"
+        private const val ARG_START_PAGE = "start_page"
+        private const val ARG_SEARCH_TERM = "search_term"
         private const val KEY_CURRENT_PAGE = "current_page"
 
-        fun newInstance(textEntity: TextEntity) = TextReadingFragment().apply {
+        fun newInstance(
+            textEntity: TextEntity,
+            startPage: Int = 0,
+            searchTerm: String? = null
+        ) = TextReadingFragment().apply {
             arguments = Bundle().apply {
                 putSerializable(ARG_TEXT, textEntity)
+                putInt(ARG_START_PAGE, startPage)
+                searchTerm?.let { putString(ARG_SEARCH_TERM, it) }
             }
+        }
+
+        /**
+         * Data class for search match information
+         */
+        data class SearchMatch(
+            val pageIndex: Int,
+            val headerText: String?,
+            val contentSnippet: String,
+            val charPosition: Int
+        )
+
+        /**
+         * Find all occurrences of search term in text and return page indices
+         * This is a simplified version of the parsing logic
+         */
+        suspend fun findSearchMatches(textEntity: TextEntity, searchTerm: String): List<SearchMatch> {
+            val matches = mutableListOf<SearchMatch>()
+            if (searchTerm.isBlank()) return matches
+
+            val text = textEntity.rawContent
+            val searchTermLower = searchTerm.lowercase()
+            var currentMainText: String? = null
+            var currentSubtexts = mutableListOf<String>()
+            var pageIndex = 0
+
+            var currentIndex = 0
+
+            while (true) {
+                val mainTextIndex = text.indexOf(">>", currentIndex)
+                val subTextIndex = text.indexOf("|", currentIndex)
+
+                if (mainTextIndex == -1 && subTextIndex == -1) {
+                    break
+                }
+
+                if (mainTextIndex != -1 && (subTextIndex == -1 || subTextIndex > mainTextIndex)) {
+                    // Found main text (header)
+
+                    // Process previous texts
+                    if (currentMainText != null || currentSubtexts.isNotEmpty()) {
+                        // Search in previous segment
+                        if (currentSubtexts.isEmpty()) {
+                            // Only main text
+                            currentMainText?.let { header ->
+                                if (header.lowercase().contains(searchTermLower)) {
+                                    val snippet = header.take(100)
+                                    matches.add(SearchMatch(pageIndex, header, snippet, 0))
+                                }
+                                pageIndex++
+                            }
+                        } else {
+                            // Main + sub texts
+                            currentSubtexts.forEach { subText ->
+                                val combinedText = "${currentMainText ?: ""} $subText"
+                                if (combinedText.lowercase().contains(searchTermLower)) {
+                                    val matchPos = combinedText.lowercase().indexOf(searchTermLower)
+                                    val snippetStart = maxOf(0, matchPos - 30)
+                                    val snippetEnd = minOf(combinedText.length, matchPos + searchTerm.length + 30)
+                                    val snippet = "..." + combinedText.substring(snippetStart, snippetEnd) + "..."
+                                    matches.add(SearchMatch(pageIndex, currentMainText, snippet, matchPos))
+                                }
+                                pageIndex++
+                            }
+                        }
+                        currentSubtexts.clear()
+                    }
+
+                    val endMainTextIndex = text.indexOf("<<", mainTextIndex).takeIf { it != -1 } ?: text.length
+                    currentIndex = endMainTextIndex + 2
+                    currentMainText = text.substring(mainTextIndex + 2, endMainTextIndex)
+
+                    // Remove repetition prefix if exists
+                    val repetitionSignIndex = currentMainText.indexOf("^")
+                    if (repetitionSignIndex > -1) {
+                        try {
+                            currentMainText.substring(0, repetitionSignIndex).toInt()
+                            currentMainText = currentMainText.substring(repetitionSignIndex + 1)
+                        } catch (e: NumberFormatException) {
+                            // Not a valid repetition
+                        }
+                    }
+
+                    // Check for content after >><<
+                    if (currentIndex < text.length && text[currentIndex] != '|' && text[currentIndex] != '>') {
+                        while (currentIndex < text.length && text[currentIndex].isWhitespace()) {
+                            currentIndex++
+                        }
+                        val contentEndIndex1 = text.indexOf(">>", currentIndex).takeIf { it != -1 } ?: Int.MAX_VALUE
+                        val contentEndIndex2 = text.indexOf("|", currentIndex).takeIf { it != -1 } ?: Int.MAX_VALUE
+                        val contentEndIndex = minOf(contentEndIndex1, contentEndIndex2, text.length)
+
+                        if (contentEndIndex > currentIndex) {
+                            val contentText = text.substring(currentIndex, contentEndIndex).trim()
+                            if (contentText.isNotEmpty()) {
+                                currentSubtexts.add(contentText)
+                            }
+                            currentIndex = contentEndIndex
+                        }
+                    }
+                } else {
+                    // Found sub text
+                    val endSubTextIndex1 = text.indexOf(">>", subTextIndex + 1).takeIf { it != -1 } ?: Int.MAX_VALUE
+                    val endSubTextIndex2 = text.indexOf("|", subTextIndex + 1).takeIf { it != -1 } ?: Int.MAX_VALUE
+                    val endSubTextIndex = minOf(endSubTextIndex1, endSubTextIndex2, text.length)
+
+                    currentIndex = endSubTextIndex
+                    var subText = text.substring(subTextIndex + 1, endSubTextIndex)
+
+                    // Remove repetition prefix if exists
+                    val repetitionSignIndex = subText.indexOf("^")
+                    if (repetitionSignIndex > -1) {
+                        try {
+                            subText.substring(0, repetitionSignIndex).toInt()
+                            subText = subText.substring(repetitionSignIndex + 1)
+                        } catch (e: NumberFormatException) {
+                            // Not a valid repetition
+                        }
+                    }
+
+                    currentSubtexts.add(subText)
+                }
+
+                if (currentIndex >= text.length) {
+                    break
+                }
+            }
+
+            // Process remaining texts
+            if (currentMainText != null || currentSubtexts.isNotEmpty()) {
+                if (currentSubtexts.isEmpty()) {
+                    currentMainText?.let { header ->
+                        if (header.lowercase().contains(searchTermLower)) {
+                            val snippet = header.take(100)
+                            matches.add(SearchMatch(pageIndex, header, snippet, 0))
+                        }
+                    }
+                } else {
+                    currentSubtexts.forEach { subText ->
+                        val combinedText = "${currentMainText ?: ""} $subText"
+                        if (combinedText.lowercase().contains(searchTermLower)) {
+                            val matchPos = combinedText.lowercase().indexOf(searchTermLower)
+                            val snippetStart = maxOf(0, matchPos - 30)
+                            val snippetEnd = minOf(combinedText.length, matchPos + searchTerm.length + 30)
+                            val snippet = "..." + combinedText.substring(snippetStart, snippetEnd) + "..."
+                            matches.add(SearchMatch(pageIndex, currentMainText, snippet, matchPos))
+                        }
+                        pageIndex++
+                    }
+                }
+            }
+
+            return matches
         }
     }
 }

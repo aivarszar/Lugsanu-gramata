@@ -81,8 +81,12 @@ class MainActivity : AppCompatActivity() {
         showFragment(TextsFragment(), getString(R.string.app_name))
     }
 
-    fun showTextReadingFragment(textEntity: TextEntity) {
-        val fragment = TextReadingFragment.newInstance(textEntity)
+    fun showTextReadingFragment(
+        textEntity: TextEntity,
+        startPage: Int = 0,
+        searchTerm: String? = null
+    ) {
+        val fragment = TextReadingFragment.newInstance(textEntity, startPage, searchTerm)
         currentFragment = fragment
         supportFragmentManager.beginTransaction()
             .replace(R.id.fragment_container, fragment)

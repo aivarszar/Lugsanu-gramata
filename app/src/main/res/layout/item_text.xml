@@ -32,4 +32,32 @@
         android:maxLines="2"
         android:ellipsize="end" />
 
+    <!-- Search result: Go to first match icon -->
+    <TextView
+        android:id="@+id/searchGoToIcon"
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        android:text="🔍"
+        android:textSize="18sp"
+        android:gravity="center"
+        android:contentDescription="Go to first match"
+        android:visibility="gone"
+        android:layout_marginStart="8dp"
+        android:background="?android:attr/selectableItemBackgroundBorderless"
+        android:clickable="true" />
+
+    <!-- Search result: Show all matches icon -->
+    <TextView
+        android:id="@+id/searchShowAllIcon"
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        android:text="📋"
+        android:textSize="18sp"
+        android:gravity="center"
+        android:contentDescription="Show all matches"
+        android:visibility="gone"
+        android:layout_marginStart="4dp"
+        android:background="?android:attr/selectableItemBackgroundBorderless"
+        android:clickable="true" />
+
 </LinearLayout>
